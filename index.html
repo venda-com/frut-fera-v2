@@ -15,7 +15,10 @@
   <meta property="og:locale" content="pt_BR">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
-  <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image"
+    imagesrcset="/images/hero-mobile.webp 400w, /images/hero.webp 700w"
+    imagesizes="(max-width:639px) 400px, 700px"
+    fetchpriority="high">
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -245,7 +248,10 @@
     <p>Do primeiro vaso à primeira colheita em semanas, um guia completo do zero, para quem nunca plantou e para quem já tentou e não conseguiu</p>
     <div class="hero-img">
       <picture>
-        <source srcset="/images/hero.webp" type="image/webp">
+        <source
+          srcset="/images/hero-mobile.webp 400w, /images/hero.webp 700w"
+          sizes="(max-width:639px) 400px, 700px"
+          type="image/webp">
         <img src="/images/hero.jpg" alt="Mockup do produto Como Cultivar Árvores Frutíferas" fetchpriority="high" loading="eager" decoding="sync" width="700" height="393">
       </picture>
     </div>
