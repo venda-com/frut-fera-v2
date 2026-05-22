@@ -216,10 +216,14 @@
      TOP BANNER
 ═══════════════════════════════════════ -->
 <div class="top-banner">
-  ⏰ OFERTA ENCERRA EM: <span id="countdown" style="font-variant-numeric:tabular-nums;letter-spacing:.05em">--:--:--</span>
+  🎁 OFERTA EXCLUSIVA APENAS HOJE — <span id="banner-date"></span> &nbsp;|&nbsp; ⏰ OFERTA ENCERRA EM: <span id="countdown" style="font-variant-numeric:tabular-nums;letter-spacing:.05em">--:--:--</span>
 </div>
 <script>
   (function(){
+    var months=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    var d=new Date();
+    var el=document.getElementById('banner-date');
+    if(el) el.textContent=d.getDate()+' de '+months[d.getMonth()]+' de '+d.getFullYear();
     function tick(){
       var now=new Date(),midnight=new Date();
       midnight.setHours(24,0,0,0);
@@ -227,8 +231,8 @@
       var h=Math.floor(diff/3600000);
       var m=Math.floor((diff%3600000)/60000);
       var s=Math.floor((diff%60000)/1000);
-      var el=document.getElementById('countdown');
-      if(el) el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+      var el2=document.getElementById('countdown');
+      if(el2) el2.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
     }
     tick();setInterval(tick,1000);
   })();
@@ -239,8 +243,9 @@
 ═══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
-    <h1>COLHA <span class="orange">FRUTAS FRESCAS</span> DA SUA <span class="orange">PRÓPRIA CASA</span>, SEM QUINTAL E SEM EXPERIÊNCIA</h1>
-    <p>Do primeiro vaso à primeira colheita em semanas, um guia completo do zero, para quem nunca plantou e para quem já tentou e não conseguiu</p>
+    <h1>A FRUTA QUE VOCÊ COME TEM <span class="orange">AGROTÓXICO</span>. E <span class="orange">VOCÊ NÃO</span> TEM COMO SABER QUANTO.</h1>
+    <p>Agora você pode cultivar a sua própria fruta em casa, em vaso, mesmo sem quintal e sem ter plantado nada na vida.</p>
+    <p style="margin-top:16px;font-size:.95rem;color:#d2e4d7;text-align:center">Tudo isso, gastando <span class="orange">menos do que uma semana de frutas no mercado.</span></p>
     <div class="hero-img">
       <picture>
         <source
@@ -251,10 +256,10 @@
       </picture>
     </div>
     <div class="hero-bullets">
-      <div class="hero-bullet">✅ Funciona em qualquer lugar com luz natural</div>
-      <div class="hero-bullet">✅ Frutas sem agrotóxico colhidas por você</div>
-      <div class="hero-bullet">✅ Sem experiência, o guia começa do zero</div>
-      <div class="hero-bullet">✅ Acesso imediato após a compra</div>
+      <div class="hero-bullet">✅ Funciona em qualquer cantinho com luz natural — janela, corredor ou varanda</div>
+      <div class="hero-bullet">✅ Você sabe exatamente o que sua família está comendo</div>
+      <div class="hero-bullet">✅ Não precisa de experiência — cada passo é explicado na ordem certa</div>
+      <div class="hero-bullet">✅ Você recebe o acesso na hora, pelo celular ou computador</div>
     </div>
   </div>
 </section>
@@ -265,7 +270,7 @@
 <section class="quick-offer">
   <div class="quick-offer-inner">
     <a href="#plano-completo" class="btn-orange" onclick="event.preventDefault();document.getElementById('plano-completo').scrollIntoView({behavior:'smooth',block:'start'})">
-      🍋 Quero Meu Acesso Agora
+      🍋 Quero Cultivar Minha Própria Fruta
     </a>
   </div>
 </section>
@@ -276,12 +281,12 @@
 <section class="pain-section">
   <div class="pain-inner">
     <h2 class="section-title">
-      Pagar caro por fruta de <span class="orange">qualidade duvidosa</span> está te incomodando?
+      Você já foi ao mercado, pegou uma fruta, <span class="orange">olhou o preço e deixou de volta na prateleira?</span>
     </h2>
     <p class="pain-intro">
-      No supermercado, você nunca sabe quando a fruta foi colhida, com quais defensivos foi tratada, ou se vai durar mais do que dois dias.
+      No supermercado, você nunca sabe quando a fruta foi colhida, com quantos agrotóxicos foi tratada, ou se vai durar mais do que dois dias.
     </p>
-    <p class="pain-callout">Veja se alguma dessas situações parece familiar:</p>
+    <p class="pain-intro" style="margin-top:24px">Veja se alguma dessas situações parece familiar:</p>
     <ul class="pain-list">
       <li>😩 Compra frutas e elas amadurecem ou estragam antes de consumir</li>
       <li>💸 Paga preços absurdos por frutas orgânicas</li>
