@@ -410,7 +410,7 @@
       color: var(--text-mid);
       line-height: 1.6;
     }
-    .bonus-pricing { text-align: right; flex-shrink: 0; }
+    .bonus-pricing { margin-top: 0.5rem; }
     .bonus-old {
       font-size: 0.8125rem;
       color: #999;
@@ -627,8 +627,11 @@
     @media (max-width: 680px) {
       .benefits-grid { grid-template-columns: 1fr; }
       .ba-grid { grid-template-columns: 1fr; }
-      .bonus-card { flex-direction: column; }
-      .bonus-pricing { text-align: left; }
+      .bonus-card { padding: 1.25rem 1rem; align-items: flex-start; }
+      .bonus-icon { font-size: 1.4rem; }
+      .bonus-body { text-align: left; }
+      .bonus-name { font-size: 0.9375rem; }
+      .bonus-desc { font-size: 0.8125rem; }
     }
   </style>
 </head>
@@ -801,10 +804,10 @@
         <div class="bonus-body">
           <div class="bonus-name">Cultivando Frutíferas em Vaso</div>
           <p class="bonus-desc">Tudo que você precisa saber antes de plantar — qual vaso usar, qual terra escolher, como cuidar nos primeiros 30 dias. O começo certo faz toda a diferença no resultado final.</p>
-        </div>
-        <div class="bonus-pricing">
-          <div class="bonus-old">De R$27</div>
-          <div class="bonus-free">Incluído grátis</div>
+          <div class="bonus-pricing">
+            <div class="bonus-old">De R$27</div>
+            <div class="bonus-free">Incluído grátis</div>
+          </div>
         </div>
       </div>
 
@@ -814,10 +817,10 @@
         <div class="bonus-body">
           <div class="bonus-name">Calendário de Colheita por Espécie</div>
           <p class="bonus-desc">Descubra exatamente quando cada fruta é produzida na sua região do Brasil. Planeje seu cultivo e já saiba em qual mês vai fazer sua primeira colheita.</p>
-        </div>
-        <div class="bonus-pricing">
-          <div class="bonus-old">De R$17</div>
-          <div class="bonus-free">Incluído grátis</div>
+          <div class="bonus-pricing">
+            <div class="bonus-old">De R$17</div>
+            <div class="bonus-free">Incluído grátis</div>
+          </div>
         </div>
       </div>
 
@@ -827,10 +830,10 @@
         <div class="bonus-body">
           <div class="bonus-name">100 Receitas com as Frutas que Você Vai Colher</div>
           <p class="bonus-desc">Sucos, geleias, sobremesas e drinks feitos com as frutas do seu próprio vaso. 100 receitas simples, prontas em menos de 10 minutos.</p>
-        </div>
-        <div class="bonus-pricing">
-          <div class="bonus-old">De R$27</div>
-          <div class="bonus-free">Incluído grátis</div>
+          <div class="bonus-pricing">
+            <div class="bonus-old">De R$27</div>
+            <div class="bonus-free">Incluído grátis</div>
+          </div>
         </div>
       </div>
 
