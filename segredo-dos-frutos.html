@@ -3,18 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O Adubo Milagroso: Faça Sua Frutífera Produzir</title>
-  <meta name="description" content="O adubo caseiro que você prepara em minutos e faz sua frutífera produzir frutos. 3 ingredientes naturais, resultado em semanas. Funciona para limoeiro, acerola, laranjeira e mais." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-  <link rel="dns-prefetch" href="//cdn.utmify.com.br">
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wxh4uf5jpq");
-  </script>
+  <title>O Segredo dos Frutos — Faça Sua Frutífera Produzir</title>
+  <link rel="icon" href="data:,">
   <link rel="preload" as="image" href="images/mockup-640.webp" type="image/webp" imagesrcset="images/mockup-640.webp 640w, images/mockup.webp 934w" imagesizes="(max-width: 680px) 94vw, 600px" fetchpriority="high">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +22,7 @@
       --text-mid: #444;
     }
 
-    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -41,34 +31,30 @@
       overflow-x: hidden;
     }
 
+    /* ── TIMER ── */
     .timer-bar {
       background: var(--orange);
       color: #fff;
       text-align: center;
-      padding: 0.5rem 1rem;
-      font-size: 0.72rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
       font-weight: 700;
       letter-spacing: 0.01em;
     }
-    @media (min-width: 640px) {
-      .timer-bar { font-size: 0.85rem; padding: 0.65rem 1rem; }
-    }
 
+    /* ── HERO ── */
     .hero {
       background: var(--green);
-      padding: 3rem 3%;
+      padding: 4rem 5%;
       text-align: center;
     }
-    @media (min-width: 640px) {
-      .hero { padding: 4rem 5%; }
-    }
     .hero h1 {
-      font-size: clamp(0.82rem, 4.3vw, 1.9rem);
+      font-size: clamp(1.6rem, 4vw, 2.75rem);
       font-weight: 900;
       color: #fff;
       text-transform: uppercase;
-      letter-spacing: 0;
-      line-height: 1.25;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
       max-width: 820px;
       margin: 0 auto 1.25rem;
     }
@@ -116,6 +102,7 @@
     }
     .bullets li span.ico { flex-shrink: 0; }
 
+    /* ── BOTÕES ── */
     .btn {
       display: inline-block;
       background: var(--orange);
@@ -136,6 +123,7 @@
       padding: 0.75rem 1.75rem;
     }
 
+    /* ── SECTION BASE ── */
     .section-green { background: var(--green); }
     .section-beige { background: var(--beige); }
     .section-pad { padding: 4.5rem 5%; }
@@ -158,6 +146,7 @@
     .section-sub.white { color: rgba(255,255,255,0.8); font-size: 1.0625rem; }
     .section-sub.dark { color: var(--text-mid); font-size: 1rem; }
 
+    /* ── TESTIMONIALS CAROUSEL ── */
     .testimonials-section {
       background: var(--beige);
       padding: 4.5rem 5%;
@@ -174,28 +163,32 @@
     }
     .testimonial-card {
       min-width: 100%;
-      background: none;
-      border-radius: 0;
-      padding: 0;
-      border: none;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--beige-dark);
       text-align: center;
     }
-    .screenshot-wrap {
-      width: 100%;
-      max-width: 320px;
-      height: 560px;
-      margin: 0 auto 1.5rem;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    .testimonial-stars {
+      color: #f5a623;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
     }
-    .screenshot-wrap picture { display: block; height: 100%; }
-    .whatsapp-screenshot {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
+    .testimonial-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--green);
+      font-size: 0.9375rem;
+    }
+    .testimonial-city {
+      font-size: 0.8125rem;
+      color: #888;
     }
     .carousel-controls {
       display: flex;
@@ -226,6 +219,7 @@
     }
     .dot.active { background: var(--orange); }
 
+    /* ── BENEFITS ── */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -255,12 +249,14 @@
       line-height: 1.6;
     }
 
+    /* ── URGENCY ── */
     .urgency-section {
       background: var(--green);
       padding: 4rem 5%;
       text-align: center;
     }
 
+    /* ── BEFORE AFTER ── */
     .before-after-section {
       background: var(--beige);
       padding: 4.5rem 5%;
@@ -274,25 +270,40 @@
       margin: 0 auto 2.5rem;
       line-height: 1.6;
     }
-    .before-after-image {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      margin-top: 32px;
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 760px;
+      margin: 0 auto;
     }
-    .before-after-image img {
-      width: 100%;
-      height: auto;
-      max-width: 1000px;
-      border-radius: 16px;
-      display: block;
+    .ba-item { position: relative; }
+    .ba-placeholder {
+      border-radius: 1rem;
+      overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,.12);
-      object-fit: contain;
     }
-    @media (max-width: 768px) {
-      .before-after-image img { max-width: 100%; }
+    .ba-placeholder img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
     }
+    .ba-label {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-weight: 800;
+      font-size: 0.9375rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 1.25rem;
+      border-radius: 2rem;
+    }
+    .ba-label.antes { background: #e8e0d0; color: #888; }
+    .ba-label.depois { background: var(--green); color: #fff; }
 
+    /* ── STEPS ── */
     .steps-section {
       background: var(--green);
       padding: 4.5rem 5%;
@@ -336,6 +347,7 @@
       line-height: 1.65;
     }
 
+    /* ── BONUSES ── */
     .bonuses-section {
       background: var(--beige);
       padding: 4.5rem 5%;
@@ -384,7 +396,7 @@
       color: var(--text-mid);
       line-height: 1.6;
     }
-    .bonus-pricing { margin-top: 0.5rem; }
+    .bonus-pricing { text-align: right; flex-shrink: 0; }
     .bonus-old {
       font-size: 0.8125rem;
       color: #999;
@@ -396,90 +408,104 @@
       color: #2a7a2a;
     }
 
-    .plans-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
+    /* ── PLANS ── */
+    .plans-section {
+      background: var(--green);
+      padding: 4.5rem 5%;
+      text-align: center;
+    }
+    .plans-note {
+      color: rgba(255,255,255,0.9);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
     .plans-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; max-width: 760px; margin: 2rem auto 0; align-items: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 720px;
+      margin: 0 auto;
+      align-items: start;
     }
-    .plan-card { border-radius: 16px; padding: 2rem 1.5rem; position: relative; text-align: left; }
+    .plan-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 2rem 1.5rem;
+      position: relative;
+      text-align: center;
+    }
     .plan-popular-badge {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: #f5a623; color: #1a1a1a; font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.3rem 1rem; border-radius: 2rem; white-space: nowrap;
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      white-space: nowrap;
     }
-    .plan-card.basico { background: #fff; }
-    .plan-card.basico .plan-title {
-      font-weight: 900; font-size: 1rem; color: #1a3a1a;
-      text-transform: uppercase; letter-spacing: 0.05em;
-      text-align: center; margin-bottom: 1.25rem;
+    .plan-title {
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
     }
-    .plan-basico-items { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; }
-    .plan-basico-items li {
-      font-size:.9rem; color:#444; display:flex; align-items:center; gap:.4rem;
-      padding:.65rem 0; border-bottom:1px solid #ebebeb;
+    .plan-old {
+      font-size: 0.875rem;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
     }
-    .plan-basico-items li:last-child { border-bottom:none; }
-    .plan-basico-price-box {
-      background: #1a3a1a; border-radius: 12px;
-      padding: 1rem 1.25rem; text-align: center; margin-bottom: 1.25rem;
+    .plan-price {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #2a7a2a;
+      line-height: 1;
+      margin-bottom: 0.25rem;
     }
-    .plan-val-label { font-size:.75rem; color:rgba(255,255,255,.65); margin-bottom:.1rem; }
-    .plan-val-old { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
-    .plan-val-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
-    .plan-val-period { font-size:.8rem; color:rgba(255,255,255,.65); }
-    .btn-basico {
-      display:block; width:100%; background:#f5a623; color:#fff;
-      font-weight:800; font-size:.9375rem; text-transform:uppercase;
-      text-align:center; padding:.9rem 1rem; border-radius:2rem;
-      text-decoration:none; transition:background .2s;
+    .plan-period {
+      font-size: 0.875rem;
+      color: #888;
+      margin-bottom: 1.25rem;
     }
-    .btn-basico:hover { background:#d98c1a; }
-    .plan-footnote { font-size:.75rem; color:#aaa; text-align:center; margin-top:.75rem; }
-    .plan-card.completo {
-      background: #1a2e1a;
-      box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.3), 0 0 40px rgba(0,230,118,.12);
+    .plan-items {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
-    .plan-card.completo .plan-title {
-      font-weight:900; font-size:1rem; color:#f5a623;
-      text-transform:uppercase; letter-spacing:.05em;
-      text-align:center; margin-bottom:1rem;
+    .plan-items li {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
     }
-    .plan-completo-banner {
-      background:#2d4a2d; border-radius:8px; padding:.6rem 1rem;
-      text-align:center; font-size:.85rem; font-weight:700; color:#fff; margin-bottom:1rem;
-    }
-    .plan-completo-items { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; }
-    .plan-completo-item { padding:.75rem 0; border-bottom:1px solid rgba(0,230,118,.12); }
-    .plan-completo-item:last-child { border-bottom:none; }
-    .plan-completo-item-header { display:flex; align-items:flex-start; gap:.4rem; }
-    .plan-completo-item-name { font-size:.875rem; font-weight:700; color:#fff; flex:1; }
-    .plan-completo-item-desc { font-size:.78rem; color:rgba(255,255,255,.7); margin:.25rem 0 .35rem 1.4rem; line-height:1.4; }
-    .plan-completo-item-anchor { display:flex; gap:.5rem; align-items:center; margin-left:1.4rem; }
-    .plan-completo-item-old { font-size:.75rem; color:rgba(255,255,255,.4); text-decoration:line-through; }
-    .plan-completo-item-tag { font-size:.75rem; font-weight:800; color:#00e676; }
-    .plan-total-box {
-      background:#0f1f0f; border-radius:12px; padding:1rem; text-align:center; margin-bottom:1.25rem;
-    }
-    .plan-total-label { font-size:.75rem; color:rgba(255,255,255,.65); margin-bottom:.1rem; }
-    .plan-total-old-price { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
-    .plan-total-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
-    .plan-total-period { font-size:.8rem; color:rgba(255,255,255,.65); }
-    .btn-completo {
-      display:block; width:100%; background:#00e676; color:#1a3a1a;
-      font-weight:800; font-size:.9375rem; text-transform:uppercase;
-      text-align:center; padding:.9rem 1rem; border-radius:2rem;
-      text-decoration:none; transition:background .2s;
-      box-shadow:0 0 12px rgba(0,230,118,.4);
-    }
-    .btn-completo:hover { background:#00c853; }
-    .plan-footnote-white { font-size:.75rem; color:rgba(255,255,255,.55); text-align:center; margin-top:.75rem; }
-    @media (max-width:680px) {
-      .plans-grid { grid-template-columns:1fr; }
-      .plan-card { padding:2rem 1.25rem; }
-      .plan-val-price, .plan-total-price { font-size:1.875rem; }
+    .plan-items .striked { color: #aaa; text-decoration: line-through; }
+    .plan-items .gratis { color: #2a7a2a; font-weight: 700; }
+    .plan-total-old {
+      font-size: 0.875rem;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
     }
 
+    /* ── GUARANTEE ── */
     .guarantee-section {
       background: var(--beige);
       padding: 4.5rem 5%;
@@ -506,6 +532,7 @@
       line-height: 1.75;
     }
 
+    /* ── FAQ ── */
     .faq-section {
       background: var(--beige);
       padding: 1rem 5% 4.5rem;
@@ -562,6 +589,7 @@
       line-height: 1.7;
     }
 
+    /* ── FINAL CTA ── */
     .final-cta {
       background: var(--green);
       padding: 5rem 5%;
@@ -582,6 +610,7 @@
       color: rgba(255,255,255,0.7);
     }
 
+    /* ── FOOTER ── */
     footer {
       background: #111;
       padding: 1.5rem 5%;
@@ -590,77 +619,16 @@
       color: rgba(255,255,255,0.45);
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
       .benefits-grid { grid-template-columns: 1fr; }
-      .bonus-card { padding: 1.25rem 1rem; align-items: flex-start; }
-      .bonus-icon { font-size: 1.4rem; }
-      .bonus-body { text-align: left; }
-      .bonus-name { font-size: 0.9375rem; }
-      .bonus-desc { font-size: 0.8125rem; }
-
-      /* Reduce vertical spacing on mobile */
-      .hero { padding: 2rem 5% 1.75rem; }
-      .section-pad { padding: 2.5rem 5%; }
-      .testimonials-section { padding: 2.5rem 5%; }
-      .urgency-section { padding: 2.5rem 5%; }
-      .before-after-section { padding: 2.5rem 5%; }
-      .bonuses-section { padding: 2.5rem 5%; }
-      .steps-section { padding: 2.5rem 5%; }
-      .plans-section { padding: 2.5rem 5%; }
-      .guarantee-section { padding: 2.5rem 5%; }
-      .faq-section { padding: 2.5rem 5%; }
-      .bullets { margin-bottom: 1.75rem; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .bonus-card { flex-direction: column; }
+      .bonus-pricing { text-align: left; }
+      .plan-card { padding: 1.75rem 1.25rem; }
     }
   </style>
-<!-- Meta Pixel Code -->
-<script>
-window.__fbPixelQueue = [['init', '1001844958969175'], ['track', 'PageView']];
-window.fbq = function() { window.__fbPixelQueue.push([].slice.call(arguments)); };
-window.trackCheckout = function() { window.fbq('track', 'InitiateCheckout'); };
-
-(function() {
-  var loaded = false;
-  function loadFacebookPixel() {
-    if (loaded) return;
-    loaded = true;
-    var queued = window.__fbPixelQueue || [];
-    delete window.fbq;
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    queued.forEach(function(args) { window.fbq.apply(null, args); });
-  }
-  function loadUtmify() {
-    var script = document.createElement('script');
-    script.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
-    script.async = true;
-    script.defer = true;
-    script.setAttribute('data-utmify-prevent-xcod-sck', '');
-    script.setAttribute('data-utmify-prevent-subids', '');
-    document.head.appendChild(script);
-  }
-  function loadMarketingScripts() {
-    loadFacebookPixel();
-    loadUtmify();
-  }
-  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function(eventName) {
-    window.addEventListener(eventName, loadMarketingScripts, { once: true, passive: true });
-  });
-  window.addEventListener('load', function() {
-    setTimeout(loadMarketingScripts, 3500);
-  });
-})();
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -671,42 +639,37 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>O <span style="color:var(--orange)">ADUBO CASEIRO</span> QUE VOCÊ PREPARA<br>EM MINUTOS, QUE FAZ SUA FRUTÍFERA<br><span style="color:var(--orange)">PRODUZIR FRUTOS</span></h1>
+    <h1>O ADUBO CASEIRO QUE VOCÊ PREPARA EM MINUTOS, QUE FAZ SUA FRUTÍFERA PRODUZIR FRUTOS.</h1>
     <p class="subheadline">O adubo que você compra na loja foi feito para fazer a planta crescer, não para produzir fruto. Três ingredientes naturais que você tem em casa mudam esse sinal em semanas.</p>
-    <div class="mockup-placeholder"><picture><source srcset="images/mockup-640.webp 640w, images/mockup.webp 934w" sizes="(max-width: 680px) 94vw, 600px" type="image/webp"><img src="images/mockup.jpg" alt="O Adubo Milagroso" fetchpriority="high" decoding="sync" width="934" height="909" /></picture></div>
-    <p class="gancho">Uma aplicação por mês, com o que você já tem em casa, e sua planta finalmente entra no modo de produção.</p>
+    <div class="mockup-placeholder"><picture><source srcset="images/mockup-640.webp 640w, images/mockup.webp 934w" sizes="(max-width: 680px) 94vw, 600px" type="image/webp"><img src="images/mockup.jpg" alt="O Segredo dos Frutos" fetchpriority="high" decoding="sync" width="934" height="909" /></picture></div>
+    <p class="gancho">Uma aplicação por mês, com o que você já tem em casa — e sua planta finalmente entra no modo de produção.</p>
     <ul class="bullets">
       <li><span class="ico">✅</span> Funciona para qualquer frutífera em vaso, quintal ou jardim pequeno</li>
       <li><span class="ico">✅</span> Funciona mesmo que você já tenha tentado outros adubos e não tenha funcionado</li>
-      <li><span class="ico">✅</span> Sem receita complicada, três ingredientes, proporção exata, resultado em semanas</li>
-      <li><span class="ico">✅</span> 100% natural, sem químicos, sem veneno, sem prejudicar a planta</li>
+      <li><span class="ico">✅</span> Sem receita complicada — três ingredientes, proporção exata, resultado em semanas</li>
+      <li><span class="ico">✅</span> 100% natural — sem químicos, sem veneno, sem prejudicar a planta</li>
     </ul>
     <a href="#planos" class="btn">🌿 Quero Ver Minha Planta Produzindo Frutos</a>
   </section>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
-    <h2 class="section-headline green">Veja o que aconteceu com quem já usou o adubo</h2>
+    <h2 class="section-headline green">O que estão dizendo</h2>
     <div class="carousel-wrapper">
       <div class="carousel-track" id="carousel-track">
 
         <div class="testimonial-card">
-          <div class="screenshot-wrap"><picture><source srcset="images/depoimento-whatsapp.webp" type="image/webp"><img src="images/depoimento-whatsapp.jpg" alt="Print WhatsApp — Ana" class="whatsapp-screenshot" loading="lazy" decoding="async" width="740" height="1600" /></picture></div>
           <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Oiii olha como tava meu limoeiro. Nem acredito que eh o mesmo pé!! Seguindo o guia certinho deu nisso. Já fiz até uma limonada com os limões daqui!! Voces são demais, obrigadaaaa"</p>
           <div class="testimonial-name">Ana</div>
           <div class="testimonial-city">São Paulo, SP</div>
         </div>
 
         <div class="testimonial-card">
-          <div class="screenshot-wrap"><picture><source srcset="images/depoimento-lucia.webp" type="image/webp"><img src="images/depoimento-lucia.jpg" alt="Print WhatsApp — Lucia" class="whatsapp-screenshot" loading="lazy" decoding="async" width="853" height="1844" /></picture></div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="screenshot-wrap"><picture><source srcset="images/depoimento-sandra.webp" type="image/webp"><img src="images/depoimento-sandra.png" alt="Print WhatsApp — Sandra" class="whatsapp-screenshot" loading="lazy" decoding="async" width="941" height="1672" /></picture></div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="screenshot-wrap"><picture><source srcset="images/depoimento-silma.webp" type="image/webp"><img src="images/depoimento-silma.jpg" alt="Print WhatsApp — Silma" class="whatsapp-screenshot" loading="lazy" decoding="async" width="853" height="1844" /></picture></div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Bom dia, olha o estado do meu manjericão, tava quase morrendo. Gente não dá pra acreditar, meu manjericão voltou!! Já to usando nas receitas. Até meu marido que não acreditava ficou impressionado kkkk obrigada pelo guia"</p>
+          <div class="testimonial-name">Lucia</div>
+          <div class="testimonial-city">Belo Horizonte, MG</div>
         </div>
 
       </div>
@@ -720,46 +683,46 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
   <!-- BENEFITS -->
   <section class="section-beige section-pad">
-    <h2 class="section-headline" style="background:#1a3a1a; color:#fff; border-radius:14px; padding:0.85rem 2rem; max-width:680px; margin:0 auto 0.75rem;">O Adubo Milagroso é ideal para você que deseja:</h2>
+    <h2 class="section-headline green">O Segredo dos Frutos é ideal para você que deseja:</h2>
     <div style="height: 2rem;"></div>
     <div class="benefits-grid">
       <div class="benefit-card">
-        <span class="ico">🍊</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Ver sua frutífera finalmente carregada de frutos</div>
-          <p class="benefit-desc">Chega de esperar meses sem resultado, a receita certa muda esse cenário em semanas.</p>
+          <p class="benefit-desc">Chega de esperar meses sem resultado — a fórmula certa muda esse cenário em semanas.</p>
         </div>
       </div>
       <div class="benefit-card">
-        <span class="ico">💰</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Parar de gastar com adubo de loja que não funciona</div>
           <p class="benefit-desc">Três ingredientes que você já tem em casa substituem qualquer produto químico caro.</p>
         </div>
       </div>
       <div class="benefit-card">
-        <span class="ico">🔍</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Entender de uma vez o que estava impedindo sua planta de produzir</div>
-          <p class="benefit-desc">Sem mais tentativa e erro, a causa tem nome e a solução é simples.</p>
+          <p class="benefit-desc">Sem mais tentativa e erro — a causa tem nome e a solução é simples.</p>
         </div>
       </div>
       <div class="benefit-card">
-        <span class="ico">🌳</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Colher sua própria fruta em casa, no vaso ou no quintal</div>
-          <p class="benefit-desc">Seja limoeiro, acerola, laranjeira ou pitanga, a fórmula funciona para qualquer frutífera.</p>
+          <p class="benefit-desc">Seja limoeiro, acerola, laranjeira ou pitanga — a fórmula funciona para qualquer frutífera.</p>
         </div>
       </div>
       <div class="benefit-card">
-        <span class="ico">👨‍👩‍👧</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Ser a pessoa que serve fruta da própria casa para a família</div>
           <p class="benefit-desc">O que parecia impossível se torna realidade com uma aplicação por mês.</p>
         </div>
       </div>
       <div class="benefit-card">
-        <span class="ico">⚡</span>
+        <span class="ico">✅</span>
         <div>
           <div class="benefit-title">Começar agora, sem experiência e sem complicação</div>
           <p class="benefit-desc">A receita é simples, os ingredientes são caseiros e o resultado aparece em semanas.</p>
@@ -777,24 +740,28 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
   <!-- BEFORE / AFTER -->
   <section class="before-after-section">
     <p class="sub">Existe um motivo pelo qual sua planta cresce mas não produz. E não é o que você está pensando.</p>
-    <div class="before-after-image">
-      <picture>
-        <source srcset="novafotoclaude-640.webp 760w, novafotoclaude.webp 1444w" sizes="(max-width: 760px) 100vw, 760px" type="image/webp">
-        <img src="./novafotoclaude.jpg" alt="Resultado antes e depois utilizando o adubo natural" loading="lazy" width="1444" height="1089" />
-      </picture>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <div class="ba-placeholder"><img src="images/antes.webp" alt="Planta antes de receber os nutrientes certos" loading="lazy" decoding="async" width="853" height="1600"></div>
+        <div><span class="ba-label antes">ANTES</span></div>
+      </div>
+      <div class="ba-item">
+        <div class="ba-placeholder"><img src="images/depois.webp" alt="Planta depois da aplicação do adubo natural" loading="lazy" decoding="async" width="853" height="1600"></div>
+        <div><span class="ba-label depois">DEPOIS</span></div>
+      </div>
     </div>
   </section>
 
   <!-- STEPS / EXPLANATION -->
   <section class="steps-section">
-    <h2 class="section-headline white">Conheça O Adubo Milagroso, a <span style="color:#e07b39">receita que faltava</span> para sua árvore produzir frutos.</h2>
-    <p class="section-sub white" style="margin-top:0.75rem;">A combinação de 3 ingredientes caseiros na quantidade exata para ativar o modo de frutificação da sua árvore em poucas semanas.</p>
+    <h2 class="section-headline white">Conheça O Segredo dos Frutos — a fórmula que faltava para sua planta produzir</h2>
+    <p class="section-sub white" style="margin-top:0.75rem;">O Segredo dos Frutos é uma fórmula natural feita com três ingredientes simples que você já tem em casa. Combinados na proporção certa, eles fornecem exatamente o que sua planta precisa para sair do modo de crescimento e entrar no modo de produção de frutos. Uma aplicação por mês, e em poucas semanas sua planta começa a mostrar os primeiros sinais de frutificação.</p>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">1</div>
         <div>
           <div class="step-title">Entendendo o problema</div>
-          <p class="step-text">Sua planta está recebendo nitrogênio em excesso, o nutriente que faz crescer a folha. Para frutificar ela precisa de fósforo e potássio na proporção certa. É isso que o adubo de loja não entrega.</p>
+          <p class="step-text">Sua planta está recebendo nitrogênio em excesso — o nutriente que faz crescer a folha. Para frutificar ela precisa de fósforo e potássio na proporção certa. É isso que o adubo de loja não entrega.</p>
         </div>
       </div>
       <div class="step-card">
@@ -816,7 +783,7 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
   <!-- BONUSES -->
   <section class="bonuses-section">
-    <h2 class="section-headline" style="background:#1a3a1a; color:#fff; border-radius:14px; padding:0.85rem 2rem; max-width:680px; margin:0 auto 0.75rem; font-size:clamp(1.12rem, 2.4vw, 1.68rem);">Junto com o Adubo Milagroso, você ainda recebe:</h2>
+    <h2 class="section-headline green">E ainda tem mais — incluído gratuitamente no seu pedido</h2>
     <div class="bonus-list">
 
       <div class="bonus-card">
@@ -824,11 +791,11 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
         <div class="bonus-icon">🪴</div>
         <div class="bonus-body">
           <div class="bonus-name">Cultivando Frutíferas em Vaso</div>
-          <p class="bonus-desc">Tudo que você precisa saber antes de plantar, qual vaso usar, qual terra escolher, como cuidar nos primeiros 30 dias. O começo certo faz toda a diferença no resultado final.</p>
-          <div class="bonus-pricing">
-            <div class="bonus-old">De R$27</div>
-            <div class="bonus-free">Incluído grátis</div>
-          </div>
+          <p class="bonus-desc">Tudo que você precisa saber antes de plantar — qual vaso usar, qual terra escolher, como cuidar nos primeiros 30 dias. O começo certo faz toda a diferença no resultado final.</p>
+        </div>
+        <div class="bonus-pricing">
+          <div class="bonus-old">De R$27</div>
+          <div class="bonus-free">Incluído grátis</div>
         </div>
       </div>
 
@@ -838,10 +805,10 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
         <div class="bonus-body">
           <div class="bonus-name">Calendário de Colheita por Espécie</div>
           <p class="bonus-desc">Descubra exatamente quando cada fruta é produzida na sua região do Brasil. Planeje seu cultivo e já saiba em qual mês vai fazer sua primeira colheita.</p>
-          <div class="bonus-pricing">
-            <div class="bonus-old">De R$17</div>
-            <div class="bonus-free">Incluído grátis</div>
-          </div>
+        </div>
+        <div class="bonus-pricing">
+          <div class="bonus-old">De R$17</div>
+          <div class="bonus-free">Incluído grátis</div>
         </div>
       </div>
 
@@ -851,10 +818,10 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
         <div class="bonus-body">
           <div class="bonus-name">100 Receitas com as Frutas que Você Vai Colher</div>
           <p class="bonus-desc">Sucos, geleias, sobremesas e drinks feitos com as frutas do seu próprio vaso. 100 receitas simples, prontas em menos de 10 minutos.</p>
-          <div class="bonus-pricing">
-            <div class="bonus-old">De R$27</div>
-            <div class="bonus-free">Incluído grátis</div>
-          </div>
+        </div>
+        <div class="bonus-pricing">
+          <div class="bonus-old">De R$27</div>
+          <div class="bonus-free">Incluído grátis</div>
         </div>
       </div>
 
@@ -863,70 +830,49 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
   <!-- PLANS -->
   <section class="plans-section" id="planos">
-    <h2 class="section-headline white">ESCOLHA SEU PLANO</h2>
+    <h2 class="section-headline white" style="margin-bottom:0.5rem;">ESCOLHA SEU PLANO</h2>
+    <p class="plans-note">⭐ MAIS POPULAR — O Plano Completo inclui os 3 bônus por apenas R$10 a mais.</p>
     <div class="plans-grid">
 
       <!-- BÁSICO -->
-      <div class="plan-card basico">
-        <div class="plan-title">PLANO BÁSICO</div>
-        <ul class="plan-basico-items">
-          <li style="flex-direction:column;align-items:flex-start;gap:.25rem">
-            <span style="display:flex;align-items:center;gap:.4rem"><span>✅</span><strong>O Adubo Milagroso</strong></span>
-            <span style="font-size:.8rem;color:#666;padding-left:1.4rem">A receita caseira completa com os 3 ingredientes e proporção exata para ativar a frutificação</span>
-          </li>
-          <li style="flex-direction:column;align-items:flex-start;gap:.25rem">
-            <span style="display:flex;align-items:center;gap:.4rem"><span>✅</span><strong>Acesso imediato</strong></span>
-            <span style="font-size:.8rem;color:#666;padding-left:1.4rem">Enviado imediatamente ao seu e-mail e whatsapp</span>
-          </li>
-          <li style="flex-direction:column;align-items:flex-start;gap:.25rem">
-            <span style="display:flex;align-items:center;gap:.4rem"><span>✅</span><strong>Garantia de 7 dias</strong></span>
-            <span style="font-size:.8rem;color:#666;padding-left:1.4rem">Se não gostar devolvemos 100% do seu dinheiro</span>
-          </li>
+      <div class="plan-card">
+        <div class="plan-title">Plano Básico</div>
+        <div class="plan-old">De R$47,00</div>
+        <div class="plan-price">R$17,90</div>
+        <div class="plan-period">à vista no PIX</div>
+        <ul class="plan-items">
+          <li><span>✅</span> O Segredo dos Frutos — a fórmula completa</li>
+          <li><span>✅</span> Acesso imediato</li>
+          <li><span>✅</span> Garantia de 7 dias</li>
         </ul>
-        <div class="plan-basico-price-box">
-          <div class="plan-val-label">Valor total</div>
-          <div class="plan-val-old">De R$47,00</div>
-          <div class="plan-val-label">Por apenas</div>
-          <div class="plan-val-price">R$17,90</div>
-          <div class="plan-val-period">à vista no PIX</div>
-        </div>
-        <a href="https://pay.cakto.com.br/wkbaexh_902259" class="btn-basico" onclick="fbq('track', 'InitiateCheckout');">QUERO O PLANO BÁSICO</a>
-        <p class="plan-footnote">Pagamento único · Garantia 7 dias</p>
+        <a href="#planos" class="btn btn-sm" style="width:100%; text-align:center;">QUERO O PLANO BÁSICO</a>
       </div>
 
       <!-- COMPLETO -->
-      <div class="plan-card completo">
-        <span class="plan-popular-badge">⭐ MAIS POPULAR</span>
-        <div class="plan-title">PLANO COMPLETO</div>
-        <div class="plan-completo-banner">✅ TUDO DO PLANO BÁSICO, MAIS:</div>
-        <ul class="plan-completo-items">
-          <li class="plan-completo-item">
-            <div class="plan-completo-item-header"><span>🪴</span><span class="plan-completo-item-name">Cultivando Frutíferas em Vaso</span></div>
-            <div class="plan-completo-item-desc">Guia ensinando a como plantar árvores frutíferas em vasos</div>
-            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$27,00</span><span class="plan-completo-item-tag">Grátis</span></div>
-          </li>
-          <li class="plan-completo-item">
-            <div class="plan-completo-item-header"><span>📅</span><span class="plan-completo-item-name">Calendário de Colheita por Espécie</span></div>
-            <div class="plan-completo-item-desc">Saiba exatamente quando cada fruta produz na sua região do Brasil</div>
-            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$17,00</span><span class="plan-completo-item-tag">Grátis</span></div>
-          </li>
-          <li class="plan-completo-item">
-            <div class="plan-completo-item-header"><span>🍋</span><span class="plan-completo-item-name">100 Receitas com as Frutas que Você Vai Colher</span></div>
-            <div class="plan-completo-item-desc">Sucos, geleias e sobremesas prontas em menos de 10 minutos</div>
-            <div class="plan-completo-item-anchor"><span class="plan-completo-item-old">De R$27,00</span><span class="plan-completo-item-tag">Grátis</span></div>
-          </li>
+      <div class="plan-card">
+        <span class="plan-popular-badge">⭐ Mais Popular</span>
+        <div class="plan-title">Plano Completo</div>
+        <ul class="plan-items" style="margin-bottom:0.75rem;">
+          <li><span>✅</span> <span>O Segredo dos Frutos &nbsp;<span class="striked">De R$47,00</span>&nbsp; Incluído</span></li>
+          <li><span>✅</span> <span>Cultivando Frutíferas em Vaso &nbsp;<span class="striked">De R$27,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
+          <li><span>✅</span> <span>Calendário de Colheita por Espécie &nbsp;<span class="striked">De R$17,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
+          <li><span>✅</span> <span>100 Receitas com as Frutas &nbsp;<span class="striked">De R$27,00</span>&nbsp; <span class="gratis">Grátis</span></span></li>
         </ul>
-        <div class="plan-total-box">
-          <div class="plan-total-label">Valor total</div>
-          <div class="plan-total-old-price">De R$118,00</div>
-          <div class="plan-total-label">Por apenas</div>
-          <div class="plan-total-price">R$27,90</div>
-          <div class="plan-total-period">à vista no PIX</div>
-        </div>
-        <a href="https://pay.cakto.com.br/3224aeh_902251" class="btn-completo" onclick="fbq('track', 'InitiateCheckout');">QUERO O PLANO COMPLETO</a>
-        <p class="plan-footnote-white">Pagamento único · Garantia 7 dias</p>
+        <div class="plan-total-old">De R$118,00</div>
+        <div class="plan-price">R$27,90</div>
+        <div class="plan-period">à vista no PIX</div>
+        <a href="#planos" class="btn btn-sm" style="width:100%; text-align:center; margin-top:1rem;">QUERO O PLANO COMPLETO</a>
       </div>
 
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee-section">
+    <div class="guarantee-box">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-title">Garantia total de 7 dias</div>
+      <p class="guarantee-text">Se você aplicar a fórmula e não ficar satisfeito com o resultado, devolvemos 100% do seu dinheiro em até 7 dias após a compra — sem burocracia e sem perguntas. Você não tem nada a perder. O risco é todo nosso.</p>
     </div>
   </section>
 
@@ -937,17 +883,17 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
       <div class="faq-item">
         <button class="faq-question">Como vou receber o produto? <span class="faq-chevron">▼</span></button>
-        <div class="faq-answer"><p>Após a confirmação do pagamento, você recebe o acesso por e-mail imediatamente. O material é digital, você acessa pelo celular ou computador, quando e onde quiser.</p></div>
+        <div class="faq-answer"><p>Após a confirmação do pagamento, você recebe o acesso por e-mail imediatamente. O material é digital — você acessa pelo celular ou computador, quando e onde quiser.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">Funciona para qualquer frutífera? <span class="faq-chevron">▼</span></button>
-        <div class="faq-answer"><p>Sim. A receita foi desenvolvida para frutíferas em geral, limoeiro, acerola, laranjeira, pitanga, jabuticaba, mangueira e muitas outras. Funciona tanto em vaso quanto em quintal.</p></div>
+        <div class="faq-answer"><p>Sim. A fórmula foi desenvolvida para frutíferas em geral — limoeiro, acerola, laranjeira, pitanga, jabuticaba, mangueira e muitas outras. Funciona tanto em vaso quanto em quintal.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">Preciso comprar algum ingrediente especial? <span class="faq-chevron">▼</span></button>
-        <div class="faq-answer"><p>Não. Os três ingredientes da fórmula são naturais e caseiros, você provavelmente já tem tudo em casa agora.</p></div>
+        <div class="faq-answer"><p>Não. Os três ingredientes da fórmula são naturais e caseiros — você provavelmente já tem tudo em casa agora.</p></div>
       </div>
 
       <div class="faq-item">
@@ -957,7 +903,7 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
       <div class="faq-item">
         <button class="faq-question">Minha planta nunca deu fruto. Vai funcionar mesmo assim? <span class="faq-chevron">▼</span></button>
-        <div class="faq-answer"><p>Sim. A fórmula foi feita exatamente para plantas que crescem mas nunca produziram. Ela corrige o desequilíbrio nutricional que impede a frutificação, independente do tempo que a planta está sem produzir.</p></div>
+        <div class="faq-answer"><p>Sim. A fórmula foi feita exatamente para plantas que crescem mas nunca produziram. Ela corrige o desequilíbrio nutricional que impede a frutificação — independente do tempo que a planta está sem produzir.</p></div>
       </div>
 
       <div class="faq-item">
@@ -973,9 +919,16 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
     </div>
   </section>
 
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>COMECE A COLHER AS SUAS PRÓPRIAS FRUTAS HOJE!</h2>
+    <a href="#planos" class="btn" style="font-size:1.25rem; padding:1.125rem 2.75rem;">🌿 GARANTIR ACESSO AGORA</a>
+    <p class="trust-line">✔ Pagamento 100% seguro &nbsp;·&nbsp; ✔ PIX e Cartão &nbsp;·&nbsp; ✔ Garantia de 7 dias</p>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <p>©️ O Adubo Milagroso. Todos os direitos reservados.</p>
+    <p>©️ O Segredo dos Frutos. Todos os direitos reservados.</p>
   </footer>
 
   <script>
