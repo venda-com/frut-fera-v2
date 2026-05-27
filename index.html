@@ -172,7 +172,11 @@
       padding: 2rem;
       border: 1px solid var(--beige-dark);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+    .testimonial-card picture { display: block; }
     .testimonial-stars {
       color: #f5a623;
       font-size: 1.25rem;
@@ -195,8 +199,10 @@
       color: #888;
     }
     .whatsapp-screenshot {
-      width: 100%;
+      width: auto;
       max-width: 320px;
+      max-height: 560px;
+      height: auto;
       border-radius: 1rem;
       box-shadow: 0 8px 32px rgba(0,0,0,0.13);
       margin: 0 auto 1.5rem;
