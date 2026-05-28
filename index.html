@@ -372,6 +372,8 @@
       border-radius: 2rem;
     }
     .bonus-icon { font-size: 2rem; flex-shrink: 0; margin-top: 4px; }
+    .bonus-icon--img { width: 200px; font-size: 0; margin-top: 0; }
+    .bonus-icon--img img { width: 100%; height: auto; display: block; box-shadow: 3px 5px 14px rgba(0,0,0,.15); }
     .bonus-body { flex: 1; }
     .bonus-name {
       font-weight: 800;
@@ -594,6 +596,8 @@
       .benefits-grid { grid-template-columns: 1fr; }
       .bonus-card { padding: 1.25rem 1rem; align-items: flex-start; }
       .bonus-icon { font-size: 1.4rem; }
+      .bonus-card:has(.bonus-icon--img) { flex-direction: column; align-items: center; }
+      .bonus-icon--img { width: 160px; }
       .bonus-body { text-align: left; }
       .bonus-name { font-size: 0.9375rem; }
       .bonus-desc { font-size: 0.8125rem; }
@@ -818,7 +822,9 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
       <div class="bonus-card">
         <span class="bonus-badge">Bônus Grátis</span>
-        <div class="bonus-icon">🌱</div>
+        <div class="bonus-icon bonus-icon--img">
+          <img src="images/bonus1.webp" alt="Guia de Desintoxicação do Solo — livro físico 3D" width="400" height="500" loading="lazy" decoding="async">
+        </div>
         <div class="bonus-body">
           <div class="bonus-name">Guia de Desintoxicação do Solo</div>
           <p class="bonus-desc">Se você usou adubo químico por algum tempo, o solo da sua planta pode estar bloqueando a absorção da fórmula natural. Este protocolo mostra como limpar o solo em poucos dias antes de começar, para que o Adubo Milagroso tenha efeito máximo desde a primeira aplicação.</p>
@@ -831,7 +837,9 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
       <div class="bonus-card">
         <span class="bonus-badge">Bônus Grátis</span>
-        <div class="bonus-icon">🌡️</div>
+        <div class="bonus-icon bonus-icon--img">
+          <img src="images/bonus2.webp" alt="Guia de Frequência por Estação — livro físico 3D" width="400" height="500" loading="lazy" decoding="async">
+        </div>
         <div class="bonus-body">
           <div class="bonus-name">Guia de Frequência por Estação</div>
           <p class="bonus-desc">A receita não muda, mas a frequência de aplicação sim. No verão a planta absorve mais rápido, no inverno o ritmo é diferente. Este guia mostra exatamente quando e quanto aplicar em cada época do ano para sua árvore produzir o ano todo.</p>
