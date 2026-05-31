@@ -10,127 +10,126 @@
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #F8F4EF;
-      color: #2c2c2c;
+      color: #2D2D2D;
       min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
     }
 
-    /* ── BADGE ── */
+    /* ── UTILITÁRIOS DE COR ── */
+    .c-orange { color: #D97706; }
+    .c-green  { color: #0f7865; }
+
+    /* ── LAYOUT BASE ── */
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── 1. BADGE ── */
     .badge-wrap {
       text-align: center;
-      padding: 28px 20px 0;
+      padding: 28px 20px 20px;
     }
 
     .badge {
       display: inline-block;
-      background: #0f7865;
+      background: #D97706;
       color: #fff;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 999px;
+      padding: 8px 20px;
+      border-radius: 20px;
     }
 
-    /* ── IMAGEM ANTES/DEPOIS ── */
-    .hero-image {
+    /* ── 2. IMAGEM ── */
+    .hero-img {
       width: 100%;
-      margin-top: 24px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
       display: block;
+      margin-bottom: 0;
     }
 
-    /* ── CONTEÚDO CENTRAL ── */
-    .page {
-      width: min(94vw, 560px);
-      margin: 0 auto;
-      padding: 0 0 56px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* ── HEADLINE ── */
-    h1 {
-      font-size: clamp(1.45rem, 5.2vw, 1.95rem);
+    /* ── 3. HEADLINE ── */
+    .headline {
+      font-size: 28px;
       font-weight: 900;
       color: #0f7865;
       text-align: center;
-      line-height: 1.28;
-      margin: 32px 0 20px;
+      line-height: 1.3;
+      margin: 32px 0 24px;
     }
 
-    /* ── SUBTÍTULO ── */
-    .subtitle {
-      font-size: clamp(0.9375rem, 2.8vw, 1.05rem);
-      color: #444;
+    /* ── 4. VALIDAÇÃO EMOCIONAL ── */
+    .validation {
+      font-size: 17px;
+      color: #2D2D2D;
       text-align: center;
-      line-height: 1.78;
-      margin-bottom: 40px;
+      line-height: 1.7;
+      margin-bottom: 36px;
     }
 
-    /* ── COMO USAR ── */
+    /* ── 5. COMO FUNCIONA ── */
+    .how-block {
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 24px 20px;
+      margin-bottom: 36px;
+    }
+
     .how-title {
-      font-size: clamp(0.9375rem, 3vw, 1.075rem);
+      font-size: 16px;
       font-weight: 700;
       color: #0f7865;
       text-align: center;
-      margin-bottom: 14px;
-      width: 100%;
+      margin-bottom: 16px;
     }
 
     .steps {
-      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 40px;
     }
 
-    .step-card {
-      background: #fff;
-      border: 1px solid #e0dbd4;
-      border-radius: 14px;
-      padding: 18px 20px;
+    .step {
+      background: #F8F4EF;
+      border-radius: 12px;
+      padding: 14px;
       display: flex;
       align-items: flex-start;
-      gap: 16px;
+      gap: 14px;
     }
 
     .step-icon {
-      font-size: 1.75rem;
-      flex-shrink: 0;
+      font-size: 1.6rem;
       line-height: 1;
-      margin-top: 2px;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
     .step-text {
       font-size: 0.9375rem;
-      color: #333;
+      color: #2D2D2D;
       line-height: 1.65;
     }
 
-    /* ── BULLETS ── */
+    /* ── 6. BULLETS ── */
     .bullets-title {
-      font-size: clamp(0.9375rem, 3vw, 1.075rem);
+      font-size: 17px;
       font-weight: 700;
       color: #0f7865;
-      text-align: left;
-      width: 100%;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .bullets {
-      width: 100%;
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 13px;
-      margin-bottom: 40px;
+      gap: 14px;
+      margin-bottom: 36px;
     }
 
     .bullets li {
@@ -138,7 +137,7 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.9375rem;
-      color: #333;
+      color: #2D2D2D;
       line-height: 1.65;
     }
 
@@ -148,78 +147,75 @@
       margin-top: 3px;
     }
 
-    /* ── BLOCO EMOCIONAL ── */
+    /* ── 7. BLOCO EMOCIONAL ── */
     .emotional {
-      width: 100%;
-      background: #fff;
       border-left: 4px solid #0f7865;
-      border-radius: 0 12px 12px 0;
-      padding: 20px 22px;
-      margin-bottom: 40px;
-      font-size: 0.9375rem;
-      color: #444;
-      line-height: 1.78;
+      background: #FFFFFF;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin: 0 0 36px;
+      font-size: 15px;
       font-style: italic;
+      color: #2D2D2D;
+      line-height: 1.75;
     }
 
-    /* ── BLOCO DE OFERTA ── */
+    /* ── 8. OFERTA ── */
     .offer-box {
-      width: 100%;
-      background: #fff;
-      border: 1.5px solid #b2d8d0;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(15, 120, 101, 0.10);
-      padding: 32px 28px;
+      background: #FFFFFF;
+      border: 2px solid #0f7865;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(15,120,101,0.12);
+      padding: 24px 20px;
       text-align: center;
       margin-bottom: 28px;
     }
 
     .offer-label {
-      font-size: 0.8125rem;
-      color: #888;
-      margin-bottom: 8px;
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 6px;
     }
 
     .offer-price {
-      font-size: clamp(2.4rem, 10vw, 3rem);
+      font-size: 48px;
       font-weight: 900;
       color: #0f7865;
       line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .offer-note {
-      font-size: 0.8125rem;
-      color: #888;
       margin-bottom: 8px;
     }
 
-    .offer-highlight {
-      font-size: 0.8125rem;
-      font-weight: 700;
-      color: #0f7865;
+    .offer-note {
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 10px;
     }
 
-    /* ── BOTÕES CAKTO ── */
+    .offer-highlight {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f7865;
+      margin-top: 8px;
+    }
+
+    /* ── 9. BOTÕES CAKTO ── */
     .cakto-wrap {
-      width: 100%;
-      margin-bottom: 32px;
+      margin-bottom: 8px;
     }
 
     cakto-upsell-buttons { display: block; }
 
     cakto-upsell-accept::part(button) {
       width: 100%;
-      min-height: 58px;
+      padding: 18px 20px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       border: none;
       border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
       cursor: pointer;
-      transition: filter 0.2s ease, transform 0.15s ease;
-      padding: 0 20px;
+      transition: filter 0.2s, transform 0.15s;
     }
 
     cakto-upsell-accept::part(button):hover {
@@ -230,29 +226,32 @@
     cakto-upsell-reject::part(button) {
       display: block;
       width: 100%;
-      margin-top: 18px;
+      margin-top: 16px;
       background: transparent;
       border: none;
-      color: #999;
-      font-size: 0.875rem;
+      color: #888888;
+      font-size: 14px;
       cursor: pointer;
       text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 3px;
       line-height: 1.5;
     }
 
-    /* ── RODAPÉ ── */
-    .guarantee {
-      font-size: 0.8125rem;
-      color: #aaa;
+    /* ── 10. RODAPÉ ── */
+    .footer {
       text-align: center;
+      font-size: 13px;
+      color: #888888;
+      padding: 32px 0;
       line-height: 1.65;
-      padding-top: 8px;
     }
 
-    @media (max-width: 400px) {
-      .offer-box { padding: 24px 18px; }
-      .step-card { padding: 14px 16px; }
-      .emotional { padding: 16px 18px; }
+    /* ── RESPONSIVO ── */
+    @media (max-width: 390px) {
+      .headline { font-size: 24px; }
+      .offer-price { font-size: 40px; }
+      .how-block { padding: 20px 16px; }
     }
   </style>
 </head>
@@ -260,60 +259,92 @@
 
   <!-- 1. BADGE -->
   <div class="badge-wrap">
-    <span class="badge">Oferta especial — disponível apenas agora</span>
+    <span class="badge">⚠️ Leia antes de fechar</span>
   </div>
 
-  <!-- 2. IMAGEM ANTES/DEPOIS -->
-  <div class="hero-image">
-    <img src="/images/antes-depois-verdi.jpg" alt="Antes: perdida. Depois: no controle." />
-  </div>
+  <!-- 2. IMAGEM -->
+  <img
+    src="/images/antes-depois-verdi.jpg"
+    alt="Antes: sem saber o que fazer. Depois: no controle de tudo."
+    class="hero-img"
+    width="1080"
+    height="1080"
+  />
 
-  <div class="page">
+  <div class="wrap">
 
     <!-- 3. HEADLINE -->
-    <h1>Você tem a receita. Mas e agora — o que fazer primeiro? E depois? E se der algo errado?</h1>
+    <h1 class="headline">
+      Você tem a receita. Mas e agora —
+      <span class="c-orange">o que fazer primeiro?</span>
+      E se <span class="c-orange">der algo errado?</span>
+    </h1>
 
-    <!-- 4. SUBTÍTULO -->
-    <p class="subtitle">É normal ficar em dúvida. O Verdi IA funciona como um guia do seu lado — você tira uma foto da planta e ele te diz exatamente o que está acontecendo e o que fazer a seguir. Em linguagem simples, sem complicação.</p>
+    <!-- 4. VALIDAÇÃO EMOCIONAL -->
+    <p class="validation">
+      É normal ficar <strong class="c-orange">perdida</strong> depois que compra.<br>
+      Ninguém te diz o próximo passo.
+    </p>
 
-    <!-- 5. COMO USAR -->
-    <p class="how-title">Como usar — é mais simples do que parece:</p>
-    <div class="steps">
-      <div class="step-card">
-        <span class="step-icon">📸</span>
-        <p class="step-text">Tira uma foto da sua planta com o celular — do jeito que você já faz normalmente</p>
-      </div>
-      <div class="step-card">
-        <span class="step-icon">📤</span>
-        <p class="step-text">Envia a foto pelo aplicativo — leva menos de 1 minuto</p>
-      </div>
-      <div class="step-card">
-        <span class="step-icon">✅</span>
-        <p class="step-text">O Verdi te diz o que está acontecendo e o que fazer a seguir — sem termos complicados</p>
+    <!-- 5. COMO FUNCIONA -->
+    <div class="how-block">
+      <p class="how-title">O Verdi funciona como um guia do seu lado:</p>
+      <div class="steps">
+        <div class="step">
+          <span class="step-icon">📸</span>
+          <p class="step-text">Tira uma foto da planta com o celular — do jeito que você já faz normalmente</p>
+        </div>
+        <div class="step">
+          <span class="step-icon">📤</span>
+          <p class="step-text">Envia pelo aplicativo — leva menos de 1 minuto</p>
+        </div>
+        <div class="step">
+          <span class="step-icon">✅</span>
+          <p class="step-text">O Verdi te diz <strong class="c-green">o que está acontecendo</strong> e <strong class="c-green">o que fazer a seguir</strong> — sem termos complicados</p>
+        </div>
       </div>
     </div>
 
     <!-- 6. BULLETS -->
-    <p class="bullets-title">O Verdi te diz exatamente:</p>
+    <p class="bullets-title">Com o Verdi, você vai saber:</p>
     <ul class="bullets">
-      <li><span class="ico">🌿</span><span>O que sua planta está sinalizando agora</span></li>
-      <li><span class="ico">🌿</span><span>Se o Adubo Milagroso está fazendo efeito ou precisa de ajuste</span></li>
-      <li><span class="ico">🌿</span><span>O que fazer esta semana para sua planta continuar evoluindo</span></li>
-      <li><span class="ico">🌿</span><span>Se tem algo errado — antes que vire um problema maior</span></li>
-      <li><span class="ico">🌿</span><span>Qual o próximo passo, sempre que você tiver dúvida</span></li>
+      <li>
+        <span class="ico">🌿</span>
+        <span>O que sua planta está sinalizando <strong class="c-green">agora</strong> — antes que vire <strong class="c-orange">problema</strong></span>
+      </li>
+      <li>
+        <span class="ico">🌿</span>
+        <span>Se o <strong class="c-green">Adubo Milagroso está fazendo efeito</strong> ou precisa de ajuste</span>
+      </li>
+      <li>
+        <span class="ico">🌿</span>
+        <span><strong class="c-green">O que fazer esta semana</strong> — sem precisar adivinhar</span>
+      </li>
+      <li>
+        <span class="ico">🌿</span>
+        <span>Se tem algo <strong class="c-orange">errado</strong> — antes que seja <strong class="c-orange">tarde demais</strong></span>
+      </li>
+      <li>
+        <span class="ico">🌿</span>
+        <span><strong class="c-green">Qual o próximo passo</strong>, sempre que você tiver dúvida</span>
+      </li>
     </ul>
 
     <!-- 7. BLOCO EMOCIONAL -->
     <blockquote class="emotional">
-      A maioria das pessoas que cuida de frutífera em casa sabe o que quer: ver a planta dar fruto. O que falta não é dedicação — é saber exatamente o que fazer em cada momento. O Verdi resolve isso.
+      A maioria das pessoas que cuida de frutífera sabe o que quer:
+      <strong class="c-green">ver a planta dar fruto</strong>.
+      O que falta não é dedicação — é saber
+      <strong class="c-green">exatamente o que fazer em cada momento</strong>.
+      O Verdi resolve isso.
     </blockquote>
 
-    <!-- 8. BLOCO DE OFERTA -->
+    <!-- 8. OFERTA -->
     <div class="offer-box">
       <p class="offer-label">Acesso vitalício</p>
       <p class="offer-price">R$37,90</p>
-      <p class="offer-note">Pagamento único. Sem mensalidade. Sem renovação.</p>
-      <p class="offer-highlight">Diagnósticos ilimitados, para sempre.</p>
+      <p class="offer-note">Pagamento único · Sem mensalidade · Sem renovação</p>
+      <p class="offer-highlight">✅ Diagnósticos ilimitados, para sempre.</p>
     </div>
 
     <!-- 9. BOTÕES CAKTO -->
@@ -340,7 +371,7 @@
     </div>
 
     <!-- 10. RODAPÉ -->
-    <p class="guarantee">🔒 Garantia de 7 dias. Se não fizer sentido para você, é só pedir reembolso — sem burocracia.</p>
+    <p class="footer">🔒 Garantia de 7 dias. Se não fizer sentido, é só pedir reembolso — sem burocracia.</p>
 
   </div>
 
