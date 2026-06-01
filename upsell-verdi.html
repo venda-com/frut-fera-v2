@@ -55,12 +55,73 @@
 
     /* ── 3. HEADLINE ── */
     .headline {
-      font-size: clamp(1.2rem, 5.2vw, 1.75rem);
+      font-size: 26px;
       font-weight: 900;
       color: #0f7865;
       text-align: center;
       line-height: 1.3;
-      margin: 32px 0 24px;
+      margin: 32px 0 8px;
+    }
+
+    /* ── INTRO SUBTITLE ── */
+    .intro-subtitle {
+      font-size: 15px;
+      color: #2D2D2D;
+      text-align: center;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* ── INFO CARD ── */
+    .info-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-row-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .info-row-text {
+      font-size: 15px;
+      color: #2D2D2D;
+      line-height: 1.6;
+    }
+
+    .info-divider {
+      border: none;
+      border-top: 1px solid #E5E0D8;
+      margin: 16px 0;
+    }
+
+    .info-checks {
+      background: #F0FAF5;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .info-check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f7865;
     }
 
     /* ── SEPARADOR ── */
@@ -331,7 +392,7 @@
 
     /* ── RESPONSIVO ── */
     @media (max-width: 390px) {
-      .headline { font-size: 1.2rem; }
+      .headline { font-size: 22px; }
       .offer-price { font-size: 40px; }
       .how-block { padding: 20px 16px; }
     }
@@ -346,48 +407,35 @@
 
   <div class="wrap">
 
-    <!-- 3. HEADLINE -->
-    <h1 class="headline">SE A SUA PLANTA DER UM <span style="color:#cc2222;">SINAL NEGATIVO</span>, VOCÊ VAI PERCEBER?</h1>
+    <!-- HEADLINE -->
+    <h1 class="headline">Se a sua planta der um sinal, você vai perceber?</h1>
 
-    <hr class="divider">
+    <!-- SUBTÍTULO -->
+    <p class="intro-subtitle">Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha ficar amarela?</p>
 
-    <!-- 5. TEXTO ESTRUTURADO -->
+    <!-- SEPARADOR 1 -->
+    <hr class="divider" style="margin: 8px 0 24px;">
 
-    <!-- Bloco 1 -->
-    <div class="txt-dark">
-      Depois que você aplica o adubo, começa a dúvida: será que está funcionando? Estou fazendo certo? O que faço se a folha ficar amarela?
-    </div>
-
-    <!-- Bloco 2 -->
-    <p class="txt-plain">Essa dúvida é normal, porque ninguém te acompanha nessa jornada.</p>
-
-    <!-- Bloco 3 -->
-    <div class="txt-dark" style="margin-top:0;">
-      Você fica sozinho, olhando para a planta, tentando adivinhar se está no caminho certo.
-    </div>
-
-    <!-- Bloco 4 -->
-    <div class="mini-cards">
-      <div class="mini-card">
-        <span class="mini-card-icon">🤝</span>
-        <p class="mini-card-text">O Verdi foi feito exatamente para esse momento</p>
+    <!-- CARD ÚNICO -->
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-row-icon">🤝</span>
+        <p class="info-row-text">Essa dúvida é normal — porque ninguém te acompanha nessa jornada. Você fica sozinho, tentando adivinhar se está no caminho certo.</p>
       </div>
-      <div class="mini-card">
-        <span class="mini-card-icon">📱</span>
-        <p class="mini-card-text">É como ter alguém de confiança do seu lado, que você pode chamar a qualquer hora</p>
+      <hr class="info-divider">
+      <div class="info-row">
+        <span class="info-row-icon">💬</span>
+        <p class="info-row-text">O Verdi foi feito exatamente para esse momento. É como ter alguém de confiança do seu lado, que você pode chamar a qualquer hora.</p>
       </div>
-      <div class="mini-card">
-        <span class="mini-card-icon">💬</span>
-        <p class="mini-card-text">Responde de forma simples e te diz exatamente o que fazer</p>
+      <div class="info-checks" style="margin-top:16px;">
+        <div class="info-check-item"><span>✅</span><span>Sem enrolação</span></div>
+        <div class="info-check-item"><span>✅</span><span>Sem palavras difíceis</span></div>
+        <div class="info-check-item"><span>✅</span><span>Sem precisar esperar</span></div>
       </div>
     </div>
 
-    <!-- Bloco 5 -->
-    <div class="checkmarks">
-      <div class="checkmark-item"><span>✅</span><span>Sem enrolação</span></div>
-      <div class="checkmark-item"><span>✅</span><span>Sem palavras difíceis</span></div>
-      <div class="checkmark-item"><span>✅</span><span>Sem precisar esperar</span></div>
-    </div>
+    <!-- SEPARADOR 2 -->
+    <hr class="divider" style="margin: 24px 0;">
 
     <!-- 5b. PASSOS -->
     <p class="how-title">Veja como é simples de usar:</p>
