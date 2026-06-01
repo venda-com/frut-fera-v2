@@ -596,7 +596,7 @@
       <meta charset="UTF-8">
       <cakto-upsell-buttons>
         <cakto-upsell-accept
-          bg-color="#0f7865"
+          bg-color="#22C55E"
           text-color="#ffffff"
           upsell-accept-url="members_area"
           offer-id="9k4svwj"
@@ -619,6 +619,15 @@
 
   </div>
 
+  <style>
+    cakto-upsell-accept::part(button) {
+      font-size: 13px;
+      background-color: #22C55E !important;
+    }
+    cakto-upsell-reject::part(button) {
+      font-size: 13px;
+    }
+  </style>
   <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 </body>
 </html>
