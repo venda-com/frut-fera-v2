@@ -7,7 +7,8 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/frutiferas", "destination": "/frutiferas.html" },
     { "source": "/horta", "destination": "/horta.html" },
-    { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" }
+    { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" },
+    { "source": "/verdi-lite", "destination": "/verdi-lite.html" }
   ],
   "headers": [
     {

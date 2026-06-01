@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdi Lite — Acompanhe suas frutíferas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #F8F4EF;
+      color: #2D2D2D;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── BARRA DE TOPO ── */
+    .top-bar {
+      width: 100%;
+      background: #D97706;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HEADLINE ── */
+    .headline {
+      font-size: 26px;
+      font-weight: 900;
+      color: #0f7865;
+      text-align: center;
+      line-height: 1.3;
+      margin: 24px 0 16px;
+    }
+
+    /* ── INFO CARD ── */
+    .info-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-row-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .info-row-text {
+      font-size: 15px;
+      color: #2D2D2D;
+      line-height: 1.6;
+    }
+
+    .info-divider {
+      border: none;
+      border-top: 1px solid #E5E0D8;
+      margin: 16px 0;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f7865;
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      min-width: 36px;
+    }
+
+    .step-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f7865;
+      line-height: 1;
+    }
+
+    .step-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .step-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2D2D2D;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .step-sub {
+      font-size: 13px;
+      color: #888888;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── BULLETS ── */
+    .bullets-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f7865;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #2D2D2D;
+      line-height: 1.65;
+    }
+
+    .bullets li .ico {
+      flex-shrink: 0;
+      font-size: 1rem;
+      margin-top: 3px;
+    }
+
+    /* ── BLOCO EMOCIONAL ── */
+    .emotional {
+      border-left: 4px solid #0f7865;
+      background: #FFFFFF;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin: 32px 0;
+      font-size: 15px;
+      font-style: italic;
+      color: #2D2D2D;
+      line-height: 1.7;
+    }
+
+    /* ── VALUE LIST ── */
+    .value-headline {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f7865;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #F0FAF5;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f7865;
+    }
+
+    .value-anchor {
+      font-size: 14px;
+      font-style: italic;
+      color: #2D2D2D;
+      text-align: center;
+      margin: 16px 0 24px;
+    }
+
+    /* ── OFERTA ── */
+    .offer-box {
+      background: #FFFFFF;
+      border: 2px solid #0f7865;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(15,120,101,0.12);
+      padding: 24px 20px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .offer-label {
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 6px;
+    }
+
+    .offer-price-old {
+      font-size: 18px;
+      color: #888888;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .offer-price {
+      font-size: 48px;
+      font-weight: 900;
+      color: #0f7865;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .offer-note {
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 10px;
+    }
+
+    .offer-highlight {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f7865;
+      margin-top: 8px;
+    }
+
+    /* ── BOTÕES CAKTO ── */
+    .cakto-wrap {
+      margin-bottom: 8px;
+    }
+
+    cakto-upsell-buttons { display: block; }
+
+    cakto-upsell-accept::part(button) {
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: filter 0.2s, transform 0.15s;
+    }
+
+    cakto-upsell-accept::part(button):hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    cakto-upsell-reject::part(button) {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      background: transparent;
+      border: none;
+      color: #888888;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    /* ── RODAPÉ ── */
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888888;
+      padding: 32px 0;
+      line-height: 1.65;
+    }
+
+    /* ── POPUP ── */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .popup-headline {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f7865;
+      margin-bottom: 12px;
+    }
+
+    .popup-text {
+      font-size: 15px;
+      color: #2D2D2D;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .popup-btn-accept {
+      display: block;
+      width: 100%;
+      background: #0f7865;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .popup-btn-reject {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #888888;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 12px;
+      padding: 4px;
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 390px) {
+      .headline { font-size: 22px; }
+      .offer-price { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- POPUP -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-card">
+      <p class="popup-headline">Tem certeza?</p>
+      <p class="popup-text">Você está prestes a sair sem levar a única ferramenta que vai te dizer, semana a semana, se suas plantas estão no caminho certo — por menos de R$18.</p>
+      <button class="popup-btn-accept" id="popup-accept">QUERO O ACESSO POR R$17,90</button>
+      <button class="popup-btn-reject" id="popup-close">Não quero, pode fechar</button>
+    </div>
+  </div>
+
+  <!-- BARRA DE TOPO -->
+  <div class="top-bar">⚠️ ÚLTIMA CHANCE — ESSA OFERTA NÃO VAI APARECER DE NOVO</div>
+
+  <div class="wrap">
+
+    <!-- HEADLINE -->
+    <h1 class="headline">Tudo bem — mas antes de sair, criamos uma versão que cabe melhor no seu momento.</h1>
+
+    <!-- CARD ÚNICO -->
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-row-icon">❓</span>
+        <p class="info-row-text">Você já conhece o Verdi. Sabe o que ele faz e como funciona.</p>
+      </div>
+      <hr class="info-divider">
+      <div class="info-row">
+        <span class="info-row-icon">💡</span>
+        <p class="info-row-text">A versão completa ficou para outra hora — mas você ainda pode ter acesso agora, com 20 diagnósticos por mês.</p>
+      </div>
+      <hr class="info-divider">
+      <div class="info-row">
+        <span class="info-row-icon">🤝</span>
+        <p class="info-row-text">Para quem tem até 5 frutíferas em casa, 20 análises por mês é mais do que suficiente para nunca ficar sem saber o que fazer.</p>
+      </div>
+    </div>
+
+    <!-- TÍTULO PASSOS -->
+    <p class="section-title">Como usar — igualzinho ao Verdi completo, sem nenhuma diferença:</p>
+
+    <!-- PASSOS -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-left">
+          <span class="step-num">1</span>
+          <span class="step-icon">📸</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">Tire uma foto da planta</p>
+          <p class="step-sub">Aponte o celular para sua frutífera e tire uma foto que pegue ela inteira.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <span class="step-num">2</span>
+          <span class="step-icon">📤</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">Envie pelo aplicativo</p>
+          <p class="step-sub">Abra o Verdi, envie a foto da sua frutífera — leva menos de 1 minuto</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <span class="step-num">3</span>
+          <span class="step-icon">✅</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">O Verdi te responde na hora</p>
+          <p class="step-sub">Você recebe na tela o que está acontecendo com a planta, se o adubo está fazendo efeito e qual o próximo passo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BULLETS -->
+    <p class="bullets-title">Com 20 análises por mês, você vai:</p>
+    <ul class="bullets">
+      <li>
+        <span class="ico">🌱</span>
+        <span>Acompanhar cada uma das suas frutíferas semana a semana — são 4 análises por planta se você tiver 5</span>
+      </li>
+      <li>
+        <span class="ico">⚗️</span>
+        <span>Saber em tempo real se o adubo está fazendo efeito em cada planta, sem precisar adivinhar</span>
+      </li>
+      <li>
+        <span class="ico">📅</span>
+        <span>Ter um plano claro do que fazer toda semana — sem pesquisar, sem se perder</span>
+      </li>
+      <li>
+        <span class="ico">⚠️</span>
+        <span>Identificar qualquer problema antes que tome conta da planta e estrague o resultado do adubo</span>
+      </li>
+      <li>
+        <span class="ico">👣</span>
+        <span>Chegar no fim do mês sabendo exatamente o que cada planta precisou e o que deu resultado</span>
+      </li>
+    </ul>
+
+    <!-- BLOCO EMOCIONAL -->
+    <blockquote class="emotional">
+      20 análises por mês parece pouco — mas são 20 vezes que você vai abrir o aplicativo, tirar uma foto e receber a resposta exata do que fazer. 20 vezes que você não vai ficar sozinha olhando para a planta sem saber o próximo passo. Para quem tem até 5 frutíferas, isso muda completamente a experiência de cuidar.
+    </blockquote>
+
+    <!-- RESUMO DO QUE LEVA -->
+    <p class="value-headline">O que você leva com o Verdi Lite:</p>
+    <div class="value-item">✅ 20 diagnósticos por mês — suficiente para até 5 frutíferas</div>
+    <div class="value-item">✅ Resposta na hora, toda vez que tiver dúvida</div>
+    <div class="value-item">✅ Acesso vitalício — paga uma vez, usa para sempre</div>
+    <p class="value-anchor">Com o Verdi, você nunca mais vai olhar para a sua planta sem saber o que ela precisa.</p>
+
+    <!-- BLOCO DE PREÇO -->
+    <div class="offer-box">
+      <p class="offer-label">Oferta exclusiva para clientes do Adubo Milagroso</p>
+      <p class="offer-price-old">R$37,90</p>
+      <p class="offer-price">R$17,90</p>
+      <p class="offer-note">Pagamento único · Sem mensalidade · 20 diagnósticos/mês</p>
+      <p class="offer-highlight">✅ Acesso vitalício, para sempre.</p>
+    </div>
+
+    <!-- BOTÕES CAKTO -->
+    <div class="cakto-wrap">
+      <meta charset="UTF-8">
+      <cakto-upsell-buttons>
+        <cakto-upsell-accept
+          bg-color="#0f7865"
+          text-color="#ffffff"
+          upsell-accept-url="members_area"
+          offer-id="px6pneq"
+          app-base-url="https://app.cakto.com.br"
+          offer-type="downsell"
+          upsell-reject-url="members_area"
+        >
+          SIM, QUERO O ACESSO LIMITADO POR R$17,90
+        </cakto-upsell-accept>
+        <cakto-upsell-reject
+          upsell-reject-url="members_area"
+        >
+          Não, prefiro continuar sem o Verdi
+        </cakto-upsell-reject>
+      </cakto-upsell-buttons>
+    </div>
+
+    <!-- RODAPÉ -->
+    <p class="footer">🔒 Garantia de 7 dias. Se não fizer sentido, é só pedir reembolso — sem burocracia.</p>
+
+  </div>
+
+  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+
+  <script>
+    var popup = document.getElementById('popup');
+    var popupClose = document.getElementById('popup-close');
+    var popupAccept = document.getElementById('popup-accept');
+
+    // Intercepta clique no botão de recusa (captura shadow DOM via composedPath)
+    document.addEventListener('click', function(e) {
+      var path = e.composedPath();
+      var isReject = path.some(function(el) {
+        return el && el.tagName && el.tagName.toLowerCase() === 'cakto-upsell-reject';
+      });
+      if (isReject) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        popup.classList.add('active');
+      }
+    }, true);
+
+    // Fecha popup ao clicar no overlay
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+      }
+    });
+
+    // Fecha popup
+    popupClose.addEventListener('click', function() {
+      popup.classList.remove('active');
+    });
+
+    // Aceitar pelo popup — aciona o botão de aceite da Cakto
+    popupAccept.addEventListener('click', function() {
+      popup.classList.remove('active');
+      var acceptEl = document.querySelector('cakto-upsell-accept');
+      if (acceptEl) {
+        var shadowBtn = acceptEl.shadowRoot && acceptEl.shadowRoot.querySelector('button');
+        if (shadowBtn) {
+          shadowBtn.click();
+        } else {
+          acceptEl.click();
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
