@@ -191,6 +191,43 @@
       line-height: 1.65;
     }
 
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      min-width: 36px;
+    }
+
+    .step-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f7865;
+      line-height: 1;
+    }
+
+    .step-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2D2D2D;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .step-sub {
+      font-size: 13px;
+      color: #888888;
+      line-height: 1.55;
+      margin: 0;
+    }
+
     /* ── 6. BULLETS ── */
     .bullets-title {
       font-size: 18px;
@@ -449,16 +486,34 @@
     <p class="how-title">Veja como é simples de usar:</p>
     <div class="steps">
       <div class="step">
-        <span class="step-icon">📸</span>
-        <p class="step-text">Tira uma foto da sua frutífera com o celular</p>
+        <div class="step-left">
+          <span class="step-num">1</span>
+          <span class="step-icon">📸</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">Tire uma foto da planta</p>
+          <p class="step-sub">Aponte o celular para sua frutífera e tire uma foto normal — do jeito que você já faz no dia a dia</p>
+        </div>
       </div>
       <div class="step">
-        <span class="step-icon">📤</span>
-        <p class="step-text">Envia pelo aplicativo</p>
+        <div class="step-left">
+          <span class="step-num">2</span>
+          <span class="step-icon">📤</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">Envie pelo aplicativo</p>
+          <p class="step-sub">Abra o Verdi, envie a foto e aguarde — leva menos de 1 minuto para receber a resposta</p>
+        </div>
       </div>
       <div class="step">
-        <span class="step-icon">✅</span>
-        <p class="step-text">O Verdi <strong class="c-green">te responde</strong>: o que está acontecendo, se o adubo está fazendo efeito, e o que você deve fazer agora</p>
+        <div class="step-left">
+          <span class="step-num">3</span>
+          <span class="step-icon">✅</span>
+        </div>
+        <div class="step-right">
+          <p class="step-title">O Verdi te responde na hora</p>
+          <p class="step-sub">Você recebe na tela o que está acontecendo com a planta, se o adubo está fazendo efeito e o que fazer agora</p>
+        </div>
       </div>
     </div>
 
