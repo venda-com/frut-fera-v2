@@ -314,13 +314,44 @@
     .ba-slide {
       flex: 0 0 100%;
       scroll-snap-align: center;
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .ba-slide-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
     .ba-slide img {
       width: 100%;
-      height: clamp(360px, 60vh, 560px);
-      object-fit: contain;
-      background: var(--beige);
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block;
+    }
+    .ba-label {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      padding: 7px 0;
+      line-height: 1.2;
+      z-index: 1;
+    }
+    .ba-label.antes {
+      top: 50%;
+      transform: translateY(-100%);
+      background: #CC0000;
+    }
+    .ba-label.depois {
+      bottom: 0;
+      background: #22AA00;
     }
     .ba-arrow {
       position: absolute;
@@ -369,7 +400,7 @@
       .ba-arrow { width: 38px; height: 38px; font-size: 1.4rem; }
       .ba-prev { left: 8px; }
       .ba-next { right: 8px; }
-      .ba-slide img { height: clamp(320px, 70vh, 520px); }
+      .ba-slide img { height: 100%; }
     }
 
     .steps-section {
@@ -858,10 +889,10 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
     <h2 class="section-headline green" style="text-align:center; margin-bottom:0;">Veja o que aconteceu com quem já usou o adubo</h2>
     <div class="carousel" id="dep-carousel">
       <div class="carousel-track" id="dep-track">
-        <div class="carousel-slide"><div class="slide-wrapper"><img src="/images/dep-1.jpg" alt="Depoimento 1" loading="lazy" /><div class="slide-label antes">ANTES</div><div class="slide-label depois">DEPOIS</div></div></div>
-        <div class="carousel-slide"><div class="slide-wrapper"><img src="/images/dep-2.jpg" alt="Depoimento 2" loading="lazy" /><div class="slide-label antes">ANTES</div><div class="slide-label depois">DEPOIS</div></div></div>
-        <div class="carousel-slide"><div class="slide-wrapper"><img src="/images/dep-3.jpg" alt="Depoimento 3" loading="lazy" /><div class="slide-label antes">ANTES</div><div class="slide-label depois">DEPOIS</div></div></div>
-        <div class="carousel-slide"><div class="slide-wrapper"><img src="/images/dep-4.jpg" alt="Depoimento 4" loading="lazy" /><div class="slide-label antes">ANTES</div><div class="slide-label depois">DEPOIS</div></div></div>
+        <div class="carousel-slide"><img src="/images/dep-1.jpg" alt="Depoimento 1" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="/images/dep-2.jpg" alt="Depoimento 2" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="/images/dep-3.jpg" alt="Depoimento 3" loading="lazy" /></div>
+        <div class="carousel-slide"><img src="/images/dep-4.jpg" alt="Depoimento 4" loading="lazy" /></div>
       </div>
       <button class="carousel-btn carousel-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
       <button class="carousel-btn carousel-next" id="dep-next" aria-label="Próximo">&#8250;</button>
@@ -935,9 +966,9 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
     <p class="sub">Existe um motivo pelo qual sua planta cresce mas não produz. E não é o que você está pensando.</p>
     <div class="before-after-carousel" aria-roledescription="carrossel" aria-label="Resultados antes e depois">
       <div class="ba-viewport">
-        <div class="ba-slide"><img src="./images/antes-depois-limao.webp" alt="Limoeiro antes e depois de usar o adubo natural" loading="lazy" decoding="async" width="1200" height="1500" /></div>
-        <div class="ba-slide"><img src="./images/antes-depois-laranja.webp" alt="Laranjeira na varanda antes e depois de usar o adubo natural" loading="lazy" decoding="async" width="1200" height="751" /></div>
-        <div class="ba-slide"><img src="./images/antes-depois-manga.webp" alt="Mangueira antes e depois de usar o adubo natural" loading="lazy" decoding="async" width="1200" height="961" /></div>
+        <div class="ba-slide"><div class="ba-slide-inner"><img src="./images/antes-depois-limao.webp" alt="Limoeiro antes e depois de usar o adubo natural" loading="lazy" decoding="async" /><div class="ba-label antes">ANTES</div><div class="ba-label depois">DEPOIS</div></div></div>
+        <div class="ba-slide"><div class="ba-slide-inner"><img src="./images/antes-depois-laranja.webp" alt="Laranjeira na varanda antes e depois de usar o adubo natural" loading="lazy" decoding="async" /><div class="ba-label antes">ANTES</div><div class="ba-label depois">DEPOIS</div></div></div>
+        <div class="ba-slide"><div class="ba-slide-inner"><img src="./images/antes-depois-manga.webp" alt="Mangueira antes e depois de usar o adubo natural" loading="lazy" decoding="async" /><div class="ba-label antes">ANTES</div><div class="ba-label depois">DEPOIS</div></div></div>
       </div>
       <button class="ba-arrow ba-prev" type="button" aria-label="Imagem anterior">&#8249;</button>
       <button class="ba-arrow ba-next" type="button" aria-label="Próxima imagem">&#8250;</button>
