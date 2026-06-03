@@ -544,16 +544,21 @@
       font-size: 13px;
     }
   </style>
-  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 
+  <!--
+    Popup logic ANTES do script da Cakto: garante que nosso listener capture-phase
+    seja registrado primeiro e intercepte o clique de rejeição antes do Cakto processar.
+  -->
   <script>
-    var popup = document.getElementById('popup');
-    var popupClose = document.getElementById('popup-close');
+    var popup     = document.getElementById('popup');
+    var popupClose  = document.getElementById('popup-close');
     var popupAccept = document.getElementById('popup-accept');
+    var skipPopup = false;
 
-    // Intercepta clique no botão de recusa (captura shadow DOM via composedPath)
+    // Intercepta clique no botão de recusa antes do Cakto redirecionar
     document.addEventListener('click', function(e) {
-      var path = e.composedPath();
+      if (skipPopup) return;
+      var path = e.composedPath ? e.composedPath() : [];
       var isReject = path.some(function(el) {
         return el && el.tagName && el.tagName.toLowerCase() === 'cakto-upsell-reject';
       });
@@ -564,32 +569,31 @@
       }
     }, true);
 
-    // Fecha popup ao clicar no overlay
+    // Fecha popup ao clicar fora do card
     popup.addEventListener('click', function(e) {
-      if (e.target === popup) {
-        popup.classList.remove('active');
-      }
+      if (e.target === popup) popup.classList.remove('active');
     });
 
-    // Fecha popup
+    // "Não quero" → fecha popup e deixa o Cakto processar a rejeição normalmente
     popupClose.addEventListener('click', function() {
       popup.classList.remove('active');
+      skipPopup = true;
+      var rejectEl = document.querySelector('cakto-upsell-reject');
+      if (rejectEl) rejectEl.click();
     });
 
-    // Aceitar pelo popup — aciona o botão de aceite da Cakto
+    // "LIBERAR ACESSO AGORA" no popup → aciona o botão de compra da Cakto
     popupAccept.addEventListener('click', function() {
       popup.classList.remove('active');
       var acceptEl = document.querySelector('cakto-upsell-accept');
       if (acceptEl) {
         var shadowBtn = acceptEl.shadowRoot && acceptEl.shadowRoot.querySelector('button');
-        if (shadowBtn) {
-          shadowBtn.click();
-        } else {
-          acceptEl.click();
-        }
+        if (shadowBtn) { shadowBtn.click(); } else { acceptEl.click(); }
       }
     });
   </script>
+
+  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 
 </body>
 </html>
