@@ -649,6 +649,22 @@
       font-size: 13px;
     }
   </style>
+
+  <!-- Fallback: garante o redirect para /verdi-lite caso o Cakto demore ou falhe -->
+  <script>
+    document.addEventListener('click', function(e) {
+      var path = e.composedPath ? e.composedPath() : [];
+      var isReject = path.some(function(el) {
+        return el && el.tagName && el.tagName.toLowerCase() === 'cakto-upsell-reject';
+      });
+      if (isReject) {
+        setTimeout(function() {
+          window.location.href = 'https://cultivaragora.store/verdi-lite';
+        }, 400);
+      }
+    }, true);
+  </script>
+
   <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 </body>
 </html>
