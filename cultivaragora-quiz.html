@@ -139,6 +139,26 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.2
 .guarantee .g-ic{font-size:1.6rem}
 .scarcity{text-align:center;font-size:.9rem;color:var(--terracota);font-weight:600;margin-top:14px}
 
+/* planos lado a lado */
+.plans-head{font-weight:600;color:var(--verde);text-align:center;margin:18px 0 4px;font-size:1rem}
+.plans{display:flex;flex-direction:column;gap:20px;margin:16px 0 6px}
+.plan{position:relative;border:2px solid #e7dec9;border-radius:20px;padding:24px 20px 20px;background:#fffdf7}
+.plan.best{border-color:var(--verde-claro);box-shadow:0 18px 44px -22px rgba(47,93,58,.55);background:#fffefb}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--verde);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(47,93,58,.6)}
+.plan-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--verde-escuro)}
+.plan-old{display:inline-block;color:#a59a85;text-decoration:line-through;font-size:.95rem;margin-top:4px}
+.plan-price{font-family:'Fraunces',serif;font-weight:700;font-size:2.3rem;color:var(--verde-escuro);line-height:1.05;margin-top:2px}
+.plan-price small{font-size:1.05rem;font-weight:600}
+.plan-sub{font-size:.82rem;color:#7a7567;margin:2px 0 14px}
+.plan-feats{list-style:none;margin:0 0 18px}
+.plan-feats li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:.96rem;color:#3f4438;line-height:1.4}
+.plan-feats li.no{color:#b3ac9c}
+.plan-feats li .fic{flex-shrink:0;font-weight:800;font-size:1.02rem}
+.plan-feats li .fic.yes{color:var(--verde-claro)}
+.plan-feats li .fic.x{color:#cdbfa5}
+.btn.ghost{background:#fff;color:var(--verde);border:2px solid #cdbfa5;box-shadow:none;font-weight:600;font-size:1rem}
+.btn.ghost:hover{border-color:var(--musgo);background:#f4f8ee;transform:translateY(-2px);box-shadow:0 10px 24px -16px var(--sombra)}
+
 .foot{text-align:center;font-size:.75rem;color:#b3ac9c;padding:16px}
 @media(max-width:480px){
   .screen{padding:24px 20px 30px}
@@ -197,21 +217,9 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.2
       <h2>Guia do Adubo Milagroso</h2>
     </div>
     <p class="lead" id="offerIntro" style="margin-bottom:6px">O passo a passo pra fazer, em casa, um adubo natural e baratíssimo que devolve a vida do solo e faz suas plantas crescerem fortes e frutíferas.</p>
-    <ul class="bullets">
-      <li>A receita completa do adubo caseiro que nutre qualquer planta</li>
-      <li>Ingredientes baratos que você acha em qualquer lugar</li>
-      <li>Como e quando aplicar pra ver resultado rápido</li>
-      <li>O segredo pra fazer árvores frutíferas darem mais frutos</li>
-      <li>Erros que matam suas plantas (e como evitar)</li>
-    </ul>
 
-    <div class="price-box">
-      <div class="price-old" id="priceOld">de R$ XX,XX</div>
-      <div class="price-now">R$ <span id="priceNow">XX,XX</span></div>
-      <div class="price-sub">pagamento único · acesso imediato</div>
-    </div>
-
-    <a class="btn cta" id="ctaBtn" href="#" target="_blank" rel="noopener">QUERO O GUIA DO ADUBO MILAGROSO 🌱</a>
+    <p class="plans-head">Escolha seu acesso:</p>
+    <div class="plans" id="plans"></div>
 
     <div class="guarantee">
       <span class="g-ic">🛡️</span>
@@ -229,12 +237,39 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.2
    ============================================================ */
 const CONFIG = {
   precoDe:      "97,00",                 // preço "cheio" (riscado). Deixe "" pra esconder.
-  precoPor:     "27,90",                 // preço final
-  checkoutURL:  "https://pay.cakto.com.br/3224aeh_897755", // ex: link da Cakto/Kiwify
   garantia:     "Garantia incondicional de 7 dias. Não gostou? Devolvemos 100% do seu dinheiro.",
   escassez:     "⚡ Condição especial por tempo limitado",
-  webhookLead:  ""                       // opcional: URL de webhook (Make/Zapier) pra receber os leads. Deixe "" pra desativar.
+  webhookLead:  "",                      // opcional: URL de webhook (Make/Zapier) pra receber os leads. Deixe "" pra desativar.
+  planos: {
+    completo: {
+      nome:        "Completo",
+      preco:       "27,90",
+      checkoutURL: "https://pay.cakto.com.br/3224aeh_902251",
+      cta:         "QUERO O GUIA COMPLETO 🌱",
+      destaque:    true,
+      badge:       "⭐ Mais escolhido"
+    },
+    basico: {
+      nome:        "Básico",
+      preco:       "17,90",
+      checkoutURL: "https://pay.cakto.com.br/wkbaexh_902259",
+      cta:         "Quero só o guia básico",
+      destaque:    false,
+      badge:       ""
+    }
+  }
 };
+
+// O que cada plano inclui (✓ / —). É o contraste que faz o Completo virar a escolha óbvia.
+const FEATURES = [
+  { t:"Guia do Adubo Milagroso completo",            basico:true,  completo:true  },
+  { t:"Receita + ingredientes baratos",              basico:true,  completo:true  },
+  { t:"Como e quando aplicar (passo a passo)",        basico:true,  completo:true  },
+  { t:"Calendário de aplicação mês a mês",            basico:false, completo:true  },
+  { t:"Guia das Frutíferas: mais flores e frutos",    basico:false, completo:true  },
+  { t:"Erros que matam suas plantas (e como evitar)", basico:false, completo:true  },
+  { t:"Atualizações futuras grátis",                  basico:false, completo:true  },
+];
 /* ============================================================ */
 
 const PERGUNTAS = [
@@ -378,16 +413,36 @@ function buildResult(){
 }
 
 function buildOffer(){
-  document.getElementById('priceNow').textContent = CONFIG.precoPor;
-  const oldEl = document.getElementById('priceOld');
-  if(CONFIG.precoDe){ oldEl.textContent = "de R$ "+CONFIG.precoDe; } else { oldEl.style.display="none"; }
-  document.getElementById('ctaBtn').href = CONFIG.checkoutURL || "#";
   document.getElementById('guaranteeTxt').textContent = CONFIG.garantia;
   document.getElementById('scarcityTxt').textContent = CONFIG.escassez;
   const nome = respostas.nome ? respostas.nome.split(' ')[0] : "";
   if(nome){
     document.getElementById('offerIntro').innerHTML = `${nome}, essa é a forma mais simples e barata de resolver o que identificamos na sua planta: o passo a passo pra fazer, em casa, um adubo natural que devolve a vida do solo e deixa suas plantas fortes e frutíferas.`;
   }
+  // Completo primeiro (destaque) e Básico embaixo — o contraste das ✓/— puxa pra cima
+  document.getElementById('plans').innerHTML =
+    renderPlano(CONFIG.planos.completo, "completo") +
+    renderPlano(CONFIG.planos.basico, "basico");
+}
+
+function renderPlano(p, key){
+  const feats = FEATURES.map(f=>{
+    const on = f[key];
+    return `<li class="${on?'':'no'}"><span class="fic ${on?'yes':'x'}">${on?'✓':'—'}</span><span>${f.t}</span></li>`;
+  }).join('');
+  const anchor = (p.destaque && CONFIG.precoDe) ? `<span class="plan-old">de R$ ${CONFIG.precoDe}</span>` : '';
+  const badge  = p.badge ? `<span class="plan-badge">${p.badge}</span>` : '';
+  const btnCls = p.destaque ? 'btn cta' : 'btn ghost';
+  return `
+    <div class="plan ${p.destaque?'best':''}">
+      ${badge}
+      <div class="plan-name">${p.nome}</div>
+      ${anchor}
+      <div class="plan-price"><small>R$</small> ${p.preco}</div>
+      <div class="plan-sub">pagamento único · acesso imediato</div>
+      <ul class="plan-feats">${feats}</ul>
+      <a class="${btnCls}" href="${p.checkoutURL||'#'}" target="_blank" rel="noopener">${p.cta}</a>
+    </div>`;
 }
 
 setBar();
