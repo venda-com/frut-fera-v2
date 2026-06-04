@@ -505,7 +505,7 @@
     </div>
 
     <!-- BOTÕES CAKTO -->
-    <div class="cakto-wrap">
+    <div>
       <meta charset="UTF-8">
       <cakto-upsell-buttons>
         <cakto-upsell-accept
@@ -525,25 +525,29 @@
           Não, prefiro continuar sem o Verdi
         </cakto-upsell-reject>
       </cakto-upsell-buttons>
+      <style>
+        cakto-upsell-accept::part(button) {
+          background-color: #22C55E !important;
+          color: white;
+          font-size: 19px;
+          width: 100%;
+          padding: 16px 24px;
+          white-space: nowrap;
+        }
+        cakto-upsell-reject::part(button) {
+          font-size: 13px;
+          color: #888888;
+          background: none;
+          text-decoration: none;
+        }
+      </style>
+      <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
     </div>
 
     <!-- RODAPÉ -->
     <p class="footer">🔒 Garantia de 7 dias. Se não fizer sentido, é só pedir reembolso — sem burocracia.</p>
 
   </div>
-
-  <style>
-    cakto-upsell-accept::part(button) {
-      font-size: 19px;
-      background-color: #22C55E !important;
-      width: 100%;
-      padding: 16px 24px;
-      white-space: nowrap;
-    }
-    cakto-upsell-reject::part(button) {
-      font-size: 13px;
-    }
-  </style>
 
   <!--
     Popup logic ANTES do script da Cakto: garante que nosso listener capture-phase
@@ -593,7 +597,6 @@
     });
   </script>
 
-  <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
 
 </body>
 </html>
