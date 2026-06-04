@@ -627,13 +627,9 @@
         >
           SIM, QUERO SABER SEMPRE O QUE FAZER
         </cakto-upsell-accept>
-        <cakto-upsell-reject
-          upsell-reject-url="https://cultivaragora.store/verdi-lite"
-        >
-          Não, vou continuar descobrindo sozinho
-        </cakto-upsell-reject>
       </cakto-upsell-buttons>
     </div>
+    <a href="https://cultivaragora.store/verdi-lite" class="reject-link">Não, vou continuar descobrindo sozinho</a>
 
     <!-- 10. RODAPÉ -->
     <p class="footer">🔒 Garantia de 7 dias. Se não fizer sentido, é só pedir reembolso — sem burocracia.</p>
@@ -645,8 +641,19 @@
       font-size: 13px;
       background-color: #22C55E !important;
     }
-    cakto-upsell-reject::part(button) {
+    .reject-link {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      background: transparent;
+      border: none;
+      color: #888888;
       font-size: 13px;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      line-height: 1.5;
+      cursor: pointer;
     }
   </style>
 
