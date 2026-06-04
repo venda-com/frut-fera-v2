@@ -8,7 +8,8 @@
     { "source": "/frutiferas", "destination": "/frutiferas.html" },
     { "source": "/horta", "destination": "/horta.html" },
     { "source": "/pagina-anterior", "destination": "/pagina-anterior.html" },
-    { "source": "/verdi-lite", "destination": "/verdi-lite.html" }
+    { "source": "/verdi-lite", "destination": "/verdi-lite.html" },
+    { "source": "/quiz", "destination": "/cultivaragora-quiz.html" }
   ],
   "headers": [
     {

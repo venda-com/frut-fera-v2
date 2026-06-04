@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Gratuito da Sua Planta | Adubo Milagroso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   >>> EDITE AQUI: dados da sua oferta <<<
+   Procure por CONFIG no <script> lá embaixo para mudar
+   preço, link de checkout, garantia e webhook de leads.
+   ============================================================ */
+
+:root{
+  --verde-escuro:#1f3d2b;
+  --verde:#2f5d3a;
+  --verde-claro:#4f8b54;
+  --musgo:#7ca56b;
+  --terracota:#c5613d;
+  --terracota-claro:#e08a5f;
+  --creme:#f6f1e4;
+  --creme-2:#efe7d3;
+  --carvao:#23241f;
+  --dourado:#d9a441;
+  --sombra:rgba(31,61,43,.18);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #ffffff22, transparent),
+    radial-gradient(900px 500px at -10% 110%, #7ca56b33, transparent),
+    var(--creme);
+  color:var(--carvao);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+  -webkit-font-smoothing:antialiased;
+}
+.leaf-bg{position:fixed;inset:0;pointer-events:none;opacity:.06;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 10c30 10 40 40 30 70-30-10-40-40-30-70z' fill='%232f5d3a'/%3E%3C/svg%3E");
+  background-size:180px;}
+
+.card{
+  position:relative;z-index:1;
+  width:100%;max-width:600px;
+  background:#fffefb;
+  border-radius:28px;
+  box-shadow:0 30px 80px -30px var(--sombra), 0 4px 14px -8px var(--sombra);
+  border:1px solid #e7dec9;
+  overflow:hidden;
+}
+
+/* topo */
+.topbar{padding:18px 26px 0;display:flex;align-items:center;gap:10px}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--verde)}
+.brand span{color:var(--terracota)}
+.progress-wrap{padding:14px 26px 0}
+.progress{height:7px;background:var(--creme-2);border-radius:99px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--musgo),var(--verde-claro));border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+.screen{padding:30px 30px 36px;display:none;animation:fade .45s ease both}
+.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracota);font-weight:600;margin-bottom:12px}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:2rem;line-height:1.12;color:var(--verde-escuro);margin-bottom:14px;letter-spacing:-.01em}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.2;color:var(--verde-escuro);margin-bottom:18px}
+.lead{font-size:1.05rem;color:#54584c;line-height:1.55;margin-bottom:26px}
+.emoji-hero{font-size:3.4rem;line-height:1;margin-bottom:18px;display:inline-block;animation:sway 3s ease-in-out infinite;transform-origin:bottom center}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+
+/* opções */
+.options{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.opt{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border:2px solid #e7dec9;border-radius:16px;
+  background:#fffdf7;cursor:pointer;font-size:1.02rem;font-weight:500;color:#33372e;
+  transition:all .18s ease;text-align:left;width:100%;
+}
+.opt .ic{font-size:1.4rem;flex-shrink:0}
+.opt:hover{border-color:var(--musgo);background:#f4f8ee;transform:translateY(-2px);box-shadow:0 10px 24px -16px var(--sombra)}
+.opt:active{transform:scale(.99)}
+
+/* botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:17px 24px;border:none;border-radius:16px;cursor:pointer;
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:1.08rem;
+  background:linear-gradient(135deg,var(--verde-claro),var(--verde));color:#fff;
+  box-shadow:0 14px 30px -12px rgba(47,93,58,.6);transition:all .2s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 38px -12px rgba(47,93,58,.7)}
+.btn.cta{background:linear-gradient(135deg,var(--terracota-claro),var(--terracota));box-shadow:0 14px 34px -10px rgba(197,97,61,.65);font-size:1.18rem;padding:20px}
+.btn.cta:hover{box-shadow:0 22px 46px -10px rgba(197,97,61,.8)}
+.btn-mini{margin-top:14px;background:none;border:none;color:#9a9384;font-size:.92rem;cursor:pointer;text-decoration:underline;width:100%}
+
+/* inputs */
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.9rem;font-weight:600;color:var(--verde);margin-bottom:6px}
+.field input{
+  width:100%;padding:15px 16px;border:2px solid #e7dec9;border-radius:14px;
+  font-family:'Outfit',sans-serif;font-size:1rem;background:#fffdf7;color:#33372e;transition:border .15s;
+}
+.field input:focus{outline:none;border-color:var(--musgo)}
+.privacy{font-size:.8rem;color:#9a9384;margin:8px 0 18px;text-align:center}
+
+/* loading */
+.loader-wrap{text-align:center;padding:40px 0}
+.spinner{width:64px;height:64px;margin:0 auto 26px;border:6px solid var(--creme-2);border-top-color:var(--verde-claro);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-step{font-size:1.05rem;color:#54584c;min-height:1.6em;font-weight:500}
+
+/* diagnóstico */
+.diag-box{background:#f4f8ee;border:1.5px solid #d6e6c9;border-radius:18px;padding:22px;margin:18px 0}
+.diag-tag{display:inline-block;background:var(--terracota);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:12px}
+.diag-box p{color:#3f4438;line-height:1.6;font-size:1.02rem}
+.diag-box strong{color:var(--verde-escuro)}
+
+/* oferta */
+.offer-hero{text-align:center;margin-bottom:6px}
+.book{font-size:3rem;margin-bottom:8px}
+.bullets{list-style:none;margin:20px 0}
+.bullets li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:1.01rem;color:#3f4438;line-height:1.45}
+.bullets li::before{content:"✓";color:var(--verde-claro);font-weight:800;font-size:1.1rem;flex-shrink:0}
+.price-box{text-align:center;background:linear-gradient(135deg,#fff,#f6f1e4);border:2px dashed var(--dourado);border-radius:18px;padding:20px;margin:18px 0}
+.price-old{color:#a59a85;text-decoration:line-through;font-size:1.05rem}
+.price-now{font-family:'Fraunces',serif;font-weight:700;font-size:2.6rem;color:var(--verde-escuro);line-height:1;margin:4px 0}
+.price-now small{font-size:1.1rem;font-weight:600}
+.price-sub{font-size:.9rem;color:#7a7567;margin-top:6px}
+.guarantee{display:flex;gap:12px;align-items:center;background:#f4f8ee;border-radius:14px;padding:14px 16px;margin-top:16px;font-size:.92rem;color:#3f4438}
+.guarantee .g-ic{font-size:1.6rem}
+.scarcity{text-align:center;font-size:.9rem;color:var(--terracota);font-weight:600;margin-top:14px}
+
+.foot{text-align:center;font-size:.75rem;color:#b3ac9c;padding:16px}
+@media(max-width:480px){
+  .screen{padding:24px 20px 30px}
+  h1{font-size:1.7rem}
+  .card{border-radius:22px}
+}
+</style>
+</head>
+<body>
+<div class="leaf-bg"></div>
+
+<div class="card">
+  <div class="topbar">
+    <div class="brand">🌱 Cultive <span>em Casa</span></div>
+  </div>
+  <div class="progress-wrap"><div class="progress"><div class="progress-bar" id="bar"></div></div></div>
+
+  <!-- 0 BOAS-VINDAS -->
+  <section class="screen active" data-step="0">
+    <span class="emoji-hero">🪴</span>
+    <span class="eyebrow">Diagnóstico gratuito</span>
+    <h1>Descubra em menos de 1 minuto por que suas plantas não estão prosperando</h1>
+    <p class="lead">Responda 5 perguntinhas rápidas e receba um diagnóstico personalizado da sua planta — e o caminho simples pra ela crescer forte e cheia de frutos. 🌳</p>
+    <button class="btn" onclick="next()">Começar meu diagnóstico →</button>
+    <p class="privacy" style="margin-top:14px">⏱️ Leva menos de 1 minuto · 100% gratuito</p>
+  </section>
+
+  <!-- PERGUNTAS injetadas via JS -->
+  <section class="screen" data-step="q"></section>
+
+  <!-- LOADING -->
+  <section class="screen" data-step="load">
+    <div class="loader-wrap">
+      <div class="spinner"></div>
+      <div class="load-step" id="loadTxt">Analisando suas respostas...</div>
+    </div>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="screen" data-step="result">
+    <span class="eyebrow">Seu diagnóstico</span>
+    <h2 id="diagTitle">Resultado da sua planta</h2>
+    <div class="diag-box">
+      <span class="diag-tag">Causa nº 1 identificada</span>
+      <p id="diagText"></p>
+    </div>
+    <p class="lead" style="margin-bottom:18px">A boa notícia: <strong>isso tem solução simples, caseira e muito barata.</strong> 👇</p>
+    <button class="btn" onclick="next()">Ver a solução →</button>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="screen" data-step="offer">
+    <div class="offer-hero">
+      <div class="book">📗</div>
+      <span class="eyebrow">A solução</span>
+      <h2>Guia do Adubo Milagroso</h2>
+    </div>
+    <p class="lead" id="offerIntro" style="margin-bottom:6px">O passo a passo pra fazer, em casa, um adubo natural e baratíssimo que devolve a vida do solo e faz suas plantas crescerem fortes e frutíferas.</p>
+    <ul class="bullets">
+      <li>A receita completa do adubo caseiro que nutre qualquer planta</li>
+      <li>Ingredientes baratos que você acha em qualquer lugar</li>
+      <li>Como e quando aplicar pra ver resultado rápido</li>
+      <li>O segredo pra fazer árvores frutíferas darem mais frutos</li>
+      <li>Erros que matam suas plantas (e como evitar)</li>
+    </ul>
+
+    <div class="price-box">
+      <div class="price-old" id="priceOld">de R$ XX,XX</div>
+      <div class="price-now">R$ <span id="priceNow">XX,XX</span></div>
+      <div class="price-sub">pagamento único · acesso imediato</div>
+    </div>
+
+    <a class="btn cta" id="ctaBtn" href="#" target="_blank" rel="noopener">QUERO O GUIA DO ADUBO MILAGROSO 🌱</a>
+
+    <div class="guarantee">
+      <span class="g-ic">🛡️</span>
+      <span id="guaranteeTxt">Garantia incondicional de 7 dias. Não gostou? Devolvemos 100% do seu dinheiro.</span>
+    </div>
+    <p class="scarcity" id="scarcityTxt">⚡ Condição especial por tempo limitado</p>
+  </section>
+
+  <div class="foot">© Cultive em Casa · Diagnóstico ilustrativo, não substitui avaliação técnica.</div>
+</div>
+
+<script>
+/* ============================================================
+   >>> CONFIG — EDITE ESTES VALORES <<<
+   ============================================================ */
+const CONFIG = {
+  precoDe:      "97,00",                 // preço "cheio" (riscado). Deixe "" pra esconder.
+  precoPor:     "27,90",                 // preço final
+  checkoutURL:  "https://pay.cakto.com.br/3224aeh_897755", // ex: link da Cakto/Kiwify
+  garantia:     "Garantia incondicional de 7 dias. Não gostou? Devolvemos 100% do seu dinheiro.",
+  escassez:     "⚡ Condição especial por tempo limitado",
+  webhookLead:  ""                       // opcional: URL de webhook (Make/Zapier) pra receber os leads. Deixe "" pra desativar.
+};
+/* ============================================================ */
+
+const PERGUNTAS = [
+  {
+    titulo:"O que você cultiva ou quer cultivar?",
+    opcoes:[
+      {ic:"🍋",txt:"Árvores frutíferas"},
+      {ic:"🌿",txt:"Horta e temperos"},
+      {ic:"🌸",txt:"Plantas ornamentais"},
+      {ic:"🪴",txt:"Um pouco de tudo"},
+    ]
+  },
+  {
+    titulo:"Como estão suas plantas hoje?",
+    opcoes:[
+      {ic:"🚫",txt:"Não dão frutos",key:"frutos"},
+      {ic:"🍂",txt:"Folhas amareladas ou caindo",key:"folhas"},
+      {ic:"🐢",txt:"Crescem muito devagar",key:"lento"},
+      {ic:"😟",txt:"Fracas e sem vida",key:"fracas"},
+      {ic:"😊",txt:"Vão bem, mas quero mais",key:"bem"},
+    ]
+  },
+  {
+    titulo:"Há quanto tempo isso acontece?",
+    opcoes:[
+      {ic:"🗓️",txt:"Algumas semanas"},
+      {ic:"📆",txt:"Alguns meses"},
+      {ic:"⏳",txt:"Mais de 1 ano"},
+      {ic:"♾️",txt:"Sempre foi assim"},
+    ]
+  },
+  {
+    titulo:"Você já usou adubo ou fertilizante?",
+    opcoes:[
+      {ic:"❌",txt:"Nunca usei"},
+      {ic:"🏪",txt:"Comprado em loja"},
+      {ic:"🏡",txt:"Faço caseiro"},
+      {ic:"😤",txt:"Já tentei de tudo e não resolveu"},
+    ]
+  },
+  {
+    titulo:"Você toparia uma solução caseira e barata pra resolver isso?",
+    opcoes:[
+      {ic:"🙌",txt:"Com certeza!"},
+      {ic:"🤔",txt:"Quero ver pra crer"},
+    ]
+  },
+];
+
+// diagnóstico personalizado pela pergunta 2
+const DIAG = {
+  frutos:{t:"Suas plantas estão com fome de nutrientes",x:"Plantas que <strong>não dão frutos</strong> quase sempre estão num solo pobre nos nutrientes certos pra frutificação. Sem isso, a planta gasta toda a energia só pra sobreviver — e não sobra pra produzir frutos."},
+  folhas:{t:"Sinal clássico de solo esgotado",x:"<strong>Folhas amareladas ou caindo</strong> são o pedido de socorro nº1 da planta: o solo está sem os nutrientes essenciais. É reversível — mas só quando você devolve a nutrição certa pra terra."},
+  lento:{t:"Falta de energia no solo",x:"Quando a planta <strong>cresce devagar</strong>, é porque o solo não está entregando o 'combustível' que ela precisa. Com a nutrição certa, o crescimento acelera de forma visível."},
+  fracas:{t:"Solo desequilibrado e sem vida",x:"Plantas <strong>fracas e sem vida</strong> denunciam um solo cansado e desequilibrado. A raiz é a nutrição — e ela tem conserto mais simples do que você imagina."},
+  bem:{t:"Suas plantas podem render muito mais",x:"Suas plantas vão bem, mas estão <strong>longe do potencial máximo</strong>. Com a nutrição certa no solo, dá pra ter mais flores, mais frutos e plantas muito mais vigorosas."},
+  default:{t:"Deficiência nutricional no solo",x:"Pelas suas respostas, tudo aponta pra <strong>deficiência de nutrientes no solo</strong> — a causa nº1 de plantas fracas e que não frutificam."},
+};
+
+const respostas = {};
+let q2key = "default";
+
+// telas em ordem
+const ordem = ["0","q0","q1","q2","q3","q4","load","result","offer"];
+let idx = 0;
+
+const screens = {
+  base: document.querySelector('[data-step="0"]'),
+  qSlot: document.querySelector('[data-step="q"]'),
+  lead: document.querySelector('[data-step="lead"]'),
+  load: document.querySelector('[data-step="load"]'),
+  result: document.querySelector('[data-step="result"]'),
+  offer: document.querySelector('[data-step="offer"]'),
+};
+
+function setBar(){
+  const pct = Math.round((idx/(ordem.length-1))*100);
+  document.getElementById('bar').style.width = pct+"%";
+}
+
+function showStep(){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const cur = ordem[idx];
+  if(cur==="0"){ screens.base.classList.add('active'); }
+  else if(cur.startsWith("q")){ renderQuestion(parseInt(cur.slice(1))); screens.qSlot.classList.add('active'); }
+  else if(cur==="lead"){ screens.lead.classList.add('active'); }
+  else if(cur==="load"){ screens.load.classList.add('active'); runLoading(); }
+  else if(cur==="result"){ buildResult(); screens.result.classList.add('active'); }
+  else if(cur==="offer"){ buildOffer(); screens.offer.classList.add('active'); }
+  setBar();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function next(){ idx++; showStep(); }
+
+function renderQuestion(n){
+  const p = PERGUNTAS[n];
+  let html = `<span class="eyebrow">Pergunta ${n+1} de ${PERGUNTAS.length}</span><h2>${p.titulo}</h2><div class="options">`;
+  p.opcoes.forEach((o,i)=>{
+    html += `<button class="opt" onclick="answer(${n},${i})"><span class="ic">${o.ic}</span><span>${o.txt}</span></button>`;
+  });
+  html += `</div>`;
+  screens.qSlot.innerHTML = html;
+}
+
+function answer(n,i){
+  const o = PERGUNTAS[n].opcoes[i];
+  respostas["q"+n] = o.txt;
+  if(n===1 && o.key) q2key = o.key;
+  next();
+}
+
+function submitLead(){
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const whats = document.getElementById('whats').value.trim();
+  if(!nome){ alert("Por favor, digite seu nome 🙂"); return; }
+  if(!email || !email.includes('@')){ alert("Digite um e-mail válido 🙂"); return; }
+  respostas.nome = nome; respostas.email = email; respostas.whatsapp = whats;
+
+  if(CONFIG.webhookLead){
+    try{
+      fetch(CONFIG.webhookLead,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(respostas)});
+    }catch(e){}
+  }
+  next();
+}
+
+const loadMsgs = ["Analisando suas respostas...","Avaliando o estado da sua planta...","Identificando a causa nº1...","Montando seu diagnóstico personalizado..."];
+function runLoading(){
+  const el = document.getElementById('loadTxt');
+  let i=0; el.textContent = loadMsgs[0];
+  const t = setInterval(()=>{ i++; if(i<loadMsgs.length){ el.textContent = loadMsgs[i]; } else { clearInterval(t); next(); } }, 950);
+}
+
+function buildResult(){
+  const d = DIAG[q2key] || DIAG.default;
+  const nome = respostas.nome ? respostas.nome.split(' ')[0] : "";
+  document.getElementById('diagTitle').innerHTML = nome ? `${nome}, aqui está o seu diagnóstico 🌿` : "Aqui está o seu diagnóstico 🌿";
+  document.getElementById('diagText').innerHTML = `<strong>${d.t}.</strong> ${d.x}`;
+}
+
+function buildOffer(){
+  document.getElementById('priceNow').textContent = CONFIG.precoPor;
+  const oldEl = document.getElementById('priceOld');
+  if(CONFIG.precoDe){ oldEl.textContent = "de R$ "+CONFIG.precoDe; } else { oldEl.style.display="none"; }
+  document.getElementById('ctaBtn').href = CONFIG.checkoutURL || "#";
+  document.getElementById('guaranteeTxt').textContent = CONFIG.garantia;
+  document.getElementById('scarcityTxt').textContent = CONFIG.escassez;
+  const nome = respostas.nome ? respostas.nome.split(' ')[0] : "";
+  if(nome){
+    document.getElementById('offerIntro').innerHTML = `${nome}, essa é a forma mais simples e barata de resolver o que identificamos na sua planta: o passo a passo pra fazer, em casa, um adubo natural que devolve a vida do solo e deixa suas plantas fortes e frutíferas.`;
+  }
+}
+
+setBar();
+</script>
+</body>
+</html>
