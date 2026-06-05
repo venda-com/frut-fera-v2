@@ -314,19 +314,28 @@
     .ba-slide {
       flex: 0 0 100%;
       scroll-snap-align: center;
-      aspect-ratio: 5/4;
       overflow: hidden;
       background: var(--beige);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
     }
     .ba-slide img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 5/4;
       object-fit: contain;
       object-position: center;
       display: block;
+    }
+    .ba-caption {
+      text-align: center;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 1.35;
+      color: var(--green);
+      margin: 12px 0 14px;
+      padding: 0 14px;
     }
     .ba-arrow {
       position: absolute;
@@ -375,7 +384,7 @@
       .ba-arrow { width: 38px; height: 38px; font-size: 1.4rem; }
       .ba-prev { left: 8px; }
       .ba-next { right: 8px; }
-      .ba-slide img { height: 100%; }
+      .ba-caption { font-size: 16px; }
     }
 
     .steps-section {
@@ -941,9 +950,18 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
     <p class="sub">Existe um motivo pelo qual sua planta cresce mas não produz. E não é o que você está pensando.</p>
     <div class="before-after-carousel" aria-roledescription="carrossel" aria-label="Resultados antes e depois">
       <div class="ba-viewport">
-        <div class="ba-slide"><img src="./images/antes-depois-limao.webp" alt="Limoeiro antes e depois de usar o adubo natural" loading="lazy" decoding="async" /></div>
-        <div class="ba-slide"><img src="./images/antes-depois-laranja.webp" alt="Laranjeira na varanda antes e depois de usar o adubo natural" loading="lazy" decoding="async" /></div>
-        <div class="ba-slide"><img src="./images/antes-depois-manga.webp" alt="Mangueira antes e depois de usar o adubo natural" loading="lazy" decoding="async" /></div>
+        <div class="ba-slide">
+          <img src="./images/antes-depois-limao.webp" alt="Limoeiro antes e depois de usar o adubo natural" loading="lazy" decoding="async" />
+          <p class="ba-caption">Limoeiro que só dava folha há 2 anos — deu limão em 27 dias 🌱</p>
+        </div>
+        <div class="ba-slide">
+          <img src="./images/antes-depois-laranja.webp" alt="Laranjeira na varanda antes e depois de usar o adubo natural" loading="lazy" decoding="async" />
+          <p class="ba-caption">Laranjeira de varanda parada — carregada de laranjinhas em 35 dias 🍊</p>
+        </div>
+        <div class="ba-slide">
+          <img src="./images/antes-depois-manga.webp" alt="Mangueira antes e depois de usar o adubo natural" loading="lazy" decoding="async" />
+          <p class="ba-caption">Mangueira sem dar fruto — começou a frutificar em 24 dias 🥭</p>
+        </div>
       </div>
       <button class="ba-arrow ba-prev" type="button" aria-label="Imagem anterior">&#8249;</button>
       <button class="ba-arrow ba-next" type="button" aria-label="Próxima imagem">&#8250;</button>
