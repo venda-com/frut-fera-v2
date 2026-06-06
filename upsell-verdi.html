@@ -483,6 +483,113 @@
       margin-bottom: 24px;
     }
 
+    /* ── DEMONSTRAÇÃO DE DIAGNÓSTICO ── */
+    .demo-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f7865;
+      text-align: center;
+      margin: 32px 0 4px;
+    }
+    .demo-sub {
+      font-size: 13px;
+      color: #888888;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .demo-phone {
+      background: #F8F4EF;
+      border: 1px solid #E5E0D8;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .demo-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .demo-card:last-child { margin-bottom: 0; }
+    .demo-critical { background: #FDECEC; border: 1px solid #F5C2C2; box-shadow: none; }
+    .demo-crit-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .demo-sos {
+      background: #cc2222;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 8px;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+    }
+    .demo-tag-crit {
+      background: #f7d5d5;
+      color: #b91c1c;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .demo-phase { font-size: 13px; color: #888888; }
+    .demo-diag-text {
+      font-size: 14px;
+      color: #2D2D2D;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .demo-sev-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 6px;
+    }
+    .demo-sev-bar { height: 8px; background: #eee; border-radius: 6px; overflow: hidden; }
+    .demo-sev-fill { width: 80%; height: 100%; background: #e0574c; border-radius: 6px; }
+    .demo-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f7865;
+      margin-bottom: 12px;
+    }
+    .demo-chips { display: flex; flex-direction: column; gap: 8px; }
+    .demo-chip {
+      background: #F0FAF5;
+      color: #2D2D2D;
+      font-size: 14px;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .demo-rec { display: flex; flex-direction: column; gap: 12px; }
+    .demo-rec-item { display: flex; gap: 10px; align-items: flex-start; }
+    .demo-rec-num {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: #F0FAF5;
+      color: #0f7865;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+    }
+    .demo-rec-text { font-size: 14px; color: #2D2D2D; line-height: 1.5; }
+    .demo-disclaimer {
+      font-size: 12px;
+      color: #888888;
+      text-align: center;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
     /* ── RESPONSIVO ── */
     @media (max-width: 390px) {
       .headline { font-size: 1.65rem; }
@@ -568,6 +675,42 @@
         </div>
       </div>
     </div>
+
+    <!-- DEMONSTRAÇÃO: exemplo real de diagnóstico do Verdi -->
+    <p class="demo-title">E a resposta que você recebe é assim:</p>
+    <p class="demo-sub">Exemplo de um diagnóstico gerado pelo Verdi</p>
+    <div class="demo-phone">
+      <div class="demo-card demo-critical">
+        <div class="demo-crit-head">
+          <span class="demo-sos">SOS</span>
+          <span class="demo-tag-crit">Estado Crítico</span>
+          <span class="demo-phase">• planta em fase de murcha</span>
+        </div>
+        <p class="demo-diag-text">A planta apresenta sintomas severos de murcha, provavelmente por falta de água ou problemas nas raízes. As folhas estão secas e enroladas, indicando stress hídrico intenso.</p>
+        <div class="demo-sev-label"><span>Severidade do problema</span><span>8/10</span></div>
+        <div class="demo-sev-bar"><div class="demo-sev-fill"></div></div>
+      </div>
+
+      <div class="demo-card">
+        <p class="demo-card-title">🐛 Problemas Identificados</p>
+        <div class="demo-chips">
+          <span class="demo-chip">falta de água</span>
+          <span class="demo-chip">possível podridão radicular</span>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <p class="demo-card-title">🌿 Recomendações de Cuidado</p>
+        <div class="demo-rec">
+          <div class="demo-rec-item"><span class="demo-rec-num">1</span><span class="demo-rec-text">Regar abundantemente, mas evitando encharcar o solo</span></div>
+          <div class="demo-rec-item"><span class="demo-rec-num">2</span><span class="demo-rec-text">Verificar as raízes e remover partes podres, se necessário</span></div>
+          <div class="demo-rec-item"><span class="demo-rec-num">3</span><span class="demo-rec-text">Considerar transferir para um vaso maior com solo fresco</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-disclaimer">Exemplo ilustrativo de uma análise gerada pelo Verdi.</p>
+
+    <hr class="divider" style="margin: 32px 0;">
 
     <!-- 6. BULLETS -->
     <p class="bullets-title">Com o Verdi, você vai saber:</p>
