@@ -22,6 +22,7 @@
     :root {
       --green: #1a3a1a;
       --green-mid: #2a5a2a;
+      --green-deep: #0e1f10;
       --orange: #e07b39;
       --orange-hover: #c96a28;
       --beige: #f5f0e8;
@@ -256,9 +257,17 @@
     }
 
     .urgency-section {
-      background: var(--green);
-      padding: 4rem 5%;
+      background: var(--beige);
+      padding: 3rem 5%;
       text-align: center;
+    }
+    .urgency-card {
+      background: var(--green-deep);
+      border-radius: 20px;
+      padding: 3rem 5%;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .before-after-section {
@@ -696,7 +705,8 @@
       .hero { padding: 2rem 5% 1.75rem; }
       .section-pad { padding: 2.5rem 5%; }
       .testimonials-section { padding: 2.5rem 5%; }
-      .urgency-section { padding: 2.5rem 5%; }
+      .urgency-section { padding: 2rem 5%; }
+      .urgency-card { padding: 2.25rem 6%; border-radius: 16px; }
       .before-after-section { padding: 2.5rem 5%; }
       .bonuses-section { padding: 2.5rem 5%; }
       .steps-section { padding: 2.5rem 5%; }
@@ -966,8 +976,10 @@ src="https://www.facebook.com/tr?id=1001844958969175&ev=PageView&noscript=1"/>
 
   <!-- URGENCY -->
   <section class="urgency-section">
-    <h2 class="section-headline white" style="max-width:700px; margin:0 auto 2rem;">O que você viu acima não é sorte. Falta um nutriente pra sua frutífera virar isso, e a receita te mostra qual.</h2>
-    <a href="#plano-completo" class="btn">🌿 Quero a receita agora</a>
+    <div class="urgency-card">
+      <h2 class="section-headline white" style="max-width:700px; margin:0 auto 2rem;">O que você viu acima não é sorte. Falta um nutriente pra sua frutífera virar isso, e a receita te mostra qual.</h2>
+      <a href="#plano-completo" class="btn">🌿 Quero a receita agora</a>
+    </div>
   </section>
 
   <!-- STEPS / EXPLANATION -->
