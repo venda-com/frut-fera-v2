@@ -705,338 +705,155 @@ img { max-width:100%; display:block; }
 
 <!-- PRICING -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+.itp-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
+.itp-heading { color: #fff; font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; letter-spacing: 0.03em; margin-bottom: 0.5rem; text-transform: uppercase; }
+.itp-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; max-width: 760px; margin: 2rem auto 0; align-items: start;
+}
+.itp-card { border-radius: 16px; padding: 2rem 1.5rem; position: relative; text-align: left; }
+.itp-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: #f5a623; color: #1a1a1a; font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.3rem 1rem; border-radius: 2rem; white-space: nowrap;
+}
+.itp-card.itp-basico { background: #fff; }
+.itp-card.itp-basico .itp-title {
+  font-weight: 900; font-size: 1rem; color: #1a3a1a;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  text-align: center; margin-bottom: 1.25rem;
+}
+.itp-items { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; }
+.itp-items li {
+  font-size:.9rem; color:#444; display:flex; align-items:center; gap:.4rem;
+  padding:.65rem 0; border-bottom:1px solid #ebebeb;
+}
+.itp-items li:last-child { border-bottom:none; }
+.itp-price-box {
+  background: #1a3a1a; border-radius: 12px;
+  padding: 1rem 1.25rem; text-align: center; margin-bottom: 1.25rem;
+}
+.itp-val-label { font-size:.75rem; color:rgba(255,255,255,.65); margin-bottom:.1rem; }
+.itp-val-old { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
+.itp-val-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
+.itp-val-period { font-size:.8rem; color:rgba(255,255,255,.65); }
+.itp-btn-basico {
+  display:block; width:100%; background:#f5a623; color:#fff;
+  font-weight:800; font-size:.9375rem; text-transform:uppercase;
+  text-align:center; padding:.9rem 1rem; border-radius:2rem;
+  text-decoration:none; transition:background .2s;
+}
+.itp-btn-basico:hover { background:#d98c1a; }
+.itp-footnote { font-size:.75rem; color:#aaa; text-align:center; margin-top:.75rem; }
 
-:root {
-  --terra:      #C4622D;
-  --terra-dark: #A8441F;
-  --cream:      #FDF8F3;
-  --warm-white: #FFFBF8;
-  --border:     #E5E7EB;
-  --text-muted: #6B7280;
-  --ink:        #111827;
-  --sage:       #009246;
-  --gold:       #C8922A;
+.itp-card.itp-completo {
+  background: #1a2e1a;
+  box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.3), 0 0 40px rgba(0,230,118,.12);
 }
+.itp-card.itp-completo .itp-title {
+  font-weight:900; font-size:1rem; color:#f5a623;
+  text-transform:uppercase; letter-spacing:.05em;
+  text-align:center; margin-bottom:1rem;
+}
+.itp-banner {
+  background:#2d4a2d; border-radius:8px; padding:.6rem 1rem;
+  text-align:center; font-size:.85rem; font-weight:700; color:#fff; margin-bottom:1rem;
+}
+.itp-bonus-items { list-style:none; margin-bottom:1.25rem; display:flex; flex-direction:column; }
+.itp-bonus-item { padding:.75rem 0; border-bottom:1px solid rgba(0,230,118,.12); }
+.itp-bonus-item:last-child { border-bottom:none; }
+.itp-bonus-header { display:flex; align-items:flex-start; gap:.4rem; }
+.itp-bonus-name { font-size:.875rem; font-weight:700; color:#fff; flex:1; }
+.itp-bonus-desc { font-size:.78rem; color:rgba(255,255,255,.7); margin:.25rem 0 .35rem 1.4rem; line-height:1.4; }
+.itp-bonus-anchor { display:flex; gap:.5rem; align-items:center; margin-left:1.4rem; }
+.itp-bonus-old { font-size:.75rem; color:rgba(255,255,255,.4); text-decoration:line-through; }
+.itp-bonus-tag { font-size:.75rem; font-weight:800; color:#00e676; }
+.itp-total-box {
+  background:#0f1f0f; border-radius:12px; padding:1rem; text-align:center; margin-bottom:1.25rem;
+}
+.itp-total-label { font-size:.75rem; color:rgba(255,255,255,.65); margin-bottom:.1rem; }
+.itp-total-old { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
+.itp-total-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
+.itp-total-period { font-size:.8rem; color:rgba(255,255,255,.65); }
+.itp-btn-completo {
+  display:block; width:100%; background:#00e676; color:#1a3a1a;
+  font-weight:800; font-size:.9375rem; text-transform:uppercase;
+  text-align:center; padding:.9rem 1rem; border-radius:2rem;
+  text-decoration:none; transition:background .2s;
+  box-shadow:0 0 12px rgba(0,230,118,.4);
+}
+.itp-btn-completo:hover { background:#00c853; }
+.itp-footnote-white { font-size:.75rem; color:rgba(255,255,255,.55); text-align:center; margin-top:.75rem; }
 
-/* ── NEW PRICING SECTION ── */
-.np-section {
-  background: var(--cinza-f);
-  padding: 56px 20px 64px;
-  text-align: center;
-}
-.np-eyebrow {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--terra);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.np-heading {
-  font-size: clamp(24px, 4vw, 34px);
-  font-weight: 900;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-.np-subheading {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 44px;
-}
-
-/* Grid */
-.np-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* Card base */
-.np-card {
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 28px;
-  text-align: left;
-  position: relative;
-}
-
-/* Desktop order: Basic left, Premium right */
-.np-card-basic   { order: 1; }
-.np-card-premium { order: 2; margin-top: -12px; border: 2px solid var(--terra); box-shadow: 0 8px 40px rgba(196,98,45,0.15); }
-
-/* Badges */
-.np-badge-basic {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 4px 12px;
-  margin-bottom: 14px;
-}
-.np-badge-premium {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--terra);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-  padding: 6px 20px;
-  border-radius: 100px;
-}
-
-/* Title */
-.np-card-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--ink);
-  margin-bottom: 16px;
-}
-
-/* Price block */
-.np-price-from {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
-.np-price-main {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 700;
-  font-size: 52px;
-  color: var(--terra);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.np-price-install {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-}
-.np-economy {
-  display: inline-block;
-  background: #EEF3EB;
-  color: var(--sage);
-  border: 1px solid #BAD0B2;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 14px;
-  margin-top: 8px;
-  margin-bottom: 20px;
-}
-
-/* Divider */
-.np-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 16px 0;
-}
-
-/* Basic features list */
-.np-features {
-  list-style: none;
-  margin-bottom: 24px;
-}
-.np-features li {
-  font-size: 14px;
-  color: var(--ink);
-  padding: 8px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.45;
-  border-bottom: 1px solid var(--border);
-}
-.np-features li:last-child { border-bottom: none; }
-.np-chk {
-  color: var(--sage);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-/* "Tudo do básico + " block */
-.np-plus-block {
-  background: var(--cream);
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-
-/* Bonus list */
-.np-bonus-list {
-  list-style: none;
-  margin-bottom: 4px;
-}
-.np-bonus-item {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-.np-bonus-item:last-child { border-bottom: none; }
-.np-bonus-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-.np-bonus-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 2px;
-  line-height: 1.4;
-}
-.np-bonus-price {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.np-free {
-  color: var(--sage);
-  font-weight: 600;
-}
-.np-bonus-total {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-style: italic;
-  text-align: center;
-  padding-top: 12px;
-  margin-bottom: 20px;
-}
-
-/* Buttons */
-.np-btn-outline {
-  display: block;
-  width: 100%;
-  background: transparent;
-  border: 2px solid var(--terra);
-  color: var(--terra);
-  padding: 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 15px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.np-btn-outline:hover { background: var(--terra); color: #fff; }
-.np-btn-solid {
-  display: block;
-  width: 100%;
-  background: var(--terra);
-  color: #fff;
-  border: none;
-  padding: 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 16px;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(196,98,45,0.35);
-  transition: background 0.2s, transform 0.15s;
-}
-.np-btn-solid:hover { background: var(--terra-dark); transform: translateY(-1px); }
-
-.np-secure {
-  font-size: 12px;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Mobile: Premium top, Basic bottom */
-@media (max-width: 640px) {
-  .np-grid {
-    grid-template-columns: 1fr;
-    padding: 0 4px;
-  }
-  .np-card-premium { order: 1; margin-top: 0; }
-  .np-card-basic   { order: 2; }
+@media (max-width:680px) {
+  .itp-grid { grid-template-columns:1fr; }
+  .itp-card { padding:2rem 1.25rem; }
+  .itp-val-price, .itp-total-price { font-size:1.875rem; }
 }
 </style>
 
-<section class="np-section" id="comprar">
-  <span class="np-eyebrow">OFERTA ESPECIAL · HOJE</span>
-  <h2 class="np-heading">Escolha seu plano</h2>
-  <p class="np-subheading">Acesso imediato após a confirmação do pagamento</p>
+<section class="itp-section" id="comprar">
+  <h2 class="itp-heading">Escolha seu plano</h2>
+  <div class="itp-grid">
 
-  <div class="np-grid">
-
-    <!-- CARD PREMIUM — primeiro no HTML → topo no mobile, direita no desktop -->
-    <div class="np-card np-card-premium">
-      <span class="np-badge-premium">⭐ MAIS ESCOLHIDO</span>
-      <p class="np-card-title">Italiano Ilustrado Premium</p>
-      <p class="np-price-from">de <s>R$247,00</s> por:</p>
-      <p class="np-price-main">R$47,90</p>
-      <p class="np-price-install">ou 5x de R$10,61 no cartão</p>
-      <span class="np-economy">Você economiza R$199,10</span>
-
-      <div class="np-plus-block">✅ TUDO DO PLANO BÁSICO, MAIS:</div>
-
-      <ul class="np-bonus-list">
-        <li class="np-bonus-item">
-          <p class="np-bonus-name">🎁 100 Expressões que italianos reais usam no dia a dia</p>
-          <p class="np-bonus-desc">As mais usadas no cotidiano — não as do livro didático</p>
-          <p class="np-bonus-price">De R$27 · <span class="np-free">Grátis</span></p>
-        </li>
-        <li class="np-bonus-item">
-          <p class="np-bonus-name">🎁 Guia de Pronúncia — pare de soar como turista</p>
-          <p class="np-bonus-desc">Sons, acentos e melodia do italiano explicados visualmente</p>
-          <p class="np-bonus-price">De R$19 · <span class="np-free">Grátis</span></p>
-        </li>
-        <li class="np-bonus-item">
-          <p class="np-bonus-name">🎁 200 Frases prontas — restaurante, aeroporto, família, trabalho</p>
-          <p class="np-bonus-desc">Para situações reais, não para exercícios de sala de aula</p>
-          <p class="np-bonus-price">De R$19 · <span class="np-free">Grátis</span></p>
-        </li>
-        <li class="np-bonus-item">
-          <p class="np-bonus-name">🎁 50 Exercícios para fixar sem repetição mecânica</p>
-          <p class="np-bonus-desc">Pratique o que aprendeu sem sentir que está estudando</p>
-          <p class="np-bonus-price">De R$17 · <span class="np-free">Grátis</span></p>
-        </li>
+    <!-- BÁSICO -->
+    <div class="itp-card itp-basico">
+      <div class="itp-title">PLANO BÁSICO</div>
+      <ul class="itp-items">
+        <li><span>✅</span> +365 mapas mentais — um por dia do ano</li>
+        <li><span>✅</span> Aprende vendo, não decorando</li>
+        <li><span>✅</span> Do vocabulário ao congiuntivo — tudo no lugar certo</li>
+        <li><span>✅</span> PDF para celular, tablet e impressão</li>
+        <li><span>✅</span> Atualizações vitalícias inclusas</li>
       </ul>
-      <p class="np-bonus-total">Valor total dos bônus: R$82 · inclusos grátis</p>
-
-      <a href="https://pay.wiapy.com/UYssgi1UeB" class="np-btn-solid">QUERO O KIT COMPLETO</a>
-      <p class="np-secure">🔒 Compra segura · 7 dias de garantia</p>
+      <div class="itp-price-box">
+        <div class="itp-val-label">Valor total</div>
+        <div class="itp-val-old">De R$97,00</div>
+        <div class="itp-val-label">Por apenas</div>
+        <div class="itp-val-price">R$27,90</div>
+        <div class="itp-val-period">ou 3x de R$9,97 no cartão</div>
+      </div>
+      <a href="[LINK_CHECKOUT_27,90]" class="itp-btn-basico">QUERO OS MAPAS MENTAIS</a>
+      <p class="itp-footnote">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
-    <!-- CARD BÁSICO — segundo no HTML → base no mobile, esquerda no desktop -->
-    <div class="np-card np-card-basic">
-      <span class="np-badge-basic">BÁSICO</span>
-      <p class="np-card-title">Italiano Ilustrado</p>
-      <p class="np-price-from">de <s>R$97,00</s> por:</p>
-      <p class="np-price-main">R$27,90</p>
-      <p class="np-price-install">ou 3x de R$9,97 no cartão</p>
-
-      <hr class="np-divider">
-
-      <ul class="np-features">
-        <li><span class="np-chk">✓</span>+365 mapas mentais — um por dia do ano</li>
-        <li><span class="np-chk">✓</span>Aprende vendo, não decorando</li>
-        <li><span class="np-chk">✓</span>Do vocabulário ao congiuntivo — tudo no lugar certo</li>
-        <li><span class="np-chk">✓</span>PDF para celular, tablet e impressão</li>
-        <li><span class="np-chk">✓</span>Atualizações vitalícias inclusas</li>
+    <!-- COMPLETO -->
+    <div class="itp-card itp-completo">
+      <span class="itp-badge">⭐ MAIS ESCOLHIDO</span>
+      <div class="itp-title">PLANO COMPLETO</div>
+      <div class="itp-banner">✅ TUDO DO PLANO BÁSICO, MAIS:</div>
+      <ul class="itp-bonus-items">
+        <li class="itp-bonus-item">
+          <div class="itp-bonus-header"><span>🎁</span><span class="itp-bonus-name">100 Expressões que italianos reais usam no dia a dia</span></div>
+          <div class="itp-bonus-desc">As mais usadas no cotidiano — não as do livro didático</div>
+          <div class="itp-bonus-anchor"><span class="itp-bonus-old">De R$27</span><span class="itp-bonus-tag">Grátis</span></div>
+        </li>
+        <li class="itp-bonus-item">
+          <div class="itp-bonus-header"><span>🎁</span><span class="itp-bonus-name">Guia de Pronúncia — pare de soar como turista</span></div>
+          <div class="itp-bonus-desc">Sons, acentos e melodia do italiano explicados visualmente</div>
+          <div class="itp-bonus-anchor"><span class="itp-bonus-old">De R$19</span><span class="itp-bonus-tag">Grátis</span></div>
+        </li>
+        <li class="itp-bonus-item">
+          <div class="itp-bonus-header"><span>🎁</span><span class="itp-bonus-name">200 Frases prontas — restaurante, aeroporto, família, trabalho</span></div>
+          <div class="itp-bonus-desc">Para situações reais, não para exercícios de sala de aula</div>
+          <div class="itp-bonus-anchor"><span class="itp-bonus-old">De R$19</span><span class="itp-bonus-tag">Grátis</span></div>
+        </li>
+        <li class="itp-bonus-item">
+          <div class="itp-bonus-header"><span>🎁</span><span class="itp-bonus-name">50 Exercícios para fixar sem repetição mecânica</span></div>
+          <div class="itp-bonus-desc">Pratique o que aprendeu sem sentir que está estudando</div>
+          <div class="itp-bonus-anchor"><span class="itp-bonus-old">De R$17</span><span class="itp-bonus-tag">Grátis</span></div>
+        </li>
       </ul>
-
-      <a href="[LINK_CHECKOUT_27,90]" class="np-btn-outline">QUERO OS MAPAS MENTAIS</a>
-      <p class="np-secure">🔒 Compra segura · 7 dias de garantia</p>
+      <div class="itp-total-box">
+        <div class="itp-total-label">Valor total</div>
+        <div class="itp-total-old">De R$247,00</div>
+        <div class="itp-total-label">Por apenas</div>
+        <div class="itp-total-price">R$47,90</div>
+        <div class="itp-total-period">ou 5x de R$10,61 no cartão</div>
+      </div>
+      <a href="https://pay.wiapy.com/UYssgi1UeB" class="itp-btn-completo">QUERO O KIT COMPLETO</a>
+      <p class="itp-footnote-white">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
   </div>
