@@ -849,7 +849,7 @@ img { max-width:100%; display:block; }
         <div class="itp-val-period">ou 3x de R$9,97 no cartão</div>
         <span class="itp-economy">Você economiza R$19,10</span>
       </div>
-      <a href="https://pay.wiapy.com/YMHJdIWK4gI" class="itp-btn-basico">QUERO OS MAPAS MENTAIS</a>
+      <a href="https://pay.wiapy.com/YMHJdIWK4gI" class="itp-btn-basico" data-checkout="basico">QUERO OS MAPAS MENTAIS</a>
       <p class="itp-footnote">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
@@ -888,7 +888,7 @@ img { max-width:100%; display:block; }
         <div class="itp-total-period">ou 5x de R$10,61 no cartão</div>
         <span class="itp-economy">Você economiza R$79,10</span>
       </div>
-      <a href="https://pay.wiapy.com/PEloPLi7cAc" class="itp-btn-completo">QUERO O KIT COMPLETO</a>
+      <a href="https://pay.wiapy.com/PEloPLi7cAc" class="itp-btn-completo" data-checkout="completo">QUERO O KIT COMPLETO</a>
       <p class="itp-footnote-white">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
@@ -1133,6 +1133,21 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     if (!isOpen) item.classList.add('open');
   });
 });
+</script>
+
+<!-- InitiateCheckout — dispara pixel antes de redirecionar -->
+<script>
+  document.querySelectorAll('a[data-checkout]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var url  = btn.href;
+      var plan = btn.getAttribute('data-checkout') === 'basico' ? 'Plano Básico — Italiano Ilustrado' : 'Plano Completo — Italiano Ilustrado Premium';
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', { content_name: plan, currency: 'BRL' });
+      }
+      setTimeout(function() { window.location.href = url; }, 300);
+    });
+  });
 </script>
 </body>
 </html>
