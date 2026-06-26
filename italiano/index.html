@@ -271,9 +271,10 @@ img { max-width:100%; display:block; }
 
 .forwhom-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px; max-width: 860px; margin: 0 auto;
 }
+.forwhom-grid .forwhom-card:nth-child(5) { grid-column: 2; }
 .forwhom-card {
   background: var(--branco); border-radius: 12px; padding: 22px 18px;
   text-align: left; border: 1px solid #c8ddd0;
@@ -487,6 +488,7 @@ img { max-width:100%; display:block; }
   .learn-grid { grid-template-columns: 1fr; }
   .testi-grid { grid-template-columns: 1fr; }
   .forwhom-grid { grid-template-columns: 1fr; }
+  .forwhom-grid .forwhom-card:nth-child(5) { grid-column: auto; }
 
   /* Ajuste de fontes maiores para mobile */
   .hero h1 { font-size: 34px; line-height: 1.25; font-weight: 900; }
@@ -637,6 +639,7 @@ img { max-width:100%; display:block; }
   <h2>Ideal para você que <em>deseja</em></h2>
   <div class="forwhom-grid">
     <div class="forwhom-card"><div class="fw-icon">✈️</div><div><h4>Viajar pela Itália com confiança</h4><p>Aprenda frases e vocabulário para se comunicar em Roma, Florença, Milão e muito mais.</p></div></div>
+    <div class="forwhom-card"><div class="fw-icon">🏛️</div><div><h4>Cidadania italiana</h4><p>Milhões de brasileiros no processo. As entrevistas consulares são em italiano, chegue preparado.</p></div></div>
     <div class="forwhom-card"><div class="fw-icon">💼</div><div><h4>Crescer profissionalmente</h4><p>Abra portas no mercado de moda, gastronomia, arquitetura e negócios com a Itália.</p></div></div>
     <div class="forwhom-card"><div class="fw-icon">🍕</div><div><h4>Mergulhar na cultura italiana</h4><p>Entenda filmes, músicas, receitas e a rica cultura do país sem precisar de tradução.</p></div></div>
     <div class="forwhom-card"><div class="fw-icon">🧠</div><div><h4>Aprender de forma rápida e eficiente</h4><p>Sem metodologias antigas e cansativas, aprenda com mapas visuais que o cérebro adora.</p></div></div>
