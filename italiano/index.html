@@ -704,42 +704,224 @@ img { max-width:100%; display:block; }
 </section>
 
 <!-- PRICING -->
+<style>
+/* ── DUAL PLAN PRICING ── */
+.dual-pricing-wrap {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.dp-card {
+  background: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 14px;
+  padding: 32px 22px 24px;
+  flex: 1;
+  max-width: 390px;
+  position: relative;
+  text-align: left;
+}
+.dp-card.dp-premium {
+  border: 3px solid var(--verde);
+  box-shadow: 0 16px 48px rgba(0,146,70,0.18);
+  background: #f0faf4;
+  transform: scale(1.03);
+  z-index: 2;
+}
+.dp-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.dp-badge-basic {
+  background: var(--cinza-c);
+  color: var(--txt-s);
+}
+.dp-badge-premium {
+  background: var(--verde);
+  color: #fff;
+}
+.dp-title {
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.dp-price-from {
+  font-size: 13px;
+  color: var(--vermelho);
+  text-decoration: line-through;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.dp-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  color: var(--verde);
+  margin-bottom: 3px;
+}
+.dp-price-main .dp-cur { font-size: 18px; font-weight: 800; }
+.dp-price-main .dp-amt { font-size: 52px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
+.dp-period { font-size: 12px; color: #6b7280; margin-bottom: 10px; }
+.dp-economy {
+  display: inline-block;
+  background: #E6F4EB;
+  color: var(--verde);
+  border: 1px solid var(--verde);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.dp-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 14px 0;
+}
+.dp-features {
+  list-style: none;
+  margin-bottom: 22px;
+}
+.dp-features li {
+  font-size: 13px;
+  color: #374151;
+  padding: 7px 0;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.4;
+  border-bottom: 1px solid #f3f4f6;
+}
+.dp-features li:last-child { border-bottom: none; }
+.dp-bonus-total {
+  font-size: 12px;
+  color: var(--txt-s);
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-align: center;
+}
+.dp-btn-outline {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--verde);
+  border: 2px solid var(--verde);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 15px 0;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.dp-btn-outline:hover { background: var(--verde); color: #fff; }
+.dp-btn-solid {
+  display: block;
+  width: 100%;
+  background: var(--verde);
+  color: #fff;
+  border: 2px solid var(--verde);
+  font-size: 15px;
+  font-weight: 900;
+  padding: 17px 0;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,146,70,0.35);
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.dp-btn-solid:hover { background: var(--verde-h); transform: translateY(-2px); }
+.dp-secure {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+  margin-top: 10px;
+}
+.dp-payment-methods {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+  opacity: 0.55;
+}
+@media (max-width: 640px) {
+  .dual-pricing-wrap {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .dp-card { max-width: 100%; width: 100%; }
+  .dp-card.dp-premium { transform: none; }
+}
+</style>
+
 <section class="pricing-section" id="comprar">
-  <div class="plan-card">
-    <div class="plan-badge-top">⚡ MAIS VENDIDO</div>
-    <div class="plan-urgency">⏰ ÚLTIMA CHANCE: OFERTA TERMINA HOJE</div>
-    <p class="plan-subtitle-top">Todos os bônus inclusos</p>
-    <p class="plan-title">Italiano Ilustrado Premium</p>
-    <img src="cv5c4x24.webp" alt="Italiano Ilustrado Premium" class="plan-img" loading="lazy">
-    
-    <div class="plan-bonus-pill">⚡ +4 bônus inclusos</div>
+  <h2>Escolha seu plano</h2>
+  <p class="sub">Acesso imediato após a confirmação do pagamento</p>
 
-    <ul class="plan-features">
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Mais de 360 mapas mentais com método visual</li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Frases prontas para situações do dia a dia</li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Guia de pronúncia completo</li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Exercícios práticos de fixação</li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Gramática essencial com explicações visuais</li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>🎁 <strong>Bônus #1</strong> 100 Expressões Italianas Essenciais</span></li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>🎁 <strong>Bônus #2</strong> Guia de Pronúncia do Italiano</span></li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>🎁 <strong>Bônus #3</strong> 200 Frases para Praticar Italiano</span></li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>🎁 <strong>Bônus #4</strong> 50 Exercícios Práticos</span></li>
-      <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>🛡️ <strong>Garantia estendida:</strong> nessa versão sua garantia é de 7 dias</span></li>
-    </ul>
+  <div class="dual-pricing-wrap">
 
-    <div class="price-tag">
-      <p class="from">de R$247,00 por:</p>
-      <div class="price-main"><span class="currency">R$</span><span class="amount">47,90</span></div>
-      <p class="period">ou 5x de R$10,61 no cartão</p>
+    <!-- CARD BÁSICO -->
+    <div class="dp-card dp-basic">
+      <span class="dp-badge dp-badge-basic">BÁSICO</span>
+      <p class="dp-title">Italiano Ilustrado</p>
+      <p class="dp-price-from">de R$97,00 por:</p>
+      <div class="dp-price-main"><span class="dp-cur">R$</span><span class="dp-amt">27,90</span></div>
+      <p class="dp-period">ou 3x de R$9,97 no cartão</p>
+      <ul class="dp-features">
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>+365 mapas mentais exclusivos</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Formato visual, colorido e intuitivo</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Organizado por temas</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Acesso imediato em PDF</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Funciona no celular, tablet e computador</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Atualizações gratuitas e vitalícias</li>
+      </ul>
+      <a href="[INSERIR LINK DO CHECKOUT R$27,90]" class="dp-btn-outline">QUERO O BÁSICO</a>
+      <p class="dp-secure">🔒 Compra segura · 7 dias de garantia</p>
     </div>
-    
-    <div class="plan-economy-pill">• Você economiza R$199,10</div>
 
-    <a href="https://pay.wiapy.com/UYssgi1UeB" class="btn-buy-card">COMPRAR AGORA!</a>
-
-    <div class="payment-methods">
-      <img src="pagamentos.png" alt="Formas de pagamento aceitas: Pix, Visa, Mastercard" style="max-height: 65px; width: auto;" loading="lazy">
+    <!-- CARD PREMIUM -->
+    <div class="dp-card dp-premium">
+      <span class="dp-badge dp-badge-premium">⭐ MAIS ESCOLHIDO</span>
+      <p class="dp-title">Italiano Ilustrado Premium</p>
+      <p class="dp-price-from">de R$247,00 por:</p>
+      <div class="dp-price-main"><span class="dp-cur">R$</span><span class="dp-amt">47,90</span></div>
+      <p class="dp-period">ou 5x de R$10,61 no cartão</p>
+      <span class="dp-economy">Você economiza R$199,10</span>
+      <ul class="dp-features">
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>+365 mapas mentais exclusivos</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Formato visual, colorido e intuitivo</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Organizado por temas</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Acesso imediato em PDF</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Funciona no celular, tablet e computador</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Atualizações gratuitas e vitalícias</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #1</strong> — 100 Expressões Italianas (~R$27)</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #2</strong> — Guia de Pronúncia (~R$19)</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #3</strong> — 200 Frases para Situações Reais (~R$19)</li>
+        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #4</strong> — 50 Exercícios Práticos (~R$17)</li>
+      </ul>
+      <div class="dp-bonus-total">Valor total dos bônus: <strong>R$82</strong> · inclusos grátis</div>
+      <a href="https://pay.wiapy.com/UYssgi1UeB" class="dp-btn-solid">QUERO APROVEITAR TUDO</a>
+      <p class="dp-secure">🔒 Compra segura · 7 dias de garantia</p>
+      <div class="dp-payment-methods">
+        <img src="pagamentos.png" alt="Formas de pagamento aceitas" style="max-height:55px;width:auto;" loading="lazy">
+      </div>
     </div>
+
   </div>
 </section>
 
