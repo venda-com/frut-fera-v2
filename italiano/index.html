@@ -556,7 +556,7 @@ img { max-width:100%; display:block; }
     <span>7 DIAS DE GARANTIA INCONDICIONAL</span>
   </div>
   <h1><span class="highlight">+360 Mapas Mentais</span> para Aprender <em>Italiano</em> de Forma Fácil e Prática Sem Aulas Longas</h1>
-  <div class="hero-img-wrapper"><img src="cv5c4x24.webp" alt="Mockup Italiano Ilustrado Premium"></div>
+  <div class="hero-img-wrapper"><picture><source srcset="hero-mockup-640.webp 640w, hero-mockup.webp 1254w" sizes="(max-width: 640px) 94vw, 530px" type="image/webp"><img src="hero-mockup.jpg" alt="Italiano Ilustrado Premium — Mapas Mentais" fetchpriority="high" decoding="sync" width="1254" height="1254"></picture></div>
   <p class="hero-desc">Domine o italiano de vez com mapas mentais visuais, diretos ao ponto e fáceis de absorver. Sem decoreba, sem aulas longas e sem complicação.</p>
   <a href="#comprar" class="btn-cta">QUERO APRENDER AGORA</a>
   <p class="hero-sub">Acesso imediato após a confirmação do pagamento</p>
@@ -705,221 +705,338 @@ img { max-width:100%; display:block; }
 
 <!-- PRICING -->
 <style>
-/* ── DUAL PLAN PRICING ── */
-.dual-pricing-wrap {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 860px;
-  margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+
+:root {
+  --terra:      #C4622D;
+  --terra-dark: #A8441F;
+  --cream:      #FDF8F3;
+  --warm-white: #FFFBF8;
+  --border:     #E5E7EB;
+  --text-muted: #6B7280;
+  --ink:        #111827;
+  --sage:       #009246;
+  --gold:       #C8922A;
 }
-.dp-card {
-  background: #fff;
-  border: 2px solid #d1d5db;
-  border-radius: 14px;
-  padding: 32px 22px 24px;
-  flex: 1;
-  max-width: 390px;
-  position: relative;
-  text-align: left;
-}
-.dp-card.dp-premium {
-  border: 3px solid var(--verde);
-  box-shadow: 0 16px 48px rgba(0,146,70,0.18);
-  background: #f0faf4;
-  transform: scale(1.03);
-  z-index: 2;
-}
-.dp-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 900;
-  padding: 5px 14px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-}
-.dp-badge-basic {
-  background: var(--cinza-c);
-  color: var(--txt-s);
-}
-.dp-badge-premium {
-  background: var(--verde);
-  color: #fff;
-}
-.dp-title {
-  font-size: 19px;
-  font-weight: 900;
-  color: var(--navy);
-  margin-bottom: 16px;
-}
-.dp-price-from {
-  font-size: 13px;
-  color: var(--vermelho);
-  text-decoration: line-through;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-.dp-price-main {
-  display: flex;
-  align-items: baseline;
-  gap: 3px;
-  color: var(--verde);
-  margin-bottom: 3px;
-}
-.dp-price-main .dp-cur { font-size: 18px; font-weight: 800; }
-.dp-price-main .dp-amt { font-size: 52px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
-.dp-period { font-size: 12px; color: #6b7280; margin-bottom: 10px; }
-.dp-economy {
-  display: inline-block;
-  background: #E6F4EB;
-  color: var(--verde);
-  border: 1px solid var(--verde);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 18px;
-}
-.dp-divider {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 14px 0;
-}
-.dp-features {
-  list-style: none;
-  margin-bottom: 22px;
-}
-.dp-features li {
-  font-size: 13px;
-  color: #374151;
-  padding: 7px 0;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  line-height: 1.4;
-  border-bottom: 1px solid #f3f4f6;
-}
-.dp-features li:last-child { border-bottom: none; }
-.dp-bonus-total {
-  font-size: 12px;
-  color: var(--txt-s);
-  margin-bottom: 20px;
-  padding: 10px;
-  background: #f9fafb;
-  border-radius: 8px;
+
+/* ── NEW PRICING SECTION ── */
+.np-section {
+  background: var(--cinza-f);
+  padding: 56px 20px 64px;
   text-align: center;
 }
-.dp-btn-outline {
+.np-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--terra);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.np-heading {
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.np-subheading {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+}
+
+/* Grid */
+.np-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Card base */
+.np-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: left;
+  position: relative;
+}
+
+/* Desktop order: Basic left, Premium right */
+.np-card-basic   { order: 1; }
+.np-card-premium { order: 2; margin-top: -12px; border: 2px solid var(--terra); box-shadow: 0 8px 40px rgba(196,98,45,0.15); }
+
+/* Badges */
+.np-badge-basic {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+}
+.np-badge-premium {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--terra);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  padding: 6px 20px;
+  border-radius: 100px;
+}
+
+/* Title */
+.np-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+/* Price block */
+.np-price-from {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.np-price-main {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--terra);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.np-price-install {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.np-economy {
+  display: inline-block;
+  background: #EEF3EB;
+  color: var(--sage);
+  border: 1px solid #BAD0B2;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.np-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* Basic features list */
+.np-features {
+  list-style: none;
+  margin-bottom: 24px;
+}
+.np-features li {
+  font-size: 14px;
+  color: var(--ink);
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+  border-bottom: 1px solid var(--border);
+}
+.np-features li:last-child { border-bottom: none; }
+.np-chk {
+  color: var(--sage);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* "Tudo do básico + " block */
+.np-plus-block {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+/* Bonus list */
+.np-bonus-list {
+  list-style: none;
+  margin-bottom: 4px;
+}
+.np-bonus-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.np-bonus-item:last-child { border-bottom: none; }
+.np-bonus-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.np-bonus-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+.np-bonus-price {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.np-free {
+  color: var(--sage);
+  font-weight: 600;
+}
+.np-bonus-total {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding-top: 12px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.np-btn-outline {
   display: block;
   width: 100%;
   background: transparent;
-  color: var(--verde);
-  border: 2px solid var(--verde);
-  font-size: 14px;
-  font-weight: 900;
-  padding: 15px 0;
-  border-radius: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border: 2px solid var(--terra);
+  color: var(--terra);
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
   text-align: center;
-  transition: background 0.2s, color 0.2s;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
-.dp-btn-outline:hover { background: var(--verde); color: #fff; }
-.dp-btn-solid {
+.np-btn-outline:hover { background: var(--terra); color: #fff; }
+.np-btn-solid {
   display: block;
   width: 100%;
-  background: var(--verde);
+  background: var(--terra);
   color: #fff;
-  border: 2px solid var(--verde);
-  font-size: 15px;
-  font-weight: 900;
-  padding: 17px 0;
-  border-radius: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border: none;
+  padding: 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0,146,70,0.35);
-  transition: background 0.2s, transform 0.15s;
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(196,98,45,0.35);
+  transition: background 0.2s, transform 0.15s;
 }
-.dp-btn-solid:hover { background: var(--verde-h); transform: translateY(-2px); }
-.dp-secure {
-  font-size: 11px;
-  color: #9ca3af;
+.np-btn-solid:hover { background: var(--terra-dark); transform: translateY(-1px); }
+
+.np-secure {
+  font-size: 12px;
+  color: var(--text-muted);
   text-align: center;
   margin-top: 10px;
 }
-.dp-payment-methods {
-  display: flex;
-  justify-content: center;
-  margin-top: 14px;
-  opacity: 0.55;
-}
+
+/* Mobile: Premium top, Basic bottom */
 @media (max-width: 640px) {
-  .dual-pricing-wrap {
-    flex-direction: column-reverse;
-    align-items: center;
+  .np-grid {
+    grid-template-columns: 1fr;
+    padding: 0 4px;
   }
-  .dp-card { max-width: 100%; width: 100%; }
-  .dp-card.dp-premium { transform: none; }
+  .np-card-premium { order: 1; margin-top: 0; }
+  .np-card-basic   { order: 2; }
 }
 </style>
 
-<section class="pricing-section" id="comprar">
-  <h2>Escolha seu plano</h2>
-  <p class="sub">Acesso imediato após a confirmação do pagamento</p>
+<section class="np-section" id="comprar">
+  <span class="np-eyebrow">OFERTA ESPECIAL · HOJE</span>
+  <h2 class="np-heading">Escolha seu plano</h2>
+  <p class="np-subheading">Acesso imediato após a confirmação do pagamento</p>
 
-  <div class="dual-pricing-wrap">
+  <div class="np-grid">
 
-    <!-- CARD BÁSICO -->
-    <div class="dp-card dp-basic">
-      <span class="dp-badge dp-badge-basic">BÁSICO</span>
-      <p class="dp-title">Italiano Ilustrado</p>
-      <p class="dp-price-from">de R$97,00 por:</p>
-      <div class="dp-price-main"><span class="dp-cur">R$</span><span class="dp-amt">27,90</span></div>
-      <p class="dp-period">ou 3x de R$9,97 no cartão</p>
-      <ul class="dp-features">
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>+365 mapas mentais exclusivos</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Formato visual, colorido e intuitivo</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Organizado por temas</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Acesso imediato em PDF</li>
+    <!-- CARD PREMIUM — primeiro no HTML → topo no mobile, direita no desktop -->
+    <div class="np-card np-card-premium">
+      <span class="np-badge-premium">⭐ MAIS ESCOLHIDO</span>
+      <p class="np-card-title">Italiano Ilustrado Premium</p>
+      <p class="np-price-from">de <s>R$247,00</s> por:</p>
+      <p class="np-price-main">R$47,90</p>
+      <p class="np-price-install">ou 5x de R$10,61 no cartão</p>
+      <span class="np-economy">Você economiza R$199,10</span>
 
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Atualizações gratuitas e vitalícias</li>
+      <div class="np-plus-block">✅ TUDO DO PLANO BÁSICO, MAIS:</div>
+
+      <ul class="np-bonus-list">
+        <li class="np-bonus-item">
+          <p class="np-bonus-name">🎁 100 Expressões que italianos reais usam no dia a dia</p>
+          <p class="np-bonus-desc">As mais usadas no cotidiano — não as do livro didático</p>
+          <p class="np-bonus-price">De R$27 · <span class="np-free">Grátis</span></p>
+        </li>
+        <li class="np-bonus-item">
+          <p class="np-bonus-name">🎁 Guia de Pronúncia — pare de soar como turista</p>
+          <p class="np-bonus-desc">Sons, acentos e melodia do italiano explicados visualmente</p>
+          <p class="np-bonus-price">De R$19 · <span class="np-free">Grátis</span></p>
+        </li>
+        <li class="np-bonus-item">
+          <p class="np-bonus-name">🎁 200 Frases prontas — restaurante, aeroporto, família, trabalho</p>
+          <p class="np-bonus-desc">Para situações reais, não para exercícios de sala de aula</p>
+          <p class="np-bonus-price">De R$19 · <span class="np-free">Grátis</span></p>
+        </li>
+        <li class="np-bonus-item">
+          <p class="np-bonus-name">🎁 50 Exercícios para fixar sem repetição mecânica</p>
+          <p class="np-bonus-desc">Pratique o que aprendeu sem sentir que está estudando</p>
+          <p class="np-bonus-price">De R$17 · <span class="np-free">Grátis</span></p>
+        </li>
       </ul>
-      <a href="[INSERIR LINK DO CHECKOUT R$27,90]" class="dp-btn-outline">QUERO O BÁSICO</a>
-      <p class="dp-secure">🔒 Compra segura · 7 dias de garantia</p>
+      <p class="np-bonus-total">Valor total dos bônus: R$82 · inclusos grátis</p>
+
+      <a href="https://pay.wiapy.com/UYssgi1UeB" class="np-btn-solid">QUERO O KIT COMPLETO</a>
+      <p class="np-secure">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
-    <!-- CARD PREMIUM -->
-    <div class="dp-card dp-premium">
-      <span class="dp-badge dp-badge-premium">⭐ MAIS ESCOLHIDO</span>
-      <p class="dp-title">Italiano Ilustrado Premium</p>
-      <p class="dp-price-from">de R$247,00 por:</p>
-      <div class="dp-price-main"><span class="dp-cur">R$</span><span class="dp-amt">47,90</span></div>
-      <p class="dp-period">ou 5x de R$10,61 no cartão</p>
-      <span class="dp-economy">Você economiza R$199,10</span>
-      <ul class="dp-features">
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>+365 mapas mentais exclusivos</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Formato visual, colorido e intuitivo</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Organizado por temas</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Acesso imediato em PDF</li>
+    <!-- CARD BÁSICO — segundo no HTML → base no mobile, esquerda no desktop -->
+    <div class="np-card np-card-basic">
+      <span class="np-badge-basic">BÁSICO</span>
+      <p class="np-card-title">Italiano Ilustrado</p>
+      <p class="np-price-from">de <s>R$97,00</s> por:</p>
+      <p class="np-price-main">R$27,90</p>
+      <p class="np-price-install">ou 3x de R$9,97 no cartão</p>
 
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Atualizações gratuitas e vitalícias</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #1</strong> — 100 Expressões Italianas (~R$27)</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #2</strong> — Guia de Pronúncia (~R$19)</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #3</strong> — 200 Frases para Situações Reais (~R$19)</li>
-        <li><svg class="chk-icon" viewBox="0 0 24 24"><path fill="none" stroke="#009246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>🎁 <strong>Bônus #4</strong> — 50 Exercícios Práticos (~R$17)</li>
+      <hr class="np-divider">
+
+      <ul class="np-features">
+        <li><span class="np-chk">✓</span>+365 mapas mentais — um por dia do ano</li>
+        <li><span class="np-chk">✓</span>Aprende vendo, não decorando</li>
+        <li><span class="np-chk">✓</span>Do vocabulário ao congiuntivo — tudo no lugar certo</li>
+        <li><span class="np-chk">✓</span>PDF para celular, tablet e impressão</li>
+        <li><span class="np-chk">✓</span>Atualizações vitalícias inclusas</li>
       </ul>
-      <div class="dp-bonus-total">Valor total dos bônus: <strong>R$82</strong> · inclusos grátis</div>
-      <a href="https://pay.wiapy.com/UYssgi1UeB" class="dp-btn-solid">QUERO APROVEITAR TUDO</a>
-      <p class="dp-secure">🔒 Compra segura · 7 dias de garantia</p>
-      <div class="dp-payment-methods">
-        <img src="pagamentos.png" alt="Formas de pagamento aceitas" style="max-height:55px;width:auto;" loading="lazy">
-      </div>
+
+      <a href="[LINK_CHECKOUT_27,90]" class="np-btn-outline">QUERO OS MAPAS MENTAIS</a>
+      <p class="np-secure">🔒 Compra segura · 7 dias de garantia</p>
     </div>
 
   </div>
