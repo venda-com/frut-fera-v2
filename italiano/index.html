@@ -454,21 +454,6 @@ img { max-width:100%; display:block; }
 .guarantee-inner h2 { font-size: clamp(18px, 3vw, 24px); font-weight: 900; color: var(--navy); margin-bottom: 12px; }
 .guarantee-inner p { font-size: 14px; color: var(--txt-s); line-height: 1.7; }
 
-/* ── TESTIMONIALS ── */
-.testimonials-section { background: var(--branco); padding: 52px 20px; text-align: center; }
-.testimonials-section h2 { font-size: clamp(19px, 3vw, 26px); font-weight: 900; color: var(--navy); margin-bottom: 24px; }
-.stars { color: var(--ouro); font-size: 17px; margin-bottom: 4px; }
-.testi-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px; max-width: 860px; margin: 0 auto;
-}
-.testi-card {
-  background: var(--cinza-f); border-radius: 12px; padding: 20px 18px;
-  text-align: left; border: 1px solid #dde8e2;
-}
-.testi-card p { font-size: 13px; color: #444; line-height: 1.65; }
-.testi-card .author { font-size: 13px; font-weight: 800; color: var(--navy); margin-top: 12px; }
-
 /* ── FAQ ACCORDION ── */
 .faq-section { background: var(--cinza-f); padding: 52px 20px; }
 .faq-section h2 { font-size: clamp(19px, 3vw, 26px); font-weight: 900; color: var(--navy); text-align: center; margin-bottom: 30px; }
@@ -507,7 +492,6 @@ img { max-width:100%; display:block; }
   .plan-card { padding: 32px 18px 22px; }
   .bonus-grid { grid-template-columns: 1fr; max-width: 380px; }
   .learn-grid { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr; }
   .forwhom-grid { grid-template-columns: 1fr; }
   .forwhom-grid .forwhom-card:nth-child(5) { grid-column: auto; }
 
@@ -515,7 +499,7 @@ img { max-width:100%; display:block; }
   .hero h1 { font-size: 34px; line-height: 1.25; font-weight: 900; }
   .hero-desc { font-size: 16px; margin-bottom: 26px; color: #444; }
   .btn-cta { width: 100%; display: block; font-size: 17px; padding: 20px 0; border-radius: 8px; text-align: center; }
-  .preview-section h2, .learn-section h2, .forwhom-section h2, .product-details h2, .bonus-header h2, .pricing-section h2, .guarantee-inner h2, .testimonials-section h2, .faq-section h2, .footer-cta h2 { font-size: 30px; line-height: 1.25; }
+  .preview-section h2, .learn-section h2, .forwhom-section h2, .product-details h2, .bonus-header h2, .pricing-section h2, .guarantee-inner h2, .faq-section h2, .footer-cta h2 { font-size: 30px; line-height: 1.25; }
   .learn-item { font-size: 16px; }
   .callout-box p { font-size: 15px; }
   .forwhom-card h4 { font-size: 16px; }
@@ -524,14 +508,13 @@ img { max-width:100%; display:block; }
   .bonus-card h4 { font-size: 17px; }
   .bonus-card p { font-size: 15px; }
   .guarantee-inner p { font-size: 16px; }
-  .testi-card p, .testi-card .author { font-size: 15px; }
   .faq-toggle h4 { font-size: 17px; }
   .faq-body p { font-size: 16px; }
 }
 @media (max-width: 400px) {
   .btn-cta { font-size: 16px; padding: 16px 0; }
   .hero h1 { font-size: 28px; }
-  .preview-section h2, .learn-section h2, .forwhom-section h2, .product-details h2, .bonus-header h2, .pricing-section h2, .guarantee-inner h2, .testimonials-section h2, .faq-section h2, .footer-cta h2 { font-size: 26px; }
+  .preview-section h2, .learn-section h2, .forwhom-section h2, .product-details h2, .bonus-header h2, .pricing-section h2, .guarantee-inner h2, .faq-section h2, .footer-cta h2 { font-size: 26px; }
 }
 </style>
 <script type="text/javascript">
@@ -905,28 +888,6 @@ img { max-width:100%; display:block; }
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <h2>Veja o que nossos clientes estão dizendo</h2>
-  <p class="stars">★★★★★</p>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p>"Nunca imaginei que aprender italiano pudesse ser tão simples. Os mapas mentais são incríveis, absorvo tudo muito mais rápido!"</p>
-      <p class="author">— Carla M.</p>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p>"Tentei vários cursos e não conseguia avançar. Com o Italiano Ilustrado me comuniquei em viagem à Itália sem dificuldade!"</p>
-      <p class="author">— Rafael S.</p>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p>"Material super completo, visual e organizado. Recomendo para qualquer pessoa que quer aprender italiano de forma prática."</p>
-      <p class="author">— Juliana P.</p>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq-section">
   <h2>Perguntas Frequentes</h2>
