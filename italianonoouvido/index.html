@@ -143,6 +143,18 @@ img { max-width:100%; display:block; }
 .dialog-card p { font-size: 13.5px; color: var(--txt-s); line-height: 1.5; }
 .dialog-card p strong { color: var(--navy); }
 
+/* ── AMOSTRA DE ÁUDIO ── */
+.audio-sample-section { background: var(--branco); padding: 52px 20px; text-align: center; }
+.audio-sample-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
+.audio-sample-sub { font-size: 14px; color: var(--txt-s); max-width: 520px; margin: 0 auto 24px; line-height: 1.6; }
+.audio-card {
+  background: var(--cinza-f); border-radius: 12px; padding: 24px;
+  border: 1px solid #e3e3e3; max-width: 420px; margin: 0 auto;
+}
+.audio-label { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+.audio-card audio { width: 100%; }
+.audio-footnote { font-size: 12px; color: var(--txt-s); font-style: italic; margin-top: 14px; }
+
 /* ── QUEBRA DE OBJEÇÃO ── */
 .objection-section { background: var(--cinza-c); padding: 26px 20px; text-align: center; }
 .objection-section p { font-size: 15px; font-weight: 700; color: var(--navy); max-width: 600px; margin: 0 auto; line-height: 1.6; }
@@ -255,6 +267,19 @@ img { max-width:100%; display:block; }
     <div class="dialog-card"><span class="fw-icon">☕</span><p><strong>No café ou bar:</strong> peça como um local, sem apontar pro cardápio</p></div>
     <div class="dialog-card"><span class="fw-icon">🚕</span><p><strong>No transporte:</strong> pegue táxi, ônibus ou trem entendendo o que falam com você</p></div>
     <div class="dialog-card"><span class="fw-icon">👋</span><p><strong>Conversa casual:</strong> se apresente, puxe papo e responda quando falarem com você</p></div>
+  </div>
+</section>
+
+<!-- AMOSTRA DE ÁUDIO -->
+<section class="audio-sample-section">
+  <h2>Ouça um trecho agora</h2>
+  <p class="audio-sample-sub">Aperte o play e sinta como funciona o treino — frase em italiano, pausa para você entender, e a resposta.</p>
+  <div class="audio-card">
+    <p class="audio-label">🎧 Amostra — Diálogo no restaurante</p>
+    <audio controls>
+      <source src="amostra-italiano-no-ouvido.mp3" type="audio/mpeg">
+    </audio>
+    <p class="audio-footnote">É exatamente assim que você vai treinar todos os diálogos do material.</p>
   </div>
 </section>
 
