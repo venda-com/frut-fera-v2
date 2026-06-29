@@ -208,7 +208,23 @@ img { max-width:100%; display:block; }
     <span class="hero-price-old">De R$47</span>
     <div class="hero-price-new">R$24,90</div>
   </div>
-  <a href="#oferta" class="btn-cta">QUERO TREINAR MEU OUVIDO</a>
+  <div id="wiapy_upsell_hero"></div>
+  <script>
+  initWiapyUpsell({
+      elementId: "wiapy_upsell_hero",
+      linkUrl: "https://pay.wiapy.com/checkout/6a427621f5f6893c9450eb06",
+      linkText: "QUERO TREINAR MEU OUVIDO",
+      styles: {
+          backgroundColor: "#00d769",
+          hoverBackgroundColor: "#00b85a",
+          fontSize: "17px",
+          borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "#000000"
+  });
+  </script>
   <p class="hero-sub">adquira ao seu pedido com 1 clique</p>
 </section>
 
@@ -247,6 +263,23 @@ img { max-width:100%; display:block; }
 <!-- QUEBRA DE OBJEÇÃO -->
 <section class="objection-section">
   <p>Não precisa de nada além do seu celular. Baixou, apertou o play e começou a treinar, no seu ritmo, onde você estiver.</p>
+  <div id="wiapy_upsell_objection" style="margin-top:18px;"></div>
+  <script>
+  initWiapyUpsell({
+      elementId: "wiapy_upsell_objection",
+      linkUrl: "https://pay.wiapy.com/checkout/6a427621f5f6893c9450eb06",
+      linkText: "SIM, EU ACEITO ESSA OFERTA",
+      styles: {
+          backgroundColor: "#00d769",
+          hoverBackgroundColor: "#00b85a",
+          fontSize: "17px",
+          borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "#000000"
+  });
+  </script>
 </section>
 
 <!-- DOBRA 4 — OFERTA -->
@@ -263,7 +296,8 @@ img { max-width:100%; display:block; }
     <div id="wiapy_upsell_bottom"></div>
     <script>
     initWiapyUpsell({
-        linkUrl: "PLACEHOLDER_LINK_UPSELL",
+        elementId: "wiapy_upsell_bottom",
+        linkUrl: "https://pay.wiapy.com/checkout/6a427621f5f6893c9450eb06",
         linkText: "SIM, EU ACEITO ESSA OFERTA",
         styles: {
             backgroundColor: "#00d769",
@@ -271,9 +305,9 @@ img { max-width:100%; display:block; }
             fontSize: "17px",
             borderRadius: "10px"
         },
-        refusalLinkUrl: "PLACEHOLDER_LINK_RECUSA",
-        refusalLinkText: "Não, obrigado. Continuar sem o áudio",
-        refusalLinkColor: "#7A6E62"
+        refusalLinkUrl: "https://wiapy.com/login",
+        refusalLinkText: "Recusar está oferta",
+        refusalLinkColor: "#000000"
     });
     </script>
 
