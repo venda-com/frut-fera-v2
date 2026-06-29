@@ -127,6 +127,31 @@ img { max-width:100%; display:block; }
 .forwhom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
 .forwhom-card p { font-size: 13px; color: var(--txt-s); line-height: 1.5; }
 
+/* ── O QUE VOCÊ VAI TREINAR ── */
+.dialogs-section { background: var(--branco); padding: 52px 20px; text-align: center; }
+.dialogs-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
+.dialogs-sub { font-size: 14px; color: var(--txt-s); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
+.dialog-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 14px; max-width: 860px; margin: 0 auto;
+}
+.dialog-card {
+  background: var(--cinza-f); border-radius: 12px; padding: 18px;
+  text-align: left; border: 1px solid #e3e3e3;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.dialog-card .fw-icon { font-size: 24px; flex-shrink: 0; }
+.dialog-card p { font-size: 13.5px; color: var(--txt-s); line-height: 1.5; }
+.dialog-card p strong { color: var(--navy); }
+
+/* ── QUEBRA DE OBJEÇÃO ── */
+.objection-section { background: var(--cinza-c); padding: 26px 20px; text-align: center; }
+.objection-section p { font-size: 15px; font-weight: 700; color: var(--navy); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+@media (max-width: 680px) {
+  .dialog-grid { grid-template-columns: 1fr; }
+}
+
 /* ── OFERTA ── */
 .offer-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
 .itp-card {
@@ -201,6 +226,27 @@ img { max-width:100%; display:block; }
     <div class="forwhom-card"><div class="fw-icon">⏸️</div><div><h4>Pausa para você entender sozinho</h4><p>Cada frase tem uma pausa antes da tradução. Você ouve, tenta entender e só depois confere. Assim você para de só reconhecer no papel e passa a entender de ouvido.</p></div></div>
     <div class="forwhom-card"><div class="fw-icon">📱</div><div><h4>Ouça onde quiser</h4><p>No ônibus, na academia, dirigindo, antes de dormir. Transforma tempo perdido em treino de italiano, todo dia.</p></div></div>
   </div>
+</section>
+
+<!-- O QUE VOCÊ VAI TREINAR -->
+<section class="dialogs-section">
+  <h2>O que você vai treinar</h2>
+  <p class="dialogs-sub">Diálogos reais para você se virar sozinho nas situações que mais importam.</p>
+  <div class="dialog-grid">
+    <div class="dialog-card"><span class="fw-icon">✈️</span><p><strong>No aeroporto:</strong> entenda os avisos, ache seu portão e passe pela imigração sem pânico</p></div>
+    <div class="dialog-card"><span class="fw-icon">🏨</span><p><strong>No hotel:</strong> faça check-in, peça informações e resolva qualquer imprevisto</p></div>
+    <div class="dialog-card"><span class="fw-icon">🍝</span><p><strong>No restaurante:</strong> peça do jeito certo, tire dúvidas do cardápio e entenda o garçom</p></div>
+    <div class="dialog-card"><span class="fw-icon">🛍️</span><p><strong>Nas compras:</strong> pergunte preço, tamanho e feche a compra com confiança</p></div>
+    <div class="dialog-card"><span class="fw-icon">🗺️</span><p><strong>Pedindo informação na rua:</strong> pergunte direções e entenda a resposta de um italiano</p></div>
+    <div class="dialog-card"><span class="fw-icon">☕</span><p><strong>No café ou bar:</strong> peça como um local, sem apontar pro cardápio</p></div>
+    <div class="dialog-card"><span class="fw-icon">🚕</span><p><strong>No transporte:</strong> pegue táxi, ônibus ou trem entendendo o que falam com você</p></div>
+    <div class="dialog-card"><span class="fw-icon">👋</span><p><strong>Conversa casual:</strong> se apresente, puxe papo e responda quando falarem com você</p></div>
+  </div>
+</section>
+
+<!-- QUEBRA DE OBJEÇÃO -->
+<section class="objection-section">
+  <p>Não precisa de nada além do seu celular. Baixou, apertou o play e começou a treinar, no seu ritmo, onde você estiver.</p>
 </section>
 
 <!-- DOBRA 4 — OFERTA -->
