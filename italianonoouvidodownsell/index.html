@@ -195,7 +195,23 @@ img { max-width:100%; display:block; }
     <span class="hero-price-old">De R$24,90</span>
     <div class="hero-price-new">R$12,90</div>
   </div>
-  <a href="#oferta" class="btn-cta">QUERO O KIT ESSENCIAL</a>
+  <div id="wiapy_upsell_hero"></div>
+  <script>
+  initWiapyUpsell({
+      elementId: "wiapy_upsell_hero",
+      linkUrl: "https://pay.wiapy.com/checkout/6a42e0d6f5f6893c945aa920",
+      linkText: "QUERO O KIT ESSENCIAL",
+      styles: {
+          backgroundColor: "#00d769",
+          hoverBackgroundColor: "#00b85a",
+          fontSize: "17px",
+          borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "#000000"
+  });
+  </script>
   <p class="hero-sub">comece agora com 1 clique</p>
 </section>
 
