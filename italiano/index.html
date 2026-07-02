@@ -716,6 +716,93 @@ img { max-width:100%; display:block; }
   <a href="#plano-completo" class="btn-cta">QUERO TODOS OS BÔNUS</a>
 </section>
 
+<!-- DEPOIMENTOS -->
+<style>
+.dep-section { background: var(--branco); padding: 52px 20px 56px; text-align: center; }
+.dep-section h2 { font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+.dep-sub { font-size: 14px; color: var(--txt-s); margin-bottom: 36px; }
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 820px;
+  margin: 0 auto 36px;
+}
+.dep-card {
+  background: var(--cinza-f);
+  border: 1px solid #e3e3e3;
+  border-radius: 14px;
+  padding: 24px 20px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dep-card-top { display: flex; align-items: center; gap: 14px; }
+.dep-avatar {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  background: var(--verde); color: #fff;
+  font-size: 18px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.dep-author { font-size: 14px; font-weight: 800; color: var(--navy); }
+.dep-stars { color: #F59E0B; font-size: 13px; margin-top: 2px; }
+.dep-text { font-size: 14px; color: var(--txt-s); line-height: 1.65; font-style: italic; }
+.dep-badge { font-size: 11px; color: #25D366; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+@media (max-width: 600px) { .dep-grid { grid-template-columns: 1fr; } }
+</style>
+<section class="dep-section">
+  <h2>O que nossos alunos estão dizendo</h2>
+  <p class="dep-sub">Depoimentos reais de quem já está estudando com o Italiano Ilustrado</p>
+  <div class="dep-grid">
+    <div class="dep-card">
+      <div class="dep-card-top">
+        <div class="dep-avatar">A</div>
+        <div>
+          <div class="dep-author">Altemir M.</div>
+          <div class="dep-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="dep-text">"Achei super pratico, não botei muita fé no material mas é algo muito bom! Estou aprendendo bastante."</p>
+      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+    </div>
+    <div class="dep-card">
+      <div class="dep-card-top">
+        <div class="dep-avatar">V</div>
+        <div>
+          <div class="dep-author">Vilson S.</div>
+          <div class="dep-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="dep-text">"Gostei bastante do material. Estou há 2 semanas estudando e aprendi muita coisa cara. Top de mais!"</p>
+      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+    </div>
+    <div class="dep-card">
+      <div class="dep-card-top">
+        <div class="dep-avatar">L</div>
+        <div>
+          <div class="dep-author">Lilian C.</div>
+          <div class="dep-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="dep-text">"Muito bom, gostei muito!"</p>
+      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+    </div>
+    <div class="dep-card">
+      <div class="dep-card-top">
+        <div class="dep-avatar">B</div>
+        <div>
+          <div class="dep-author">Beatriz O.</div>
+          <div class="dep-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="dep-text">"Gostei muito do material. Imprimi alguns pra já ir aprendendo!"</p>
+      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+    </div>
+  </div>
+  <a href="#plano-completo" class="btn-cta">QUERO APRENDER ITALIANO AGORA</a>
+</section>
+
 <!-- PRICING -->
 <style>
 .itp-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
