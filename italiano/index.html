@@ -718,90 +718,88 @@ img { max-width:100%; display:block; }
 
 <!-- DEPOIMENTOS -->
 <style>
-.dep-section { background: var(--branco); padding: 52px 20px 56px; text-align: center; }
-.dep-section h2 { font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 8px; }
-.dep-sub { font-size: 14px; color: var(--txt-s); margin-bottom: 36px; }
-.dep-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 820px;
-  margin: 0 auto 36px;
+.dep-section { background: #F5F0E8; padding: 3.5rem 5%; text-align: center; }
+.dep-section h2 { font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 0; }
+.dep-carousel {
+  position: relative;
+  max-width: 480px;
+  margin: 1.5rem auto 0;
+  overflow: hidden;
+  border-radius: 12px;
 }
-.dep-card {
-  background: var(--cinza-f);
-  border: 1px solid #e3e3e3;
-  border-radius: 14px;
-  padding: 24px 20px 20px;
-  text-align: left;
+.dep-track {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  align-items: flex-start;
+  transition: transform 0.35s ease;
 }
-.dep-card-top { display: flex; align-items: center; gap: 14px; }
-.dep-avatar {
-  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
-  background: var(--verde); color: #fff;
-  font-size: 18px; font-weight: 900;
+.dep-slide { min-width: 100%; width: 100%; font-size: 0; }
+.dep-slide img { width: 100%; height: auto; display: block; vertical-align: top; }
+.dep-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  font-size: 22px;
+  cursor: pointer;
   display: flex; align-items: center; justify-content: center;
+  line-height: 1;
 }
-.dep-author { font-size: 14px; font-weight: 800; color: var(--navy); }
-.dep-stars { color: #F59E0B; font-size: 13px; margin-top: 2px; }
-.dep-text { font-size: 14px; color: var(--txt-s); line-height: 1.65; font-style: italic; }
-.dep-badge { font-size: 11px; color: #25D366; font-weight: 700; display: flex; align-items: center; gap: 4px; }
-@media (max-width: 600px) { .dep-grid { grid-template-columns: 1fr; } }
+.dep-btn:hover { background: #fff; }
+.dep-prev { left: 8px; }
+.dep-next { right: 8px; }
+.dep-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+.dep-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dep-dot.active { background: #1a3a1a; }
 </style>
 <section class="dep-section">
-  <h2>O que nossos alunos estão dizendo</h2>
-  <p class="dep-sub">Depoimentos reais de quem já está estudando com o Italiano Ilustrado</p>
-  <div class="dep-grid">
-    <div class="dep-card">
-      <div class="dep-card-top">
-        <div class="dep-avatar">A</div>
-        <div>
-          <div class="dep-author">Altemir M.</div>
-          <div class="dep-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="dep-text">"Achei super pratico, não botei muita fé no material mas é algo muito bom! Estou aprendendo bastante."</p>
-      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+  <h2>Veja o que estão dizendo nossos alunos</h2>
+  <div class="dep-carousel" id="dep-carousel">
+    <div class="dep-track" id="dep-track">
+      <div class="dep-slide"><img src="dep-ita-1.webp" alt="Depoimento Beatriz" loading="lazy"></div>
+      <div class="dep-slide"><img src="dep-ita-2.webp" alt="Depoimento Lilian" loading="lazy"></div>
+      <div class="dep-slide"><img src="dep-ita-3.webp" alt="Depoimento Vilson" loading="lazy"></div>
+      <div class="dep-slide"><img src="dep-ita-4.webp" alt="Depoimento Altemir" loading="lazy"></div>
     </div>
-    <div class="dep-card">
-      <div class="dep-card-top">
-        <div class="dep-avatar">V</div>
-        <div>
-          <div class="dep-author">Vilson S.</div>
-          <div class="dep-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="dep-text">"Gostei bastante do material. Estou há 2 semanas estudando e aprendi muita coisa cara. Top de mais!"</p>
-      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
-    </div>
-    <div class="dep-card">
-      <div class="dep-card-top">
-        <div class="dep-avatar">L</div>
-        <div>
-          <div class="dep-author">Lilian C.</div>
-          <div class="dep-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="dep-text">"Muito bom, gostei muito!"</p>
-      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
-    </div>
-    <div class="dep-card">
-      <div class="dep-card-top">
-        <div class="dep-avatar">B</div>
-        <div>
-          <div class="dep-author">Beatriz O.</div>
-          <div class="dep-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="dep-text">"Gostei muito do material. Imprimi alguns pra já ir aprendendo!"</p>
-      <span class="dep-badge">✔ Compra verificada via WhatsApp</span>
+    <button class="dep-btn dep-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
+    <button class="dep-btn dep-next" id="dep-next" aria-label="Próximo">&#8250;</button>
+    <div class="dep-dots" id="dep-dots">
+      <span class="dep-dot active" data-idx="0"></span>
+      <span class="dep-dot" data-idx="1"></span>
+      <span class="dep-dot" data-idx="2"></span>
+      <span class="dep-dot" data-idx="3"></span>
     </div>
   </div>
-  <a href="#plano-completo" class="btn-cta">QUERO APRENDER ITALIANO AGORA</a>
+  <a href="#plano-completo" class="btn-cta" style="margin-top:2rem;display:inline-block;">QUERO APRENDER ITALIANO AGORA</a>
 </section>
+<script>
+(function() {
+  var track = document.getElementById('dep-track');
+  var dots  = document.querySelectorAll('#dep-dots .dep-dot');
+  var total = 4, current = 0;
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+  }
+  document.getElementById('dep-prev').addEventListener('click', function() { goTo(current - 1); });
+  document.getElementById('dep-next').addEventListener('click', function() { goTo(current + 1); });
+  dots.forEach(function(d) { d.addEventListener('click', function() { goTo(parseInt(d.getAttribute('data-idx'))); }); });
+})();
+</script>
 
 <!-- PRICING -->
 <style>
