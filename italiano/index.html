@@ -1193,20 +1193,11 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
 .upg-overlay.upg-open .upg-box{transform:translateY(0);}
 .upg-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);border:none;cursor:pointer;font-size:18px;color:#555;line-height:1;padding:0;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-family:inherit;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.2);font-weight:700;}
 .upg-close:hover{color:#111;}
-.upg-hero-img{width:100%;max-height:260px;object-fit:cover;object-position:top 8%;display:block;}
-.upg-thumbs{display:flex;gap:8px;padding:10px 1.125rem 0;}
-.upg-thumb{flex:1;border-radius:8px;overflow:hidden;border:2px solid #E5E7EB;cursor:pointer;transition:border-color .15s;}
-.upg-thumb.upg-thumb-active{border-color:#C8922A;}
-.upg-thumb img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;}
+.upg-hero-img{width:100%;height:auto;display:block;}
 .upg-content{padding:1.25rem 1.25rem 1.375rem;text-align:center;}
 .upg-tag{display:inline-block;background:#FFF8E6;color:#C8922A;border:2px solid #C8922A;font-size:11px;font-weight:900;padding:4px 16px;border-radius:30px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
 .upg-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.45rem,5.5vw,1.8rem);font-weight:900;color:#111827;margin-bottom:10px;line-height:1.2;}
 .upg-body{font-size:13.5px;color:#4B5563;line-height:1.65;margin-bottom:16px;}
-.upg-price-panel{background:#FFF8E6;border-radius:14px;padding:14px 16px;margin-bottom:16px;}
-.upg-price-label{display:block;font-size:13px;color:#111827;font-weight:700;margin-bottom:6px;}
-.upg-price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;}
-.upg-price-old{font-size:15px;color:#9CA3AF;text-decoration:line-through;}
-.upg-price-new{font-size:2.5rem;font-weight:900;color:#CE2B37;line-height:1;}
 .upg-btn-primary{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:1rem;text-align:center;padding:1rem;border-radius:2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;margin-bottom:14px;font-family:inherit;}
 .upg-btn-primary:hover{background:#d98c1a;}
 .upg-btn-secondary{display:block;width:100%;text-align:center;font-size:13.5px;font-weight:600;color:#374151;background:none;border:none;cursor:pointer;padding:4px;font-family:inherit;}
@@ -1217,22 +1208,10 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
   <div class="upg-box">
     <button class="upg-close" id="upg-close" aria-label="Fechar">✕</button>
     <img class="upg-hero-img" src="oferta-exclusiva.webp" alt="Ganhe R$10 de desconto — Plano Completo">
-    <div class="upg-thumbs">
-      <div class="upg-thumb upg-thumb-active"><img src="carousel-verbo-fare.webp" alt="Mapa Mental — Verbos" loading="lazy"></div>
-      <div class="upg-thumb"><img src="carousel-girias-italianas.webp" alt="Mapa Mental — Gírias" loading="lazy"></div>
-      <div class="upg-thumb"><img src="carousel-erros-pronuncia.webp" alt="Mapa Mental — Pronúncia" loading="lazy"></div>
-    </div>
     <div class="upg-content">
       <span class="upg-tag">Oferta exclusiva</span>
-      <h2 class="upg-title" id="upg-title-h">Antes de fechar, olha isto</h2>
+      <h2 class="upg-title" id="upg-title-h">Leve o completo com desconto</h2>
       <p class="upg-body">Só aqui: o Plano Completo por R$27,90 em vez de R$37,90. Você leva os mesmos 127 mapas. Agora com áudio pra destravar a fala, um plano pra saber por onde começar, e os bônus pra cada objetivo: viagem, cidadania, fluência.</p>
-      <div class="upg-price-panel">
-        <span class="upg-price-label">Só nesta tela, por apenas</span>
-        <div class="upg-price-row">
-          <span class="upg-price-old">R$37,90</span>
-          <span class="upg-price-new">R$27,90</span>
-        </div>
-      </div>
       <a href="https://pay.wiapy.com/5q5iRCiiJI1" class="upg-btn-primary" id="upg-btn-primary">Quero o Completo por R$27,90</a>
       <button class="upg-btn-secondary" id="upg-btn-secondary">Continuar só com o Básico</button>
     </div>
@@ -1245,7 +1224,6 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
   var primBtn  = document.getElementById('upg-btn-primary');
   var secBtn   = document.getElementById('upg-btn-secondary');
   var trigger  = document.querySelector('.itp-card.itp-basico .itp-btn-basico');
-  var heroImg  = overlay.querySelector('.upg-hero-img');
   if(!trigger) return;
 
   function openModal(){ overlay.classList.add('upg-open'); overlay.scrollTop=0; closeBtn.focus(); document.body.style.overflow='hidden'; }
@@ -1265,14 +1243,6 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
   secBtn.addEventListener('click', function(){
     if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'Plano Básico — Italiano Ilustrado',currency:'BRL'});
     setTimeout(function(){ window.location.href='https://pay.wiapy.com/YMHJdIWK4gI'; }, 300);
-  });
-
-  overlay.querySelectorAll('.upg-thumb').forEach(function(thumb){
-    thumb.addEventListener('click', function(){
-      overlay.querySelectorAll('.upg-thumb').forEach(function(t){ t.classList.remove('upg-thumb-active'); });
-      thumb.classList.add('upg-thumb-active');
-      heroImg.src = thumb.querySelector('img').src;
-    });
   });
 })();
 </script>
