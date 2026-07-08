@@ -1183,6 +1183,68 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
 });
 </script>
 
+<!-- UPGRADE MODAL -->
+<style>
+.upg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .22s ease;}
+.upg-overlay.upg-open{opacity:1;pointer-events:auto;}
+@media(prefers-reduced-motion:reduce){.upg-overlay,.upg-box{transition:none!important;}}
+.upg-box{background:#fff;border-radius:16px;padding:2rem 1.75rem 1.75rem;max-width:420px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);transform:translateY(12px);transition:transform .22s ease;}
+.upg-overlay.upg-open .upg-box{transform:translateY(0);}
+.upg-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:22px;color:#999;line-height:1;padding:4px 6px;border-radius:4px;font-family:inherit;}
+.upg-close:hover{color:#333;}
+.upg-close:focus-visible,.upg-btn-primary:focus-visible,.upg-btn-secondary:focus-visible{outline:2px solid #009246;outline-offset:2px;}
+.upg-tag{display:inline-block;background:#009246;color:#fff;font-size:11px;font-weight:900;padding:3px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.upg-title{font-size:1.2rem;font-weight:900;color:#111827;margin-bottom:10px;line-height:1.25;}
+.upg-body{font-size:14px;color:#4B5563;line-height:1.65;margin-bottom:18px;}
+.upg-price-line{text-align:center;margin-bottom:18px;}
+.upg-price-old{font-size:14px;color:#CE2B37;text-decoration:line-through;margin-right:8px;}
+.upg-price-new{font-size:1.6rem;font-weight:900;color:#f5a623;}
+.upg-btn-primary{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:1rem;text-transform:uppercase;text-align:center;padding:1rem;border-radius:2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;margin-bottom:14px;font-family:inherit;}
+.upg-btn-primary:hover{background:#d98c1a;}
+.upg-btn-secondary{display:block;width:100%;text-align:center;font-size:13px;font-weight:700;color:#009246;text-decoration:underline;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;font-family:inherit;}
+.upg-btn-secondary:hover{color:#007A3A;}
+</style>
+<div class="upg-overlay" id="upg-overlay" role="dialog" aria-modal="true" aria-labelledby="upg-title">
+  <div class="upg-box">
+    <button class="upg-close" id="upg-close" aria-label="Fechar">✕</button>
+    <span class="upg-tag">Oferta exclusiva</span>
+    <h2 class="upg-title" id="upg-title">Antes de fechar, olha isto</h2>
+    <p class="upg-body">Só aqui: o Plano Completo por R$27,90 em vez de R$37,90. Você leva os mesmos 127 mapas. Agora com áudio pra destravar a fala, um plano pra saber por onde começar, e os bônus pra cada objetivo: viagem, cidadania, fluência.</p>
+    <div class="upg-price-line">
+      <span class="upg-price-old">R$37,90</span>
+      <span class="upg-price-new">R$27,90</span>
+    </div>
+    <a href="https://pay.wiapy.com/5q5iRCiiJI1" class="upg-btn-primary" id="upg-btn-primary">Quero o Completo por R$27,90</a>
+    <button class="upg-btn-secondary" id="upg-btn-secondary">Continuar só com o Básico</button>
+  </div>
+</div>
+<script>
+(function(){
+  var overlay  = document.getElementById('upg-overlay');
+  var closeBtn = document.getElementById('upg-close');
+  var secBtn   = document.getElementById('upg-btn-secondary');
+  var trigger  = document.querySelector('.itp-card.itp-basico .itp-btn-basico');
+  if(!trigger) return;
+
+  function open(){ overlay.classList.add('upg-open'); closeBtn.focus(); document.body.style.overflow='hidden'; }
+  function close(){ overlay.classList.remove('upg-open'); document.body.style.overflow=''; trigger.focus(); }
+
+  // stopImmediatePropagation impede o listener do InitiateCheckout (registrado depois) de redirecionar
+  trigger.addEventListener('click', function(e){ e.preventDefault(); e.stopImmediatePropagation(); open(); });
+
+  closeBtn.addEventListener('click', close);
+
+  // Secundário: dispara pixel do Básico e redireciona
+  secBtn.addEventListener('click', function(){
+    if(typeof fbq==='function') fbq('track','InitiateCheckout',{content_name:'Plano Básico — Italiano Ilustrado',currency:'BRL'});
+    setTimeout(function(){ window.location.href='https://pay.wiapy.com/YMHJdIWK4gI'; }, 300);
+  });
+
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&overlay.classList.contains('upg-open')) close(); });
+})();
+</script>
+
 <!-- InitiateCheckout — dispara pixel antes de redirecionar -->
 <script>
   document.querySelectorAll('a[data-checkout]').forEach(function(btn) {
