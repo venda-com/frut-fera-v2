@@ -64,6 +64,18 @@ img { max-width:100%; display:block; }
 .app-logo-wrap { text-align: center; margin: 4px 0 14px; }
 .app-logo { width: 240px; max-width: 100%; height: auto; margin: 0 auto; display: block; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
 
+/* ── FOTO EM DESTAQUE + LEGENDA ── */
+.app-feature { margin: 22px 0 0; }
+.app-feature-img {
+  width: 100%; height: auto; display: block;
+  border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+.app-feature-caption {
+  font-size: 15px; color: var(--txt); line-height: 1.6;
+  text-align: center; margin: 14px auto 0; max-width: 440px;
+}
+.app-feature-caption strong { color: var(--ouro); font-weight: 700; }
+
 /* ── SEÇÕES (títulos) ── */
 .sec-title {
   font-family: var(--serif);
@@ -313,12 +325,12 @@ img { max-width:100%; display:block; }
       <span class="info-row-icon">💬</span>
       <p class="info-row-text">Não é falta de capacidade, nem do material. É o cérebro: o que não é praticado, ele apaga em poucos dias. E treinar sozinho, todo dia, é a parte que quase ninguém consegue.</p>
     </div>
-    <hr class="info-divider">
-    <div class="app-logo-wrap"><img class="app-logo" src="parla-italiano-brand.png" alt="Parla Italiano — app para aprender italiano" width="1080" height="1080" loading="lazy" decoding="async"></div>
-    <div class="info-row">
-      <span class="info-row-icon">🤝</span>
-      <p class="info-row-text">O <strong>Aplicativo Parla Italiano</strong> foi feito pra isso: alguns minutos de treino por dia e você memoriza o que estudou, e quem não esquece o conteúdo, aprende muito mais rápido.</p>
-    </div>
+  </div>
+
+  <!-- FOTO EM DESTAQUE + LEGENDA -->
+  <div class="app-feature">
+    <img class="app-feature-img" src="parla-italiano-brand.png" alt="Parla Italiano — app para aprender italiano" width="1080" height="1080" loading="lazy" decoding="async">
+    <p class="app-feature-caption">O <strong>Aplicativo Parla Italiano</strong> foi feito pra isso: alguns minutos de treino por dia e você memoriza o que estudou, e quem não esquece o conteúdo, aprende muito mais rápido.</p>
   </div>
 
   <hr class="divider" style="margin: 30px 0;">
