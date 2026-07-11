@@ -146,9 +146,23 @@ img { max-width:100%; display:block; }
 .forwhom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
 .forwhom-card p { font-size: 13px; color: var(--txt-s); line-height: 1.5; }
 
-/* ── O QUE VOCÊ VAI TREINAR ── */
+/* ── O ITALIANO NO SEU BOLSO ── */
+.pocket-section { background: var(--cinza-f); padding: 46px 20px; text-align: center; }
+.pocket-section h2 {
+  font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy);
+  max-width: 640px; margin: 0 auto 18px; line-height: 1.35;
+}
+.pocket-section p {
+  font-size: 15px; color: var(--txt-s); max-width: 620px;
+  margin: 0 auto 16px; line-height: 1.75;
+}
+.pocket-italic { font-size: 14px; font-style: italic; color: var(--txt-s); margin-top: 8px; }
+
+/* ── O QUE TEM DENTRO / PARA QUEM É (cards de item) ── */
 .dialogs-section { background: var(--branco); padding: 40px 20px; text-align: center; }
+.dialogs-section.alt { background: var(--cinza-c); }
 .dialogs-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
+.dialogs-section h2 em { color: var(--vermelho); font-style: normal; }
 .dialogs-sub { font-size: 14px; color: var(--txt-s); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
 .dialog-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
@@ -159,13 +173,16 @@ img { max-width:100%; display:block; }
   text-align: left; border: 1px solid #e3e3e3;
   display: flex; gap: 12px; align-items: flex-start;
 }
+.dialogs-section.alt .dialog-card { background: var(--branco); }
 .dialog-card .fw-icon { font-size: 24px; flex-shrink: 0; }
 .dialog-card p { font-size: 13.5px; color: var(--txt-s); line-height: 1.5; }
 .dialog-card p strong { color: var(--navy); }
-
-/* ── QUEBRA DE OBJEÇÃO ── */
-.objection-section { background: var(--cinza-c); padding: 26px 20px; text-align: center; }
-.objection-section p { font-size: 15px; font-weight: 700; color: var(--navy); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+.whats-inside-extra {
+  max-width: 860px; margin: 14px auto 0;
+  background: transparent; border: 1px dashed #d0d0d0; border-radius: 10px;
+  padding: 14px 18px; text-align: left;
+  font-size: 12.5px; color: var(--txt-s); line-height: 1.55;
+}
 
 @media (max-width: 680px) {
   .dialog-grid { grid-template-columns: 1fr; }
@@ -189,6 +206,10 @@ img { max-width:100%; display:block; }
   font-size: .85rem; color: rgba(255,255,255,.7);
   text-align: center; margin-bottom: 1.25rem;
 }
+.itp-compare {
+  font-size: .78rem; color: rgba(255,255,255,.6);
+  text-align: center; line-height: 1.55; margin-bottom: 1rem;
+}
 .itp-total-box {
   background:#0f1f0f; border-radius:12px; padding:1rem; text-align:center; margin-bottom:1.25rem;
 }
@@ -196,16 +217,32 @@ img { max-width:100%; display:block; }
 .itp-total-old { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
 .itp-total-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
 .itp-total-note { font-size:.75rem; color:rgba(255,255,255,.65); margin-top:.2rem; }
+.itp-cta-note { font-size:.75rem; color:rgba(255,255,255,.7); text-align:center; margin-top:.85rem; line-height:1.5; }
+.itp-guarantee { font-size:.8rem; color:rgba(255,255,255,.75); text-align:center; margin-top:1.1rem; line-height:1.5; }
+.itp-refusal { display:block; text-align:center; font-size:.8rem; color:#9aa3ad; text-decoration:underline; margin-top:1rem; }
 
-/* ── GARANTIA ── */
-.guarantee-section { background: var(--cinza-f); padding: 46px 20px; text-align: center; }
-.guarantee-inner { max-width: 580px; margin: 0 auto; }
-.guarantee-seal {
-  width: 92px; height: 92px; background: var(--branco); border-radius: 50%;
-  border: 3px solid var(--verde); display: flex; align-items: center; justify-content: center;
-  font-size: 36px; margin: 0 auto 16px; box-shadow: 0 2px 14px rgba(0,146,70,.18);
+/* ── FAQ ── */
+.faq-section { background: var(--cinza-f); padding: 52px 20px; }
+.faq-section h2 { font-size: clamp(19px, 3vw, 26px); font-weight: 900; color: var(--navy); text-align: center; margin-bottom: 30px; }
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #cdd8d2; }
+.faq-toggle {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 18px 0; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; text-align: left;
 }
-.guarantee-inner p { font-size: 14px; color: var(--txt-s); line-height: 1.7; }
+.faq-toggle h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.4; }
+.faq-arrow {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: transform .3s, background .2s;
+}
+.faq-arrow svg { fill: #fff; width: 14px; height: 14px; transition: transform .3s; }
+.faq-item.open .faq-arrow { background: var(--verde); }
+.faq-item.open .faq-arrow svg { transform: rotate(180deg); }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height .38s ease, padding .3s ease; }
+.faq-body p { font-size: 14px; color: var(--txt-s); line-height: 1.65; padding-bottom: 16px; }
+.faq-item.open .faq-body { max-height: 260px; }
 
 @media (max-width: 680px) {
   .forwhom-grid { grid-template-columns: 1fr; }
@@ -226,10 +263,8 @@ img { max-width:100%; display:block; }
   <!-- MÍDIA — vídeo/GIF do app (formato vertical 9:16) -->
   <div class="hero-media">
     <!-- INSERIR_GIF_DEMO_APP_AQUI -->
-    <!-- Quando tiver o vídeo/GIF, substitua o bloco .media-placeholder abaixo por um dos exemplos:
-         <video src="demo-app.mp4" autoplay muted loop playsinline></video>
-         ou
-         <img src="demo-app.gif" alt="[NOME DO APP] em uso"> -->
+    <!-- Quando tiver o vídeo/GIF, substitua o .media-placeholder abaixo por:
+         <video src="demo-app.mp4" autoplay muted loop playsinline></video>   ou   <img src="demo-app.gif" alt="[NOME DO APP] em uso"> -->
     <div class="media-placeholder">▶ Vídeo/GIF do app<br>(9:16 vertical)</div>
   </div>
 
@@ -255,68 +290,107 @@ img { max-width:100%; display:block; }
   <div class="pain-box">Os seus 127 mapas são o método completo. O app é o acelerador: pra quem quer fixar mais rápido e nunca mais depender da sorte pra lembrar.</div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════════════
-     A PARTIR DAQUI É RASCUNHO (seu prompt cortou na Dobra 3).
-     Redigido seguindo o padrão da /italianonoouvido + as mecânicas do app.
-     REVISE E AJUSTE A COPY quando quiser.
-════════════════════════════════════════════════════════════════ -->
-
 <!-- DOBRA 3 — COMO FUNCIONA (3 cards) -->
 <section class="forwhom-section">
   <h2>Como o <em>[NOME DO APP]</em> funciona</h2>
   <div class="forwhom-grid">
-    <div class="forwhom-card"><div class="fw-icon">🎯</div><div><h4>Quiz relâmpago</h4><p>Perguntas rápidas sobre cada mapa. Você responde, o app corrige na hora e reforça o que você errou até fixar de vez.</p></div></div>
-    <div class="forwhom-card"><div class="fw-icon">✍️</div><div><h4>Complete a frase</h4><p>Monte frases reais em italiano preenchendo as lacunas. É a prática ativa que transforma o que você viu no mapa em algo que você lembra.</p></div></div>
-    <div class="forwhom-card"><div class="fw-icon">🎧</div><div><h4>Treino de escuta</h4><p>Ouça a frase, tente entender e confira. Seu ouvido se acostuma com o italiano falado, não só com o italiano escrito.</p></div></div>
+    <div class="forwhom-card"><div class="fw-icon">⏱️</div><div><h4>Você escolhe seu tempo</h4><p>10, 20 ou 30 minutos por dia. O app monta automaticamente a sua sessão de treino do dia — você abre e já sabe exatamente o que estudar. Zero planejamento, zero desculpa.</p></div></div>
+    <div class="forwhom-card"><div class="fw-icon">🗺️</div><div><h4>Você avança pela jornada dos 127 mapas</h4><p>Cada mapa mental é um nível. Você estuda o mapa, destrava os exercícios daquele nível e vai subindo — do básico à conversação, na ordem certa, vendo seu progresso crescer na tela.</p></div></div>
+    <div class="forwhom-card"><div class="fw-icon">🎯</div><div><h4>Você treina exatamente o que acabou de estudar</h4><p>Nada de frases aleatórias que não têm a ver com nada. Cada exercício usa o vocabulário do mapa que você acabou de ver. Estudou o mapa do restaurante? Vai treinar pedindo comida em italiano.</p></div></div>
   </div>
 </section>
 
-<!-- QUEBRA DE OBJEÇÃO (mid-page) -->
-<section class="objection-section">
-  <p>Tudo dentro do seu celular. Baixou, abriu o app e começou a treinar — 10 minutinhos por dia, no seu ritmo, onde você estiver.</p>
+<!-- DOBRA 4 — O ITALIANO NO SEU BOLSO -->
+<section class="pocket-section">
+  <h2>Seu professor de italiano agora mora no seu bolso.</h2>
+  <p>Sabe aqueles minutos que somem todo dia? A fila do banco. O ônibus. A sala de espera. O intervalo do almoço. Com o [NOME DO APP] no celular, cada um desses momentos vira treino de italiano.</p>
+  <p>Sem precisar sentar numa mesa, sem abrir caderno, sem "esperar o momento certo" — você tira o celular do bolso, faz uma sessão de 10 minutos e pronto: estudou hoje. É por isso que quem usa o app não depende de disciplina. Depende só de ter um celular por perto. E isso você já tem.</p>
+  <p class="pocket-italic">Enquanto os outros rolam o feed, você aprende italiano.</p>
 </section>
 
-<!-- DOBRA 4 — OFERTA -->
+<!-- DOBRA 5 — O QUE TEM DENTRO -->
+<section class="dialogs-section">
+  <h2>Tudo isso dentro do <em>[NOME DO APP]</em>:</h2>
+  <div class="dialog-grid">
+    <div class="dialog-card"><span class="fw-icon">🎯</span><p><strong>Quiz de tradução</strong> — traduza do italiano pro português e do português pro italiano, com correção na hora</p></div>
+    <div class="dialog-card"><span class="fw-icon">✍️</span><p><strong>Complete a frase</strong> — o app testa se você realmente entendeu, não se você decorou</p></div>
+    <div class="dialog-card"><span class="fw-icon">🎧</span><p><strong>Ouça e escolha</strong> — escute a palavra na pronúncia certa e marque a opção correta: treino de ouvido todo dia</p></div>
+    <div class="dialog-card"><span class="fw-icon">🔗</span><p><strong>Ligue os pares</strong> — conecte palavra e significado em segundos, do jeito que o cérebro gosta de aprender</p></div>
+    <div class="dialog-card"><span class="fw-icon">🗺️</span><p><strong>Jornada com 127 níveis</strong> — um nível pra cada mapa mental, com progresso visível do início ao fim</p></div>
+    <div class="dialog-card"><span class="fw-icon">⏱️</span><p><strong>Sessão diária no seu tempo</strong> — 10, 20 ou 30 minutos: o app se adapta à sua rotina, não o contrário</p></div>
+    <div class="dialog-card"><span class="fw-icon">🔥</span><p><strong>Sequência de dias</strong> — mantenha sua ofensiva de estudos e veja há quantos dias você não falha com o seu italiano</p></div>
+    <div class="dialog-card"><span class="fw-icon">📱</span><p><strong>Funciona em qualquer lugar</strong> — no celular, no tablet ou no computador: seu progresso te acompanha onde você estiver</p></div>
+  </div>
+  <div class="whats-inside-extra">E ainda: todos os seus mapas e bônus disponíveis dentro do app, com opção de download — pra estudar e treinar no mesmo lugar.</div>
+</section>
+
+<!-- DOBRA 6 — PARA QUEM É -->
+<section class="dialogs-section alt">
+  <h2>O <em>[NOME DO APP]</em> foi feito pra você que...</h2>
+  <div class="dialog-grid">
+    <div class="dialog-card"><span class="fw-icon">🇮🇹</span><p><strong>Vai buscar a cidadania</strong> — e precisa que o italiano esteja fixado na memória no dia da entrevista, não "mais ou menos lembrado"</p></div>
+    <div class="dialog-card"><span class="fw-icon">✈️</span><p><strong>Vai viajar pra Itália</strong> — e quer chegar lá com as frases na ponta da língua, sem abrir tradutor na frente do garçom</p></div>
+    <div class="dialog-card"><span class="fw-icon">⏰</span><p><strong>Tem pouco tempo no dia</strong> — e precisa de um treino que caiba nos 10 minutos da fila ou do ônibus, não de mais um curso de 2 horas por aula</p></div>
+    <div class="dialog-card"><span class="fw-icon">😤</span><p><strong>Já tentou aprender antes e esqueceu tudo</strong> — porque estudou sem praticar. Dessa vez vai ser diferente, e o app garante isso.</p></div>
+  </div>
+</section>
+
+<!-- DOBRA 7 — OFERTA FINAL -->
 <section class="offer-section">
   <div class="itp-card" id="oferta">
-    <div class="itp-title">[NOME DO APP]</div>
-    <p class="itp-subtitle">O app de treino que fixa cada um dos seus 127 mapas</p>
+    <div class="itp-title">[NOME DO APP] — Acesso Vitalício</div>
+    <p class="itp-subtitle">O treino diário que transforma seus 127 mapas em italiano de verdade na sua memória</p>
+    <p class="itp-compare">Aplicativos de idioma cobram R$40 ou mais todo mês, pra sempre. Aqui você paga uma vez e o app é seu pra sempre.</p>
     <div class="itp-total-box">
       <div class="itp-total-label">Por ser cliente, só agora:</div>
       <div class="itp-total-old">De R$97,00</div>
       <div class="itp-total-price">R$47,00</div>
-      <div class="itp-total-note">pagamento único · acesso vitalício</div>
+      <div class="itp-total-note">pagamento único · acesso vitalício · sem mensalidade</div>
     </div>
 
-    <div id="wiapy_upsell_bottom"></div>
-    <script>
-    initWiapyUpsell({
-        elementId: "wiapy_upsell_bottom",
-        /* ⬇️ COLE A URL DE CHECKOUT DO APP AQUI (formato: https://pay.wiapy.com/checkout/XXXXXXXX) */
-        linkUrl: "COLE_A_URL_DE_CHECKOUT_AQUI",
-        linkText: "SIM, QUERO O APP DE TREINO",
-        styles: {
-            backgroundColor: "#00d769",
-            hoverBackgroundColor: "#00b85a",
-            fontSize: "17px",
-            borderRadius: "10px"
-        },
-        refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-        refusalLinkText: "Recusar está oferta",
-        refusalLinkColor: "#999999"
+    <!-- BOTÃO PRINCIPAL — widget Wiapy (você envia o código depois).
+         Ao inserir, configure: refusalLinkUrl -> https://www.cultivaragora.store/italianonoouvido
+         refusalLinkText -> "Não quero treinar meu italiano com desconto" -->
+    <!-- INSERIR_BOTAO_WIAPY_UPSELL_APP_AQUI -->
+
+    <p class="itp-cta-note">1 clique · sem digitar cartão de novo · acesso liberado em segundos</p>
+    <p class="itp-guarantee">🛡️ Mesma garantia de 7 dias. Se não gostar, devolvemos.</p>
+  </div>
+</section>
+
+<!-- DOBRA 8 — FAQ -->
+<section class="faq-section">
+  <h2>Perguntas frequentes</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-toggle"><h4>Preciso baixar alguma coisa?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
+      <div class="faq-body"><p>Não. O [NOME DO APP] funciona direto do navegador do seu celular ou computador — sem ocupar memória, sem loja de aplicativos. Você recebe o link de acesso no seu e-mail assim que a compra é confirmada.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle"><h4>É mensalidade?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
+      <div class="faq-body"><p>Não. Pagamento único de R$47,00 e o acesso é seu pra sempre, incluindo atualizações.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle"><h4>Preciso já saber italiano pra usar?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
+      <div class="faq-body"><p>Não. A jornada começa do nível 1, junto com o primeiro mapa mental. O app acompanha você do zero.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle"><h4>E se eu não gostar?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
+      <div class="faq-body"><p>Você tem 7 dias de garantia incondicional. Um e-mail e devolvemos tudo.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
     });
-    </script>
-
-  </div>
-</section>
-
-<!-- GARANTIA -->
-<section class="guarantee-section">
-  <div class="guarantee-inner">
-    <div class="guarantee-seal">🛡️</div>
-    <p>Mesma garantia de 7 dias. Se não gostar, devolvemos.</p>
-  </div>
-</section>
+  });
+</script>
 
 </body>
 </html>
