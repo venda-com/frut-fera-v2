@@ -373,6 +373,24 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
+  <!-- BOTÃO WIAPY CUSTOMIZADO (após FAQ) -->
+  <div id="wiapy_upsell_custom"></div>
+  <script>
+  initWiapyUpsell({
+    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "#000000"
+  });
+  </script>
+
   <hr class="divider" style="margin: 30px 0;">
 
   <!-- BOTÃO TERCEIRO — widget Wiapy (após FAQ) -->
