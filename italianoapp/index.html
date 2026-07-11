@@ -257,7 +257,8 @@ img { max-width:100%; display:block; }
   line-height: 1.32; letter-spacing: 0;
   text-transform: uppercase; margin: 0;
 }
-.app-hero-copy h2 .line-break { display: block; margin-top: 10px; }
+.app-hero-copy h2 .hero-line { display: block; }
+.app-hero-copy h2 .hero-line + .hero-line { margin-top: 10px; }
 .app-hero-copy h2 .hl { color: #00d769; }
 
 /* ── RODAPÉ ── */
@@ -318,12 +319,12 @@ img { max-width:100%; display:block; }
   <div class="info-card">
     <div class="info-row">
       <span class="info-row-icon">❓</span>
-      <p class="info-row-text">Você estuda um mapa, entende tudo. Mas depois de 1 mês quanto disso ainda vai estar na sua memória?</p>
+      <p class="info-row-text">Você estuda um mapa, entende tudo. Mas depois de <span style="font-weight:700">1 mês</span> quanto disso ainda vai estar na sua <span style="color:var(--verde);font-weight:700">memória</span>?</p>
     </div>
     <hr class="info-divider">
     <div class="info-row">
       <span class="info-row-icon">💬</span>
-      <p class="info-row-text">Não é falta de capacidade, nem do material. É o cérebro: o que não é praticado, ele apaga em poucos dias. E treinar sozinho, todo dia, é a parte que quase ninguém consegue.</p>
+      <p class="info-row-text">Não é falta de capacidade, nem do material. É o cérebro: o que não é <span style="color:var(--verde);font-weight:700">praticado</span>, ele <span style="font-weight:700">apaga</span> em poucos dias. E treinar <span style="font-weight:700">sozinho</span>, todo dia, é a parte que quase ninguém consegue.</p>
     </div>
   </div>
 
@@ -545,7 +546,7 @@ img { max-width:100%; display:block; }
 
   <!-- HEADLINE ANTES DA OFERTA (após FAQ) -->
   <section class="app-hero-copy">
-    <h2>Chega de estudar e esquecer<span class="line-break"></span>Adquira o aplicativo que <span class="hl">fixa o italiano de vez</span></h2>
+    <h2><span class="hero-line">Chega de estudar e esquecer.</span><span class="hero-line">Adquira o aplicativo que <span class="hl">fixa o italiano de vez</span>.</span></h2>
   </section>
 
   <!-- OFERTA SIMPLIFICADA (após FAQ) — só preço + botão -->
@@ -598,7 +599,7 @@ img { max-width:100%; display:block; }
             fontSize: "17px",
             borderRadius: "10px"
         },
-        refusalLinkUrl: "https://wiapy.com/login",
+        refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
         refusalLinkText: "Recusar está oferta",
         refusalLinkColor: "#000000"
     });
@@ -675,12 +676,20 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
       return;
     }
     if (popup.classList.contains('open')) {
-      var popupRefusal = e.target.closest('.discount-popup a[href*="wiapy.com/login"]');
-      if (popupRefusal) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        closePopup();
+      var popupLink = e.target.closest('.discount-popup a');
+      if (popupLink) {
+        var pHref = popupLink.getAttribute('href') || '';
+        var pText = (popupLink.textContent || '').toLowerCase();
+        var isPopupRefusal = pHref.indexOf('italianonoouvido') !== -1
+                          || pHref.indexOf('wiapy.com/login') !== -1
+                          || pText.indexOf('recusar') !== -1
+                          || pText.indexOf('lembrar sozinho') !== -1;
+        if (isPopupRefusal) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          closePopup();
+        }
       }
     }
   }, true);
