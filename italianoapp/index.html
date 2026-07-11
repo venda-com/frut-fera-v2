@@ -130,25 +130,28 @@ img { max-width:100%; display:block; }
 }
 /* ── FAQ ── */
 .faq-title {
-  font-family: var(--serif);
-  font-size: 20px; font-weight: 800; color: var(--verde);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; font-weight: 900; color: var(--navy);
   text-align: center; margin: 8px 0 20px;
 }
-.faq-container { display: flex; flex-direction: column; gap: 12px; }
+.faq-container { display: flex; flex-direction: column; gap: 0; }
 .faq-item {
-  background: #fff; border: 1px solid #E5E7EB; border-radius: 12px;
-  overflow: hidden;
+  background: transparent; border: none; border-bottom: 1px solid #E5E7EB;
+  overflow: hidden; padding: 18px 0;
 }
+.faq-item:last-child { border-bottom: none; }
 .faq-toggle {
-  width: 100%; background: #f0faF5; border: none; cursor: pointer;
-  padding: 16px; text-align: left; font-size: 15px; font-weight: 700;
-  color: var(--txt); line-height: 1.5; transition: background 0.2s;
+  width: 100%; background: transparent; border: none; cursor: pointer;
+  padding: 0; text-align: left; font-size: 16px; font-weight: 800;
+  color: var(--navy); line-height: 1.5; transition: color 0.2s;
+  display: flex; align-items: center; justify-content: space-between;
 }
-.faq-toggle:hover { background: #e0f5ee; }
-.faq-toggle.open { background: var(--verde); color: #fff; }
+.faq-toggle:hover { color: var(--verde); }
+.faq-toggle::after { content: "-"; font-size: 20px; font-weight: 700; transition: transform 0.3s; }
+.faq-toggle.open::after { transform: rotate(180deg); }
 .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
 .faq-content.open { max-height: 500px; }
-.faq-content p { padding: 14px 16px; font-size: 14px; color: var(--txt); line-height: 1.6; margin: 0; }
+.faq-content p { padding: 14px 0; font-size: 15px; color: var(--txt); line-height: 1.6; margin: 0; }
 
 /* ── OFERTA ── */
 .offer-box {
@@ -220,7 +223,7 @@ img { max-width:100%; display:block; }
     <div class="app-logo-wrap"><img class="app-logo" src="parla-italiano-brand.webp" alt="Parla Italiano — app de treino" width="640" height="640" loading="lazy" decoding="async"></div>
     <div class="info-row">
       <span class="info-row-icon">🤝</span>
-      <p class="info-row-text">O <strong>Parla Italiano</strong> foi feito pra isso: alguns minutos de treino por dia e você memoriza o que estudou — e quem não esquece o conteúdo, avança muito mais rápido.</p>
+      <p class="info-row-text">O <strong>Aplicativo Parla Italiano</strong> foi feito pra isso: alguns minutos de treino por dia e você memoriza o que estudou — e quem não esquece o conteúdo, avança muito mais rápido.</p>
     </div>
   </div>
 
@@ -287,6 +290,35 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 34px 0;">
 
+  <!-- OFERTA -->
+  <div class="offer-box" id="oferta">
+    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
+    <p class="offer-old">De R$97,00</p>
+    <p class="offer-price">R$27,90</p>
+    <p class="offer-economy">Você economiza R$69,10 (71%)</p>
+    <p class="offer-note">Pagamento único · Sem mensalidade</p>
+  </div>
+
+  <!-- BOTÃO PRINCIPAL — widget Wiapy -->
+  <div id="wiapy_upsell"></div>
+  <script>
+  initWiapyUpsell({
+    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    styles: {
+      backgroundColor: "#009246",
+      hoverBackgroundColor: "#007A3A",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+    refusalLinkText: "Recusar essa oferta",
+    refusalLinkColor: "#888888"
+  });
+  </script>
+
+  <hr class="divider" style="margin: 34px 0;">
+
   <!-- BULLETS -->
   <p class="bullets-title">Com o Parla Italiano, você vai:</p>
   <ul class="bullets">
@@ -312,7 +344,7 @@ img { max-width:100%; display:block; }
     <div class="faq-item">
       <button class="faq-toggle">P: É mensalidade?</button>
       <div class="faq-content">
-        <p>Não. Pagamento único de R$47,00 e o acesso é seu pra sempre, incluindo atualizações.</p>
+        <p>Não. Pagamento único de R$27,90 e o acesso é seu pra sempre, incluindo atualizações.</p>
       </div>
     </div>
     <div class="faq-item">
@@ -329,40 +361,12 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
-  <hr class="divider" style="margin: 30px 0;">
-
-  <!-- OFERTA -->
-  <div class="offer-box" id="oferta">
-    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
-    <p class="offer-old">De R$97,00</p>
-    <p class="offer-price">R$47,00</p>
-    <p class="offer-economy">Você economiza R$50 (52%)</p>
-    <p class="offer-note">Pagamento único · Sem mensalidade</p>
-  </div>
-
-  <!-- BOTÃO PRINCIPAL — widget Wiapy -->
-  <div id="wiapy_upsell"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, EU ACEITO ESSA OFERTA",
-    styles: {
-      backgroundColor: "#009246",
-      hoverBackgroundColor: "#007A3A",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-    refusalLinkText: "Recusar essa oferta",
-    refusalLinkColor: "#888888"
-  });
-  </script>
 
   <!-- GARANTIA -->
   <div class="guarantee-badge">
     <span class="guarantee-badge-icon">🛡️</span>
     <div>
-      <div class="guarantee-badge-title">Risco zero · Garantia de 7 dias</div>
+      <div class="guarantee-badge-title">Risco zero · Garantia de 15 dias</div>
       <div class="guarantee-badge-text">Se não fizer sentido pra você, devolvemos 100% do valor. Sem perguntas, sem burocracia.</div>
     </div>
   </div>
