@@ -67,6 +67,36 @@
       ]
     },
     {
+      "source": "/italianoapp/(.*).webp",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/italianoapp/(.*).jpg",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/italianoapp/(.*).png",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/italianoapp/(.*).mp4",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/italianoapp/(.*).gif",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
       "source": "/(.*).html",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
