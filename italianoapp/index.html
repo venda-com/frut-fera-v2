@@ -232,6 +232,21 @@ img { max-width:100%; display:block; }
   margin-top: 14px; letter-spacing: 0.03em;
 }
 
+/* ── HEADLINE ANTES DA OFERTA (após FAQ) ── */
+.app-hero-copy {
+  background: var(--navy); border-radius: 18px;
+  padding: 38px 24px; margin: 30px 0 24px;
+  text-align: center;
+}
+.app-hero-copy h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+  font-weight: 900; color: #fff;
+  line-height: 1.28; letter-spacing: 0.01em;
+  text-transform: uppercase; margin: 0;
+}
+.app-hero-copy h2 .hl { color: #00d769; }
+
 /* ── RODAPÉ ── */
 .footer { text-align: center; font-size: 13px; color: var(--txt-s); padding: 30px 0; line-height: 1.65; }
 
@@ -341,7 +356,7 @@ img { max-width:100%; display:block; }
   <!-- OFERTA UNIFICADA (benefícios + preço + botão) -->
   <div class="unified-offer-card" id="oferta">
     <span class="benefits-badge">OFERTA EXCLUSIVA</span>
-    <p class="benefits-title">📱 O que você leva com o app</p>
+    <p class="benefits-title">📱 O que você leva com o nosso aplicativo</p>
     <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
 
     <div class="benefits-list">
@@ -484,6 +499,11 @@ img { max-width:100%; display:block; }
   </div>
 
   <hr class="divider" style="margin: 34px 0;">
+
+  <!-- HEADLINE ANTES DA OFERTA (após FAQ) -->
+  <section class="app-hero-copy">
+    <h2>Receba o acesso ao aplicativo que vai <span class="hl">facilitar seu aprendizado</span> no italiano</h2>
+  </section>
 
   <!-- OFERTA SIMPLIFICADA (após FAQ) — só preço + botão -->
   <div class="unified-offer-card" id="oferta-2">
