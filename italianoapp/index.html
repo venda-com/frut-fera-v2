@@ -380,7 +380,41 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
+  <hr class="divider" style="margin: 34px 0;">
+
+  <!-- OFERTA DUPLICADA (após FAQ) -->
+  <div class="offer-box" id="oferta-2">
+    <span class="offer-badge">OFERTA EXCLUSIVA</span>
+    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
+    <p class="offer-old">De R$47,90</p>
+    <p class="offer-price">R$27,90</p>
+    <p class="offer-economy">Você economiza R$20,00 (42%)</p>
+    <p class="offer-note">Pagamento único · Sem mensalidade</p>
+  </div>
+
+  <!-- BOTÃO PRINCIPAL (após oferta duplicada) -->
+  <div id="wiapy_upsell_4"></div>
+  <script>
+  initWiapyUpsell({
+    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+    linkText: "SIM, QUERO LIBERAR O APP AGORA",
+    styles: {
+      backgroundColor: "#009246",
+      hoverBackgroundColor: "#007A3A",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+    refusalLinkText: "Não, prefiro estudar sozinho.",
+    refusalLinkColor: "#888888"
+  });
+  </script>
+
+  <!-- LINK DE RECUSA -->
+  <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link" style="margin-top: 12px;">Não, prefiro estudar sozinho.</a>
+
   <!-- BOTÃO WIAPY CUSTOMIZADO (após FAQ) -->
+  <hr class="divider" style="margin: 34px 0;">
   <div id="wiapy_upsell_custom"></div>
   <script>
   initWiapyUpsell({
