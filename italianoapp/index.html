@@ -629,10 +629,36 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     document.body.style.overflow = '';
   }
 
+  function isExternalRefusal(el) {
+    if (!el || popup.contains(el)) return false;
+    var href = el.getAttribute('href') || '';
+    var text = (el.textContent || '').toLowerCase();
+    return href.indexOf('italianonoouvido') !== -1
+        || text.indexOf('prefiro estudar sozinho') !== -1
+        || text.indexOf('vou tentar lembrar') !== -1;
+  }
+
+  function neutralize(a) {
+    if (a.dataset.refusalNeutralized) return;
+    a.dataset.refusalNeutralized = 'true';
+    a.setAttribute('href', 'javascript:void(0)');
+    a.removeAttribute('target');
+    a.onclick = null;
+  }
+
+  function scan() {
+    var anchors = document.querySelectorAll('a');
+    for (var i = 0; i < anchors.length; i++) {
+      if (isExternalRefusal(anchors[i])) neutralize(anchors[i]);
+    }
+  }
+
   document.addEventListener('click', function(e) {
-    var extRefusal = e.target.closest('a[href*="italianonoouvido"]');
-    if (extRefusal && !popup.contains(extRefusal)) {
+    var link = e.target.closest('a');
+    if (link && (isExternalRefusal(link) || link.dataset.refusalNeutralized)) {
       e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
       openPopup();
       return;
     }
@@ -640,10 +666,15 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
       var popupRefusal = e.target.closest('.discount-popup a[href*="wiapy.com/login"]');
       if (popupRefusal) {
         e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         closePopup();
       }
     }
-  });
+  }, true);
+
+  new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
+  scan();
 
   closeBtn.addEventListener('click', closePopup);
   popup.addEventListener('click', function(e) { if (e.target === popup) closePopup(); });
