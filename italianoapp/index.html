@@ -473,146 +473,32 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 34px 0;">
 
-  <!-- OFERTA UNIFICADA DUPLICADA (após FAQ) -->
+  <!-- OFERTA SIMPLIFICADA (após FAQ) — só preço + botão -->
   <div class="unified-offer-card" id="oferta-2">
-    <span class="benefits-badge">OFERTA EXCLUSIVA</span>
-    <p class="benefits-title">📱 O que você leva com o app</p>
-    <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
-
-    <div class="benefits-list">
-      <div class="benefit-item">
-        <span class="benefit-icon">📚</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Sua compra 100% integrada</div>
-          <div class="benefit-desc">Acesse todos os seus Mapas Mentais e bônus direto no app, sem precisar baixar PDFs soltos</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">🧠</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Treino Prático Inteligente</div>
-          <div class="benefit-desc">Fixe o conteúdo com Quizzes dinâmicos, áudios com pronúncia nativa e jogos de memorização</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">⏱️</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Resultado em 5 Minutos</div>
-          <div class="benefit-desc">O app monta treinos customizados que se encaixam na sua rotina, sem você precisar planejar nada</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">📈</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Gráficos de Evolução Real</div>
-          <div class="benefit-desc">Veja seu avanço acontecer na tela, módulo por módulo, do zero até a fluência</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">🌍</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Estude no seu ritmo, onde quiser</div>
-          <div class="benefit-desc">Acesse sua conta pelo celular ou tablet e estude quando quiser</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="unified-price-box">
+    <div class="unified-price-box" style="margin-top:0;">
       <p class="offer-old">De R$47,90</p>
       <p class="offer-price">R$27,90</p>
       <p class="offer-economy">Você economiza R$20,00 (42%)</p>
       <p class="offer-note">Pagamento único · Sem mensalidade</p>
     </div>
 
-    <!-- BOTÃO PRINCIPAL (após oferta duplicada) -->
-    <div id="wiapy_upsell_4"></div>
+    <div id="wiapy_upsell_2"></div>
     <script>
     initWiapyUpsell({
       linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-      linkText: "SIM, QUERO LIBERAR O APP AGORA",
+      linkText: "SIM, EU ACEITO ESSA OFERTA",
       styles: {
-        backgroundColor: "#009246",
-        hoverBackgroundColor: "#007A3A",
+        backgroundColor: "#00d769",
+        hoverBackgroundColor: "#00b85a",
         fontSize: "17px",
         borderRadius: "10px"
       },
-      refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-      refusalLinkText: "Não, prefiro estudar sozinho.",
-      refusalLinkColor: "#888888"
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "#000000"
     });
     </script>
-
-    <span class="unified-secure">🔒 Compra segura · 15 dias de garantia</span>
   </div>
-
-  <!-- LINK DE RECUSA -->
-  <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link" style="margin-top: 12px;">Não, prefiro estudar sozinho.</a>
-
-  <!-- BOTÃO WIAPY CUSTOMIZADO (após FAQ) -->
-  <hr class="divider" style="margin: 34px 0;">
-  <div id="wiapy_upsell_custom"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, EU ACEITO ESSA OFERTA",
-    styles: {
-      backgroundColor: "#00d769",
-      hoverBackgroundColor: "#00b85a",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://wiapy.com/login",
-    refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "#000000"
-  });
-  </script>
-
-  <hr class="divider" style="margin: 30px 0;">
-
-  <!-- BOTÃO TERCEIRO — widget Wiapy (após FAQ) -->
-  <div id="wiapy_upsell_3"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, QUERO LIBERAR O APP AGORA",
-    styles: {
-      backgroundColor: "#009246",
-      hoverBackgroundColor: "#007A3A",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-    refusalLinkText: "Não, prefiro estudar sozinho.",
-    refusalLinkColor: "#888888"
-  });
-  </script>
-
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- BOTÃO SECUNDÁRIO — widget Wiapy -->
-  <div id="wiapy_upsell_2"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, QUERO LIBERAR O APP AGORA",
-    styles: {
-      backgroundColor: "#009246",
-      hoverBackgroundColor: "#007A3A",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-    refusalLinkText: "Não, prefiro estudar sozinho.",
-    refusalLinkColor: "#888888"
-  });
-  </script>
-
-  <!-- LINK DE RECUSA -->
-  <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link">Não, vou tentar lembrar sozinho</a>
 
   <!-- RODAPÉ -->
   <p class="footer">🔒 Pagamento 100% seguro · Acesso liberado na hora.</p>
