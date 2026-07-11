@@ -187,6 +187,29 @@ img { max-width:100%; display:block; }
 }
 .guarantee-badge-icon { display: block; margin: 0 auto 16px; max-width: 180px; }
 .guarantee-badge-title { font-size: 22px; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
+/* ── BENEFÍCIOS CARD ── */
+.benefits-section {
+  background: #1a3a2a; border: 3px solid var(--verde); border-radius: 20px;
+  padding: 32px 24px; margin-bottom: 26px; position: relative; margin-top: 30px;
+}
+.benefits-badge {
+  position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+  background: var(--ouro); color: #000; font-size: 12px; font-weight: 900;
+  text-transform: uppercase; padding: 8px 24px; border-radius: 20px;
+  letter-spacing: 0.06em; white-space: nowrap;
+}
+.benefits-title {
+  font-family: var(--serif); font-size: 24px; font-weight: 900;
+  color: var(--ouro); text-align: center; margin: 14px 0 8px;
+  line-height: 1.3;
+}
+.benefits-subtitle { font-size: 15px; color: #a0bab0; text-align: center; margin-bottom: 24px; line-height: 1.6; }
+.benefits-list { display: flex; flex-direction: column; gap: 20px; }
+.benefit-item { display: flex; align-items: flex-start; gap: 14px; }
+.benefit-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.benefit-content { flex: 1; }
+.benefit-title { font-size: 15px; font-weight: 800; color: #00ff88; line-height: 1.4; margin-bottom: 4px; }
+.benefit-desc { font-size: 13px; color: #a0bab0; line-height: 1.6; }
 .guarantee-badge-text { font-size: 14px; color: var(--txt); line-height: 1.6; max-width: 440px; margin: 0 auto; }
 
 /* ── RODAPÉ ── */
@@ -322,6 +345,57 @@ img { max-width:100%; display:block; }
     refusalLinkColor: "#888888"
   });
   </script>
+
+  <hr class="divider" style="margin: 34px 0;">
+
+  <!-- BENEFÍCIOS -->
+  <div class="benefits-section">
+    <span class="benefits-badge">PARLA ITALIANO</span>
+    <p class="benefits-title">📱 O que você leva com o app</p>
+    <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
+
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <span class="benefit-icon">📚</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Sua compra 100% integrada</div>
+          <div class="benefit-desc">Acesse todos os seus Mapas Mentais e bônus direto no app, sem precisar baixar PDFs soltos</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🧠</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Treino Prático Inteligente</div>
+          <div class="benefit-desc">Fixe o conteúdo com Quizzes dinâmicos, áudios com pronúncia nativa e jogos de memorização</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">⏱️</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Resultado em 5 Minutos</div>
+          <div class="benefit-desc">O app monta treinos customizados que se encaixam na sua rotina, sem você precisar planejar nada</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">📈</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Gráficos de Evolução Real</div>
+          <div class="benefit-desc">Veja seu avanço acontecer na tela, módulo por módulo, do zero até a fluência</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🌍</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Estude no seu ritmo, onde quiser</div>
+          <div class="benefit-desc">Acesse sua conta pelo celular ou tablet e estude quando quiser</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <hr class="divider" style="margin: 34px 0;">
 
