@@ -50,12 +50,17 @@ img { max-width:100%; display:block; }
 /* ── DIVISOR ── */
 .divider { border: none; border-top: 1px solid var(--linha); width: 100%; margin: 26px 0; }
 
-/* ── MICRO-BLOCOS (emoji grande centralizado) ── */
-.micro { text-align: center; }
-.micro-emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
-.micro-text { font-size: 16px; color: var(--txt); line-height: 1.7; max-width: 420px; margin: 0 auto; }
-.micro-text .q { display: block; margin-top: 8px; font-weight: 700; color: var(--navy); text-align: left; max-width: 300px; margin-left: auto; margin-right: auto; }
-.micro-text strong { color: var(--verde); }
+/* ── CARD ÚNICO (3 micro-blocos, modelo /upsell-verdi) ── */
+.info-card {
+  background: #fff; border-radius: 16px; border: 1px solid #EFEFEF;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10); padding: 20px;
+}
+.info-row { display: flex; align-items: flex-start; gap: 14px; }
+.info-row-icon { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.info-row-text { font-size: 15px; color: var(--txt); line-height: 1.6; }
+.info-row-text strong { color: var(--ouro); font-weight: 700; }
+.info-row-text b { color: var(--navy); font-weight: 700; }
+.info-divider { border: none; border-top: 1px solid var(--linha); margin: 16px 0; }
 
 /* ── PASSOS ── */
 .how-title {
@@ -178,35 +183,27 @@ img { max-width:100%; display:block; }
   <!-- HEADLINE -->
   <h1 class="headline">De tudo que você estudar hoje, quanto vai sobrar na sua cabeça daqui a 15 dias?</h1>
 
-  <hr class="divider" style="margin: 10px 0 26px;">
+  <hr class="divider" style="margin: 10px 0 24px;">
 
-  <!-- MICRO-BLOCO 1 -->
-  <div class="micro">
-    <span class="micro-emoji">❓</span>
-    <p class="micro-text">Você vai estudar um mapa, entender tudo... e aí começa a dúvida:
-      <span class="q">1 - Será que isso vai ficar na minha memória?</span>
-      <span class="q">2 - Daqui a um mês, eu ainda vou lembrar?</span>
-      <span class="q">3 - Como eu pratico o que acabei de aprender?</span>
-    </p>
+  <!-- CARD ÚNICO (3 micro-blocos, modelo /upsell-verdi) -->
+  <div class="info-card">
+    <div class="info-row">
+      <span class="info-row-icon">❓</span>
+      <p class="info-row-text">Você vai estudar um mapa, entender tudo... e aí começa a <strong>dúvida:</strong><br><b>1 - Será que isso vai ficar na minha memória?</b><br><b>2 - Daqui a um mês, eu ainda vou lembrar?</b><br><b>3 - Como eu pratico o que acabei de aprender?</b></p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-row">
+      <span class="info-row-icon">💬</span>
+      <p class="info-row-text">Essa dúvida é normal, porque é assim que o cérebro funciona: o que você aprende e não pratica, ele descarta em poucos dias. Não é falta de capacidade, nem do material — é <strong>falta de treino</strong>. E treinar sozinho, com disciplina, todo dia, é a parte que quase ninguém consegue.</p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-row">
+      <span class="info-row-icon">🤝</span>
+      <p class="info-row-text">O <strong>[NOME DO APP]</strong> foi feito exatamente para esse momento. Seus 127 mapas continuam sendo o método completo — o app é o treinador que fica do seu lado: todo dia ele te diz o que estudar, transforma cada mapa em exercícios práticos e garante que o italiano fique de vez na sua memória.</p>
+    </div>
   </div>
 
-  <hr class="divider">
-
-  <!-- MICRO-BLOCO 2 -->
-  <div class="micro">
-    <span class="micro-emoji">💬</span>
-    <p class="micro-text">Essa dúvida é normal, porque é assim que o cérebro funciona: o que você aprende e não pratica, ele descarta em poucos dias. Não é falta de capacidade, nem do material — é falta de treino. E treinar sozinho, com disciplina, todo dia, é a parte que quase ninguém consegue.</p>
-  </div>
-
-  <hr class="divider">
-
-  <!-- MICRO-BLOCO 3 -->
-  <div class="micro">
-    <span class="micro-emoji">🤝</span>
-    <p class="micro-text">O <strong>[NOME DO APP]</strong> foi feito exatamente para esse momento. Seus 127 mapas continuam sendo o método completo — o app é o treinador que fica do seu lado: todo dia ele te diz o que estudar, transforma cada mapa em exercícios práticos e garante que o italiano fique de vez na sua memória.</p>
-  </div>
-
-  <hr class="divider" style="margin: 30px 0;">
+  <hr class="divider" style="margin: 26px 0;">
 
   <!-- PASSOS -->
   <p class="how-title">Veja como é simples de usar:</p>
