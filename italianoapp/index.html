@@ -62,50 +62,41 @@ img { max-width:100%; display:block; }
 .info-row-text b { color: var(--navy); font-weight: 700; }
 .info-divider { border: none; border-top: 1px solid var(--linha); margin: 16px 0; }
 
+/* ── SEÇÕES (títulos) ── */
+.sec-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 8px 0 6px;
+}
+.sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; }
+
+/* ── IMAGEM DO APP (container destacado) ── */
+.app-shot {
+  max-width: 340px; margin: 0 auto; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+.app-shot img { width: 100%; height: auto; display: block; }
+.app-caption { font-size: 13px; font-style: italic; color: var(--txt-s); text-align: center; margin-top: 12px; max-width: 340px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+
 /* ── PASSOS ── */
 .how-title {
   font-family: var(--serif);
   font-size: 20px; font-weight: 800; color: var(--verde);
-  text-align: center; margin: 8px 0 18px;
+  text-align: center; margin: 8px 0 20px;
 }
-.steps { display: flex; flex-direction: column; gap: 14px; }
-.step {
-  background: #fff; border-radius: 12px; border: 1px solid var(--linha);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden;
-  display: flex; flex-direction: column;
-}
-.step-img { width: 100%; height: auto; display: block; }
-/* placeholder de imagem (substituir pelo print real) */
-.ph-img {
-  width: 100%; aspect-ratio: 16 / 10; background: #F3F4F6;
-  border-bottom: 1px dashed #cfd3d8;
-  display: flex; align-items: center; justify-content: center;
-  color: #9aa0a6; font-size: 12px; text-align: center; padding: 12px; line-height: 1.5;
-}
-.step-content { padding: 16px; display: flex; align-items: flex-start; gap: 14px; }
-.step-left { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; min-width: 36px; }
+.steps { display: flex; flex-direction: column; gap: 34px; }
+.step { text-align: center; }
+.step-meta { margin-top: 14px; }
+.step-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
 .step-num { font-size: 22px; font-weight: 900; color: var(--verde); line-height: 1; }
 .step-icon { font-size: 26px; line-height: 1; }
-.step-right { display: flex; flex-direction: column; gap: 4px; }
-.step-title { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
-.step-sub { font-size: 13.5px; color: var(--txt-s); line-height: 1.55; }
+.step-title { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; margin-bottom: 6px; }
+.step-sub { font-size: 14px; color: var(--txt); line-height: 1.6; max-width: 400px; margin: 0 auto; }
+.step-caption { font-size: 12.5px; font-style: italic; color: var(--txt-s); line-height: 1.5; max-width: 380px; margin: 8px auto 0; }
 
-/* ── DEMO (celular 9:16) ── */
-.demo-title {
-  font-family: var(--serif);
-  font-size: 20px; font-weight: 800; color: var(--verde);
-  text-align: center; margin: 34px 0 14px;
-}
-.demo-phone {
-  max-width: 320px; aspect-ratio: 9 / 16; margin: 0 auto;
-  background: #F3F4F6; border: 1px dashed #cfd3d8; border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-  display: flex; align-items: center; justify-content: center;
-  color: #9aa0a6; font-size: 13px; text-align: center; padding: 18px; line-height: 1.5;
-  overflow: hidden;
-}
-.demo-phone img, .demo-phone video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.demo-caption { font-size: 13px; font-style: italic; color: var(--txt-s); text-align: center; margin-top: 12px; }
+/* ── EVOLUÇÃO (2 imagens) ── */
+.evo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 720px; margin: 0 auto; }
+.evo-cell { display: flex; flex-direction: column; }
 
 /* ── BULLETS ── */
 .bullets-title {
@@ -124,9 +115,9 @@ img { max-width:100%; display:block; }
   text-align: center; margin: 8px 0 16px;
 }
 .value-item {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: flex-start; gap: 10px;
   background: #EAF7EF; border-radius: 10px; padding: 12px 16px; margin-bottom: 9px;
-  font-size: 14.5px; font-weight: 700; color: var(--verde-h);
+  font-size: 14.5px; font-weight: 700; color: var(--verde-h); line-height: 1.5;
 }
 .value-anchor {
   font-size: 15px; font-style: italic; color: var(--txt);
@@ -167,6 +158,9 @@ img { max-width:100%; display:block; }
 /* ── RODAPÉ ── */
 .footer { text-align: center; font-size: 13px; color: var(--txt-s); padding: 30px 0; line-height: 1.65; }
 
+@media (max-width: 680px) {
+  .evo-grid { grid-template-columns: 1fr; gap: 28px; }
+}
 @media (max-width: 390px) {
   .headline { font-size: 1.5rem; }
   .offer-price { font-size: 40px; }
@@ -185,7 +179,7 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 10px 0 24px;">
 
-  <!-- CARD ÚNICO (3 micro-blocos, modelo /upsell-verdi) -->
+  <!-- CARD ÚNICO (3 micro-blocos) -->
   <div class="info-card">
     <div class="info-row">
       <span class="info-row-icon">❓</span>
@@ -199,63 +193,66 @@ img { max-width:100%; display:block; }
     <hr class="info-divider">
     <div class="info-row">
       <span class="info-row-icon">🤝</span>
-      <p class="info-row-text">O <strong>[NOME DO APP]</strong> foi feito exatamente para esse momento. Seus 127 mapas continuam sendo o método completo — o app é o treinador que fica do seu lado: todo dia ele te diz o que estudar, transforma cada mapa em exercícios práticos e garante que o italiano fique de vez na sua memória.</p>
+      <p class="info-row-text">O <strong>[NOME DO APP]</strong> foi feito exatamente para esse momento. Seus 127 mapas continuam sendo o método completo — o app é o treinador que fica do seu lado: todo dia ele te diz o que estudar e transforma o conteúdo dos seus mapas em exercícios práticos, até o italiano ficar de vez na sua memória.</p>
     </div>
   </div>
 
-  <hr class="divider" style="margin: 26px 0;">
+  <hr class="divider" style="margin: 30px 0;">
 
   <!-- PASSOS -->
   <p class="how-title">Veja como é simples de usar:</p>
   <div class="steps">
     <div class="step">
-      <!-- INSERIR_PRINT_TELA_TEMPO_AQUI -->
-      <!-- Substitua a div .ph-img abaixo por: <img src="print-tela-tempo.png" alt="Escolha seu tempo" class="step-img" loading="lazy"> -->
-      <div class="ph-img">📷 Print da tela<br>(escolher tempo)</div>
-      <div class="step-content">
-        <div class="step-left"><span class="step-num">1</span><span class="step-icon">⏱️</span></div>
-        <div class="step-right">
-          <p class="step-title">Escolha seu tempo</p>
-          <p class="step-sub">Diga ao app quanto tempo você tem: 10, 20 ou 30 minutos por dia.</p>
-        </div>
+      <div class="app-shot"><img src="app-tempo.webp" alt="Tela de escolha do tempo diário de estudo" width="680" height="849" loading="lazy" decoding="async"></div>
+      <div class="step-meta">
+        <div class="step-head"><span class="step-num">1</span><span class="step-icon">⏱️</span></div>
+        <p class="step-title">Escolha seu tempo</p>
+        <p class="step-sub">Diga ao app quanto tempo você tem, a partir de 5 minutos por dia. Ele até recomenda o tempo ideal pra sua rotina.</p>
+        <p class="step-caption">Você define o tempo. O app se encaixa na sua rotina — não o contrário.</p>
       </div>
     </div>
     <div class="step">
-      <!-- INSERIR_PRINT_SESSAO_DIA_AQUI -->
-      <!-- Substitua a div .ph-img abaixo por: <img src="print-sessao-dia.png" alt="Abra a sessão do dia" class="step-img" loading="lazy"> -->
-      <div class="ph-img">📷 Print da tela<br>(sessão do dia)</div>
-      <div class="step-content">
-        <div class="step-left"><span class="step-num">2</span><span class="step-icon">📲</span></div>
-        <div class="step-right">
-          <p class="step-title">Abra a sessão do dia</p>
-          <p class="step-sub">Todo dia o app já mostra exatamente o que você precisa estudar. Sem planejar nada.</p>
-        </div>
+      <div class="app-shot"><img src="app-inicio.webp" alt="Tela inicial do app com sessão do dia" width="680" height="849" loading="lazy" decoding="async"></div>
+      <div class="step-meta">
+        <div class="step-head"><span class="step-num">2</span><span class="step-icon">📲</span></div>
+        <p class="step-title">Abra a sessão do dia</p>
+        <p class="step-sub">Todo dia o app já te espera com os flashcards do dia, o desafio diário e o ponto exato de onde você parou. Zero planejamento.</p>
+        <p class="step-caption">Abriu, já sabe o que estudar hoje. Sem pensar, sem planilha.</p>
       </div>
     </div>
     <div class="step">
-      <!-- INSERIR_PRINT_EXERCICIO_AQUI -->
-      <!-- Substitua a div .ph-img abaixo por: <img src="print-exercicio.png" alt="Treine e avance" class="step-img" loading="lazy"> -->
-      <div class="ph-img">📷 Print da tela<br>(exercício)</div>
-      <div class="step-content">
-        <div class="step-left"><span class="step-num">3</span><span class="step-icon">🎯</span></div>
-        <div class="step-right">
-          <p class="step-title">Treine e avance</p>
-          <p class="step-sub">Quiz, complete a frase, treino de escuta — tudo com o conteúdo do mapa que você acabou de estudar. Acertou, subiu de nível.</p>
-        </div>
+      <div class="app-shot"><img src="app-atividades.webp" alt="Tela de atividades de treino" width="680" height="849" loading="lazy" decoding="async"></div>
+      <div class="step-meta">
+        <div class="step-head"><span class="step-num">3</span><span class="step-icon">🎯</span></div>
+        <p class="step-title">Treine e avance</p>
+        <p class="step-sub">Quiz de tradução, complete a frase, ligue os pares, ouça e escolha. Cada acerto vale pontos e te empurra pro próximo nível.</p>
+        <p class="step-caption">4 formas diferentes de treinar — seu cérebro nunca entra no piloto automático.</p>
       </div>
     </div>
   </div>
 
-  <!-- DEMO -->
-  <p class="demo-title">E o treino é assim:</p>
-  <div class="demo-phone">
-    <!-- INSERIR_GIF_DEMO_EXERCICIO_AQUI -->
-    <!-- Substitua o texto abaixo por: <video src="demo-exercicio.mp4" autoplay muted loop playsinline></video>  ou  <img src="demo-exercicio.gif" alt="Exercício do app"> -->
-    ▶ GIF do exercício<br>(9:16 vertical)
-  </div>
-  <p class="demo-caption">Exemplo real de um exercício do nível 12 — Mapa "No Restaurante".</p>
+  <!-- E O TREINO É ASSIM -->
+  <p class="how-title" style="margin-top:38px;">E o treino é assim:</p>
+  <div class="app-shot"><img src="app-flashcards.webp" alt="Tela de flashcards por tema" width="680" height="849" loading="lazy" decoding="async"></div>
+  <p class="app-caption">Flashcards por tema: o app mostra o que você já domina e o que ainda precisa revisar.</p>
 
-  <hr class="divider" style="margin: 30px 0;">
+  <hr class="divider" style="margin: 34px 0;">
+
+  <!-- VOCÊ VÊ SUA EVOLUÇÃO -->
+  <p class="sec-title">Você vê sua evolução acontecendo</p>
+  <p class="sec-text">Dias seguidos de treino, pontos de experiência, nível subindo, progresso em cada módulo. Estudar sozinho desanima porque você não vê resultado — no app, cada dia de treino aparece na tela. E quando a evolução é visível, ninguém quer quebrar a sequência.</p>
+  <div class="evo-grid">
+    <div class="evo-cell">
+      <div class="app-shot"><img src="app-progresso.webp" alt="Tela de progresso: nível, dias seguidos e XP" width="680" height="849" loading="lazy" decoding="async"></div>
+      <p class="app-caption">19 dias seguidos. É esse tipo de sequência que transforma estudo em hábito.</p>
+    </div>
+    <div class="evo-cell">
+      <div class="app-shot"><img src="app-modulos.webp" alt="Tela de progresso por módulo" width="680" height="849" loading="lazy" decoding="async"></div>
+      <p class="app-caption">Seu progresso, módulo por módulo — você sempre sabe onde está.</p>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin: 34px 0;">
 
   <!-- BULLETS -->
   <p class="bullets-title">Com o [NOME DO APP], você vai:</p>
@@ -263,18 +260,19 @@ img { max-width:100%; display:block; }
     <li><span class="ico">📅</span><span>Saber exatamente o que estudar hoje, sem planejar nada</span></li>
     <li><span class="ico">🎯</span><span>Treinar de verdade o que estudou, em vez de só ler e torcer pra lembrar</span></li>
     <li><span class="ico">🎧</span><span>Acostumar o ouvido com a pronúncia certa, um pouco por dia</span></li>
-    <li><span class="ico">🗺️</span><span>Ver seu progresso subindo pelos 127 níveis, do zero à conversação</span></li>
-    <li><span class="ico">📱</span><span>Estudar em qualquer lugar: na fila, no ônibus, no intervalo — 10 minutos bastam</span></li>
+    <li><span class="ico">🔥</span><span>Manter sua sequência com o desafio diário — 2 minutos que viciam em estudar</span></li>
+    <li><span class="ico">🗺️</span><span>Avançar módulo por módulo, dos Fundamentos à Fluência, sempre sabendo onde está</span></li>
+    <li><span class="ico">📱</span><span>Estudar em qualquer lugar: na fila, no ônibus, no intervalo — 5 minutos bastam</span></li>
   </ul>
 
   <hr class="divider" style="margin: 30px 0;">
 
   <!-- CHECKLIST DE VALOR -->
   <p class="value-headline">O que você leva com o [NOME DO APP]:</p>
-  <div class="value-item">✅ Acesso a todos os 127 níveis de treino</div>
-  <div class="value-item">✅ Exercícios ilimitados, treine quantas vezes quiser</div>
+  <div class="value-item">✅ Treino completo em 6 módulos: Fundamentos, Conversação, Gramática, Tempos Verbais, Fluência e Cultura &amp; Viagem</div>
+  <div class="value-item">✅ 4 tipos de exercício + flashcards + desafio diário, treine quantas vezes quiser</div>
   <div class="value-item">✅ Funciona direto do navegador do celular, sem baixar nada</div>
-  <div class="value-item">✅ Seus mapas e bônus disponíveis dentro do app, com download</div>
+  <div class="value-item">✅ Bônus: seus 127 mapas organizados dentro do app, com download</div>
   <div class="value-item">✅ Acesso vitalício: paga uma vez, usa para sempre</div>
   <p class="value-anchor">Com o [NOME DO APP], você nunca mais vai abrir um mapa sem saber se está realmente aprendendo.</p>
 
