@@ -108,12 +108,13 @@ img { max-width:100%; display:block; }
 .evo-cell { display: flex; flex-direction: column; }
 
 /* ── BULLETS ── */
+.bullets-section { background: #EAF7EF; border-radius: 16px; padding: 28px 22px; margin-bottom: 26px; border: 1px solid #BFE3D5; }
 .bullets-title {
   font-family: var(--serif);
   font-size: 20px; font-weight: 800; color: var(--verde);
-  text-align: center; margin: 8px 0 18px;
+  text-align: center; margin: 0 0 20px;
 }
-.bullets { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 0; }
 .bullets li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--txt); line-height: 1.6; }
 .bullets li .ico { flex-shrink: 0; font-size: 20px; margin-top: 1px; }
 
@@ -318,15 +319,17 @@ img { max-width:100%; display:block; }
   <hr class="divider" style="margin: 34px 0;">
 
   <!-- BULLETS -->
-  <p class="bullets-title">Com o Parla Italiano, você vai:</p>
-  <ul class="bullets">
-    <li><span class="ico">📅</span><span>Saber exatamente o que estudar hoje, sem planejar nada</span></li>
-    <li><span class="ico">🎯</span><span>Treinar de verdade o que estudou, em vez de só ler e torcer pra lembrar</span></li>
-    <li><span class="ico">🎧</span><span>Acostumar o ouvido com a pronúncia certa, um pouco por dia</span></li>
-    <li><span class="ico">🔥</span><span>Manter sua sequência com o desafio diário — 2 minutos que viciam em estudar</span></li>
-    <li><span class="ico">🗺️</span><span>Avançar módulo por módulo, dos Fundamentos à Fluência, sempre sabendo onde está</span></li>
-    <li><span class="ico">📱</span><span>Estudar em qualquer lugar: na fila, no ônibus, no intervalo — 5 minutos bastam</span></li>
-  </ul>
+  <div class="bullets-section">
+    <p class="bullets-title">Com o Parla Italiano, você vai:</p>
+    <ul class="bullets">
+      <li><span class="ico">📅</span><span>Saber exatamente o que estudar hoje, sem planejar nada</span></li>
+      <li><span class="ico">🎯</span><span>Treinar de verdade o que estudou, em vez de só ler e torcer pra lembrar</span></li>
+      <li><span class="ico">🎧</span><span>Acostumar o ouvido com a pronúncia certa, um pouco por dia</span></li>
+      <li><span class="ico">🔥</span><span>Manter sua sequência com o desafio diário — 2 minutos que viciam em estudar</span></li>
+      <li><span class="ico">🗺️</span><span>Avançar módulo por módulo, dos Fundamentos à Fluência, sempre sabendo onde está</span></li>
+      <li><span class="ico">📱</span><span>Estudar em qualquer lugar: na fila, no ônibus, no intervalo — 5 minutos bastam</span></li>
+    </ul>
+  </div>
 
   <hr class="divider" style="margin: 30px 0;">
 
