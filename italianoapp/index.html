@@ -212,6 +212,26 @@ img { max-width:100%; display:block; }
 .benefit-desc { font-size: 13px; color: #a0bab0; line-height: 1.6; }
 .guarantee-badge-text { font-size: 14px; color: var(--txt); line-height: 1.6; max-width: 440px; margin: 0 auto; }
 
+/* ── CARD UNIFICADO (benefícios + preço + botão) ── */
+.unified-offer-card {
+  background: #1a3a2a; border: 3px solid var(--verde); border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,146,70,0.25);
+  padding: 32px 24px; margin: 30px 0 24px; position: relative;
+}
+.unified-price-box {
+  background: rgba(0,0,0,0.28); border: 1px solid rgba(0,146,70,0.35);
+  border-radius: 14px; padding: 22px 16px; text-align: center;
+  margin: 24px 0 20px;
+}
+.unified-price-box .offer-old,
+.unified-price-box .offer-price,
+.unified-price-box .offer-economy,
+.unified-price-box .offer-note { margin-left: auto; margin-right: auto; }
+.unified-secure {
+  display: block; text-align: center; font-size: 12px; color: #a0bab0;
+  margin-top: 14px; letter-spacing: 0.03em;
+}
+
 /* ── RODAPÉ ── */
 .footer { text-align: center; font-size: 13px; color: var(--txt-s); padding: 30px 0; line-height: 1.65; }
 
@@ -318,39 +338,9 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 34px 0;">
 
-  <!-- OFERTA -->
-  <div class="offer-box" id="oferta">
-    <span class="offer-badge">OFERTA EXCLUSIVA</span>
-    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
-    <p class="offer-old">De R$47,90</p>
-    <p class="offer-price">R$27,90</p>
-    <p class="offer-economy">Você economiza R$20,00 (42%)</p>
-    <p class="offer-note">Pagamento único · Sem mensalidade</p>
-  </div>
-
-  <!-- BOTÃO PRINCIPAL — widget Wiapy -->
-  <div id="wiapy_upsell"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, QUERO LIBERAR O APP AGORA",
-    styles: {
-      backgroundColor: "#009246",
-      hoverBackgroundColor: "#007A3A",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-    refusalLinkText: "Não, prefiro estudar sozinho.",
-    refusalLinkColor: "#888888"
-  });
-  </script>
-
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- BENEFÍCIOS -->
-  <div class="benefits-section">
-    <span class="benefits-badge">PARLA ITALIANO</span>
+  <!-- OFERTA UNIFICADA (benefícios + preço + botão) -->
+  <div class="unified-offer-card" id="oferta">
+    <span class="benefits-badge">OFERTA EXCLUSIVA</span>
     <p class="benefits-title">📱 O que você leva com o app</p>
     <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
 
@@ -395,6 +385,33 @@ img { max-width:100%; display:block; }
         </div>
       </div>
     </div>
+
+    <div class="unified-price-box">
+      <p class="offer-old">De R$47,90</p>
+      <p class="offer-price">R$27,90</p>
+      <p class="offer-economy">Você economiza R$20,00 (42%)</p>
+      <p class="offer-note">Pagamento único · Sem mensalidade</p>
+    </div>
+
+    <!-- BOTÃO PRINCIPAL — widget Wiapy -->
+    <div id="wiapy_upsell"></div>
+    <script>
+    initWiapyUpsell({
+      linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+      linkText: "SIM, QUERO LIBERAR O APP AGORA",
+      styles: {
+        backgroundColor: "#009246",
+        hoverBackgroundColor: "#007A3A",
+        fontSize: "17px",
+        borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+      refusalLinkText: "Não, prefiro estudar sozinho.",
+      refusalLinkColor: "#888888"
+    });
+    </script>
+
+    <span class="unified-secure">🔒 Compra segura · 15 dias de garantia</span>
   </div>
 
   <hr class="divider" style="margin: 34px 0;">
@@ -456,33 +473,81 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 34px 0;">
 
-  <!-- OFERTA DUPLICADA (após FAQ) -->
-  <div class="offer-box" id="oferta-2">
-    <span class="offer-badge">OFERTA EXCLUSIVA</span>
-    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
-    <p class="offer-old">De R$47,90</p>
-    <p class="offer-price">R$27,90</p>
-    <p class="offer-economy">Você economiza R$20,00 (42%)</p>
-    <p class="offer-note">Pagamento único · Sem mensalidade</p>
-  </div>
+  <!-- OFERTA UNIFICADA DUPLICADA (após FAQ) -->
+  <div class="unified-offer-card" id="oferta-2">
+    <span class="benefits-badge">OFERTA EXCLUSIVA</span>
+    <p class="benefits-title">📱 O que você leva com o app</p>
+    <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
 
-  <!-- BOTÃO PRINCIPAL (após oferta duplicada) -->
-  <div id="wiapy_upsell_4"></div>
-  <script>
-  initWiapyUpsell({
-    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
-    linkText: "SIM, QUERO LIBERAR O APP AGORA",
-    styles: {
-      backgroundColor: "#009246",
-      hoverBackgroundColor: "#007A3A",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-    refusalLinkText: "Não, prefiro estudar sozinho.",
-    refusalLinkColor: "#888888"
-  });
-  </script>
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <span class="benefit-icon">📚</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Sua compra 100% integrada</div>
+          <div class="benefit-desc">Acesse todos os seus Mapas Mentais e bônus direto no app, sem precisar baixar PDFs soltos</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🧠</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Treino Prático Inteligente</div>
+          <div class="benefit-desc">Fixe o conteúdo com Quizzes dinâmicos, áudios com pronúncia nativa e jogos de memorização</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">⏱️</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Resultado em 5 Minutos</div>
+          <div class="benefit-desc">O app monta treinos customizados que se encaixam na sua rotina, sem você precisar planejar nada</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">📈</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Gráficos de Evolução Real</div>
+          <div class="benefit-desc">Veja seu avanço acontecer na tela, módulo por módulo, do zero até a fluência</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🌍</span>
+        <div class="benefit-content">
+          <div class="benefit-title">Estude no seu ritmo, onde quiser</div>
+          <div class="benefit-desc">Acesse sua conta pelo celular ou tablet e estude quando quiser</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="unified-price-box">
+      <p class="offer-old">De R$47,90</p>
+      <p class="offer-price">R$27,90</p>
+      <p class="offer-economy">Você economiza R$20,00 (42%)</p>
+      <p class="offer-note">Pagamento único · Sem mensalidade</p>
+    </div>
+
+    <!-- BOTÃO PRINCIPAL (após oferta duplicada) -->
+    <div id="wiapy_upsell_4"></div>
+    <script>
+    initWiapyUpsell({
+      linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+      linkText: "SIM, QUERO LIBERAR O APP AGORA",
+      styles: {
+        backgroundColor: "#009246",
+        hoverBackgroundColor: "#007A3A",
+        fontSize: "17px",
+        borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+      refusalLinkText: "Não, prefiro estudar sozinho.",
+      refusalLinkColor: "#888888"
+    });
+    </script>
+
+    <span class="unified-secure">🔒 Compra segura · 15 dias de garantia</span>
+  </div>
 
   <!-- LINK DE RECUSA -->
   <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link" style="margin-top: 12px;">Não, prefiro estudar sozinho.</a>
