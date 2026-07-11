@@ -330,6 +330,17 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 30px 0;">
 
+  <!-- GARANTIA -->
+  <div class="guarantee-badge">
+    <span class="guarantee-badge-icon">🛡️</span>
+    <div>
+      <div class="guarantee-badge-title">Risco zero · Garantia de 15 dias</div>
+      <div class="guarantee-badge-text">Se não fizer sentido pra você, devolvemos 100% do valor. Sem perguntas, sem burocracia.</div>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin: 30px 0;">
+
   <!-- FAQ -->
   <p class="faq-title">Perguntas frequentes</p>
   <div class="faq-container">
@@ -359,15 +370,25 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
+  <hr class="divider" style="margin: 30px 0;">
 
-  <!-- GARANTIA -->
-  <div class="guarantee-badge">
-    <span class="guarantee-badge-icon">🛡️</span>
-    <div>
-      <div class="guarantee-badge-title">Risco zero · Garantia de 15 dias</div>
-      <div class="guarantee-badge-text">Se não fizer sentido pra você, devolvemos 100% do valor. Sem perguntas, sem burocracia.</div>
-    </div>
-  </div>
+  <!-- BOTÃO SECUNDÁRIO — widget Wiapy -->
+  <div id="wiapy_upsell_2"></div>
+  <script>
+  initWiapyUpsell({
+    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    styles: {
+      backgroundColor: "#009246",
+      hoverBackgroundColor: "#007A3A",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+    refusalLinkText: "Recusar essa oferta",
+    refusalLinkColor: "#888888"
+  });
+  </script>
 
   <!-- LINK DE RECUSA -->
   <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link">Não, vou tentar lembrar sozinho</a>
