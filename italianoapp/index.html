@@ -69,6 +69,9 @@ img { max-width:100%; display:block; }
   text-align: center; margin: 8px 0 6px;
 }
 .sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; }
+.evo-highlight { background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 14px; padding: 22px; max-width: 560px; margin: 0 auto 26px; }
+.evo-highlight .sec-title { margin: 0 0 8px; }
+.evo-highlight .sec-text { margin: 0 auto; }
 
 /* ── IMAGEM DO APP (container destacado) ── */
 .app-shot {
@@ -233,23 +236,36 @@ img { max-width:100%; display:block; }
   </div>
 
   <!-- DOMINE TEMA POR TEMA -->
-  <p class="how-title" style="margin-top:38px;">Domine tema por tema</p>
-  <div class="app-shot"><img src="app-flashcards.webp" alt="Tela de flashcards por tema" width="680" height="849" loading="lazy" decoding="async"></div>
-  <p class="app-caption">Os flashcards mostram o que você já domina e o que ainda precisa revisar. Nada fica pra trás.</p>
+  <div class="step" style="margin:38px auto 0;">
+    <div class="step-header">
+      <div class="step-head"><span class="step-icon">🗂️</span></div>
+      <p class="step-title">Domine tema por tema</p>
+    </div>
+    <img class="step-photo" src="app-flashcards.webp" alt="Tela de flashcards por tema" width="680" height="849" loading="lazy" decoding="async">
+    <p class="step-sub">Os flashcards mostram o que você já domina e o que ainda precisa revisar. Nada fica pra trás.</p>
+  </div>
 
   <hr class="divider" style="margin: 34px 0;">
 
   <!-- VOCÊ VÊ SUA EVOLUÇÃO -->
-  <p class="sec-title">Você vê sua evolução acontecendo</p>
-  <p class="sec-text">Estudar sozinho desanima porque você não vê resultado. No app, cada dia de treino aparece na tela — e ninguém quer quebrar uma sequência.</p>
+  <div class="evo-highlight">
+    <p class="sec-title">Você vê sua evolução acontecendo</p>
+    <p class="sec-text">Estudar sozinho desanima porque você não vê resultado. No app, cada dia de treino aparece na tela — e ninguém quer quebrar uma sequência.</p>
+  </div>
   <div class="evo-grid">
     <div class="step">
-      <div class="step-header"><p class="step-title">Sua sequência em jogo</p></div>
+      <div class="step-header">
+        <div class="step-head"><span class="step-icon">🔥</span></div>
+        <p class="step-title">Sua sequência em jogo</p>
+      </div>
       <img class="step-photo" src="app-progresso.webp" alt="Tela de progresso: nível, dias seguidos e XP" width="680" height="849" loading="lazy" decoding="async">
       <p class="step-sub">Dias seguidos, pontos e nível subindo — quando a evolução aparece na tela, dá vontade de não parar.</p>
     </div>
     <div class="step">
-      <div class="step-header"><p class="step-title">Você sempre sabe onde está</p></div>
+      <div class="step-header">
+        <div class="step-head"><span class="step-icon">📍</span></div>
+        <p class="step-title">Você sempre sabe onde está</p>
+      </div>
       <img class="step-photo" src="app-modulos.webp" alt="Tela de progresso por módulo" width="680" height="849" loading="lazy" decoding="async">
       <p class="step-sub">Cada módulo com sua barra de progresso, dos Fundamentos à Cultura &amp; Viagem.</p>
     </div>
