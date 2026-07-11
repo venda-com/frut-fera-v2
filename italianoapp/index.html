@@ -128,10 +128,27 @@ img { max-width:100%; display:block; }
   background: #EAF7EF; border-radius: 10px; padding: 12px 16px; margin-bottom: 9px;
   font-size: 14.5px; font-weight: 700; color: var(--verde-h); line-height: 1.5;
 }
-.value-anchor {
-  font-size: 15px; font-style: italic; color: var(--txt);
-  text-align: center; margin: 18px auto 26px; max-width: 420px; line-height: 1.6;
+/* ── FAQ ── */
+.faq-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 8px 0 20px;
 }
+.faq-container { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: #fff; border: 1px solid #E5E7EB; border-radius: 12px;
+  overflow: hidden;
+}
+.faq-toggle {
+  width: 100%; background: #f0faF5; border: none; cursor: pointer;
+  padding: 16px; text-align: left; font-size: 15px; font-weight: 700;
+  color: var(--txt); line-height: 1.5; transition: background 0.2s;
+}
+.faq-toggle:hover { background: #e0f5ee; }
+.faq-toggle.open { background: var(--verde); color: #fff; }
+.faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+.faq-content.open { max-height: 500px; }
+.faq-content p { padding: 14px 16px; font-size: 14px; color: var(--txt); line-height: 1.6; margin: 0; }
 
 /* ── OFERTA ── */
 .offer-box {
@@ -283,14 +300,36 @@ img { max-width:100%; display:block; }
 
   <hr class="divider" style="margin: 30px 0;">
 
-  <!-- CHECKLIST DE VALOR -->
-  <p class="value-headline">O que você leva com o Parla Italiano:</p>
-  <div class="value-item">✅ Treino completo em 6 módulos: Fundamentos, Conversação, Gramática, Tempos Verbais, Fluência e Cultura &amp; Viagem</div>
-  <div class="value-item">✅ 4 tipos de exercício + flashcards + desafio diário, treine quantas vezes quiser</div>
-  <div class="value-item">✅ Funciona direto do navegador do celular, sem baixar nada</div>
-  <div class="value-item">✅ Bônus: seus 127 mapas organizados dentro do app, com download</div>
-  <div class="value-item">✅ Acesso vitalício: paga uma vez, usa para sempre</div>
-  <p class="value-anchor">Com o Parla Italiano, você nunca mais vai abrir um mapa sem saber se está realmente aprendendo.</p>
+  <!-- FAQ -->
+  <p class="faq-title">Perguntas frequentes</p>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-toggle">P: Preciso baixar alguma coisa?</button>
+      <div class="faq-content">
+        <p>Não. O Parla Italiano funciona direto do navegador do seu celular ou computador — sem ocupar memória, sem loja de aplicativos. Você recebe o link de acesso no seu e-mail assim que a compra é confirmada.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle">P: É mensalidade?</button>
+      <div class="faq-content">
+        <p>Não. Pagamento único de R$47,00 e o acesso é seu pra sempre, incluindo atualizações.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle">P: Preciso já saber italiano pra usar?</button>
+      <div class="faq-content">
+        <p>Não. A jornada começa do nível 1, junto com o primeiro mapa mental. O app acompanha você do zero.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle">P: E se eu não gostar?</button>
+      <div class="faq-content">
+        <p>Você tem 7 dias de garantia incondicional. Um e-mail e devolvemos tudo.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin: 30px 0;">
 
   <!-- OFERTA -->
   <div class="offer-box" id="oferta">
@@ -301,12 +340,23 @@ img { max-width:100%; display:block; }
     <p class="offer-note">Pagamento único · Sem mensalidade</p>
   </div>
 
-  <!-- BOTÃO PRINCIPAL — widget Wiapy (você envia o código depois).
-       Texto do botão: SIM, QUERO TREINAR TODO DIA
-       Ao inserir, configure: refusalLinkUrl -> https://www.cultivaragora.store/italianonoouvido -->
-  <div class="cta-wrap">
-    <!-- INSERIR_BOTAO_WIAPY_UPSELL_APP_AQUI -->
-  </div>
+  <!-- BOTÃO PRINCIPAL — widget Wiapy -->
+  <div id="wiapy_upsell"></div>
+  <script>
+  initWiapyUpsell({
+    linkUrl: "https://pay.wiapy.com/checkout/6a51996b559dab98cad4fa37",
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    styles: {
+      backgroundColor: "#009246",
+      hoverBackgroundColor: "#007A3A",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
+    refusalLinkText: "Recusar essa oferta",
+    refusalLinkColor: "#888888"
+  });
+  </script>
 
   <!-- GARANTIA -->
   <div class="guarantee-badge">
@@ -324,6 +374,24 @@ img { max-width:100%; display:block; }
   <p class="footer">🔒 Pagamento 100% seguro · Acesso liberado na hora.</p>
 
 </div>
+
+<script>
+document.querySelectorAll('.faq-toggle').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    const content = this.nextElementSibling;
+    const isOpen = this.classList.contains('open');
+
+    document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+
+    if (!isOpen) {
+      this.classList.add('open');
+      content.classList.add('open');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
