@@ -10,387 +10,309 @@
   --vermelho:#CE2B37;
   --ouro:    #C8922A;
   --navy:    #111827;
-  --navy2:   #1F2937;
   --branco:  #FFFFFF;
+  --txt:     #2D2D2D;
+  --txt-s:   #6B7280;
   --cinza-f: #F9FAFB;
-  --cinza-c: #F3F4F6;
-  --txt:     #111111;
-  --txt-s:   #4B5563;
+  --linha:   #E5E7EB;
+  --serif: Georgia, 'Times New Roman', serif;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: Arial, Helvetica, sans-serif; background: var(--branco); color: var(--txt); border-top: 6px solid; border-image: linear-gradient(to right, #009246 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #CE2B37 66.6%) 1; }
-a { text-decoration: none; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--branco); color: var(--txt);
+  border-top: 6px solid; border-image: linear-gradient(to right, #009246 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #CE2B37 66.6%) 1;
+  min-height: 100vh;
+}
 img { max-width:100%; display:block; }
 
-/* ── TOP BAR ── */
+/* ── BARRA DE TOPO ── */
 .top-bar {
-  background: var(--vermelho);
-  text-align: center;
-  padding: 9px 16px;
-  font-size: 13px;
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  width: 100%; background: var(--vermelho); color: #fff;
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  text-align: center; padding: 11px 20px; letter-spacing: 0.04em;
 }
 
-/* ── BOTÕES ── */
-.btn-cta {
-  display: inline-block;
-  background: var(--verde);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 900;
-  padding: 16px 40px;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 18px rgba(0,146,70,.4);
-  transition: background .2s, transform .15s;
-  cursor: pointer;
-  border: none;
-}
-.btn-cta:hover { background: var(--verde-h); transform: translateY(-1px); }
+/* ── LAYOUT BASE ── */
+.wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 20px; }
 
-/* ── HERO ── */
-.hero {
-  background: linear-gradient(180deg, #FFFFFF 0%, #d7e0ea 100%);
-  text-align: center;
-  padding: 32px 20px 36px;
-}
-.hero-eyebrow {
-  font-size: 14px; font-weight: 800; color: var(--verde);
-  max-width: 560px; margin: 0 auto 12px; line-height: 1.5;
-}
-.hero h1 {
-  font-size: clamp(22px, 4.5vw, 38px);
-  font-weight: 900;
-  color: #1A1A1A;
-  line-height: 1.22;
-  max-width: 740px;
-  margin: 0 auto 18px;
-}
-.hero h1 .highlight { color: var(--verde); }
-
-.hero-desc {
-  font-size: 15px; color: var(--txt-s);
-  max-width: 560px; margin: 0 auto 22px; line-height: 1.65;
+/* ── HEADLINE ── */
+.headline {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 6vw, 1.95rem);
+  font-weight: 900; color: var(--verde);
+  text-align: center; line-height: 1.28; text-transform: uppercase;
+  margin: 34px 0 8px;
 }
 
-/* ── MÍDIA VERTICAL 9:16 (vídeo/GIF do app) ── */
-.hero-media {
-  max-width: 320px;
-  aspect-ratio: 9 / 16;
-  margin: 0 auto 20px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #0f1f0f;
-  box-shadow: 0 12px 34px rgba(0,0,0,.18);
+/* ── DIVISOR ── */
+.divider { border: none; border-top: 1px solid var(--linha); width: 100%; margin: 26px 0; }
+
+/* ── MICRO-BLOCOS (emoji grande centralizado) ── */
+.micro { text-align: center; }
+.micro-emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
+.micro-text { font-size: 16px; color: var(--txt); line-height: 1.7; max-width: 420px; margin: 0 auto; }
+.micro-text .q { display: block; margin-top: 8px; font-weight: 700; color: var(--navy); text-align: left; max-width: 300px; margin-left: auto; margin-right: auto; }
+.micro-text strong { color: var(--verde); }
+
+/* ── PASSOS ── */
+.how-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 8px 0 18px;
+}
+.steps { display: flex; flex-direction: column; gap: 14px; }
+.step {
+  background: #fff; border-radius: 12px; border: 1px solid var(--linha);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.step-img { width: 100%; height: auto; display: block; }
+/* placeholder de imagem (substituir pelo print real) */
+.ph-img {
+  width: 100%; aspect-ratio: 16 / 10; background: #F3F4F6;
+  border-bottom: 1px dashed #cfd3d8;
   display: flex; align-items: center; justify-content: center;
+  color: #9aa0a6; font-size: 12px; text-align: center; padding: 12px; line-height: 1.5;
 }
-.hero-media img,
-.hero-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-media .media-placeholder {
-  color: rgba(255,255,255,.55); font-size: 13px; text-align: center;
-  padding: 20px; line-height: 1.5;
-}
+.step-content { padding: 16px; display: flex; align-items: flex-start; gap: 14px; }
+.step-left { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; min-width: 36px; }
+.step-num { font-size: 22px; font-weight: 900; color: var(--verde); line-height: 1; }
+.step-icon { font-size: 26px; line-height: 1; }
+.step-right { display: flex; flex-direction: column; gap: 4px; }
+.step-title { font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.4; }
+.step-sub { font-size: 13.5px; color: var(--txt-s); line-height: 1.55; }
 
-.hero-micro-copy {
-  font-size: 14px; color: var(--txt-s);
-  max-width: 460px; margin: 0 auto 18px; line-height: 1.6;
+/* ── DEMO (celular 9:16) ── */
+.demo-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 34px 0 14px;
 }
-.hero-price-anchor { text-align: center; margin: 0 auto 18px; }
-.hero-price-old { font-size: 14px; color: var(--vermelho); text-decoration: line-through; display: block; margin-bottom: 2px; }
-.hero-price-new { font-size: 2.25rem; font-weight: 900; color: #00e676; line-height: 1; }
-.hero-price-note { font-size: 13px; color: var(--txt-s); margin-top: 6px; }
+.demo-phone {
+  max-width: 320px; aspect-ratio: 9 / 16; margin: 0 auto;
+  background: #F3F4F6; border: 1px dashed #cfd3d8; border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+  color: #9aa0a6; font-size: 13px; text-align: center; padding: 18px; line-height: 1.5;
+  overflow: hidden;
+}
+.demo-phone img, .demo-phone video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.demo-caption { font-size: 13px; font-style: italic; color: var(--txt-s); text-align: center; margin-top: 12px; }
 
-.hero-cta-note { font-size: 13px; color: var(--txt-s); margin-top: 12px; line-height: 1.5; }
+/* ── BULLETS ── */
+.bullets-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 8px 0 18px;
+}
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.bullets li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--txt); line-height: 1.6; }
+.bullets li .ico { flex-shrink: 0; font-size: 20px; margin-top: 1px; }
 
-/* ── DOR ── */
-.pain-section { background: var(--branco); padding: 52px 20px; text-align: center; }
-.pain-section h2 {
-  font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy);
-  max-width: 700px; margin: 0 auto 20px; line-height: 1.35;
+/* ── CHECKLIST DE VALOR ── */
+.value-headline {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 800; color: var(--verde);
+  text-align: center; margin: 8px 0 16px;
 }
-.pain-section p {
-  font-size: 15px; color: var(--txt-s); max-width: 620px;
-  margin: 0 auto 16px; line-height: 1.75;
+.value-item {
+  display: flex; align-items: center; gap: 10px;
+  background: #EAF7EF; border-radius: 10px; padding: 12px 16px; margin-bottom: 9px;
+  font-size: 14.5px; font-weight: 700; color: var(--verde-h);
 }
-.pain-box {
-  background: var(--cinza-f); border: 2px solid var(--verde); border-radius: 12px;
-  padding: 22px 24px; max-width: 620px; margin: 26px auto 0;
-  font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.6;
-}
-
-/* ── COMO FUNCIONA (cards) ── */
-.forwhom-section {
-  background: var(--cinza-c);
-  padding: 40px 20px; text-align: center;
-}
-.forwhom-section h2 {
-  font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 28px;
-}
-.forwhom-section h2 em { color: var(--vermelho); font-style: normal; }
-.forwhom-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px; max-width: 860px; margin: 0 auto;
-}
-.forwhom-card {
-  background: var(--branco); border-radius: 12px; padding: 22px 18px;
-  text-align: left; border: 1px solid #c8ddd0;
-  display: flex; gap: 14px; align-items: flex-start;
-}
-.fw-icon { font-size: 28px; flex-shrink: 0; }
-.forwhom-card h4 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
-.forwhom-card p { font-size: 13px; color: var(--txt-s); line-height: 1.5; }
-
-/* ── O ITALIANO NO SEU BOLSO ── */
-.pocket-section { background: var(--cinza-f); padding: 46px 20px; text-align: center; }
-.pocket-section h2 {
-  font-size: clamp(20px, 3.5vw, 28px); font-weight: 900; color: var(--navy);
-  max-width: 640px; margin: 0 auto 18px; line-height: 1.35;
-}
-.pocket-section p {
-  font-size: 15px; color: var(--txt-s); max-width: 620px;
-  margin: 0 auto 16px; line-height: 1.75;
-}
-.pocket-italic { font-size: 14px; font-style: italic; color: var(--txt-s); margin-top: 8px; }
-
-/* ── O QUE TEM DENTRO / PARA QUEM É (cards de item) ── */
-.dialogs-section { background: var(--branco); padding: 40px 20px; text-align: center; }
-.dialogs-section.alt { background: var(--cinza-c); }
-.dialogs-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
-.dialogs-section h2 em { color: var(--vermelho); font-style: normal; }
-.dialogs-sub { font-size: 14px; color: var(--txt-s); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
-.dialog-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 14px; max-width: 860px; margin: 0 auto;
-}
-.dialog-card {
-  background: var(--cinza-f); border-radius: 12px; padding: 18px;
-  text-align: left; border: 1px solid #e3e3e3;
-  display: flex; gap: 12px; align-items: flex-start;
-}
-.dialogs-section.alt .dialog-card { background: var(--branco); }
-.dialog-card .fw-icon { font-size: 24px; flex-shrink: 0; }
-.dialog-card p { font-size: 13.5px; color: var(--txt-s); line-height: 1.5; }
-.dialog-card p strong { color: var(--navy); }
-.whats-inside-extra {
-  max-width: 860px; margin: 14px auto 0;
-  background: transparent; border: 1px dashed #d0d0d0; border-radius: 10px;
-  padding: 14px 18px; text-align: left;
-  font-size: 12.5px; color: var(--txt-s); line-height: 1.55;
-}
-
-@media (max-width: 680px) {
-  .dialog-grid { grid-template-columns: 1fr; }
+.value-anchor {
+  font-size: 15px; font-style: italic; color: var(--txt);
+  text-align: center; margin: 18px auto 26px; max-width: 420px; line-height: 1.6;
 }
 
 /* ── OFERTA ── */
-.offer-section { background: #1a3a1a; padding: 4.5rem 5%; text-align: center; }
-.itp-card {
-  border-radius: 16px; padding: 2rem 1.5rem; position: relative; text-align: left;
-  max-width: 420px; margin: 0 auto;
-  background: #1a2e1a;
-  scroll-margin-top: 20px;
-  box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.3), 0 0 40px rgba(0,230,118,.12);
+.offer-box {
+  background: #fff; border: 2px solid var(--verde); border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,146,70,0.14); padding: 26px 20px; text-align: center;
+  margin-bottom: 18px;
 }
-.itp-title {
-  font-weight: 900; font-size: 1.1rem; color: #f5a623;
-  text-transform: uppercase; letter-spacing: .05em;
-  text-align: center; margin-bottom: .4rem;
-}
-.itp-subtitle {
-  font-size: .85rem; color: rgba(255,255,255,.7);
-  text-align: center; margin-bottom: 1.25rem;
-}
-.itp-compare {
-  font-size: .78rem; color: rgba(255,255,255,.6);
-  text-align: center; line-height: 1.55; margin-bottom: 1rem;
-}
-.itp-total-box {
-  background:#0f1f0f; border-radius:12px; padding:1rem; text-align:center; margin-bottom:1.25rem;
-}
-.itp-total-label { font-size:.75rem; color:rgba(255,255,255,.65); margin-bottom:.1rem; }
-.itp-total-old { font-size:.875rem; color:#ff5252; text-decoration:line-through; }
-.itp-total-price { font-size:2.25rem; font-weight:900; color:#00e676; line-height:1; margin:.2rem 0; }
-.itp-total-note { font-size:.75rem; color:rgba(255,255,255,.65); margin-top:.2rem; }
-.itp-cta-note { font-size:.75rem; color:rgba(255,255,255,.7); text-align:center; margin-top:.85rem; line-height:1.5; }
-.itp-guarantee { font-size:.8rem; color:rgba(255,255,255,.75); text-align:center; margin-top:1.1rem; line-height:1.5; }
-.itp-refusal { display:block; text-align:center; font-size:.8rem; color:#9aa3ad; text-decoration:underline; margin-top:1rem; }
+.offer-label { font-size: 13px; color: var(--txt-s); margin-bottom: 10px; }
+.offer-old { font-size: 18px; color: var(--vermelho); text-decoration: line-through; margin-bottom: 4px; }
+.offer-price { font-family: var(--serif); font-size: 48px; font-weight: 900; color: var(--verde); line-height: 1; margin-bottom: 8px; }
+.offer-economy { font-size: 14px; font-weight: 800; color: var(--ouro); margin-bottom: 6px; }
+.offer-note { font-size: 13px; color: var(--txt-s); }
 
-/* ── FAQ ── */
-.faq-section { background: var(--cinza-f); padding: 52px 20px; }
-.faq-section h2 { font-size: clamp(19px, 3vw, 26px); font-weight: 900; color: var(--navy); text-align: center; margin-bottom: 30px; }
-.faq-list { max-width: 700px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid #cdd8d2; }
-.faq-toggle {
-  width: 100%; background: none; border: none; cursor: pointer;
-  padding: 18px 0; display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; text-align: left;
+/* ── BOTÃO / RECUSA ── */
+.cta-wrap { margin-bottom: 8px; }
+.reject-link {
+  display: block; width: 100%; margin-top: 16px; background: transparent; border: none;
+  color: #888; font-size: 13.5px; text-align: center; text-decoration: underline;
+  text-underline-offset: 3px; line-height: 1.5; cursor: pointer;
 }
-.faq-toggle h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.4; }
-.faq-arrow {
-  width: 28px; height: 28px; border-radius: 50%; background: var(--navy);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  transition: transform .3s, background .2s;
-}
-.faq-arrow svg { fill: #fff; width: 14px; height: 14px; transition: transform .3s; }
-.faq-item.open .faq-arrow { background: var(--verde); }
-.faq-item.open .faq-arrow svg { transform: rotate(180deg); }
-.faq-body { max-height: 0; overflow: hidden; transition: max-height .38s ease, padding .3s ease; }
-.faq-body p { font-size: 14px; color: var(--txt-s); line-height: 1.65; padding-bottom: 16px; }
-.faq-item.open .faq-body { max-height: 260px; }
+.reject-link:hover { color: #555; }
 
-@media (max-width: 680px) {
-  .forwhom-grid { grid-template-columns: 1fr; }
+/* ── GARANTIA ── */
+.guarantee-badge {
+  display: flex; align-items: center; gap: 12px;
+  background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 14px;
+  padding: 14px 16px; margin-top: 16px;
+}
+.guarantee-badge-icon { font-size: 30px; flex-shrink: 0; line-height: 1; }
+.guarantee-badge-title { font-size: 15px; font-weight: 800; color: var(--verde-h); line-height: 1.3; }
+.guarantee-badge-text { font-size: 13px; color: var(--txt); line-height: 1.45; margin-top: 2px; }
+
+/* ── RODAPÉ ── */
+.footer { text-align: center; font-size: 13px; color: var(--txt-s); padding: 30px 0; line-height: 1.65; }
+
+@media (max-width: 390px) {
+  .headline { font-size: 1.5rem; }
+  .offer-price { font-size: 40px; }
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">⚠️ Espere! Seu pedido ainda não está completo. Oferta única para novos alunos — essa página não aparece de novo.</div>
+<!-- BARRA DE TOPO -->
+<div class="top-bar">⚠️ NÃO FECHE, ESSA PÁGINA SÓ APARECE UMA VEZ</div>
 
-<!-- DOBRA 1 — HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">✅ Parabéns! Seus 127 Mapas Mentais já estão garantidos.</p>
-  <h1>Os mapas colocam o italiano na sua cabeça. <span class="highlight">Isso aqui impede que ele saia.</span></h1>
-  <p class="hero-desc">Conheça o aplicativo de treino que transforma cada um dos seus 127 mapas em exercícios práticos no seu celular, quiz, complete a frase, treino de escuta... em sessões de 10 minutos por dia, direto do seu celular. Você estuda o mapa, e o app garante que você nunca mais esqueça.</p>
+<div class="wrap">
 
-  <!-- MÍDIA — vídeo/GIF do app (formato vertical 9:16) -->
-  <div class="hero-media">
-    <!-- INSERIR_GIF_DEMO_APP_AQUI -->
-    <!-- Quando tiver o vídeo/GIF, substitua o .media-placeholder abaixo por:
-         <video src="demo-app.mp4" autoplay muted loop playsinline></video>   ou   <img src="demo-app.gif" alt="[NOME DO APP] em uso"> -->
-    <div class="media-placeholder">▶ Vídeo/GIF do app<br>(9:16 vertical)</div>
+  <!-- HEADLINE -->
+  <h1 class="headline">De tudo que você estudar hoje, quanto vai sobrar na sua cabeça daqui a 15 dias?</h1>
+
+  <hr class="divider" style="margin: 10px 0 26px;">
+
+  <!-- MICRO-BLOCO 1 -->
+  <div class="micro">
+    <span class="micro-emoji">❓</span>
+    <p class="micro-text">Você vai estudar um mapa, entender tudo... e aí começa a dúvida:
+      <span class="q">1 - Será que isso vai ficar na minha memória?</span>
+      <span class="q">2 - Daqui a um mês, eu ainda vou lembrar?</span>
+      <span class="q">3 - Como eu pratico o que acabei de aprender?</span>
+    </p>
   </div>
 
-  <p class="hero-micro-copy">É assim que o italiano sai do papel e entra de vez na sua memória.</p>
+  <hr class="divider">
 
-  <div class="hero-price-anchor">
-    <span class="hero-price-old">De R$97,00</span>
-    <div class="hero-price-new">R$47,00</div>
-    <p class="hero-price-note">pagamento único · acesso vitalício</p>
+  <!-- MICRO-BLOCO 2 -->
+  <div class="micro">
+    <span class="micro-emoji">💬</span>
+    <p class="micro-text">Essa dúvida é normal, porque é assim que o cérebro funciona: o que você aprende e não pratica, ele descarta em poucos dias. Não é falta de capacidade, nem do material — é falta de treino. E treinar sozinho, com disciplina, todo dia, é a parte que quase ninguém consegue.</p>
   </div>
 
-  <!-- DOBRA 1: botão-âncora (NÃO é o widget Wiapy) — rola até a oferta -->
-  <a href="#oferta" class="btn-cta">QUERO TREINAR MEU ITALIANO</a>
-  <p class="hero-cta-note">1 clique · sem digitar cartão de novo · acesso imediato</p>
-</section>
+  <hr class="divider">
 
-<!-- DOBRA 2 — A DOR (o esquecimento) -->
-<section class="pain-section">
-  <h2>"Eu estudei, entendi tudo... e duas semanas depois não lembrava de quase nada."</h2>
-  <p>Isso já aconteceu com você em alguma matéria da vida, certo? Não é falta de capacidade — é como o cérebro funciona. Tudo que você aprende e não pratica, o cérebro descarta em poucos dias. É por isso que tanta gente "faz curso de italiano" e continua sem falar italiano.</p>
-  <p>Os mapas mentais resolvem a primeira metade do problema: colocar o italiano na sua cabeça de forma visual, sem decoreba. Mas existe uma segunda metade — fixar — e ela só acontece com prática ativa: responder, errar, corrigir, repetir.</p>
-  <p>É exatamente isso que o [NOME DO APP] faz por você, todos os dias, em poucos minutos.</p>
-  <div class="pain-box">Os seus 127 mapas são o método completo. O app é o acelerador: pra quem quer fixar mais rápido e nunca mais depender da sorte pra lembrar.</div>
-</section>
-
-<!-- DOBRA 3 — COMO FUNCIONA (3 cards) -->
-<section class="forwhom-section">
-  <h2>Como o <em>[NOME DO APP]</em> funciona</h2>
-  <div class="forwhom-grid">
-    <div class="forwhom-card"><div class="fw-icon">⏱️</div><div><h4>Você escolhe seu tempo</h4><p>10, 20 ou 30 minutos por dia. O app monta automaticamente a sua sessão de treino do dia — você abre e já sabe exatamente o que estudar. Zero planejamento, zero desculpa.</p></div></div>
-    <div class="forwhom-card"><div class="fw-icon">🗺️</div><div><h4>Você avança pela jornada dos 127 mapas</h4><p>Cada mapa mental é um nível. Você estuda o mapa, destrava os exercícios daquele nível e vai subindo — do básico à conversação, na ordem certa, vendo seu progresso crescer na tela.</p></div></div>
-    <div class="forwhom-card"><div class="fw-icon">🎯</div><div><h4>Você treina exatamente o que acabou de estudar</h4><p>Nada de frases aleatórias que não têm a ver com nada. Cada exercício usa o vocabulário do mapa que você acabou de ver. Estudou o mapa do restaurante? Vai treinar pedindo comida em italiano.</p></div></div>
+  <!-- MICRO-BLOCO 3 -->
+  <div class="micro">
+    <span class="micro-emoji">🤝</span>
+    <p class="micro-text">O <strong>[NOME DO APP]</strong> foi feito exatamente para esse momento. Seus 127 mapas continuam sendo o método completo — o app é o treinador que fica do seu lado: todo dia ele te diz o que estudar, transforma cada mapa em exercícios práticos e garante que o italiano fique de vez na sua memória.</p>
   </div>
-</section>
 
-<!-- DOBRA 4 — O ITALIANO NO SEU BOLSO -->
-<section class="pocket-section">
-  <h2>Seu professor de italiano agora mora no seu bolso.</h2>
-  <p>Sabe aqueles minutos que somem todo dia? A fila do banco. O ônibus. A sala de espera. O intervalo do almoço. Com o [NOME DO APP] no celular, cada um desses momentos vira treino de italiano.</p>
-  <p>Sem precisar sentar numa mesa, sem abrir caderno, sem "esperar o momento certo" — você tira o celular do bolso, faz uma sessão de 10 minutos e pronto: estudou hoje. É por isso que quem usa o app não depende de disciplina. Depende só de ter um celular por perto. E isso você já tem.</p>
-  <p class="pocket-italic">Enquanto os outros rolam o feed, você aprende italiano.</p>
-</section>
+  <hr class="divider" style="margin: 30px 0;">
 
-<!-- DOBRA 5 — O QUE TEM DENTRO -->
-<section class="dialogs-section">
-  <h2>Tudo isso dentro do <em>[NOME DO APP]</em>:</h2>
-  <div class="dialog-grid">
-    <div class="dialog-card"><span class="fw-icon">🎯</span><p><strong>Quiz de tradução</strong> — traduza do italiano pro português e do português pro italiano, com correção na hora</p></div>
-    <div class="dialog-card"><span class="fw-icon">✍️</span><p><strong>Complete a frase</strong> — o app testa se você realmente entendeu, não se você decorou</p></div>
-    <div class="dialog-card"><span class="fw-icon">🎧</span><p><strong>Ouça e escolha</strong> — escute a palavra na pronúncia certa e marque a opção correta: treino de ouvido todo dia</p></div>
-    <div class="dialog-card"><span class="fw-icon">🔗</span><p><strong>Ligue os pares</strong> — conecte palavra e significado em segundos, do jeito que o cérebro gosta de aprender</p></div>
-    <div class="dialog-card"><span class="fw-icon">🗺️</span><p><strong>Jornada com 127 níveis</strong> — um nível pra cada mapa mental, com progresso visível do início ao fim</p></div>
-    <div class="dialog-card"><span class="fw-icon">⏱️</span><p><strong>Sessão diária no seu tempo</strong> — 10, 20 ou 30 minutos: o app se adapta à sua rotina, não o contrário</p></div>
-    <div class="dialog-card"><span class="fw-icon">🔥</span><p><strong>Sequência de dias</strong> — mantenha sua ofensiva de estudos e veja há quantos dias você não falha com o seu italiano</p></div>
-    <div class="dialog-card"><span class="fw-icon">📱</span><p><strong>Funciona em qualquer lugar</strong> — no celular, no tablet ou no computador: seu progresso te acompanha onde você estiver</p></div>
-  </div>
-  <div class="whats-inside-extra">E ainda: todos os seus mapas e bônus disponíveis dentro do app, com opção de download — pra estudar e treinar no mesmo lugar.</div>
-</section>
-
-<!-- DOBRA 6 — PARA QUEM É -->
-<section class="dialogs-section alt">
-  <h2>O <em>[NOME DO APP]</em> foi feito pra você que...</h2>
-  <div class="dialog-grid">
-    <div class="dialog-card"><span class="fw-icon">🇮🇹</span><p><strong>Vai buscar a cidadania</strong> — e precisa que o italiano esteja fixado na memória no dia da entrevista, não "mais ou menos lembrado"</p></div>
-    <div class="dialog-card"><span class="fw-icon">✈️</span><p><strong>Vai viajar pra Itália</strong> — e quer chegar lá com as frases na ponta da língua, sem abrir tradutor na frente do garçom</p></div>
-    <div class="dialog-card"><span class="fw-icon">⏰</span><p><strong>Tem pouco tempo no dia</strong> — e precisa de um treino que caiba nos 10 minutos da fila ou do ônibus, não de mais um curso de 2 horas por aula</p></div>
-    <div class="dialog-card"><span class="fw-icon">😤</span><p><strong>Já tentou aprender antes e esqueceu tudo</strong> — porque estudou sem praticar. Dessa vez vai ser diferente, e o app garante isso.</p></div>
-  </div>
-</section>
-
-<!-- DOBRA 7 — OFERTA FINAL -->
-<section class="offer-section">
-  <div class="itp-card" id="oferta">
-    <div class="itp-title">[NOME DO APP] — Acesso Vitalício</div>
-    <p class="itp-subtitle">O treino diário que transforma seus 127 mapas em italiano de verdade na sua memória</p>
-    <p class="itp-compare">Aplicativos de idioma cobram R$40 ou mais todo mês, pra sempre. Aqui você paga uma vez e o app é seu pra sempre.</p>
-    <div class="itp-total-box">
-      <div class="itp-total-label">Por ser cliente, só agora:</div>
-      <div class="itp-total-old">De R$97,00</div>
-      <div class="itp-total-price">R$47,00</div>
-      <div class="itp-total-note">pagamento único · acesso vitalício · sem mensalidade</div>
+  <!-- PASSOS -->
+  <p class="how-title">Veja como é simples de usar:</p>
+  <div class="steps">
+    <div class="step">
+      <!-- INSERIR_PRINT_TELA_TEMPO_AQUI -->
+      <!-- Substitua a div .ph-img abaixo por: <img src="print-tela-tempo.png" alt="Escolha seu tempo" class="step-img" loading="lazy"> -->
+      <div class="ph-img">📷 Print da tela<br>(escolher tempo)</div>
+      <div class="step-content">
+        <div class="step-left"><span class="step-num">1</span><span class="step-icon">⏱️</span></div>
+        <div class="step-right">
+          <p class="step-title">Escolha seu tempo</p>
+          <p class="step-sub">Diga ao app quanto tempo você tem: 10, 20 ou 30 minutos por dia.</p>
+        </div>
+      </div>
     </div>
+    <div class="step">
+      <!-- INSERIR_PRINT_SESSAO_DIA_AQUI -->
+      <!-- Substitua a div .ph-img abaixo por: <img src="print-sessao-dia.png" alt="Abra a sessão do dia" class="step-img" loading="lazy"> -->
+      <div class="ph-img">📷 Print da tela<br>(sessão do dia)</div>
+      <div class="step-content">
+        <div class="step-left"><span class="step-num">2</span><span class="step-icon">📲</span></div>
+        <div class="step-right">
+          <p class="step-title">Abra a sessão do dia</p>
+          <p class="step-sub">Todo dia o app já mostra exatamente o que você precisa estudar. Sem planejar nada.</p>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <!-- INSERIR_PRINT_EXERCICIO_AQUI -->
+      <!-- Substitua a div .ph-img abaixo por: <img src="print-exercicio.png" alt="Treine e avance" class="step-img" loading="lazy"> -->
+      <div class="ph-img">📷 Print da tela<br>(exercício)</div>
+      <div class="step-content">
+        <div class="step-left"><span class="step-num">3</span><span class="step-icon">🎯</span></div>
+        <div class="step-right">
+          <p class="step-title">Treine e avance</p>
+          <p class="step-sub">Quiz, complete a frase, treino de escuta — tudo com o conteúdo do mapa que você acabou de estudar. Acertou, subiu de nível.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- BOTÃO PRINCIPAL — widget Wiapy (você envia o código depois).
-         Ao inserir, configure: refusalLinkUrl -> https://www.cultivaragora.store/italianonoouvido
-         refusalLinkText -> "Não quero treinar meu italiano com desconto" -->
+  <!-- DEMO -->
+  <p class="demo-title">E o treino é assim:</p>
+  <div class="demo-phone">
+    <!-- INSERIR_GIF_DEMO_EXERCICIO_AQUI -->
+    <!-- Substitua o texto abaixo por: <video src="demo-exercicio.mp4" autoplay muted loop playsinline></video>  ou  <img src="demo-exercicio.gif" alt="Exercício do app"> -->
+    ▶ GIF do exercício<br>(9:16 vertical)
+  </div>
+  <p class="demo-caption">Exemplo real de um exercício do nível 12 — Mapa "No Restaurante".</p>
+
+  <hr class="divider" style="margin: 30px 0;">
+
+  <!-- BULLETS -->
+  <p class="bullets-title">Com o [NOME DO APP], você vai:</p>
+  <ul class="bullets">
+    <li><span class="ico">📅</span><span>Saber exatamente o que estudar hoje, sem planejar nada</span></li>
+    <li><span class="ico">🎯</span><span>Treinar de verdade o que estudou, em vez de só ler e torcer pra lembrar</span></li>
+    <li><span class="ico">🎧</span><span>Acostumar o ouvido com a pronúncia certa, um pouco por dia</span></li>
+    <li><span class="ico">🗺️</span><span>Ver seu progresso subindo pelos 127 níveis, do zero à conversação</span></li>
+    <li><span class="ico">📱</span><span>Estudar em qualquer lugar: na fila, no ônibus, no intervalo — 10 minutos bastam</span></li>
+  </ul>
+
+  <hr class="divider" style="margin: 30px 0;">
+
+  <!-- CHECKLIST DE VALOR -->
+  <p class="value-headline">O que você leva com o [NOME DO APP]:</p>
+  <div class="value-item">✅ Acesso a todos os 127 níveis de treino</div>
+  <div class="value-item">✅ Exercícios ilimitados, treine quantas vezes quiser</div>
+  <div class="value-item">✅ Funciona direto do navegador do celular, sem baixar nada</div>
+  <div class="value-item">✅ Seus mapas e bônus disponíveis dentro do app, com download</div>
+  <div class="value-item">✅ Acesso vitalício: paga uma vez, usa para sempre</div>
+  <p class="value-anchor">Com o [NOME DO APP], você nunca mais vai abrir um mapa sem saber se está realmente aprendendo.</p>
+
+  <!-- OFERTA -->
+  <div class="offer-box" id="oferta">
+    <p class="offer-label">Oferta exclusiva para alunos dos 127 Mapas Mentais</p>
+    <p class="offer-old">De R$97,00</p>
+    <p class="offer-price">R$47,00</p>
+    <p class="offer-economy">Você economiza R$50 (52%)</p>
+    <p class="offer-note">Pagamento único · Sem mensalidade</p>
+  </div>
+
+  <!-- BOTÃO PRINCIPAL — widget Wiapy (você envia o código depois).
+       Texto do botão: SIM, QUERO TREINAR TODO DIA
+       Ao inserir, configure: refusalLinkUrl -> https://www.cultivaragora.store/italianonoouvido -->
+  <div class="cta-wrap">
     <!-- INSERIR_BOTAO_WIAPY_UPSELL_APP_AQUI -->
-
-    <p class="itp-cta-note">1 clique · sem digitar cartão de novo · acesso liberado em segundos</p>
-    <p class="itp-guarantee">🛡️ Mesma garantia de 7 dias. Se não gostar, devolvemos.</p>
   </div>
-</section>
 
-<!-- DOBRA 8 — FAQ -->
-<section class="faq-section">
-  <h2>Perguntas frequentes</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-toggle"><h4>Preciso baixar alguma coisa?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
-      <div class="faq-body"><p>Não. O [NOME DO APP] funciona direto do navegador do seu celular ou computador — sem ocupar memória, sem loja de aplicativos. Você recebe o link de acesso no seu e-mail assim que a compra é confirmada.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle"><h4>É mensalidade?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
-      <div class="faq-body"><p>Não. Pagamento único de R$47,00 e o acesso é seu pra sempre, incluindo atualizações.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle"><h4>Preciso já saber italiano pra usar?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
-      <div class="faq-body"><p>Não. A jornada começa do nível 1, junto com o primeiro mapa mental. O app acompanha você do zero.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle"><h4>E se eu não gostar?</h4><span class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></span></button>
-      <div class="faq-body"><p>Você tem 7 dias de garantia incondicional. Um e-mail e devolvemos tudo.</p></div>
+  <!-- GARANTIA -->
+  <div class="guarantee-badge">
+    <span class="guarantee-badge-icon">🛡️</span>
+    <div>
+      <div class="guarantee-badge-title">Risco zero · Garantia de 7 dias</div>
+      <div class="guarantee-badge-text">Se não fizer sentido pra você, devolvemos 100% do valor. Sem perguntas, sem burocracia.</div>
     </div>
   </div>
-</section>
 
-<script>
-  document.querySelectorAll('.faq-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-</script>
+  <!-- LINK DE RECUSA -->
+  <a href="https://www.cultivaragora.store/italianonoouvido" class="reject-link">Não, vou tentar lembrar sozinho</a>
+
+  <!-- RODAPÉ -->
+  <p class="footer">🔒 Pagamento 100% seguro · Acesso liberado na hora.</p>
+
+</div>
 
 </body>
 </html>
