@@ -84,15 +84,19 @@ img { max-width:100%; display:block; }
   font-size: 20px; font-weight: 800; color: var(--verde);
   text-align: center; margin: 8px 0 20px;
 }
-.steps { display: flex; flex-direction: column; gap: 34px; }
-.step { text-align: center; }
-.step-meta { margin-top: 14px; }
-.step-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
-.step-num { font-size: 22px; font-weight: 900; color: var(--verde); line-height: 1; }
-.step-icon { font-size: 26px; line-height: 1; }
-.step-title { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.4; margin-bottom: 6px; }
-.step-sub { font-size: 14px; color: var(--txt); line-height: 1.6; max-width: 400px; margin: 0 auto; }
-.step-caption { font-size: 12.5px; font-style: italic; color: var(--txt-s); line-height: 1.5; max-width: 380px; margin: 8px auto 0; }
+.steps { display: flex; flex-direction: column; gap: 28px; }
+.step {
+  max-width: 340px; width: 100%; margin: 0 auto;
+  background: #fff; border: 1px solid #E5E7EB; border-radius: 16px;
+  overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+.step-header { background: var(--verde); padding: 15px 18px; text-align: center; }
+.step-head { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 3px; }
+.step-num { font-size: 20px; font-weight: 900; color: #fff; line-height: 1; }
+.step-icon { font-size: 24px; line-height: 1; }
+.step-title { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.35; }
+.step-photo { width: 100%; height: auto; display: block; }
+.step-sub { font-size: 14px; color: var(--txt); line-height: 1.6; padding: 16px 18px 18px; text-align: center; }
 
 /* ── EVOLUÇÃO (2 imagens) ── */
 .evo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 720px; margin: 0 auto; }
@@ -203,28 +207,28 @@ img { max-width:100%; display:block; }
   <p class="how-title">Veja como é simples de usar:</p>
   <div class="steps">
     <div class="step">
-      <div class="app-shot"><img src="app-tempo.webp" alt="Tela de escolha do tempo diário de estudo" width="680" height="849" loading="lazy" decoding="async"></div>
-      <div class="step-meta">
+      <div class="step-header">
         <div class="step-head"><span class="step-num">1</span><span class="step-icon">⏱️</span></div>
         <p class="step-title">Escolha seu tempo</p>
-        <p class="step-sub">Diga ao app quanto tempo você tem, a partir de 5 minutos por dia. Ele até recomenda o tempo ideal pra sua rotina.</p>
       </div>
+      <img class="step-photo" src="app-tempo.webp" alt="Tela de escolha do tempo diário de estudo" width="680" height="849" loading="lazy" decoding="async">
+      <p class="step-sub">Diga ao app quanto tempo você tem, a partir de 5 minutos por dia. Ele até recomenda o tempo ideal pra sua rotina.</p>
     </div>
     <div class="step">
-      <div class="app-shot"><img src="app-inicio.webp" alt="Tela inicial do app com sessão do dia" width="680" height="849" loading="lazy" decoding="async"></div>
-      <div class="step-meta">
+      <div class="step-header">
         <div class="step-head"><span class="step-num">2</span><span class="step-icon">📲</span></div>
         <p class="step-title">Abra a sessão do dia</p>
-        <p class="step-sub">Todo dia o app já te espera com os flashcards do dia, o desafio diário e o ponto exato de onde você parou. Zero planejamento.</p>
       </div>
+      <img class="step-photo" src="app-inicio.webp" alt="Tela inicial do app com sessão do dia" width="680" height="849" loading="lazy" decoding="async">
+      <p class="step-sub">Todo dia o app já te espera com os flashcards do dia, o desafio diário e o ponto exato de onde você parou. Zero planejamento.</p>
     </div>
     <div class="step">
-      <div class="app-shot"><img src="app-atividades.webp" alt="Tela de atividades de treino" width="680" height="849" loading="lazy" decoding="async"></div>
-      <div class="step-meta">
+      <div class="step-header">
         <div class="step-head"><span class="step-num">3</span><span class="step-icon">🎯</span></div>
         <p class="step-title">Treine e avance</p>
-        <p class="step-sub">Quiz de tradução, complete a frase, ligue os pares, ouça e escolha. Cada acerto vale pontos e te empurra pro próximo nível.</p>
       </div>
+      <img class="step-photo" src="app-atividades.webp" alt="Tela de atividades de treino" width="680" height="849" loading="lazy" decoding="async">
+      <p class="step-sub">Quiz de tradução, complete a frase, ligue os pares, ouça e escolha. Cada acerto vale pontos e te empurra pro próximo nível.</p>
     </div>
   </div>
 
