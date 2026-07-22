@@ -1,7 +1,8 @@
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <base href="/italianoapp2/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parla Italiano — Oferta Exclusiva</title>
+<title>Parla Italiano — Última Condição</title>
 <script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
 <style>
 :root {
@@ -271,335 +272,87 @@ img { max-width:100%; display:block; }
   .headline { font-size: 1.5rem; }
   .offer-price { font-size: 40px; }
 }
-
-/* ── POPUP EXIT INTENT (aparece ao clicar em recusa) ── */
-.discount-popup-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.78); z-index: 9999;
-  align-items: flex-start; justify-content: center;
-  padding: 20px 12px; overflow-y: auto;
-  -webkit-tap-highlight-color: transparent;
-}
-.discount-popup-overlay.open { display: flex; }
-.discount-popup {
-  background: #fff; border-radius: 16px;
-  max-width: 400px; width: 100%;
-  position: relative; padding: 14px 14px 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  margin: auto;
-}
-.discount-popup-close {
-  position: absolute; top: 10px; right: 10px;
-  width: 32px; height: 32px; border-radius: 50%;
-  background: rgba(0,0,0,0.55); border: none;
-  color: #fff; font-size: 16px; font-weight: 700;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  padding: 0; line-height: 1; z-index: 2;
-}
-.discount-popup-close:hover { background: rgba(0,0,0,0.75); }
-.discount-popup-image {
-  width: 100%; height: auto; display: block;
-  border-radius: 10px; margin-bottom: 16px;
-}
 </style>
 </head>
 <body>
 
 <!-- BARRA DE TOPO -->
-<div class="top-bar">⚠️ SUA COMPRA FOI CONFIRMADA, MAS VOCÊ PRECISA LER ISSO</div>
+<div class="top-bar">⚠️ ESPERE! ANTES DE VOCÊ SAIR, UMA ÚLTIMA CONDIÇÃO</div>
 
 <div class="wrap">
 
-  <!-- HEADLINE -->
-  <h1 class="headline">DAQUI A 30 DIAS, QUANTO DOS SEUS MAPAS AINDA VAI ESTAR NA SUA CABEÇA?</h1>
+  <!-- BLOCO 1 — TRANSIÇÃO -->
+  <h1 class="sec-title" style="margin-top:30px;">Entendi. Talvez R$27,90 não fosse a hora.</h1>
+  <p class="sec-text" style="margin-top:14px;">Mas eu não quero que você comece a estudar seus mapas sem ter como fixar o que aprendeu.</p>
+  <p class="sec-text">Então vou fazer o seguinte: como você acabou de garantir os 127 mapas, e só nesta página, o Parla Italiano sai por <span style="color:var(--verde);font-weight:700">R$17,90</span> — <span style="color:var(--verde);font-weight:700">o mesmo preço que você pagou pelos mapas</span>.</p>
+  <p class="sec-text">É a única vez que essa condição aparece.</p>
 
-  <hr class="divider" style="margin: 10px 0 24px;">
+  <hr class="divider">
 
-  <!-- CARD ÚNICO (3 micro-blocos) -->
-  <div class="info-card">
-    <div class="info-row">
-      <span class="info-row-icon">❓</span>
-      <p class="info-row-text">Você estuda um mapa, entende tudo. Mas depois de <span style="font-weight:700">1 mês</span> quanto disso ainda vai estar na sua <span style="color:var(--verde);font-weight:700">memória</span>?</p>
-    </div>
-    <hr class="info-divider">
-    <div class="info-row">
-      <span class="info-row-icon">💬</span>
-      <p class="info-row-text">Não é falta de capacidade, nem do material. É o cérebro: o que não é <span style="color:var(--verde);font-weight:700">praticado</span>, ele <span style="font-weight:700">apaga</span> em poucos dias. E treinar <span style="font-weight:700">sozinho</span>, todo dia, é a parte que quase ninguém consegue.</p>
-    </div>
+  <!-- BLOCO 2 — LEMBRETE DO PRODUTO -->
+  <div class="app-shot">
+    <img src="/italianoapp/app-atividades.webp" alt="Tela de atividades de treino do Parla Italiano" width="680" height="849" loading="lazy" decoding="async">
   </div>
+  <ul class="bullets" style="margin-top:22px;">
+    <li><span class="ico">🎯</span><span>Treino com correção na hora, não só leitura</span></li>
+    <li><span class="ico">🔥</span><span>Sessão de 5 minutos por dia, montada pra você</span></li>
+    <li><span class="ico">📈</span><span>Progresso visível: você vê que está aprendendo</span></li>
+  </ul>
 
-  <!-- FOTO EM DESTAQUE + LEGENDA -->
-  <div class="app-feature">
-    <img class="app-feature-img" src="parla-italiano-brand.png" alt="Parla Italiano — app para aprender italiano" width="1080" height="1080" loading="lazy" decoding="async">
-    <p class="app-feature-caption">O <strong>Aplicativo Parla Italiano</strong> foi feito pra isso: alguns minutos de treino por dia e você memoriza o que estudou, e quem não esquece o conteúdo, aprende muito mais rápido.</p>
-  </div>
+  <hr class="divider">
 
-  <hr class="divider" style="margin: 30px 0;">
-
-  <!-- PASSOS -->
-  <p class="how-title">Veja como é simples de usar:</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-header">
-        <p class="step-title">1: Escolha seu tempo</p>
-      </div>
-      <img class="step-photo" src="app-tempo.webp" alt="Tela de escolha do tempo diário de estudo" width="680" height="849" loading="lazy" decoding="async">
-      <p class="step-sub">A partir de 5 minutos por dia. O app monta o treino que cabe na sua rotina, e ainda recomenda o ideal.</p>
-    </div>
-    <div class="step">
-      <div class="step-header">
-        <p class="step-title">2: Abra a sessão do dia</p>
-      </div>
-      <img class="step-photo" src="app-inicio.webp" alt="Tela inicial do app com sessão do dia" width="680" height="849" loading="lazy" decoding="async">
-      <p class="step-sub">Você abre o aplicativo e já sabe exatamente o que precisa estudar e revisar.</p>
-    </div>
-    <div class="step">
-      <div class="step-header">
-        <p class="step-title">3: Treine e avance</p>
-      </div>
-      <img class="step-photo" src="app-atividades.webp" alt="Tela de atividades de treino" width="680" height="849" loading="lazy" decoding="async">
-      <p class="step-sub">Quiz, complete a frase, ligue os pares, ouça e escolha, e muito mais, cada acerto vale pontos e te sobe de nível.</p>
-    </div>
-  </div>
-
-  <!-- DOMINE TEMA POR TEMA -->
-  <div class="step" style="margin:38px auto 0;">
-    <div class="step-header">
-      <p class="step-title">4: Domine tema por tema</p>
-    </div>
-    <img class="step-photo" src="app-flashcards.webp" alt="Tela de flashcards por tema" width="680" height="849" loading="lazy" decoding="async">
-    <p class="step-sub">Os flashcards mostram o que você já domina e o que ainda precisa revisar. Nada fica pra trás.</p>
-  </div>
-
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- VOCÊ VÊ SUA EVOLUÇÃO -->
-  <div class="evo-highlight">
-    <p class="sec-title">Você vê sua evolução acontecendo</p>
-    <p class="sec-text">Estudar sozinho desanima porque você não vê resultado. No app, você vê cada dia de treino na tela, e ninguém quer quebrar uma sequência.</p>
-  </div>
-  <div class="evo-grid">
-    <div class="step">
-      <div class="step-header">
-        <p class="step-title">5: Sua sequência em jogo</p>
-      </div>
-      <img class="step-photo" src="app-progresso.webp" alt="Tela de progresso: nível, dias seguidos e XP" width="680" height="849" loading="lazy" decoding="async">
-      <p class="step-sub">Sua evolução visível, dia após dia. Quando você vê que está avançando, fica fácil continuar.</p>
-    </div>
-    <div class="step">
-      <div class="step-header">
-        <p class="step-title">6: Você sempre sabe onde está</p>
-      </div>
-      <img class="step-photo" src="app-modulos.webp" alt="Tela de progresso por módulo" width="680" height="849" loading="lazy" decoding="async">
-      <p class="step-sub">Cada módulo com sua barra de progresso, dos Fundamentos à Cultura &amp; Viagem.</p>
-    </div>
-  </div>
-
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- OFERTA UNIFICADA (benefícios + preço + botão) -->
-  <div class="unified-offer-card" id="oferta">
-    <span class="benefits-badge">OFERTA EXCLUSIVA</span>
-    <p class="benefits-title">📱 O que você leva com o nosso aplicativo</p>
-    <p class="benefits-subtitle">Tudo integrado em um único lugar</p>
-
-    <div class="benefits-list">
-      <div class="benefit-item">
-        <span class="benefit-icon">📚</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Sua compra 100% integrada</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">🧠</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Treino Prático Inteligente</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">⏱️</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Resultado em 5 Minutos</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">📈</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Gráficos de Evolução Real</div>
-        </div>
-      </div>
-
-      <div class="benefit-item">
-        <span class="benefit-icon">🌍</span>
-        <div class="benefit-content">
-          <div class="benefit-title">Estude no seu ritmo, onde quiser</div>
-        </div>
-      </div>
-    </div>
-
+  <!-- BLOCO 3 — CARD DE OFERTA -->
+  <div class="unified-offer-card">
+    <p style="text-align:center;font-size:13px;color:#a0bab0;letter-spacing:0.04em;margin-bottom:2px;">Última condição, só nesta página</p>
     <div class="unified-price-box">
       <p class="offer-old">De R$47,90</p>
-      <p class="offer-price">R$14,90</p>
-      <p class="offer-economy">Você economiza R$33,00 (69%)</p>
-      <p class="offer-note">Pagamento único · Sem mensalidade</p>
+      <p class="offer-old">R$27,90</p>
+      <p class="offer-price">R$17,90</p>
+      <p class="offer-note">Pagamento único · Sem mensalidade · Acesso vitalício</p>
     </div>
 
-    <!-- BOTÃO PRINCIPAL — widget Wiapy -->
+    <!-- INSERIR_BOTAO_WIAPY_DOWNSELL_AQUI — trocar o linkUrl abaixo pelo checkout real do downsell -->
     <div id="wiapy_upsell"></div>
     <script>
     initWiapyUpsell({
-      linkUrl: "https://pay.wiapy.com/checkout/undefined",
-      linkText: "SIM, QUERO LIBERAR O APP AGORA",
+      linkUrl: "https://pay.wiapy.com/checkout/COLOCAR_LINK_DO_DOWNSELL",
+      linkText: "SIM, QUERO POR R$17,90",
       styles: {
         backgroundColor: "#00d769",
         hoverBackgroundColor: "#00b85a",
         fontSize: "17px",
         borderRadius: "10px"
-      },
-      refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-      refusalLinkText: "Não, prefiro estudar sozinho.",
-      refusalLinkColor: "#888888"
+      }
     });
     </script>
 
-    <span class="unified-secure">🔒 Compra segura · 15 dias de garantia</span>
-  </div>
-
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- BULLETS -->
-  <div class="bullets-section">
-    <p class="bullets-title">Com o Parla Italiano, você vai:</p>
-    <ul class="bullets">
-      <li><span class="ico">📅</span><span>Receber sua tarefa do dia pronta, sem abrir 127 mapas e travar sem saber por onde começar</span></li>
-      <li><span class="ico">🎯</span><span>Praticar respondendo e corrigindo na hora, em vez de só ler e torcer pra ter fixado</span></li>
-      <li><span class="ico">🎧</span><span>Treinar o ouvido com o áudio dentro do exercício: você escuta e responde, não só escuta</span></li>
-      <li><span class="ico">🔥</span><span>Manter a sequência todo dia com o desafio diário, porque o app te lembra e você não perde o ritmo</span></li>
-      <li><span class="ico">📈</span><span>Ver na tela a prova de que está aprendendo: pontos, nível e progresso por módulo</span></li>
-      <li><span class="ico">📱</span><span>Ter tudo num só lugar: seus mapas, bônus e treinos juntos, é só abrir e praticar</span></li>
-    </ul>
-  </div>
-
-  <hr class="divider" style="margin: 30px 0;">
-
-  <!-- GARANTIA -->
-  <div class="guarantee-badge">
-    <img class="guarantee-badge-icon" src="garantia-selo.webp" alt="Garantia de 15 dias" width="180" height="180" loading="lazy" decoding="async">
-    <div>
-      <div class="guarantee-badge-title">Garantia de 15 dias</div>
-      <div class="guarantee-badge-text">Se por qualquer motivo você não ficar satisfeito com o material, devolvemos 100% do seu dinheiro em até 15 dias após a compra. Sem burocracia, sem perguntas. Você não tem absolutamente nada a perder.</div>
+    <!-- GARANTIA (versão curta) -->
+    <div style="text-align:center;margin-top:20px;">
+      <img src="/italianoapp/garantia-selo.webp" alt="Garantia de 15 dias" width="64" height="64" loading="lazy" decoding="async" style="margin:0 auto 8px;display:block;">
+      <p style="font-size:13px;color:#a0bab0;line-height:1.6;max-width:340px;margin:0 auto;">🛡️ 15 dias de garantia — se não gostar, devolvemos tudo, sem burocracia.</p>
     </div>
+
+    <!-- LINK DE RECUSA — trocar href pela URL da página de acesso/obrigado dos mapas -->
+    <a href="URL_PAGINA_ACESSO" class="reject-link" style="color:#a0bab0;">Não, obrigado. Quero acessar meus mapas.</a>
+
+    <span class="unified-secure">🔒 Pagamento 100% seguro · Acesso liberado na hora.</span>
   </div>
 
-  <hr class="divider" style="margin: 30px 0;">
+  <hr class="divider">
 
-  <!-- FAQ -->
+  <!-- BLOCO 4 — FAQ (uma pergunta) -->
   <p class="faq-title">Perguntas frequentes</p>
   <div class="faq-container">
     <div class="faq-item">
-      <button class="faq-toggle">Qual a diferença do app pros mapas que eu já comprei?</button>
+      <button class="faq-toggle">É o mesmo app da página anterior?</button>
       <div class="faq-content">
-        <p>Os mapas ensinam o italiano de forma visual, essa é a base. O app é onde você vai treinar e fixar o que os mapas ensinaram, com exercícios, áudios e repetição. Um não substitui o outro: a junção dos 2 acelera muito o aprendizado.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle">Não tenho tempo pra mais um curso.</button>
-      <div class="faq-content">
-        <p>Por isso o app trabalha com sessões a partir de 5 minutos. Não é "mais um curso" pra encaixar no dia, é o treino que cabe na fila do banco, no ônibus, em qualquer lugar.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle">Serve pra quem quer cidadania ou vai viajar?</button>
-      <div class="faq-content">
-        <p>Sim, você treina o vocabulário e a escuta que vai usar de verdade, e consegue ver o seu progresso em tempo real. Chegando confiante com o seu italiano.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle">Preciso baixar alguma coisa?</button>
-      <div class="faq-content">
-        <p>Se você quiser, o Parla Italiano funciona tanto pelo navegador, tanto baixando o aplicativo em seu celular.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle">Como recebo o acesso?</button>
-      <div class="faq-content">
-        <p>Assim que o pagamento é aprovado, seu acesso é liberado na hora e o link chega no seu e-mail. Sem espera.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-toggle">E se eu não gostar?</button>
-      <div class="faq-content">
-        <p>Você tem 15 dias de garantia incondicional. Teste o app da forma que preferir, e se por qualquer motivo não gostar, devolvemos seu dinheiro sem perguntas.</p>
+        <p>É o mesmo aplicativo, completo, sem nada a menos. A única diferença é o preço, e ele só está disponível nesta página porque você acabou de se tornar aluno.</p>
       </div>
     </div>
   </div>
 
-  <hr class="divider" style="margin: 34px 0;">
-
-  <!-- HEADLINE ANTES DA OFERTA (após FAQ) -->
-  <section class="app-hero-copy">
-    <h2><span class="hero-line">Chega de estudar e esquecer.</span><span class="hero-line">Adquira o aplicativo que <span class="hl">fixa o italiano de vez</span>.</span></h2>
-  </section>
-
-  <!-- OFERTA SIMPLIFICADA (após FAQ) — só preço + botão -->
-  <div class="unified-offer-card" id="oferta-2">
-    <div class="unified-price-box" style="margin-top:0;">
-      <p class="offer-old">De R$47,90</p>
-      <p class="offer-price">R$14,90</p>
-      <p class="offer-economy">Você economiza R$33,00 (69%)</p>
-      <p class="offer-note">Pagamento único · Sem mensalidade</p>
-    </div>
-
-    <div id="wiapy_upsell_2"></div>
-    <script>
-    initWiapyUpsell({
-      elementId: "wiapy_upsell_2",
-      linkUrl: "https://pay.wiapy.com/checkout/undefined",
-      linkText: "SIM, EU ACEITO ESSA OFERTA",
-      styles: {
-        backgroundColor: "#00d769",
-        hoverBackgroundColor: "#00b85a",
-        fontSize: "17px",
-        borderRadius: "10px"
-      },
-      refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-      refusalLinkText: "Não, vou tentar lembrar sozinho",
-      refusalLinkColor: "#000000"
-    });
-    </script>
-  </div>
-
-  <!-- RODAPÉ -->
   <p class="footer">🔒 Pagamento 100% seguro · Acesso liberado na hora.</p>
 
-</div>
-
-<!-- POPUP DE OFERTA (aparece ao clicar em "Não, prefiro estudar sozinho") -->
-<div class="discount-popup-overlay" id="discount-popup" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="discount-popup">
-    <button class="discount-popup-close" type="button" aria-label="Fechar">✕</button>
-    <img class="discount-popup-image" src="promo-desconto.png" alt="Ganhe R$10 de desconto agora" loading="lazy" decoding="async">
-    <div id="wiapy_upsell_popup"></div>
-    <script>
-    initWiapyUpsell({
-        elementId: "wiapy_upsell_popup",
-        linkUrl: "https://pay.wiapy.com/checkout/undefined",
-        linkText: "SIM, EU ACEITO ESSA OFERTA",
-        styles: {
-            backgroundColor: "#00d769",
-            hoverBackgroundColor: "#00b85a",
-            fontSize: "17px",
-            borderRadius: "10px"
-        },
-        refusalLinkUrl: "https://www.cultivaragora.store/italianonoouvido",
-        refusalLinkText: "Recusar está oferta",
-        refusalLinkColor: "#000000"
-    });
-    </script>
-  </div>
 </div>
 
 <script>
@@ -618,84 +371,6 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     }
   });
 });
-</script>
-
-<script>
-(function() {
-  var popup = document.getElementById('discount-popup');
-  if (!popup) return;
-  var closeBtn = popup.querySelector('.discount-popup-close');
-
-  function openPopup() {
-    popup.classList.add('open');
-    popup.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closePopup() {
-    popup.classList.remove('open');
-    popup.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  function isExternalRefusal(el) {
-    if (!el || popup.contains(el)) return false;
-    var href = el.getAttribute('href') || '';
-    var text = (el.textContent || '').toLowerCase();
-    return href.indexOf('italianonoouvido') !== -1
-        || text.indexOf('prefiro estudar sozinho') !== -1
-        || text.indexOf('vou tentar lembrar') !== -1;
-  }
-
-  function neutralize(a) {
-    if (a.dataset.refusalNeutralized) return;
-    a.dataset.refusalNeutralized = 'true';
-    a.setAttribute('href', 'javascript:void(0)');
-    a.removeAttribute('target');
-    a.onclick = null;
-  }
-
-  function scan() {
-    var anchors = document.querySelectorAll('a');
-    for (var i = 0; i < anchors.length; i++) {
-      if (isExternalRefusal(anchors[i])) neutralize(anchors[i]);
-    }
-  }
-
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a');
-    if (link && (isExternalRefusal(link) || link.dataset.refusalNeutralized)) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-      openPopup();
-      return;
-    }
-    if (popup.classList.contains('open')) {
-      var popupLink = e.target.closest('.discount-popup a');
-      if (popupLink) {
-        var pHref = popupLink.getAttribute('href') || '';
-        var pText = (popupLink.textContent || '').toLowerCase();
-        var isPopupRefusal = pHref.indexOf('italianonoouvido') !== -1
-                          || pHref.indexOf('wiapy.com/login') !== -1
-                          || pText.indexOf('recusar') !== -1
-                          || pText.indexOf('lembrar sozinho') !== -1;
-        if (isPopupRefusal) {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-          closePopup();
-        }
-      }
-    }
-  }, true);
-
-  new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
-  scan();
-
-  closeBtn.addEventListener('click', closePopup);
-  popup.addEventListener('click', function(e) { if (e.target === popup) closePopup(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
-})();
 </script>
 
 </body>
