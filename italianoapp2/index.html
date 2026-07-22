@@ -323,7 +323,10 @@ img { max-width:100%; display:block; }
         hoverBackgroundColor: "#00b85a",
         fontSize: "17px",
         borderRadius: "10px"
-      }
+      },
+      refusalLinkUrl: "URL_PAGINA_ACESSO_DOS_MAPAS",
+      refusalLinkText: "Não, obrigado. Quero acessar meus mapas.",
+      refusalLinkColor: "#888888"
     });
     </script>
 
@@ -351,6 +354,25 @@ img { max-width:100%; display:block; }
 
 </div>
 
+<!-- POPUP DE ÚLTIMA CHANCE (aparece ao clicar em recusar a oferta) -->
+<div class="discount-popup-overlay" id="lastchance-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="discount-popup" style="padding:0;overflow:hidden;max-width:400px;">
+    <button class="discount-popup-close" type="button" aria-label="Fechar">✕</button>
+    <div style="background:var(--vermelho);color:#fff;text-align:center;font-weight:900;font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;padding:12px 44px;">ÚLTIMA CHANCE DE VERDADE</div>
+    <div style="padding:22px 20px 20px;text-align:center;">
+      <h2 style="font-family:Arial,Helvetica,sans-serif;font-size:clamp(1.2rem,5.2vw,1.55rem);font-weight:900;color:var(--navy);line-height:1.2;text-transform:uppercase;margin:0 0 12px;">DEPOIS DESSA TELA, A OFERTA ACABA</h2>
+      <p style="font-size:13.5px;color:var(--txt-s);line-height:1.6;margin:0 0 16px;">Essa é a última vez que o Parla Italiano aparece por <b style="color:var(--verde)">R$14,90</b>. Se você fechar agora, ele volta para R$27,90 e essa página não abre de novo.</p>
+      <div style="background:#f3f6f4;border:1px solid #e3ebe6;border-radius:12px;padding:14px;margin:0 0 16px;">
+        <p style="font-size:14px;color:var(--vermelho);text-decoration:line-through;margin:0 0 2px;">De R$27,90</p>
+        <p style="font-family:Arial,Helvetica,sans-serif;font-size:42px;font-weight:900;color:var(--verde);line-height:1;margin:0 0 4px;">R$14,90</p>
+        <p style="font-size:12px;color:var(--txt-s);margin:0;">Pagamento único · Seu pra sempre</p>
+      </div>
+      <a href="https://pay.wiapy.com/checkout/6a42e0d6f5f6893c945aa920" style="display:block;width:100%;background:#00d769;color:#fff;font-weight:800;font-size:1rem;text-align:center;padding:15px 1rem;border-radius:10px;text-decoration:none;">QUERO GARANTIR POR R$14,90</a>
+      <a href="#" class="lastchance-leave" style="display:block;margin-top:14px;font-size:13px;color:#888;text-decoration:underline;text-underline-offset:3px;">Não, quero acessar meus mapas</a>
+    </div>
+  </div>
+</div>
+
 <script>
 document.querySelectorAll('.faq-toggle').forEach(btn => {
   btn.addEventListener('click', function() {
@@ -367,6 +389,65 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     }
   });
 });
+</script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('lastchance-overlay');
+  if (!overlay) return;
+  var closeBtn = overlay.querySelector('.discount-popup-close');
+  var leaveLink = overlay.querySelector('.lastchance-leave');
+  var STORAGE_KEY = 'pi_downsell_lastchance_shown';
+  var shownFallback = false;
+  var pendingRedirect = null;
+
+  function alreadyShown() {
+    try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return shownFallback; }
+  }
+  function markShown() {
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    shownFallback = true;
+  }
+  function openPopup() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAndRedirect() {
+    document.body.style.overflow = '';
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    if (pendingRedirect) { window.location.href = pendingRedirect; }
+  }
+
+  // O link de recusa da pagina (gerado pelo widget Wiapy). Identifica pelo texto.
+  function isPageRefusal(a) {
+    if (!a || overlay.contains(a)) return false;
+    var t = (a.textContent || '').toLowerCase();
+    return t.indexOf('acessar meus mapas') !== -1;
+  }
+
+  // Delegacao em captura para pegar o link mesmo renderizado depois (Wiapy).
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    if (isPageRefusal(a)) {
+      if (alreadyShown()) return; // 2o clique: segue o redirecionamento original
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      pendingRedirect = a.getAttribute('href') || pendingRedirect;
+      markShown();
+      openPopup();
+    }
+  }, true);
+
+  // Fechar (X, fora do card, ESC ou link de recusa de dentro) = seguir o redirect original.
+  closeBtn.addEventListener('click', closeAndRedirect);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeAndRedirect(); });
+  if (leaveLink) leaveLink.addEventListener('click', function(e) { e.preventDefault(); closeAndRedirect(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && overlay.classList.contains('open')) closeAndRedirect(); });
+})();
 </script>
 
 </body>
