@@ -272,6 +272,32 @@ img { max-width:100%; display:block; }
   .headline { font-size: 1.5rem; }
   .offer-price { font-size: 40px; }
 }
+
+/* ── POPUP DE ÚLTIMA CHANCE (escondido até clicar em recusar) ── */
+.discount-popup-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.78); z-index: 9999;
+  align-items: flex-start; justify-content: center;
+  padding: 20px 12px; overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.discount-popup-overlay.open { display: flex; }
+.discount-popup {
+  background: #fff; border-radius: 16px;
+  max-width: 400px; width: 100%;
+  position: relative; padding: 14px 14px 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  margin: auto;
+}
+.discount-popup-close {
+  position: absolute; top: 10px; right: 10px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(0,0,0,0.55); border: none;
+  color: #fff; font-size: 16px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  padding: 0; line-height: 1; z-index: 2;
+}
+.discount-popup-close:hover { background: rgba(0,0,0,0.75); }
 </style>
 </head>
 <body>
