@@ -424,7 +424,7 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
   function isPageRefusal(a) {
     if (!a || overlay.contains(a)) return false;
     var t = (a.textContent || '').toLowerCase();
-    return t.indexOf('acessar meus mapas') !== -1;
+    return t.indexOf('recusar') !== -1 || t.indexOf('acessar meus mapas') !== -1;
   }
 
   // Delegacao em captura para pegar o link mesmo renderizado depois (Wiapy).
