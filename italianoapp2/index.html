@@ -350,7 +350,7 @@ img { max-width:100%; display:block; }
         fontSize: "17px",
         borderRadius: "10px"
       },
-      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkUrl: "https://aplicativodoitaliano.vercel.app/inicio",
       refusalLinkText: "Recusar está oferta",
       refusalLinkColor: "#000000"
     });
@@ -424,8 +424,8 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
   var closeBtn = overlay.querySelector('.discount-popup-close');
   var leaveLink = overlay.querySelector('.lastchance-leave');
   var STORAGE_KEY = 'pi_downsell_lastchance_shown';
+  var REDIRECT_URL = 'https://aplicativodoitaliano.vercel.app/inicio';
   var shownFallback = false;
-  var pendingRedirect = null;
 
   function alreadyShown() {
     try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return shownFallback; }
@@ -443,7 +443,7 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
     document.body.style.overflow = '';
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
-    if (pendingRedirect) { window.location.href = pendingRedirect; }
+    window.location.href = REDIRECT_URL;
   }
 
   // O link de recusa da pagina (gerado pelo widget Wiapy). Identifica pelo texto.
@@ -462,7 +462,6 @@ document.querySelectorAll('.faq-toggle').forEach(btn => {
       e.preventDefault();
       e.stopPropagation();
       e.stopImmediatePropagation();
-      pendingRedirect = a.getAttribute('href') || pendingRedirect;
       markShown();
       openPopup();
     }
