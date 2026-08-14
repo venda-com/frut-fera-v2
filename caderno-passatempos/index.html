@@ -93,40 +93,58 @@ img { max-width:100%; display:block; }
 /* ── DIVISOR ── */
 .divider { border: none; border-top: 1px solid var(--linha); width: 100%; margin: 34px 0; }
 
-/* ── BLOCO DE OFERTA ── */
-.offer-card {
-  background: #1a3a2a; border: 3px solid var(--verde); border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,146,70,0.25);
-  padding: 30px 22px; margin: 6px auto 0; max-width: 460px; text-align: center;
+/* ── CARD DE OFERTA (padrão "PLANO COMPLETO" da /italiano) ── */
+.itp-card {
+  background: #1a2e1a; border-radius: 16px; padding: 2rem 1.5rem;
+  position: relative; text-align: left; max-width: 460px; margin: 30px auto 0;
+  box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.3), 0 0 40px rgba(0,230,118,.12);
 }
-.offer-product { font-family: var(--serif); font-size: 20px; font-weight: 900; color: var(--ouro); line-height: 1.3; margin-bottom: 14px; }
-.offer-desc { font-size: 14px; color: #cbd8d1; line-height: 1.65; margin: 0 auto 12px; max-width: 380px; }
-.price-box {
-  background: rgba(0,0,0,0.28); border: 1px solid rgba(0,146,70,0.35);
-  border-radius: 14px; padding: 20px 16px; margin: 20px auto;
+.itp-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: #f5a623; color: #1a1a1a; font-size: .7rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase; padding: .3rem 1rem;
+  border-radius: 2rem; white-space: nowrap;
 }
-.price-old { font-size: 16px; color: #ff8f8f; text-decoration: line-through; margin-bottom: 8px; }
-.price-prefix { display: block; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.price-now { font-family: Arial, Helvetica, sans-serif; font-size: 46px; font-weight: 900; color: #00ff88; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,255,136,0.3); }
-.price-note { font-size: 13px; color: #a0bab0; }
-.offer-guarantee { font-size: 13.5px; color: #cbd8d1; line-height: 1.65; margin: 0 auto; max-width: 380px; }
-.offer-guarantee b { color: #fff; font-weight: 700; }
-.cta-button {
-  display: block; width: 100%; background: #00d769; color: #fff;
-  font-weight: 800; font-size: 1rem; text-align: center; padding: 16px 1rem;
-  border-radius: 10px; text-decoration: none; margin-top: 22px; transition: background .2s;
+.itp-title {
+  font-weight: 900; font-size: 1.15rem; color: #f5a623;
+  text-transform: uppercase; letter-spacing: .04em; text-align: center;
+  line-height: 1.3; margin-bottom: 1rem;
 }
-.cta-button:hover { background: #00b85a; }
-.reject-link {
-  display: block; width: 100%; margin-top: 16px;
-  color: #a0bab0; font-size: 13px; text-align: center; text-decoration: underline;
-  text-underline-offset: 3px; line-height: 1.5;
+.itp-banner {
+  background: #2d4a2d; border-radius: 8px; padding: .6rem 1rem;
+  text-align: center; font-size: .85rem; font-weight: 700; color: #fff;
+  margin-bottom: 1.1rem;
 }
-.reject-link:hover { color: #cbd8d1; }
+.itp-items { list-style: none; margin: 0; display: flex; flex-direction: column; }
+.itp-item {
+  display: flex; align-items: flex-start; gap: .6rem;
+  padding: .7rem 0; border-bottom: 1px solid rgba(0,230,118,.12);
+}
+.itp-item:last-child { border-bottom: none; }
+.itp-item-icon { flex-shrink: 0; font-size: 1.1rem; line-height: 1.4; }
+.itp-item-name { font-size: .9rem; font-weight: 700; color: #fff; line-height: 1.4; }
+.itp-soft-divider { border: none; border-top: 1px solid rgba(0,230,118,.18); margin: 6px 0; }
+.itp-total-box {
+  background: #0f1f0f; border-radius: 12px; padding: 1.1rem 1rem;
+  text-align: center; margin-top: 1.25rem;
+}
+.itp-total-label { font-size: .75rem; color: rgba(255,255,255,.65); margin-bottom: .1rem; }
+.itp-total-old { font-size: .875rem; color: #ff5252; text-decoration: line-through; }
+.itp-total-price { font-size: 2.25rem; font-weight: 900; color: #00e676; line-height: 1; margin: .2rem 0; }
+.itp-total-period { font-size: .8rem; color: rgba(255,255,255,.65); }
+.itp-economy {
+  display: inline-block; background: rgba(0,230,118,.15); color: #00e676;
+  font-size: .75rem; font-weight: 700; padding: .3rem .9rem; border-radius: 1rem;
+  margin-top: .6rem;
+}
+
+/* ── FORA DO CARD: garantia + espaços reservados ── */
+.offer-guarantee-line { font-size: 14px; font-weight: 600; color: var(--txt); text-align: center; margin: 22px auto 0; }
+.reject-slot { min-height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
 @media (max-width: 390px) {
   .headline { font-size: 1.55rem; }
-  .price-now { font-size: 40px; }
+  .itp-total-price { font-size: 1.875rem; }
 }
 </style>
 </head>
@@ -209,30 +227,50 @@ img { max-width:100%; display:block; }
 
   <hr class="divider">
 
-  <!-- BLOCO DE OFERTA -->
-  <h2 class="sub-title">Recapitulando o que você leva:</h2>
-  <div class="offer-card">
-    <p class="offer-product">📔 Caderno de Passatempos em Italiano</p>
-    <p class="offer-desc">Mais de [X] atividades nos 4 formatos que você acabou de ver, organizadas em 6 temas do dia a dia. Todas com gabarito completo pra você conferir na hora.</p>
-    <p class="offer-desc">Acesso imediato, no celular, tablet ou computador — e pode imprimir também, se preferir resolver no papel.</p>
+  <!-- BLOCO DE OFERTA (padrão "PLANO COMPLETO" da /italiano) -->
+  <div class="itp-card">
+    <span class="itp-badge">OFERTA EXCLUSIVA DESTE PEDIDO</span>
+    <h2 class="itp-title">📔 Caderno de Passatempos em Italiano</h2>
+    <div class="itp-banner">✅ 200 PASSATEMPOS EM ITALIANO</div>
 
-    <div class="price-box">
-      <p class="price-old">De R$ 47,00</p>
-      <p class="price-now"><span class="price-prefix">Por apenas</span>R$ 24,90</p>
-      <p class="price-note">Pagamento único. Sem mensalidade.</p>
+    <ul class="itp-items">
+      <li class="itp-item"><span class="itp-item-icon">🧩</span><span class="itp-item-name">Caça-palavras</span></li>
+      <li class="itp-item"><span class="itp-item-icon">✏️</span><span class="itp-item-name">Palavras cruzadas</span></li>
+      <li class="itp-item"><span class="itp-item-icon">🔤</span><span class="itp-item-name">Complete a frase</span></li>
+      <li class="itp-item"><span class="itp-item-icon">🔗</span><span class="itp-item-name">Ligue as colunas</span></li>
+    </ul>
+
+    <hr class="itp-soft-divider">
+
+    <ul class="itp-items">
+      <li class="itp-item"><span class="itp-item-icon">📖</span><span class="itp-item-name">Gabarito completo em todas as atividades</span></li>
+      <li class="itp-item"><span class="itp-item-icon">🗂️</span><span class="itp-item-name">Organizados em 6 temas do dia a dia</span></li>
+      <li class="itp-item"><span class="itp-item-icon">📲</span><span class="itp-item-name">Acesso no celular, tablet ou computador — e pode imprimir</span></li>
+    </ul>
+
+    <div class="itp-total-box">
+      <div class="itp-total-label">Valor total</div>
+      <div class="itp-total-old">De R$ 47,00</div>
+      <div class="itp-total-label">Por apenas</div>
+      <div class="itp-total-price">R$ 24,90</div>
+      <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
+      <span class="itp-economy">Você economiza R$ 22,10</span>
     </div>
+  </div>
 
-    <p class="offer-guarantee"><b>✅ 15 dias de garantia incondicional.</b> Se não gostar, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+  <!-- FORA DO CARD -->
+  <p class="offer-guarantee-line">✅ 15 dias de garantia incondicional.</p>
 
-    <!-- ADICIONAR: link de checkout do caderno no href abaixo -->
-    <a href="#" class="cta-button">SIM, QUERO ADICIONAR AO MEU PEDIDO</a>
+  <div class="cta-slot">
+    <!-- ADICIONAR: botão CTA verde "SIM, QUERO ADICIONAR AO MEU PEDIDO" aqui -->
+  </div>
 
-    <!-- ADICIONAR: destino do link de recusa (seguir sem o caderno) no href abaixo -->
-    <a href="#" class="reject-link">Não, obrigado. Quero seguir sem o caderno.</a>
+  <div class="reject-slot">
+    <!-- ADICIONAR: link cinza pequeno "Não, obrigado. Quero seguir sem o caderno." aqui -->
   </div>
 
 </div>
 
-<!-- FALTA ADICIONAR: botão CTA no topo (espaço de 80px reservado), link de checkout do botao, destino do link de recusa, mosaico opcional. -->
+<!-- FALTA ADICIONAR: botões CTA (topo, meio e final da oferta) e link de recusa. -->
 </body>
 </html>
