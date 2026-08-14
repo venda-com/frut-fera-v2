@@ -53,6 +53,19 @@ img { max-width:100%; display:block; }
 /* ── TEXTO DE CORPO ── */
 .sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; }
 
+/* ── CARD DE INFO (emoji + texto, com destaques) ── */
+.info-card {
+  background: #fff; border-radius: 16px; border: 1px solid #EFEFEF;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10); padding: 20px;
+  max-width: 460px; margin: 26px auto;
+}
+.info-row { display: flex; align-items: flex-start; gap: 14px; }
+.info-row-icon { font-size: 26px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.info-row-text { font-size: 15px; color: var(--txt); line-height: 1.6; }
+.info-row-text b { color: var(--navy); font-weight: 700; }
+.info-row-text .hl { color: var(--verde); font-weight: 700; }
+.info-divider { border: none; border-top: 1px solid var(--linha); margin: 16px 0; }
+
 /* ── IMAGEM MOCKUP (capa geral) ── */
 .mockup-hero { max-width: 500px; margin: 24px auto; }
 .mockup-hero img { width: 100%; height: auto; display: block; border-radius: 16px; }
@@ -127,14 +140,23 @@ img { max-width:100%; display:block; }
   <!-- HEADLINE -->
   <h1 class="headline">E se estudar italiano parecesse mais um passatempo do que uma obrigação?</h1>
 
-  <!-- SUBHEADLINE -->
-  <p class="subheadline">Você já tem os mapas e as listas para aprender. Agora conheça um jeito diferente de treinar tudo isso.</p>
-
-  <!-- PARÁGRAFO 1 -->
-  <p class="sec-text">Você já deu o primeiro passo com os mapas. E aprender fica muito mais fácil quando parece brincadeira: estes passatempos deixam o italiano mais leve, gostoso e simples de fixar, sem parecer que está estudando.</p>
-
-  <!-- PARÁGRAFO 2 -->
-  <p class="sec-text">Lembra dos caça-palavras e das cruzadas da banca de jornal? A gente pegou esse mesmo passatempo e adaptou para você aprender italiano sem perceber.</p>
+  <!-- CARD DE INFO (3 frases no padrão emoji + texto) -->
+  <div class="info-card">
+    <div class="info-row">
+      <span class="info-row-icon">🗺️</span>
+      <p class="info-row-text">Você já tem os <b>mapas e as listas</b> para aprender. Agora conheça um <span class="hl">jeito diferente</span> de treinar tudo isso.</p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-row">
+      <span class="info-row-icon">🎲</span>
+      <p class="info-row-text">Você já deu o <b>primeiro passo</b> com os mapas. E aprender fica muito mais fácil quando parece <span class="hl">brincadeira</span>: estes passatempos deixam o italiano mais leve, gostoso e simples de fixar, sem parecer que está estudando.</p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-row">
+      <span class="info-row-icon">📰</span>
+      <p class="info-row-text">Lembra dos <b>caça-palavras e das cruzadas</b> da banca de jornal? A gente pegou esse mesmo passatempo e adaptou para você <span class="hl">aprender italiano sem perceber</span>.</p>
+    </div>
+  </div>
 
   <!-- IMAGEM 1 — mockup geral -->
   <div class="mockup-hero">
