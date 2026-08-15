@@ -3,6 +3,7 @@
 <base href="/caderno-passatempos/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caderno de Passatempos em Italiano</title>
+<script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
 <style>
 :root {
   --verde:   #009246;
@@ -142,6 +143,10 @@ img { max-width:100%; display:block; }
 .offer-guarantee-line { font-size: 14px; font-weight: 600; color: var(--txt); text-align: center; margin: 22px auto 0; }
 .reject-slot { min-height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
+/* ── RECAP DE PREÇO (2ª instância, após o parágrafo dos temas) ── */
+.price-recap { max-width: 400px; margin: 10px auto 0; }
+#wiapy_upsell, #wiapy_upsell_2 { margin-top: 18px; }
+
 @media (max-width: 390px) {
   .headline { font-size: 1.55rem; }
   .itp-total-price { font-size: 1.875rem; }
@@ -185,9 +190,34 @@ img { max-width:100%; display:block; }
   <!-- PARÁGRAFO 3 -->
   <p class="sec-text">O Caderno de Passatempos em Italiano reúne mais de [X] atividades nos formatos que você já conhece — caça-palavras, palavras cruzadas, complete a frase e ligue as colunas — todas em italiano, organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
 
-  <!-- ESPAÇO PARA O BOTÃO CTA -->
-  <div class="cta-slot">
-    <!-- ADICIONAR: botão CTA aqui -->
+  <!-- RECAP DE PREÇO + BOTÃO 2 (2ª instância Wiapy) -->
+  <div class="price-recap">
+    <div class="itp-total-box">
+      <div class="itp-total-label">Valor total</div>
+      <div class="itp-total-old">De R$ 47,00</div>
+      <div class="itp-total-label">Por apenas</div>
+      <div class="itp-total-price">R$ 24,90</div>
+      <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
+      <span class="itp-economy">Você economiza R$ 22,10</span>
+    </div>
+    <!-- ALTERAR: trocar linkUrl "undefined" pelo checkout real do caderno -->
+    <div id="wiapy_upsell_2"></div>
+    <script>
+    initWiapyUpsell({
+      elementId: "wiapy_upsell_2",
+      linkUrl: "https://pay.wiapy.com/checkout/undefined",
+      linkText: "SIM, EU ACEITO ESSA OFERTA",
+      styles: {
+        backgroundColor: "#00d769",
+        hoverBackgroundColor: "#00b85a",
+        fontSize: "17px",
+        borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "#000000"
+    });
+    </script>
   </div>
 
   <!-- SUBTÍTULO -->
@@ -257,19 +287,31 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
+  <!-- BOTÃO 1 (Wiapy) — logo abaixo do preço/card -->
+  <!-- ALTERAR: trocar linkUrl "undefined" pelo checkout real do caderno -->
+  <div id="wiapy_upsell"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell",
+    linkUrl: "https://pay.wiapy.com/checkout/undefined",
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "#000000"
+  });
+  </script>
+
   <!-- FORA DO CARD -->
   <p class="offer-guarantee-line">✅ 15 dias de garantia incondicional.</p>
 
-  <div class="cta-slot">
-    <!-- ADICIONAR: botão CTA verde "SIM, QUERO ADICIONAR AO MEU PEDIDO" aqui -->
-  </div>
-
-  <div class="reject-slot">
-    <!-- ADICIONAR: link cinza pequeno "Não, obrigado. Quero seguir sem o caderno." aqui -->
-  </div>
-
 </div>
 
-<!-- FALTA ADICIONAR: botões CTA (topo, meio e final da oferta) e link de recusa. -->
+<!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl dos 2 botões Wiapy). -->
 </body>
 </html>
