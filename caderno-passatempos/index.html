@@ -91,6 +91,26 @@ img { max-width:100%; display:block; }
 .format-name { font-size: 19px; font-weight: 800; color: var(--verde); line-height: 1.35; margin-bottom: 6px; }
 .format-benefit { font-size: 15px; color: var(--txt); line-height: 1.6; max-width: 400px; margin: 0 auto; }
 
+/* ── CARROSSEL DE IMAGENS (setas ‹ ›, um por vez) ── */
+.pt-carousel { position: relative; max-width: 450px; margin: 0 auto 16px; }
+.pt-viewport { overflow: hidden; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
+.pt-track { display: flex; transition: transform .35s ease; }
+.pt-slide { min-width: 100%; }
+.pt-slide img { width: 100%; height: auto; display: block; }
+.pt-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.92); color: #1a1a1a; font-size: 22px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28); z-index: 2; line-height: 1; padding: 0 0 3px;
+}
+.pt-arrow:hover { background: #fff; }
+.pt-prev { left: 8px; }
+.pt-next { right: 8px; }
+.pt-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.pt-dot { width: 8px; height: 8px; border-radius: 50%; background: #cfe3d8; border: none; padding: 0; cursor: pointer; }
+.pt-dot.active { background: var(--verde); }
+
 /* ── DIVISOR ── */
 .divider { border: none; border-top: 1px solid var(--linha); width: 100%; margin: 34px 0; }
 
@@ -223,10 +243,21 @@ img { max-width:100%; display:block; }
   <!-- SUBTÍTULO -->
   <h2 class="sub-title">Veja o que te espera dentro:</h2>
 
-  <!-- FORMATO 1 — Caça-palavras -->
+  <!-- FORMATO 1 — Caça-palavras (carrossel de 4 imagens) -->
   <div class="format-block">
-    <!-- SUBSTITUIR: caça-palavras -->
-    <img class="format-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3Crect%20width='600'%20height='400'%20rx='16'%20fill='%23EAF7EF'%20stroke='%23BFE3D5'%20stroke-width='2'%20stroke-dasharray='9%207'/%3E%3Ctext%20x='300'%20y='210'%20font-family='Arial'%20font-size='24'%20font-weight='bold'%20fill='%23009246'%20text-anchor='middle'%3Ecaca-palavras%3C/text%3E%3C/svg%3E" alt="Exemplo de atividade de caça-palavras em italiano" width="450" height="300">
+    <div class="pt-carousel" data-carousel>
+      <div class="pt-viewport">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" width="1000" height="1422" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="caca-palavras-2.webp" alt="Caça-palavras em italiano — página 2" width="1000" height="1422" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="caca-palavras-3.webp" alt="Caça-palavras em italiano — página 3" width="1000" height="1422" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="caca-palavras-4.webp" alt="Caça-palavras em italiano — página 4" width="1000" height="1422" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
+      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
+      <div class="pt-dots"></div>
+    </div>
     <p class="format-name">🧩 Caça-palavras</p>
     <p class="format-benefit">Encontre as palavras italianas escondidas e fixe vocabulário sem esforço.</p>
   </div>
@@ -313,5 +344,37 @@ img { max-width:100%; display:block; }
 </div>
 
 <!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl dos 2 botões Wiapy). -->
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(function(car) {
+  var track = car.querySelector('.pt-track');
+  var slides = car.querySelectorAll('.pt-slide');
+  var dotsWrap = car.querySelector('.pt-dots');
+  var idx = 0;
+  slides.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'pt-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Ir para imagem ' + (i + 1));
+    d.addEventListener('click', function() { go(i); });
+    dotsWrap.appendChild(d);
+  });
+  function update() {
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dotsWrap.querySelectorAll('.pt-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+  }
+  function go(i) { idx = (i + slides.length) % slides.length; update(); }
+  car.querySelector('.pt-prev').addEventListener('click', function() { go(idx - 1); });
+  car.querySelector('.pt-next').addEventListener('click', function() { go(idx + 1); });
+  var startX = null;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function(e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? idx + 1 : idx - 1); }
+    startX = null;
+  });
+});
+</script>
 </body>
 </html>
