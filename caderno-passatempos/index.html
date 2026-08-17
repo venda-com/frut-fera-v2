@@ -68,8 +68,6 @@ img { max-width:100%; display:block; }
 .info-divider { border: none; border-top: 1px solid var(--linha); margin: 16px 0; }
 
 /* ── IMAGEM MOCKUP (capa geral) ── */
-.mockup-hero { max-width: 500px; margin: 24px auto; }
-.mockup-hero img { width: 100%; height: auto; display: block; border-radius: 16px; }
 
 /* ── ESPAÇO RESERVADO PARA O CTA ── */
 .cta-slot { min-height: 80px; display: flex; align-items: center; justify-content: center; margin: 10px auto; }
@@ -168,8 +166,7 @@ img { max-width:100%; display:block; }
 .reject-slot { min-height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
 /* ── RECAP DE PREÇO (2ª instância, após o parágrafo dos temas) ── */
-.price-recap { max-width: 400px; margin: 10px auto 0; }
-#wiapy_upsell, #wiapy_upsell_2 { margin-top: 28px !important; }
+#wiapy_upsell { margin-top: 28px !important; }
 
 @media (max-width: 390px) {
   .headline { font-size: 1.2rem; }
@@ -228,44 +225,8 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
-  <!-- IMAGEM 1 — mockup geral -->
-  <div class="mockup-hero">
-    <!-- SUBSTITUIR: mockup geral do caderno -->
-    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3Crect%20width='600'%20height='400'%20rx='16'%20fill='%23EAF7EF'%20stroke='%23BFE3D5'%20stroke-width='2'%20stroke-dasharray='9%207'/%3E%3Ctext%20x='300'%20y='210'%20font-family='Arial'%20font-size='24'%20font-weight='bold'%20fill='%23009246'%20text-anchor='middle'%3Emockup%20do%20caderno%3C/text%3E%3C/svg%3E" alt="mockup caderno" width="500" height="333">
-  </div>
-
   <!-- PARÁGRAFO 3 -->
   <p class="sec-text">O Caderno de Passatempos em Italiano reúne mais de 200 atividades nos formatos que você já conhece, caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, todas em italiano, organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
-
-  <!-- RECAP DE PREÇO + BOTÃO 2 (2ª instância Wiapy) -->
-  <div class="price-recap">
-    <div class="itp-total-box">
-      <div class="itp-total-label">Valor total</div>
-      <div class="itp-total-old">De R$ 47,00</div>
-      <div class="itp-total-label">Por apenas</div>
-      <div class="itp-total-price">R$ 24,90</div>
-      <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
-      <span class="itp-economy">Você economiza R$ 22,10</span>
-    </div>
-    <!-- ALTERAR: trocar linkUrl "undefined" pelo checkout real do caderno -->
-    <div id="wiapy_upsell_2"></div>
-    <script>
-    initWiapyUpsell({
-      elementId: "wiapy_upsell_2",
-      linkUrl: "https://pay.wiapy.com/checkout/undefined",
-      linkText: "SIM, EU ACEITO ESSA OFERTA",
-      styles: {
-        backgroundColor: "#00d769",
-        hoverBackgroundColor: "#00b85a",
-        fontSize: "17px",
-        borderRadius: "10px"
-      },
-      refusalLinkUrl: "https://wiapy.com/login",
-      refusalLinkText: "Recusar está oferta",
-      refusalLinkColor: "#000000"
-    });
-    </script>
-  </div>
 
   <!-- SUBTÍTULO -->
   <h2 class="sub-title">Veja o que te espera dentro:</h2>
@@ -459,7 +420,7 @@ img { max-width:100%; display:block; }
   </div>
 </section>
 
-<!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl dos 2 botões Wiapy). -->
+<!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl do botão Wiapy). -->
 
 <script>
 document.querySelectorAll('[data-carousel]').forEach(function(car) {
