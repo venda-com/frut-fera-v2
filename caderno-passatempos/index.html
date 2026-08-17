@@ -176,6 +176,34 @@ img { max-width:100%; display:block; }
   .headline { font-size: 1.55rem; }
   .itp-total-price { font-size: 1.875rem; }
 }
+
+/* ── GARANTIA (padrão /italiano) ── */
+.guarantee-section { background: var(--cinza-f); padding: 46px 20px; text-align: center; }
+.guarantee-inner { max-width: 580px; margin: 0 auto; }
+.guarantee-inner img { margin: 0 auto 16px; display: block; }
+.guarantee-inner h2 { font-family: Arial, Helvetica, sans-serif; font-size: clamp(18px, 3vw, 24px); font-weight: 900; color: var(--navy); margin-bottom: 12px; }
+.guarantee-inner p { font-size: 14px; color: var(--txt-s); line-height: 1.7; }
+
+/* ── FAQ (padrão /italiano) ── */
+.faq-section { background: var(--cinza-f); padding: 52px 20px; }
+.faq-section h2 { font-family: Arial, Helvetica, sans-serif; font-size: clamp(19px, 3vw, 26px); font-weight: 900; color: var(--navy); text-align: center; margin-bottom: 30px; }
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #cdd8d2; }
+.faq-toggle { width: 100%; background: 0 0; border: none; cursor: pointer; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; }
+.faq-toggle h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.4; }
+.faq-arrow { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .3s, background .2s; }
+.faq-arrow svg { fill: #fff; width: 14px; height: 14px; transition: transform .3s; }
+.faq-item.open .faq-arrow { background: var(--verde); }
+.faq-item.open .faq-arrow svg { transform: rotate(180deg); }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height .38s ease, padding .3s ease; }
+.faq-body p { font-size: 14px; color: var(--txt-s); line-height: 1.65; padding-bottom: 16px; }
+.faq-item.open .faq-body { max-height: 360px; }
+
+@media (min-width: 768px) {
+  .guarantee-inner p { font-size: 16px; }
+  .faq-toggle h4 { font-size: 17px; }
+  .faq-body p { font-size: 16px; }
+}
 </style>
 </head>
 <body>
@@ -389,6 +417,57 @@ img { max-width:100%; display:block; }
 
 </div>
 
+<!-- BLOCO GARANTIA (padrão /italiano) -->
+<section class="guarantee-section">
+  <div class="guarantee-inner">
+    <img src="/italiano/garantia-selo-v2.webp" alt="Garantia de 15 dias" width="140" height="140" loading="lazy" decoding="async">
+    <h2>Garantia de 15 dias</h2>
+    <p>Se por qualquer motivo você não ficar satisfeito com o Caderno de Passatempos, devolvemos 100% do seu dinheiro em até 15 dias após a compra. Sem burocracia, sem perguntas. Você não tem absolutamente nada a perder.</p>
+  </div>
+</section>
+
+<!-- BLOCO PERGUNTAS FREQUENTES (padrão /italiano) -->
+<section class="faq-section">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-toggle" type="button">
+        <h4>Isso é diferente das Listas de Exercícios que já vêm no Plano Completo?</h4>
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
+      </button>
+      <div class="faq-body"><p>Sim. As Listas treinam gramática e verbos mapa por mapa, no formato tradicional de exercício. O Caderno é passatempo — caça-palavras, palavras cruzadas, complete a frase e ligue as colunas — todos em italiano, que fixam vocabulário sem parecer que você está estudando.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" type="button">
+        <h4>Preciso já saber italiano para conseguir fazer?</h4>
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
+      </button>
+      <div class="faq-body"><p>Não. O vocabulário é o mesmo nível dos Mapas (iniciante e intermediário). Você pode ir intercalando: estudou um tema nos Mapas, resolve as atividades daquele tema no Caderno pra fixar. Ou usa depois, como revisão leve.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" type="button">
+        <h4>Quantas atividades vêm no total?</h4>
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
+      </button>
+      <div class="faq-body"><p>São 200 atividades divididas em 4 formatos (50 caça-palavras, 50 palavras cruzadas, 50 complete a frase e 50 ligue as colunas), organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" type="button">
+        <h4>Recebo junto com os Mapas?</h4>
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
+      </button>
+      <div class="faq-body"><p>Sim. O Caderno é liberado no mesmo e-mail e WhatsApp dos Mapas, com acesso imediato após a confirmação do pagamento.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" type="button">
+        <h4>Tem a mesma garantia?</h4>
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
+      </button>
+      <div class="faq-body"><p>Tem. Os mesmos 15 dias de garantia incondicional. Se por qualquer motivo você não gostar, devolvemos 100% do valor — sem burocracia e sem perguntas.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl dos 2 botões Wiapy). -->
 
 <script>
@@ -419,6 +498,17 @@ document.querySelectorAll('[data-carousel]').forEach(function(car) {
     var dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 40) { go(dx < 0 ? idx + 1 : idx - 1); }
     startX = null;
+  });
+});
+</script>
+
+<script>
+document.querySelectorAll('.faq-toggle').forEach(function(t) {
+  t.addEventListener('click', function() {
+    var item = t.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
   });
 });
 </script>
