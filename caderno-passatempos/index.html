@@ -509,8 +509,7 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
     <button class="upg-close" id="recusa-close" aria-label="Fechar">✕</button>
     <img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" loading="eager" decoding="async">
     <div class="upg-content">
-      <!-- TODO: trocar href="#" pelo link de checkout da oferta de recusa (aguardando link do cliente) -->
-      <a href="#" class="upg-btn-primary" id="recusa-btn">Quero por apenas R$14,90</a>
+      <a href="https://pay.wiapy.com/iO6fraQdfTDv" class="upg-btn-primary" id="recusa-btn">Quero por apenas R$14,90</a>
       <button class="upg-btn-secondary" id="recusa-continue" type="button">Não, obrigado</button>
     </div>
   </div>
@@ -519,7 +518,6 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
 (function(){
   var ov=document.getElementById('recusa-overlay'),
       cl=document.getElementById('recusa-close'),
-      btn=document.getElementById('recusa-btn'),
       cont=document.getElementById('recusa-continue');
   function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
   function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
@@ -532,8 +530,6 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
   cont.addEventListener('click',close);
   ov.addEventListener('click',function(e){if(e.target===ov)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('upg-open'))close();});
-  // Enquanto o href for "#", o botão não navega (aguardando o link real)
-  btn.addEventListener('click',function(e){if(btn.getAttribute('href')==='#'){e.preventDefault();}});
 })();
 </script>
 </body>
