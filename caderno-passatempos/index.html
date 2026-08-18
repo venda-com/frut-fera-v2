@@ -459,6 +459,27 @@ img { max-width:100%; display:block; }
   </div>
 </section>
 
+<!-- BOTÃO 2 (Wiapy) — mesma CTA repetida após o FAQ -->
+<div class="wrap" style="padding-bottom:40px;">
+  <div id="wiapy_upsell_2"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell_2",
+    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+    linkText: "QUERO OS PASSATEMPOS",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "rgba(0,0,0,0.4)"
+  });
+  </script>
+</div>
+
 <script>
 document.querySelectorAll('[data-carousel]').forEach(function(car) {
   var track = car.querySelector('.pt-track');
@@ -521,9 +542,9 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
       cont=document.getElementById('recusa-continue');
   function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
   function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
-  // Intercepta o link "Recusar esta oferta" gerado pelo widget Wiapy e abre o popup
+  // Intercepta o link "Recusar esta oferta" de qualquer widget Wiapy e abre o popup
   document.addEventListener('click',function(e){
-    var a=e.target.closest('#wiapy_upsell a');
+    var a=e.target.closest('#wiapy_upsell a, #wiapy_upsell_2 a');
     if(a){e.preventDefault();e.stopImmediatePropagation();open();}
   },true);
   cl.addEventListener('click',close);
