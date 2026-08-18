@@ -377,13 +377,12 @@ img { max-width:100%; display:block; }
   </div>
 
   <!-- BOTÃO 1 (Wiapy) — logo abaixo do preço/card -->
-  <!-- ALTERAR: trocar linkUrl "undefined" pelo checkout real do caderno -->
   <div id="wiapy_upsell"></div>
   <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell",
-    linkUrl: "https://pay.wiapy.com/checkout/undefined",
-    linkText: "SIM, EU ACEITO ESSA OFERTA",
+    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+    linkText: "QUERO OS PASSATEMPOS",
     styles: {
       backgroundColor: "#00d769",
       hoverBackgroundColor: "#00b85a",
@@ -392,7 +391,7 @@ img { max-width:100%; display:block; }
     },
     refusalLinkUrl: "https://wiapy.com/login",
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "#000000"
+    refusalLinkColor: "rgba(0,0,0,0.4)"
   });
   </script>
 
@@ -459,8 +458,6 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 </section>
-
-<!-- FALTA ADICIONAR: link real do checkout do caderno (trocar "undefined" no linkUrl do botão Wiapy). -->
 
 <script>
 document.querySelectorAll('[data-carousel]').forEach(function(car) {
