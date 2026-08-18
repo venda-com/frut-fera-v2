@@ -79,6 +79,17 @@ img { max-width:100%; display:block; }
   font-weight: 800; color: var(--verde);
   text-align: center; margin: 30px 0 24px;
 }
+/* Título em destaque com fundo dourado (pílula) */
+.sub-title-wrap { text-align: center; margin: 30px 0 24px; }
+.sub-title-wrap .sub-title {
+  display: inline-block; margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  color: #fff; background: var(--ouro);
+  padding: 13px 28px; border-radius: 32px;
+  box-shadow: 0 6px 16px rgba(200,146,42,0.35);
+}
 
 /* ── BLOCO DE FORMATO (título/descrição em destaque + carrossel) ── */
 .format-block { max-width: 450px; margin: 0 auto 34px; display: flex; flex-direction: column; align-items: center; }
@@ -216,7 +227,7 @@ img { max-width:100%; display:block; }
   <div class="info-card">
     <div class="info-row">
       <span class="info-row-icon">🎲</span>
-      <p class="info-row-text">Você já deu o <b>primeiro passo</b> com os mapas. E aprender fica muito mais fácil quando parece <span class="hl">brincadeira</span>: estes passatempos deixam o italiano mais leve, gostoso e simples de fixar, sem parecer que está estudando.</p>
+      <p class="info-row-text">Você já deu o <b>primeiro passo</b> com os mapas. E aprender fica muito mais fácil quando parece <span class="hl">brincadeira</span>.</p>
     </div>
     <hr class="info-divider">
     <div class="info-row">
@@ -232,7 +243,7 @@ img { max-width:100%; display:block; }
   <p class="sec-text">O Caderno de Passatempos em Italiano reúne mais de 200 atividades nos formatos que você já conhece, caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, todas em italiano, organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
 
   <!-- SUBTÍTULO -->
-  <h2 class="sub-title">Veja o que te espera dentro:</h2>
+  <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro:</h2></div>
 
   <!-- FORMATO 1 — Caça-palavras (carrossel de 4 imagens) -->
   <div class="format-block">
