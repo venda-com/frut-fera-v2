@@ -67,6 +67,21 @@ img { max-width:100%; display:block; }
 .info-row-text .hl { color: var(--verde); font-weight: 700; }
 .info-divider { border: none; border-top: 1px solid var(--linha); margin: 16px 0; }
 
+/* ── CARD DE BENEFÍCIOS (fundo verde suave, padrão da imagem) ── */
+.benefit-card {
+  background: #EAF7EF; border: 1px solid #BFE3D5;
+  border-radius: 16px; padding: 22px 20px;
+  max-width: 460px; margin: 26px auto;
+}
+.benefit-title {
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 800; color: var(--verde);
+  text-align: center; line-height: 1.35; margin-bottom: 6px;
+}
+.benefit-row { display: flex; align-items: flex-start; gap: 13px; margin-top: 14px; }
+.benefit-icon { font-size: 22px; flex-shrink: 0; line-height: 1.4; }
+.benefit-text { font-size: 15px; color: var(--txt); line-height: 1.55; }
+
 /* ── IMAGEM MOCKUP (capa geral) ── */
 
 /* ── ESPAÇO RESERVADO PARA O CTA ── */
@@ -391,6 +406,17 @@ img { max-width:100%; display:block; }
     <p>Se por qualquer motivo você não ficar satisfeito com o Caderno de Passatempos, devolvemos 100% do seu dinheiro em até 15 dias após a compra. Sem burocracia, sem perguntas. Você não tem absolutamente nada a perder.</p>
   </div>
 </section>
+
+<!-- CARD DE BENEFÍCIOS (padrão da imagem enviada) -->
+<div class="wrap">
+  <div class="benefit-card">
+    <p class="benefit-title">Com o Caderno de Passatempos, você vai:</p>
+    <div class="benefit-row"><span class="benefit-icon">🧩</span><p class="benefit-text">Fixar o vocabulário dos Mapas resolvendo passatempos em vez de decorar listas</p></div>
+    <div class="benefit-row"><span class="benefit-icon">⏱️</span><p class="benefit-text">Praticar em 5 minutos no café, na fila, no ônibus, sem precisar de mesa nem silêncio</p></div>
+    <div class="benefit-row"><span class="benefit-icon">✏️</span><p class="benefit-text">Escolher entre 4 formatos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, nunca fica repetitivo</p></div>
+    <div class="benefit-row"><span class="benefit-icon">🎨</span><p class="benefit-text">Aprender sem sentir que está estudando, porque passatempo não parece dever de casa</p></div>
+  </div>
+</div>
 
 <!-- BLOCO PERGUNTAS FREQUENTES (padrão /italiano) -->
 <section class="faq-section">
