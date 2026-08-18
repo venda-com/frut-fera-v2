@@ -501,5 +501,40 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
   });
 });
 </script>
+
+<!-- ── POPUP DE RECUSA (downsell, padrão /italiano) ── -->
+<style>.upg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;overflow-y:auto;padding:20px 16px 32px;opacity:0;pointer-events:none;transition:opacity .22s ease}.upg-overlay.upg-open{opacity:1;pointer-events:auto}@media(prefers-reduced-motion:reduce){.upg-box,.upg-overlay{transition:none!important}}.upg-box{background:#fff;border-radius:20px;max-width:420px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.35);transform:translateY(16px);transition:transform .22s ease;margin:0 auto;overflow:hidden}.upg-overlay.upg-open .upg-box{transform:translateY(0)}.upg-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);border:none;cursor:pointer;font-size:18px;color:#555;line-height:1;padding:0;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-family:inherit;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.2);font-weight:700}.upg-close:hover{color:#111}.upg-hero-img{width:100%;height:auto;display:block}.upg-content{padding:1.25rem 1.25rem 1.375rem;text-align:center}.upg-btn-primary{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:1rem;text-align:center;padding:1rem;border-radius:2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;margin-bottom:14px;font-family:inherit}.upg-btn-primary:hover{background:#d98c1a}.upg-btn-secondary{display:block;width:100%;text-align:center;font-size:13.5px;font-weight:600;color:rgba(0,0,0,.4);background:0 0;border:none;cursor:pointer;padding:4px;font-family:inherit}.upg-btn-secondary:hover{color:#111}.upg-btn-primary:focus-visible,.upg-btn-secondary:focus-visible,.upg-close:focus-visible{outline:2px solid #009246;outline-offset:2px}</style>
+<div class="upg-overlay" id="recusa-overlay" role="dialog" aria-modal="true" aria-label="Espera! Oferta exclusiva">
+  <div class="upg-box">
+    <button class="upg-close" id="recusa-close" aria-label="Fechar">✕</button>
+    <img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — Plano Completo por R$27,90" width="842" height="1024" loading="lazy" decoding="async">
+    <div class="upg-content">
+      <!-- TODO: trocar href="#" pelo link de checkout da oferta de recusa (aguardando link do cliente) -->
+      <a href="#" class="upg-btn-primary" id="recusa-btn">Quero o Completo por R$27,90</a>
+      <button class="upg-btn-secondary" id="recusa-continue" type="button">Não, obrigado</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('recusa-overlay'),
+      cl=document.getElementById('recusa-close'),
+      btn=document.getElementById('recusa-btn'),
+      cont=document.getElementById('recusa-continue');
+  function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
+  function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
+  // Intercepta o link "Recusar esta oferta" gerado pelo widget Wiapy e abre o popup
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('#wiapy_upsell a');
+    if(a){e.preventDefault();e.stopImmediatePropagation();open();}
+  },true);
+  cl.addEventListener('click',close);
+  cont.addEventListener('click',close);
+  ov.addEventListener('click',function(e){if(e.target===ov)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('upg-open'))close();});
+  // Enquanto o href for "#", o botão não navega (aguardando o link real)
+  btn.addEventListener('click',function(e){if(btn.getAttribute('href')==='#'){e.preventDefault();}});
+})();
+</script>
 </body>
 </html>
