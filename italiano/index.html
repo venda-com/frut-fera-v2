@@ -216,26 +216,6 @@ src="https://www.facebook.com/tr?id=1208728001409571&ev=PageView&noscript=1"
 
 
 <style>.dep-section{background:#f5f0e8;padding:3.5rem 5%;text-align:center}.dep-section h2{font-size:clamp(20px, 3.5vw, 28px);font-weight:900;color:var(--navy);margin-bottom:0}.dep-carousel{position:relative;max-width:480px;margin:1.5rem auto 0;overflow:hidden;border-radius:12px}.dep-track{display:flex;align-items:flex-start;transition:transform .35s ease}.dep-slide{min-width:100%;width:100%;font-size:0}.dep-slide img{width:100%;height:auto;display:block;vertical-align:top}.dep-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;border-radius:50%;width:36px;height:36px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}.dep-btn:hover{background:#fff}.dep-prev{left:8px}.dep-next{right:8px}.dep-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}.dep-dot{width:9px;height:9px;border-radius:50%;background:#ccc;cursor:pointer;transition:background .2s}.dep-dot.active{background:#1a3a1a}</style>
-<section class="dep-section">
-  <h2>Veja o que estão dizendo nossos alunos</h2>
-  <div class="dep-carousel" id="dep-carousel">
-    <div class="dep-track" id="dep-track">
-      <div class="dep-slide"><img src="dep-ita-1.webp" alt="Depoimento Beatriz" loading="lazy" width="480" height="600" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-2.webp" alt="Depoimento Lilian" loading="lazy" width="480" height="600" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-3.webp" alt="Depoimento Vilson" loading="lazy" width="480" height="600" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-4.webp" alt="Depoimento Altemir" loading="lazy" width="480" height="600" decoding="async"></div>
-    </div>
-    <button class="dep-btn dep-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
-    <button class="dep-btn dep-next" id="dep-next" aria-label="Próximo">&#8250;</button>
-    <div class="dep-dots" id="dep-dots">
-      <span class="dep-dot active" data-idx="0"></span>
-      <span class="dep-dot" data-idx="1"></span>
-      <span class="dep-dot" data-idx="2"></span>
-      <span class="dep-dot" data-idx="3"></span>
-    </div>
-  </div>
-</section>
-<script>!function(){var t=document.getElementById("dep-track"),e=document.querySelectorAll("#dep-dots .dep-dot"),n=0;function c(c){n=(c+4)%4,t.style.transform="translateX(-"+100*n+"%)",e.forEach(function(t,e){t.classList.toggle("active",e===n)})}document.getElementById("dep-prev").addEventListener("click",function(){c(n-1)}),document.getElementById("dep-next").addEventListener("click",function(){c(n+1)}),e.forEach(function(t){t.addEventListener("click",function(){c(parseInt(t.getAttribute("data-idx")))})})}()</script>
 
 
 <style>.itp-section{background:#1a3a1a;padding:4.5rem 5%;text-align:center}.itp-heading{color:#fff;font-size:clamp(20px, 3.5vw, 28px);font-weight:900;letter-spacing:.03em;margin-bottom:.5rem;text-transform:uppercase}.itp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:760px;margin:2rem auto 0;align-items:start}.itp-card{border-radius:16px;padding:2rem 1.5rem;position:relative;text-align:left}.itp-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#f5a623;color:#1a1a1a;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.3rem 1rem;border-radius:2rem;white-space:nowrap}.itp-card.itp-basico{background:#fff}.itp-card.itp-basico .itp-title{font-weight:900;font-size:1rem;color:#1a3a1a;text-transform:uppercase;letter-spacing:.05em;text-align:center;margin-bottom:1.25rem}.itp-items{list-style:none;margin-bottom:1.25rem;display:flex;flex-direction:column}.itp-items li{font-size:.9rem;color:#444;display:flex;align-items:center;gap:.4rem;padding:.65rem 0;border-bottom:1px solid #ebebeb}.itp-items li:last-child{border-bottom:none}.itp-price-box{background:#1a3a1a;border-radius:12px;padding:1rem 1.25rem;text-align:center;margin-bottom:1.25rem}.itp-val-label{font-size:.75rem;color:rgba(255,255,255,.65);margin-bottom:.1rem}.itp-val-old{font-size:.875rem;color:#ff5252;text-decoration:line-through}.itp-val-price{font-size:2.25rem;font-weight:900;color:#00e676;line-height:1;margin:.2rem 0}.itp-val-period{font-size:.8rem;color:rgba(255,255,255,.65)}.itp-economy{display:inline-block;background:rgba(0,230,118,.15);color:#00e676;font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:1rem;margin-top:.6rem}.itp-btn-basico{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:.9375rem;text-transform:uppercase;text-align:center;padding:.9rem 1rem;border-radius:2rem;text-decoration:none;transition:background .2s;border:none;cursor:pointer;font-family:inherit}.itp-btn-basico:hover{background:#d98c1a}.itp-footnote{font-size:.75rem;color:#aaa;text-align:center;margin-top:.75rem}.itp-card.itp-completo{background:#1a2e1a;scroll-margin-top:20px;box-shadow:0 0 0 2px #00e676,0 0 20px rgba(0,230,118,.3),0 0 40px rgba(0,230,118,.12)}.itp-card.itp-completo .itp-title{font-weight:900;font-size:1rem;color:#f5a623;text-transform:uppercase;letter-spacing:.05em;text-align:center;margin-bottom:1rem}.itp-banner{background:#2d4a2d;border-radius:8px;padding:.6rem 1rem;text-align:center;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:1rem}.itp-bonus-items{list-style:none;margin-bottom:1.25rem;display:flex;flex-direction:column}.itp-bonus-item{padding:.75rem 0;border-bottom:1px solid rgba(0,230,118,.12)}.itp-bonus-item:last-child{border-bottom:none}.itp-bonus-header{display:flex;align-items:flex-start;gap:.4rem}.itp-bonus-name{font-size:.875rem;font-weight:700;color:#fff;flex:1}.itp-bonus-desc{font-size:.78rem;color:rgba(255,255,255,.7);margin:.25rem 0 .35rem 1.4rem;line-height:1.4}.itp-bonus-anchor{display:flex;gap:.5rem;align-items:center;margin-left:1.4rem}.itp-bonus-old{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:line-through}.itp-bonus-tag{font-size:.75rem;font-weight:800;color:#00e676}.itp-total-box{background:#0f1f0f;border-radius:12px;padding:1rem;text-align:center;margin-bottom:1.25rem}.itp-total-label{font-size:.75rem;color:rgba(255,255,255,.65);margin-bottom:.1rem}.itp-total-old{font-size:.875rem;color:#ff5252;text-decoration:line-through}.itp-total-price{font-size:2.25rem;font-weight:900;color:#00e676;line-height:1;margin:.2rem 0}.itp-total-period{font-size:.8rem;color:rgba(255,255,255,.65)}.itp-btn-completo{display:block;width:100%;background:#00e676;color:#1a3a1a;font-weight:800;font-size:.9375rem;text-transform:uppercase;text-align:center;padding:.9rem 1rem;border-radius:2rem;text-decoration:none;transition:background .2s;box-shadow:0 0 12px rgba(0,230,118,.4)}.itp-btn-completo:hover{background:#00c853}.itp-footnote-white{font-size:.75rem;color:rgba(255,255,255,.55);text-align:center;margin-top:.75rem}@media (max-width:680px){.itp-grid{grid-template-columns:1fr}.itp-card{padding:2rem 1.25rem}.itp-total-price,.itp-val-price{font-size:1.875rem}}</style>
@@ -366,6 +346,27 @@ src="https://www.facebook.com/tr?id=1208728001409571&ev=PageView&noscript=1"
 
   </div>
 </section>
+
+<section class="dep-section">
+  <h2>Veja o que estão dizendo nossos alunos</h2>
+  <div class="dep-carousel" id="dep-carousel">
+    <div class="dep-track" id="dep-track">
+      <div class="dep-slide"><img src="dep-ita-1.webp" alt="Depoimento Beatriz" loading="lazy" width="480" height="600" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-2.webp" alt="Depoimento Lilian" loading="lazy" width="480" height="600" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-3.webp" alt="Depoimento Vilson" loading="lazy" width="480" height="600" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-4.webp" alt="Depoimento Altemir" loading="lazy" width="480" height="600" decoding="async"></div>
+    </div>
+    <button class="dep-btn dep-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
+    <button class="dep-btn dep-next" id="dep-next" aria-label="Próximo">&#8250;</button>
+    <div class="dep-dots" id="dep-dots">
+      <span class="dep-dot active" data-idx="0"></span>
+      <span class="dep-dot" data-idx="1"></span>
+      <span class="dep-dot" data-idx="2"></span>
+      <span class="dep-dot" data-idx="3"></span>
+    </div>
+  </div>
+</section>
+<script>!function(){var t=document.getElementById("dep-track"),e=document.querySelectorAll("#dep-dots .dep-dot"),n=0;function c(c){n=(c+4)%4,t.style.transform="translateX(-"+100*n+"%)",e.forEach(function(t,e){t.classList.toggle("active",e===n)})}document.getElementById("dep-prev").addEventListener("click",function(){c(n-1)}),document.getElementById("dep-next").addEventListener("click",function(){c(n+1)}),e.forEach(function(t){t.addEventListener("click",function(){c(parseInt(t.getAttribute("data-idx")))})})}()</script>
 
 
 <section class="footer-cta">
