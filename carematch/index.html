@@ -42,7 +42,10 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:96px 0}
+  section{padding:64px 0}
+  @media(max-width:560px){section{padding:44px 0}}
+  .prob-h2{font-size:clamp(1.5rem,3vw,2.15rem)}
+  @media(max-width:560px){.prob-h2{font-size:1.18rem}}
   .eyebrow{
     display:inline-block;
     font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
@@ -331,7 +334,7 @@
 <section class="stats" id="problema">
   <div class="wrap">
     <div class="center reveal">
-      <h2 style="font-size:clamp(1.5rem,3vw,2.15rem)">Quando alguém que amamos precisa de cuidado, encontrar qualquer pessoa não basta...</h2>
+      <h2 class="prob-h2">Quando alguém que amamos precisa de cuidado, encontrar qualquer pessoa não basta...</h2>
     </div>
     <div class="stat-grid">
       <div class="stat-card reveal">
@@ -354,7 +357,6 @@
 <section id="como-funciona">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">Como funciona</span>
       <h2>Como a <span style="color:var(--blue-med)">CareMatch</span> vai resolver isso.</h2>
     </div>
     <div class="steps">
