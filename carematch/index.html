@@ -92,9 +92,9 @@
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .trust-row{display:flex;align-items:center;gap:14px;margin-top:30px;color:var(--text-soft);font-size:.92rem}
   .avatars{display:flex}
-  .avatars span{width:36px;height:36px;border-radius:50%;border:2.5px solid #fff;margin-left:-10px;background:var(--blue-1);display:flex;align-items:center;justify-content:center}
+  .avatars span{width:38px;height:38px;border-radius:50%;border:2.5px solid #fff;margin-left:-12px;background:var(--blue-1);overflow:hidden;box-shadow:0 2px 6px rgba(27,58,107,.12)}
   .avatars span:first-child{margin-left:0}
-  .avatars svg{width:20px;height:20px;stroke:var(--blue-med)}
+  .avatars img{width:100%;height:100%;object-fit:cover}
 
   /* phone mockup */
   .hero-visual{position:relative;display:flex;justify-content:center}
@@ -116,8 +116,8 @@
   .care-card{border:1px solid #eef2f8;border-radius:18px;padding:14px;box-shadow:var(--shadow-sm);background:#fff}
   .care-card+.care-card{margin-top:12px}
   .cc-top{display:flex;align-items:center;gap:12px}
-  .cc-ava{width:46px;height:46px;border-radius:50%;flex:0 0 46px;background:linear-gradient(135deg,#EAF2FB,#F5F0E8);display:flex;align-items:center;justify-content:center}
-  .cc-ava svg{width:26px;height:26px;stroke:var(--blue-med)}
+  .cc-ava{width:46px;height:46px;border-radius:50%;flex:0 0 46px;background:linear-gradient(135deg,#EAF2FB,#F5F0E8);overflow:hidden}
+  .cc-ava img{width:100%;height:100%;object-fit:cover}
   .cc-name{font-weight:600;color:var(--navy);font-size:.94rem;line-height:1.2}
   .cc-role{font-size:.74rem;color:var(--text-soft)}
   .cc-score{margin-left:auto;text-align:center}
@@ -255,7 +255,7 @@
   <div class="wrap hero-grid">
     <div class="reveal in">
       <span class="eyebrow">Cuidado de idosos, com confiança</span>
-      <h1>Encontre o cuidador certo para <span class="hl">quem você ama.</span></h1>
+      <h1>Encontre a pessoa certa para <span class="hl">cuidar de quem você ama.</span></h1>
       <p class="lead">A CareMatch conecta famílias a cuidadores confiáveis, com o perfil certo para as necessidades e a personalidade do seu idoso.</p>
       <div class="hero-cta">
         <a href="#lista" class="btn btn-primary">
@@ -266,9 +266,9 @@
       </div>
       <div class="trust-row">
         <div class="avatars">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+          <span><img src="fotos/familia-1.jpg" alt="" loading="lazy" width="38" height="38"></span>
+          <span><img src="fotos/familia-2.jpg" alt="" loading="lazy" width="38" height="38"></span>
+          <span><img src="fotos/familia-3.jpg" alt="" loading="lazy" width="38" height="38"></span>
         </div>
         <span>Cuidadores verificados por antecedentes e qualificações</span>
       </div>
@@ -292,7 +292,7 @@
           <div class="app-body">
             <div class="care-card">
               <div class="cc-top">
-                <div class="cc-ava"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+                <div class="cc-ava"><img src="fotos/cuidadora-fernanda.jpg" alt="Cuidadora Fernanda" loading="lazy" width="46" height="46"></div>
                 <div>
                   <div class="cc-name">Fernanda M.</div>
                   <div class="cc-role">Técnica de enfermagem</div>
@@ -307,7 +307,7 @@
             </div>
             <div class="care-card">
               <div class="cc-top">
-                <div class="cc-ava"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+                <div class="cc-ava"><img src="fotos/cuidador-roberto.jpg" alt="Cuidador Roberto" loading="lazy" width="46" height="46"></div>
                 <div>
                   <div class="cc-name">Roberto S.</div>
                   <div class="cc-role">Cuidador de idosos</div>
@@ -348,7 +348,6 @@
         <p>já precisaram substituir um cuidador por inadequação</p>
       </div>
     </div>
-    <p class="footnote reveal">Pesquisa CareMatch com 46 respondentes, 2026</p>
   </div>
 </section>
 
