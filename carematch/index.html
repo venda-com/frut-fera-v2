@@ -475,7 +475,6 @@
       <input type="tel" name="telefone" placeholder="Telefone (WhatsApp)" aria-label="Telefone" autocomplete="tel" inputmode="tel" required>
       <button type="submit" class="btn btn-primary">Entre na lista de espera</button>
     </form>
-    <p class="form-note reveal">Sem spam. Só um aviso quando estivermos prontos para cuidar de quem você ama.</p>
     <p class="form-success" id="success">✓ Pronto! Você está na lista. Em breve entraremos em contato.</p>
   </div>
 </section>
@@ -540,7 +539,6 @@
     if(firstInvalid){ firstInvalid.focus(); return; }
 
     this.style.display = 'none';
-    document.querySelector('.form-note').style.display = 'none';
     document.getElementById('success').style.display = 'block';
   });
 </script>
