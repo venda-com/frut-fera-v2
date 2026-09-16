@@ -291,6 +291,27 @@ src="https://www.facebook.com/tr?id=1208728001409571&ev=PageView&noscript=1"
 
 
 
+<section class="dep-section">
+  <h2>Veja o que estão dizendo nossos alunos</h2>
+  <div class="dep-carousel" id="dep-carousel">
+    <div class="dep-track" id="dep-track">
+      <div class="dep-slide"><img src="dep-ita-1.webp" alt="Depoimento Beatriz" loading="lazy" width="960" height="2081" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-2.webp" alt="Depoimento Lilian" loading="lazy" width="960" height="2081" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-3.webp" alt="Depoimento Vilson" loading="lazy" width="960" height="2081" decoding="async"></div>
+      <div class="dep-slide"><img src="dep-ita-4.webp" alt="Depoimento Altemir" loading="lazy" width="960" height="2081" decoding="async"></div>
+    </div>
+    <button class="dep-btn dep-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
+    <button class="dep-btn dep-next" id="dep-next" aria-label="Próximo">&#8250;</button>
+    <div class="dep-dots" id="dep-dots">
+      <span class="dep-dot active" data-idx="0"></span>
+      <span class="dep-dot" data-idx="1"></span>
+      <span class="dep-dot" data-idx="2"></span>
+      <span class="dep-dot" data-idx="3"></span>
+    </div>
+  </div>
+</section>
+<script>!function(){var t=document.getElementById("dep-track"),e=document.querySelectorAll("#dep-dots .dep-dot"),n=0;function c(c){n=(c+4)%4,t.style.transform="translateX(-"+100*n+"%)",e.forEach(function(t,e){t.classList.toggle("active",e===n)})}document.getElementById("dep-prev").addEventListener("click",function(){c(n-1)}),document.getElementById("dep-next").addEventListener("click",function(){c(n+1)}),e.forEach(function(t){t.addEventListener("click",function(){c(parseInt(t.getAttribute("data-idx")))})})}()</script>
+
 <section class="faq-section">
   <h2>Perguntas Frequentes</h2>
   <div class="faq-list">
@@ -347,27 +368,6 @@ src="https://www.facebook.com/tr?id=1208728001409571&ev=PageView&noscript=1"
 
   </div>
 </section>
-
-<section class="dep-section">
-  <h2>Veja o que estão dizendo nossos alunos</h2>
-  <div class="dep-carousel" id="dep-carousel">
-    <div class="dep-track" id="dep-track">
-      <div class="dep-slide"><img src="dep-ita-1.webp" alt="Depoimento Beatriz" loading="lazy" width="960" height="2081" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-2.webp" alt="Depoimento Lilian" loading="lazy" width="960" height="2081" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-3.webp" alt="Depoimento Vilson" loading="lazy" width="960" height="2081" decoding="async"></div>
-      <div class="dep-slide"><img src="dep-ita-4.webp" alt="Depoimento Altemir" loading="lazy" width="960" height="2081" decoding="async"></div>
-    </div>
-    <button class="dep-btn dep-prev" id="dep-prev" aria-label="Anterior">&#8249;</button>
-    <button class="dep-btn dep-next" id="dep-next" aria-label="Próximo">&#8250;</button>
-    <div class="dep-dots" id="dep-dots">
-      <span class="dep-dot active" data-idx="0"></span>
-      <span class="dep-dot" data-idx="1"></span>
-      <span class="dep-dot" data-idx="2"></span>
-      <span class="dep-dot" data-idx="3"></span>
-    </div>
-  </div>
-</section>
-<script>!function(){var t=document.getElementById("dep-track"),e=document.querySelectorAll("#dep-dots .dep-dot"),n=0;function c(c){n=(c+4)%4,t.style.transform="translateX(-"+100*n+"%)",e.forEach(function(t,e){t.classList.toggle("active",e===n)})}document.getElementById("dep-prev").addEventListener("click",function(){c(n-1)}),document.getElementById("dep-next").addEventListener("click",function(){c(n+1)}),e.forEach(function(t){t.addEventListener("click",function(){c(parseInt(t.getAttribute("data-idx")))})})}()</script>
 
 
 <section class="footer-cta">
