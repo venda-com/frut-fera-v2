@@ -244,48 +244,90 @@ img { max-width:100%; display:block; }
 .peek-name { display: block; font-size: 14.5px; font-weight: 700; color: var(--navy); margin-top: 9px; line-height: 1.35; }
 .peek-desc { display: block; font-size: 13px; font-style: italic; color: var(--txt-s); line-height: 1.5; margin-top: 3px; }
 .peek-themes { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 8px; }
+
+/* ── BARRA DE TOPO DISCRETA ── */
+.top-bar { padding: 9px 16px; font-size: 12px; }
+
+/* ── LEGENDA DO MOCKUP ── */
+.mockup-legend { font-size: 14.5px; font-style: italic; color: #4b5563; text-align: center; line-height: 1.6; max-width: 430px; margin: 0 auto 24px; }
+
+/* ── BLOCO 4 — LISTA DE FORMATOS ── */
+.formats-intro { font-size: 16px; font-weight: 700; color: var(--txt); text-align: center; margin: 14px auto 14px; }
+.formats-list { list-style: none; max-width: 300px; margin: 0 auto 6px; }
+.formats-list li { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: 16px; font-weight: 700; color: var(--navy); }
+.formats-list .fmt-emoji { font-size: 20px; width: 26px; text-align: center; flex-shrink: 0; }
+
+/* ── BOTÕES CTA (Wiapy) — reforço + tamanho mobile ── */
+#wiapy_upsell button, #wiapy_upsell_2 button, #wiapy_upsell_3 button { min-height: 60px !important; font-size: 18px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+#wiapy_upsell > a, #wiapy_upsell_2 > a, #wiapy_upsell_3 > a { display: none !important; }
+.cta-reassure { font-size: 12.5px; color: var(--txt-s); text-align: center; margin: 12px auto 0; line-height: 1.5; }
+
+/* ── LINK DE RECUSA (discreto) ── */
+.refuse-link { display: block; text-align: center; font-size: 13px; color: #9ca3af; margin: 16px auto 0; font-style: italic; text-decoration: none; cursor: pointer; }
+.refuse-link:hover { color: #6b7280; }
+
+/* ── PREÇO (novo) ── */
+.itp-total-compare { font-size: .875rem; color: rgba(255,255,255,.7); margin-bottom: .5rem; }
+.itp-total-period-italic { font-style: italic; }
+
+/* ── BARRA FIXA MOBILE (STICKY CTA) ── */
+.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; background: #00d769; box-shadow: 0 -4px 16px rgba(0,0,0,.18); display: none; align-items: center; justify-content: center; height: 64px; padding: 0 16px; cursor: pointer; }
+.sticky-cta.show { display: flex; }
+.sticky-cta .sc-text { color: #fff; font-weight: 800; font-size: 18px; }
+@media (min-width: 768px) { .sticky-cta { display: none !important; } }
+@media (max-width: 767px) { body.has-sticky { padding-bottom: 72px; } }
 </style>
 </head>
 <body>
 
-<!-- FAIXA DE TOPO -->
-<div class="top-bar">✅ Pedido confirmado! Só mais um passo antes de acessar…</div>
+<!-- BLOCO 1 — BARRA DE TOPO (discreta) -->
+<div class="top-bar">✅ Pedido dos 127 mapas confirmado</div>
 
 <div class="wrap">
 
-  <!-- HEADLINE -->
+  <!-- BLOCO 2 — HEADLINE -->
   <h1 class="headline">Você já garantiu os <span style="color:var(--ouro)">127</span> mapas. Agora fixe cada palavra com <span style="color:var(--ouro)">200</span> passatempos em italiano.</h1>
 
-  <!-- CARD DE INFO (3 frases no padrão emoji + texto) -->
-  <div class="info-card">
-    <div class="info-row">
-      <span class="info-row-icon">📰</span>
-      <p class="info-row-text">Lembra dos <b>caça-palavras e das cruzadas</b> da banca de jornal? A gente pegou esse mesmo passatempo e adaptou para você <span class="hl">aprender italiano sem perceber</span>.</p>
-    </div>
-  </div>
+  <!-- BLOCO 3 — MOCKUP + LEGENDA -->
+  <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 14px; border-radius:12px;">
+  <p class="mockup-legend">Lembra dos caça-palavras e cruzadas da banca de jornal? A gente pegou esse mesmo passatempo e adaptou pra você aprender italiano sem perceber.</p>
 
-  <!-- BLOCO "POR QUE AGORA" -->
+  <!-- BLOCO 4 — SUB-HEADLINE EM LISTA -->
+  <p class="formats-intro">200 atividades divididas em 4 formatos:</p>
+  <ul class="formats-list">
+    <li><span class="fmt-emoji">🧩</span> Caça-palavras</li>
+    <li><span class="fmt-emoji">✏️</span> Palavras cruzadas</li>
+    <li><span class="fmt-emoji">🔤</span> Complete a frase</li>
+    <li><span class="fmt-emoji">🔗</span> Ligue as colunas</li>
+  </ul>
+
+  <!-- BLOCO 5 — CTA 1 -->
+  <div id="wiapy_upsell"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell",
+    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+    linkText: "Adicionar ao meu pedido por R$24,90",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "18px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "rgba(0,0,0,0.4)"
+  });
+  </script>
+  <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
+
+  <!-- BLOCO 6 — POR QUE AGORA -->
   <div class="why-now">
     <p>Passatempo não pede foco de estudo — pede curiosidade. E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café da manhã, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
   </div>
 
-  <!-- PLACEHOLDER DEPOIMENTO — descomente e preencha quando tiver o depoimento real
-  <div class="depo-slot">
-    <p class="depo-quote">"[Depoimento de aluno — a ser preenchido]"</p>
-    <p class="depo-author">[Nome, idade]</p>
-  </div>
-  -->
-
-  <!-- IMAGEM MOCKUP DO PRODUTO -->
-  <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 18px; border-radius:12px;">
-
-  <!-- PARÁGRAFO 3 -->
-  <p class="sec-text">O Caderno de Passatempos em Italiano reúne mais de 200 atividades: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas.<br><br>Tudo em 6 temas do dia a dia, comida, viagem, família, trabalho, rotina e cultura.</p>
-
-  <!-- SUBTÍTULO -->
-  <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro:</h2></div>
-
-  <!-- GRID DE 4 MINIATURAS (uma imagem representativa por formato) -->
+  <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO -->
+  <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro</h2></div>
   <div class="peek-grid">
     <figure class="peek-item">
       <img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" width="1000" height="1422" loading="lazy" decoding="async">
@@ -304,13 +346,52 @@ img { max-width:100%; display:block; }
       <figcaption><span class="peek-name">🔗 Ligue as colunas</span><span class="peek-desc">Conecte cada palavra ao seu significado e fixe por associação.</span></figcaption>
     </figure>
   </div>
-
-  <!-- BLOCO C — linha dos 6 temas -->
   <p class="peek-themes">Todas as atividades estão organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
 
-  <hr class="divider">
+  <!-- BLOCO 8 — CTA 2 -->
+  <div id="wiapy_upsell_2"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell_2",
+    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+    linkText: "Adicionar ao meu pedido por R$24,90",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "18px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "rgba(0,0,0,0.4)"
+  });
+  </script>
+  <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
 
-  <!-- BLOCO DE OFERTA (padrão "PLANO COMPLETO" da /italiano) -->
+  <!-- BLOCO 9 — DEPOIMENTO (oculto até ter conteúdo real) -->
+  <!-- BLOCO DE DEPOIMENTO — REMOVER ESSA TAG DE COMENTÁRIO E INSERIR CONTEÚDO QUANDO TIVER DEPOIMENTO REAL -->
+  <!--
+  <div class="depoimento">
+    <p><em>"[Texto do depoimento aqui]"</em></p>
+    <p>— [Nome], [Idade]</p>
+  </div>
+  -->
+
+</div>
+
+<!-- BLOCO 10 — CARD DE BENEFÍCIOS (inalterado) -->
+<div class="wrap">
+  <div class="benefit-card">
+    <p class="benefit-title">Com o Caderno de Passatempos, você vai:</p>
+    <div class="benefit-row"><span class="benefit-icon">🧩</span><p class="benefit-text">Fixar o vocabulário dos Mapas resolvendo passatempos em vez de decorar listas</p></div>
+    <div class="benefit-row"><span class="benefit-icon">⏱️</span><p class="benefit-text">Praticar em 5 minutos no café, na fila, no ônibus, sem precisar de mesa nem silêncio</p></div>
+    <div class="benefit-row"><span class="benefit-icon">✏️</span><p class="benefit-text">Escolher entre 4 formatos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, nunca fica repetitivo</p></div>
+    <div class="benefit-row"><span class="benefit-icon">🎨</span><p class="benefit-text">Aprender sem sentir que está estudando, porque passatempo não parece dever de casa</p></div>
+  </div>
+</div>
+
+<!-- BLOCO 11 — OFERTA E PREÇO -->
+<div class="wrap">
   <div class="itp-card">
     <span class="itp-badge">OFERTA EXCLUSIVA DESTE PEDIDO</span>
     <div class="itp-banner">✅ 200 PASSATEMPOS EM ITALIANO</div>
@@ -331,37 +412,15 @@ img { max-width:100%; display:block; }
     </ul>
 
     <div class="itp-total-box">
-      <div class="itp-total-label">Valor total</div>
-      <div class="itp-total-old">De R$ 47,00</div>
-      <div class="itp-total-label">Por apenas</div>
+      <div class="itp-total-compare">Comprado separado sairia por R$ 47,00</div>
+      <div class="itp-total-label">Aqui, apenas neste pedido:</div>
       <div class="itp-total-price">R$ 24,90</div>
-      <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
-      <span class="itp-economy">Você economiza R$ 22,10</span>
+      <div class="itp-total-period itp-total-period-italic">ou 3x de R$ 8,30 no cartão</div>
     </div>
   </div>
-
-  <!-- BOTÃO 1 (Wiapy) — logo abaixo do preço/card -->
-  <div id="wiapy_upsell"></div>
-  <script>
-  initWiapyUpsell({
-    elementId: "wiapy_upsell",
-    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-    linkText: "QUERO OS PASSATEMPOS",
-    styles: {
-      backgroundColor: "#00d769",
-      hoverBackgroundColor: "#00b85a",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://wiapy.com/login",
-    refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
-  });
-  </script>
-
 </div>
 
-<!-- BLOCO GARANTIA (padrão /italiano) -->
+<!-- BLOCO 12 — GARANTIA (inalterado) -->
 <section class="guarantee-section">
   <div class="guarantee-inner">
     <img src="/italiano/garantia-selo-v2.webp" alt="Garantia de 15 dias" width="140" height="140" loading="lazy" decoding="async">
@@ -370,18 +429,30 @@ img { max-width:100%; display:block; }
   </div>
 </section>
 
-<!-- CARD DE BENEFÍCIOS (padrão da imagem enviada) -->
-<div class="wrap">
-  <div class="benefit-card">
-    <p class="benefit-title">Com o Caderno de Passatempos, você vai:</p>
-    <div class="benefit-row"><span class="benefit-icon">🧩</span><p class="benefit-text">Fixar o vocabulário dos Mapas resolvendo passatempos em vez de decorar listas</p></div>
-    <div class="benefit-row"><span class="benefit-icon">⏱️</span><p class="benefit-text">Praticar em 5 minutos no café, na fila, no ônibus, sem precisar de mesa nem silêncio</p></div>
-    <div class="benefit-row"><span class="benefit-icon">✏️</span><p class="benefit-text">Escolher entre 4 formatos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, nunca fica repetitivo</p></div>
-    <div class="benefit-row"><span class="benefit-icon">🎨</span><p class="benefit-text">Aprender sem sentir que está estudando, porque passatempo não parece dever de casa</p></div>
-  </div>
+<!-- BLOCO 13 — CTA 3 + link de recusa -->
+<div class="wrap" style="padding-bottom:20px;">
+  <div id="wiapy_upsell_3"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell_3",
+    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+    linkText: "Adicionar ao meu pedido por R$24,90",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "18px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "rgba(0,0,0,0.4)"
+  });
+  </script>
+  <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
+  <a href="https://wiapy.com/login" class="refuse-link" id="recusar-caderno">Não, obrigado. Prefiro continuar sem o caderno.</a>
 </div>
 
-<!-- BLOCO PERGUNTAS FREQUENTES (padrão /italiano) -->
+<!-- BLOCO 14 — PERGUNTAS FREQUENTES (inalterado) -->
 <section class="faq-section">
   <h2>Perguntas Frequentes</h2>
   <div class="faq-list">
@@ -423,58 +494,10 @@ img { max-width:100%; display:block; }
   </div>
 </section>
 
-<!-- BOTÃO 2 (Wiapy) — mesma CTA repetida após o FAQ -->
-<div class="wrap" style="padding-bottom:40px;">
-  <div id="wiapy_upsell_2"></div>
-  <script>
-  initWiapyUpsell({
-    elementId: "wiapy_upsell_2",
-    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-    linkText: "QUERO OS PASSATEMPOS",
-    styles: {
-      backgroundColor: "#00d769",
-      hoverBackgroundColor: "#00b85a",
-      fontSize: "17px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://wiapy.com/login",
-    refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
-  });
-  </script>
+<!-- BLOCO 15 — BARRA FIXA MOBILE (STICKY CTA) -->
+<div class="sticky-cta" id="sticky-cta" role="button" tabindex="0" aria-label="Adicionar ao meu pedido por R$24,90">
+  <span class="sc-text"><strong>R$24,90</strong> — Adicionar ao meu pedido →</span>
 </div>
-
-<script>
-document.querySelectorAll('[data-carousel]').forEach(function(car) {
-  var track = car.querySelector('.pt-track');
-  var slides = car.querySelectorAll('.pt-slide');
-  var dotsWrap = car.querySelector('.pt-dots');
-  var idx = 0;
-  slides.forEach(function(_, i) {
-    var d = document.createElement('button');
-    d.type = 'button';
-    d.className = 'pt-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Ir para imagem ' + (i + 1));
-    d.addEventListener('click', function() { go(i); });
-    dotsWrap.appendChild(d);
-  });
-  function update() {
-    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
-    dotsWrap.querySelectorAll('.pt-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-  }
-  function go(i) { idx = (i + slides.length) % slides.length; update(); }
-  car.querySelector('.pt-prev').addEventListener('click', function() { go(idx - 1); });
-  car.querySelector('.pt-next').addEventListener('click', function() { go(idx + 1); });
-  var startX = null;
-  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', function(e) {
-    if (startX === null) return;
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) { go(dx < 0 ? idx + 1 : idx - 1); }
-    startX = null;
-  });
-});
-</script>
 
 <script>
 document.querySelectorAll('.faq-toggle').forEach(function(t) {
@@ -485,6 +508,26 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
     if (!isOpen) item.classList.add('open');
   });
 });
+</script>
+
+<script>
+(function(){
+  var bar=document.getElementById('sticky-cta');
+  var anchor=document.getElementById('wiapy_upsell');
+  if(!bar||!anchor) return;
+  function buy(){ var b=anchor.querySelector('button'); if(b) b.click(); }
+  bar.addEventListener('click', buy);
+  bar.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); buy(); } });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting && en.boundingClientRect.top < 0){ bar.classList.add('show'); document.body.classList.add('has-sticky'); }
+        else { bar.classList.remove('show'); document.body.classList.remove('has-sticky'); }
+      });
+    }, {threshold:0});
+    io.observe(anchor);
+  }
+})();
 </script>
 
 <!-- ── POPUP DE RECUSA (downsell, padrão /italiano) ── -->
@@ -506,9 +549,9 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
       cont=document.getElementById('recusa-continue');
   function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
   function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
-  // Intercepta o link "Recusar esta oferta" de qualquer widget Wiapy e abre o popup
+  // Intercepta o link de recusa e abre o popup de downsell
   document.addEventListener('click',function(e){
-    var a=e.target.closest('#wiapy_upsell a, #wiapy_upsell_2 a');
+    var a=e.target.closest('#recusar-caderno, #wiapy_upsell a, #wiapy_upsell_2 a, #wiapy_upsell_3 a');
     if(a){e.preventDefault();e.stopImmediatePropagation();open();}
   },true);
   cl.addEventListener('click',close);
