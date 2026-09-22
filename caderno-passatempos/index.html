@@ -226,6 +226,24 @@ img { max-width:100%; display:block; }
   .faq-toggle h4 { font-size: 17px; }
   .faq-body p { font-size: 16px; }
 }
+
+/* ── BLOCO "POR QUE AGORA" ── */
+.why-now { max-width: 440px; margin: 4px auto 20px; text-align: left; }
+.why-now p { font-size: 15px; color: var(--txt); line-height: 1.7; }
+.why-now p + p { margin-top: 14px; }
+
+/* ── PLACEHOLDER DEPOIMENTO (pronto para uso) ── */
+.depo-slot { background: var(--cinza-f); border: 1px solid var(--linha); border-radius: 14px; padding: 22px 20px; max-width: 460px; margin: 22px auto; text-align: center; }
+.depo-quote { font-size: 15px; color: var(--txt); line-height: 1.6; font-style: italic; }
+.depo-author { font-size: 13px; color: var(--txt-s); margin-top: 10px; font-weight: 700; }
+
+/* ── GRID "VEJA O QUE TE ESPERA DENTRO" (4 miniaturas) ── */
+.peek-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 460px; margin: 0 auto 20px; }
+.peek-item { margin: 0; }
+.peek-item img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+.peek-name { display: block; font-size: 14.5px; font-weight: 700; color: var(--navy); margin-top: 9px; line-height: 1.35; }
+.peek-desc { display: block; font-size: 13px; font-style: italic; color: var(--txt-s); line-height: 1.5; margin-top: 3px; }
+.peek-themes { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 8px; }
 </style>
 </head>
 <body>
@@ -236,7 +254,7 @@ img { max-width:100%; display:block; }
 <div class="wrap">
 
   <!-- HEADLINE -->
-  <h1 class="headline">E se estudar italiano parecesse mais um passatempo do que uma obrigação?</h1>
+  <h1 class="headline">Você já garantiu os <span style="color:var(--ouro)">127</span> mapas. Agora fixe cada palavra com <span style="color:var(--ouro)">200</span> passatempos em italiano.</h1>
 
   <!-- CARD DE INFO (3 frases no padrão emoji + texto) -->
   <div class="info-card">
@@ -251,6 +269,20 @@ img { max-width:100%; display:block; }
     </div>
   </div>
 
+  <!-- BLOCO "POR QUE AGORA" -->
+  <div class="why-now">
+    <p>Aprender italiano funciona melhor quando o cérebro relaxa. Você já sentou pra estudar decidido, cansou em 10 minutos, e desistiu?</p>
+    <p>Passatempo não pede foco de estudo — pede curiosidade. E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café da manhã, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
+    <p>É o mesmo mecanismo de quem aprende cantando, assistindo série ou cozinhando com receita — a mente absorve porque não está tentando.</p>
+  </div>
+
+  <!-- PLACEHOLDER DEPOIMENTO — descomente e preencha quando tiver o depoimento real
+  <div class="depo-slot">
+    <p class="depo-quote">"[Depoimento de aluno — a ser preenchido]"</p>
+    <p class="depo-author">[Nome, idade]</p>
+  </div>
+  -->
+
   <!-- IMAGEM MOCKUP DO PRODUTO -->
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 18px; border-radius:12px;">
 
@@ -260,89 +292,28 @@ img { max-width:100%; display:block; }
   <!-- SUBTÍTULO -->
   <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro:</h2></div>
 
-  <!-- FORMATO 1 — Caça-palavras (carrossel de 4 imagens) -->
-  <div class="format-block">
-    <div class="pt-carousel" data-carousel>
-      <div class="pt-viewport">
-        <div class="pt-track">
-          <div class="pt-slide"><img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" width="1000" height="1422" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="caca-palavras-2.webp" alt="Caça-palavras em italiano — página 2" width="1000" height="1422" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="caca-palavras-3.webp" alt="Caça-palavras em italiano — página 3" width="1000" height="1422" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="caca-palavras-4.webp" alt="Caça-palavras em italiano — página 4" width="1000" height="1422" loading="lazy" decoding="async"></div>
-        </div>
-      </div>
-      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
-      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
-      <div class="pt-dots"></div>
-    </div>
-    <div class="format-header">
-      <p class="format-name">🧩 <span class="mark">Caça-palavras</span></p>
-      <p class="format-benefit">Encontre as palavras italianas escondidas e fixe vocabulário sem esforço.</p>
-    </div>
+  <!-- GRID DE 4 MINIATURAS (uma imagem representativa por formato) -->
+  <div class="peek-grid">
+    <figure class="peek-item">
+      <img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" width="1000" height="1422" loading="lazy" decoding="async">
+      <figcaption><span class="peek-name">🧩 Caça-palavras</span><span class="peek-desc">Encontre as palavras italianas escondidas e fixe vocabulário sem esforço.</span></figcaption>
+    </figure>
+    <figure class="peek-item">
+      <img src="palavras-cruzadas-1.webp" alt="Palavras cruzadas em italiano — página 1" width="1000" height="1333" loading="lazy" decoding="async">
+      <figcaption><span class="peek-name">✏️ Palavras cruzadas</span><span class="peek-desc">A dica vem em português, a resposta em italiano — um desafio gostoso pra memória.</span></figcaption>
+    </figure>
+    <figure class="peek-item">
+      <img src="complete-frase-1.webp" alt="Complete a frase em italiano — página 1" width="1000" height="1413" loading="lazy" decoding="async">
+      <figcaption><span class="peek-name">🔤 Complete a frase</span><span class="peek-desc">Solte o italiano completando frases de situações reais do dia a dia.</span></figcaption>
+    </figure>
+    <figure class="peek-item">
+      <img src="ligue-colunas-1.webp" alt="Ligue as colunas em italiano — página 1" width="1000" height="1413" loading="lazy" decoding="async">
+      <figcaption><span class="peek-name">🔗 Ligue as colunas</span><span class="peek-desc">Conecte cada palavra ao seu significado e fixe por associação.</span></figcaption>
+    </figure>
   </div>
 
-  <!-- FORMATO 2 — Palavras cruzadas -->
-  <div class="format-block">
-    <div class="pt-carousel" data-carousel>
-      <div class="pt-viewport">
-        <div class="pt-track">
-          <div class="pt-slide"><img src="palavras-cruzadas-1.webp" alt="Palavras cruzadas em italiano — página 1" width="1000" height="1333" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="palavras-cruzadas-2.webp" alt="Palavras cruzadas em italiano — página 2" width="1000" height="1333" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="palavras-cruzadas-3.webp" alt="Palavras cruzadas em italiano — página 3" width="1000" height="1333" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="palavras-cruzadas-4.webp" alt="Palavras cruzadas em italiano — página 4" width="1000" height="1333" loading="lazy" decoding="async"></div>
-        </div>
-      </div>
-      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
-      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
-      <div class="pt-dots"></div>
-    </div>
-    <div class="format-header">
-      <p class="format-name">✏️ <span class="mark">Palavras cruzadas</span></p>
-      <p class="format-benefit">A dica vem em português, a resposta em italiano — um desafio gostoso pra memória.</p>
-    </div>
-  </div>
-
-  <!-- FORMATO 3 — Complete a frase -->
-  <div class="format-block">
-    <div class="pt-carousel" data-carousel>
-      <div class="pt-viewport">
-        <div class="pt-track">
-          <div class="pt-slide"><img src="complete-frase-1.webp" alt="Complete a frase em italiano — página 1" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="complete-frase-2.webp" alt="Complete a frase em italiano — página 2" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="complete-frase-3.webp" alt="Complete a frase em italiano — página 3" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="complete-frase-4.webp" alt="Complete a frase em italiano — página 4" width="1000" height="1413" loading="lazy" decoding="async"></div>
-        </div>
-      </div>
-      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
-      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
-      <div class="pt-dots"></div>
-    </div>
-    <div class="format-header">
-      <p class="format-name">🔤 <span class="mark">Complete a frase</span></p>
-      <p class="format-benefit">Solte o italiano completando frases de situações reais do dia a dia.</p>
-    </div>
-  </div>
-
-  <!-- FORMATO 4 — Ligue as colunas -->
-  <div class="format-block">
-    <div class="pt-carousel" data-carousel>
-      <div class="pt-viewport">
-        <div class="pt-track">
-          <div class="pt-slide"><img src="ligue-colunas-1.webp" alt="Ligue as colunas em italiano — página 1" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="ligue-colunas-2.webp" alt="Ligue as colunas em italiano — página 2" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="ligue-colunas-3.webp" alt="Ligue as colunas em italiano — página 3" width="1000" height="1413" loading="lazy" decoding="async"></div>
-          <div class="pt-slide"><img src="ligue-colunas-4.webp" alt="Ligue as colunas em italiano — página 4" width="1000" height="1413" loading="lazy" decoding="async"></div>
-        </div>
-      </div>
-      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
-      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
-      <div class="pt-dots"></div>
-    </div>
-    <div class="format-header">
-      <p class="format-name">🔗 <span class="mark">Ligue as colunas</span></p>
-      <p class="format-benefit">Conecte cada palavra ao seu significado e fixe por associação.</p>
-    </div>
-  </div>
+  <!-- BLOCO C — linha dos 6 temas -->
+  <p class="peek-themes">Todas as atividades estão organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
 
   <hr class="divider">
 
