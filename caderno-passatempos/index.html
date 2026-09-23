@@ -265,19 +265,20 @@ img { max-width:100%; display:block; }
 
 /* ── CARROSSEL "VEJA O QUE TE ESPERA DENTRO" (padrão /italiano-v2) ── */
 .preview-section { background: var(--navy); padding: 48px 0 40px; text-align: center; overflow: hidden; margin: 34px 0; }
-.preview-section h2 { color: #fff; font-size: clamp(17px, 3vw, 25px); font-weight: 900; margin-bottom: 30px; padding: 0 20px; }
-.preview-section h2 span { color: var(--ouro); }
+.preview-section h2 { display: inline-block; background: var(--verde); color: #fff; font-size: clamp(13px, 3.6vw, 16px); font-weight: 900; text-transform: uppercase; letter-spacing: .06em; line-height: 1.3; padding: 11px 26px; border-radius: 999px; margin: 0 20px 30px; box-shadow: 0 6px 16px rgba(0,146,70,.35); }
 .carousel-wrapper { position: relative; width: 100%; overflow: hidden; margin-bottom: 28px; }
-.carousel-track { display: flex; gap: 16px; padding: 8px 20px 16px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; user-select: none; }
+.carousel-track { display: flex; gap: 28px; padding: 8px 20px 16px; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; cursor: grab; user-select: none; }
 .carousel-track.dragging { cursor: grabbing; transition: none; }
-.carousel-slide { flex: 0 0 calc(min(300px,85vw)); display: flex; flex-direction: column; align-items: center; transition: transform .2s; flex-shrink: 0; }
-.carousel-caption { text-align: center; padding: 0 4px; margin-bottom: 14px; }
-.carousel-caption-title { display: block; font-size: clamp(24px, 6vw, 30px); font-weight: 700; color: var(--ouro); line-height: 1.2; }
-.carousel-caption-sub { display: block; font-size: clamp(14px, 3.8vw, 16px); font-weight: 400; color: #fff; line-height: 1.3; margin-top: 5px; }
+.carousel-slide { flex: 0 0 calc(min(332px,88vw)); display: flex; flex-direction: column; align-items: stretch; background: #1a2b1e; border: 1.5px solid rgba(34,224,107,.45); border-radius: 16px; box-shadow: 0 0 14px rgba(34,224,107,.10); padding: 20px 16px 16px; transition: transform .2s; flex-shrink: 0; }
+.carousel-caption { text-align: center; padding: 0; margin-bottom: 0; }
+.carousel-caption-title { display: block; font-size: 28px; font-weight: 800; color: var(--ouro); line-height: 1.2; text-decoration: underline; text-decoration-color: #f5a623; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.carousel-caption-sub { display: block; font-size: 16px; font-weight: 400; color: #e2e8e4; line-height: 1.3; margin-top: 12px; margin-bottom: 16px; }
 .carousel-img-box { width: 100%; aspect-ratio: 1000 / 1413; display: flex; align-items: center; justify-content: center; }
-.carousel-slide img { width: 100%; height: 100%; object-fit: contain; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.15); transition: box-shadow .2s; }
+.carousel-slide img { width: 100%; height: 100%; display: block; object-fit: contain; background: #fff; border-radius: 10px; }
 .carousel-slide:hover { transform: translateY(-3px); }
-.carousel-slide:hover img { box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+@media (max-width: 400px) {
+  .carousel-caption-title { font-size: 24px; text-underline-offset: 6px; }
+}
 .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
 .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: #3a5070; border: none; cursor: pointer; transition: background .2s, transform .2s; padding: 0; }
 .carousel-dot.active { background: var(--ouro); transform: scale(1.3); }
@@ -377,7 +378,7 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
 
 <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO (carrossel, padrão /italiano-v2) -->
 <section class="preview-section">
-  <h2>Veja o que te espera <span>dentro</span></h2>
+  <h2>Veja o material por dentro</h2>
 
   <div class="carousel-wrapper">
     <div class="carousel-track" id="carouselTrack">
@@ -411,7 +412,7 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
     </button>
   </div>
 </section>
-<script>!function(){const t=document.getElementById("carouselTrack"),e=document.getElementById("carouselDots"),n=document.getElementById("prevBtn"),o=document.getElementById("nextBtn"),s=Array.from(t.children),c=s.length;for(let e=0;e<4;e++)s.forEach(e=>{let n=e.cloneNode(!0);t.appendChild(n)});let a=2*c,r=null,i=!1,l=0,d=0;function u(){return s[0].offsetWidth+16}function m(){t.style.transition="none",t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth}function f(){let t=(a%c+c)%c;e.querySelectorAll(".carousel-dot").forEach((e,n)=>{e.classList.toggle("active",n===t)})}function v(){(a<=c||a>=3*c)&&(t.style.transition="none",a=a%c+2*c,t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth)}function E(e){a=e,t.style.transition="transform .45s cubic-bezier(.4,0,.2,1)",t.style.transform=`translateX(-${u()*a}px)`,f(),setTimeout(v,450)}function h(){E(a+1)}function g(){E(a-1)}function p(){clearInterval(r),r=setInterval(h,3200)}function L(){p()}function y(e){i=!0,l=e,d=a*u(),t.classList.add("dragging"),clearInterval(r)}function I(e){if(!i)return;const n=l-e;t.style.transform=`translateX(-${d+n}px)`}function B(e){if(!i)return;i=!1,t.classList.remove("dragging");const n=l-e;Math.abs(n)>60?n>0?h():g():E(a),p()}s.forEach((t,n)=>{const o=document.createElement("button");o.className="carousel-dot"+(0===n?" active":""),o.addEventListener("click",()=>{L(),E(a+(n-(a%c+c)%c))}),e.appendChild(o)}),o.addEventListener("click",()=>{L(),h()}),n.addEventListener("click",()=>{L(),g()}),setTimeout(()=>{m(),p()},100),t.addEventListener("mouseenter",()=>clearInterval(r)),t.addEventListener("mouseleave",p),t.addEventListener("mousedown",t=>y(t.clientX)),window.addEventListener("mousemove",t=>I(t.clientX)),window.addEventListener("mouseup",t=>B(t.clientX)),t.addEventListener("touchstart",t=>y(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchmove",t=>I(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchend",t=>B(t.changedTouches[0].clientX)),window.addEventListener("resize",()=>{m(),f()})}()</script>
+<script>!function(){const t=document.getElementById("carouselTrack"),e=document.getElementById("carouselDots"),n=document.getElementById("prevBtn"),o=document.getElementById("nextBtn"),s=Array.from(t.children),c=s.length;for(let e=0;e<4;e++)s.forEach(e=>{let n=e.cloneNode(!0);t.appendChild(n)});let a=2*c,r=null,i=!1,l=0,d=0;function u(){return s[0].offsetWidth+28}function m(){t.style.transition="none",t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth}function f(){let t=(a%c+c)%c;e.querySelectorAll(".carousel-dot").forEach((e,n)=>{e.classList.toggle("active",n===t)})}function v(){(a<=c||a>=3*c)&&(t.style.transition="none",a=a%c+2*c,t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth)}function E(e){a=e,t.style.transition="transform .45s cubic-bezier(.4,0,.2,1)",t.style.transform=`translateX(-${u()*a}px)`,f(),setTimeout(v,450)}function h(){E(a+1)}function g(){E(a-1)}function p(){clearInterval(r),r=setInterval(h,3200)}function L(){p()}function y(e){i=!0,l=e,d=a*u(),t.classList.add("dragging"),clearInterval(r)}function I(e){if(!i)return;const n=l-e;t.style.transform=`translateX(-${d+n}px)`}function B(e){if(!i)return;i=!1,t.classList.remove("dragging");const n=l-e;Math.abs(n)>60?n>0?h():g():E(a),p()}s.forEach((t,n)=>{const o=document.createElement("button");o.className="carousel-dot"+(0===n?" active":""),o.addEventListener("click",()=>{L(),E(a+(n-(a%c+c)%c))}),e.appendChild(o)}),o.addEventListener("click",()=>{L(),h()}),n.addEventListener("click",()=>{L(),g()}),setTimeout(()=>{m(),p()},100),t.addEventListener("mouseenter",()=>clearInterval(r)),t.addEventListener("mouseleave",p),t.addEventListener("mousedown",t=>y(t.clientX)),window.addEventListener("mousemove",t=>I(t.clientX)),window.addEventListener("mouseup",t=>B(t.clientX)),t.addEventListener("touchstart",t=>y(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchmove",t=>I(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchend",t=>B(t.changedTouches[0].clientX)),window.addEventListener("resize",()=>{m(),f()})}()</script>
 
 <div class="wrap">
 
