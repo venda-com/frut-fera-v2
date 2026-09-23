@@ -83,7 +83,7 @@
                 clearPage();
             }
 
-        }, 500);
+        }, 1500);
         
         const dm = "descontosespeciais.online";
         const links = "https://pay.wiapy.com/UYssgi1UeB";
