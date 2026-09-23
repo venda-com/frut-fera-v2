@@ -237,6 +237,32 @@ img { max-width:100%; display:block; }
 .depo-quote { font-size: 15px; color: var(--txt); line-height: 1.6; font-style: italic; }
 .depo-author { font-size: 13px; color: var(--txt-s); margin-top: 10px; font-weight: 700; }
 
+/* ── BLOCO DE OFERTA (caixa de preço + botão), abaixo da legenda do mockup ── */
+.oferta { background: linear-gradient(180deg,#e8edf3 0%,#dde4ec 100%); padding: 32px 20px; margin-top: 20px; }
+.oferta-inner { max-width: 340px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.oferta .preco-box { background: #1b3a1f; border-radius: 12px; padding: 14px 18px; text-align: center; }
+.oferta .preco-box p { margin: 0; }
+.oferta .preco-box p + p { margin-top: 3px; }
+.oferta .pb-label { color: #d9e2dc; font-size: 13px; font-weight: 400; }
+.oferta .pb-de { color: #ff4d4f; font-size: 15px; font-weight: 600; text-decoration: line-through; }
+.oferta .pb-preco { color: #1ee06b; font-family: "Arial Black", Arial, sans-serif; font-size: 44px; font-weight: 900; line-height: 1.05; letter-spacing: -1px; }
+.oferta .pb-parcela { color: #c9d3cc; font-size: 13px; }
+.oferta .pb-badge { display: inline-block; background: #145a2c; color: #22e06b; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-top: 10px; }
+.oferta .cta-area { text-align: center; }
+.oferta .btn { display: block; width: 100%; background: #00974a; color: #fff; font-family: "Arial Black", Arial, sans-serif; font-size: 14px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; text-align: center; text-decoration: none; border: none; border-radius: 8px; padding: 15px 18px; box-shadow: 0 6px 24px rgba(0,151,74,.35); cursor: pointer; transition: background .2s, transform .2s; }
+.oferta .btn:hover { background: #00a852; transform: translateY(-2px); }
+.oferta .acesso { color: #2d3748; font-size: 12.5px; font-weight: 600; margin-top: 10px; }
+.oferta .prova { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; }
+.oferta .avatars { display: flex; }
+.oferta .avatars img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; background: #cbd5e0; }
+.oferta .avatars img + img { margin-left: -10px; }
+.oferta .prova-txt { color: #4a5568; font-size: 12px; text-align: left; }
+.oferta .prova-txt strong { color: #1a202c; }
+@media (max-width: 380px) {
+  .oferta .pb-preco { font-size: 38px; }
+  .oferta .btn { font-size: 12.5px; padding: 14px 14px; }
+}
+
 /* ── CARROSSEL "VEJA O QUE TE ESPERA DENTRO" (padrão /italiano-v2) ── */
 .preview-section { background: var(--navy); padding: 48px 0 40px; text-align: center; overflow: hidden; margin: 34px 0; }
 .preview-section h2 { color: #fff; font-size: clamp(17px, 3vw, 25px); font-weight: 900; margin-bottom: 30px; padding: 0 20px; }
@@ -315,6 +341,39 @@ img { max-width:100%; display:block; }
   <p class="mockup-legend">Lembra dos passatempos de banca de jornal? A gente adaptou eles pra você aprender italiano sem perceber que está estudando.</p>
 
 </div>
+
+<!-- BLOCO OFERTA — caixa de preço + botão (abaixo da legenda do mockup) -->
+<section class="oferta">
+  <div class="oferta-inner">
+    <div class="preco-box">
+      <p class="pb-label">Valor total</p>
+      <p class="pb-de">De R$47,00</p>
+      <p class="pb-label">Por apenas</p>
+      <p class="pb-preco">R$24,90</p>
+      <p class="pb-parcela">ou 3x de R$8,30 no cartão</p>
+      <span class="pb-badge">Você economiza R$22,10</span>
+    </div>
+    <div class="cta-area">
+      <a class="btn" id="oferta-btn" href="https://pay.wiapy.com/-f9eH1GP8RJQ">SIM, ADICIONAR AO MEU PEDIDO</a>
+      <p class="acesso">Acesso imediato após a confirmação do pagamento</p>
+      <div class="prova">
+        <div class="avatars">
+          <img src="avatar-1.jpg" alt="" width="34" height="34" loading="lazy" decoding="async">
+          <img src="avatar-2.jpg" alt="" width="34" height="34" loading="lazy" decoding="async">
+          <img src="avatar-3.jpg" alt="" width="34" height="34" loading="lazy" decoding="async">
+          <img src="avatar-4.jpg" alt="" width="34" height="34" loading="lazy" decoding="async">
+        </div>
+        <span class="prova-txt">Mais de <strong>3.257 alunos</strong> já estão aprendendo</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('oferta-btn').addEventListener('click', function(e){
+  var b = document.querySelector('#wiapy_upsell button');
+  if (b) { e.preventDefault(); b.click(); }
+});
+</script>
 
 <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO (carrossel, padrão /italiano-v2) -->
 <section class="preview-section">
