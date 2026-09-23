@@ -314,23 +314,6 @@ img { max-width:100%; display:block; }
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 14px; border-radius:12px;">
   <p class="mockup-legend">Lembra dos passatempos de banca de jornal? A gente adaptou eles pra você aprender italiano sem perceber que está estudando.</p>
 
-  <!-- BLOCO EDITORIAL "POR QUE AGORA" (padrão da landing) -->
-  <div class="edito-block">
-    <p class="edito-tag">O QUE FAZ FIXAR DE VERDADE</p>
-    <p class="edito-title">Passatempo não pede foco. Pede curiosidade.</p>
-    <p class="edito-text">E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
-  </div>
-
-  <!-- BLOCO 4 — SUB-HEADLINE EM LISTA -->
-  <p class="formats-intro">200 atividades divididas em 4 formatos:</p>
-  <ul class="formats-list">
-    <li><span class="fmt-emoji">🧩</span> Caça-palavras</li>
-    <li><span class="fmt-emoji">✏️</span> Palavras cruzadas</li>
-    <li><span class="fmt-emoji">🔤</span> Complete a frase</li>
-    <li><span class="fmt-emoji">🔗</span> Ligue as colunas</li>
-  </ul>
-
-
 </div>
 
 <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO (carrossel, padrão /italiano-v2) -->
@@ -372,6 +355,23 @@ img { max-width:100%; display:block; }
 <script>!function(){const t=document.getElementById("carouselTrack"),e=document.getElementById("carouselDots"),n=document.getElementById("prevBtn"),o=document.getElementById("nextBtn"),s=Array.from(t.children),c=s.length;for(let e=0;e<4;e++)s.forEach(e=>{let n=e.cloneNode(!0);t.appendChild(n)});let a=2*c,r=null,i=!1,l=0,d=0;function u(){return s[0].offsetWidth+16}function m(){t.style.transition="none",t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth}function f(){let t=(a%c+c)%c;e.querySelectorAll(".carousel-dot").forEach((e,n)=>{e.classList.toggle("active",n===t)})}function v(){(a<=c||a>=3*c)&&(t.style.transition="none",a=a%c+2*c,t.style.transform=`translateX(-${u()*a}px)`,t.offsetWidth)}function E(e){a=e,t.style.transition="transform .45s cubic-bezier(.4,0,.2,1)",t.style.transform=`translateX(-${u()*a}px)`,f(),setTimeout(v,450)}function h(){E(a+1)}function g(){E(a-1)}function p(){clearInterval(r),r=setInterval(h,3200)}function L(){p()}function y(e){i=!0,l=e,d=a*u(),t.classList.add("dragging"),clearInterval(r)}function I(e){if(!i)return;const n=l-e;t.style.transform=`translateX(-${d+n}px)`}function B(e){if(!i)return;i=!1,t.classList.remove("dragging");const n=l-e;Math.abs(n)>60?n>0?h():g():E(a),p()}s.forEach((t,n)=>{const o=document.createElement("button");o.className="carousel-dot"+(0===n?" active":""),o.addEventListener("click",()=>{L(),E(a+(n-(a%c+c)%c))}),e.appendChild(o)}),o.addEventListener("click",()=>{L(),h()}),n.addEventListener("click",()=>{L(),g()}),setTimeout(()=>{m(),p()},100),t.addEventListener("mouseenter",()=>clearInterval(r)),t.addEventListener("mouseleave",p),t.addEventListener("mousedown",t=>y(t.clientX)),window.addEventListener("mousemove",t=>I(t.clientX)),window.addEventListener("mouseup",t=>B(t.clientX)),t.addEventListener("touchstart",t=>y(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchmove",t=>I(t.touches[0].clientX),{passive:!0}),t.addEventListener("touchend",t=>B(t.changedTouches[0].clientX)),window.addEventListener("resize",()=>{m(),f()})}()</script>
 
 <div class="wrap">
+
+  <!-- BLOCO EDITORIAL "POR QUE AGORA" (padrão da landing) -->
+  <div class="edito-block">
+    <p class="edito-tag">O QUE FAZ FIXAR DE VERDADE</p>
+    <p class="edito-title">Passatempo não pede foco. Pede curiosidade.</p>
+    <p class="edito-text">E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
+  </div>
+
+  <!-- BLOCO 4 — SUB-HEADLINE EM LISTA -->
+  <p class="formats-intro">200 atividades divididas em 4 formatos:</p>
+  <ul class="formats-list">
+    <li><span class="fmt-emoji">🧩</span> Caça-palavras</li>
+    <li><span class="fmt-emoji">✏️</span> Palavras cruzadas</li>
+    <li><span class="fmt-emoji">🔤</span> Complete a frase</li>
+    <li><span class="fmt-emoji">🔗</span> Ligue as colunas</li>
+  </ul>
+
   <p class="peek-themes">Todas as atividades estão organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
 
   <!-- BLOCO 9 — DEPOIMENTO (oculto até ter conteúdo real) -->
