@@ -276,6 +276,12 @@ img { max-width:100%; display:block; }
 .sticky-cta .sc-text { color: #fff; font-weight: 800; font-size: 18px; }
 @media (min-width: 768px) { .sticky-cta { display: none !important; } }
 @media (max-width: 767px) { body.has-sticky { padding-bottom: 72px; } }
+
+/* ── BLOCO EDITORIAL (padrão "O QUE REALMENTE ESTAVA ERRADO" da landing) ── */
+.edito-block { max-width: 460px; margin: 22px auto 24px; padding-left: 18px; border-left: 4px solid var(--verde); text-align: left; }
+.edito-tag { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--verde); margin-bottom: 10px; }
+.edito-title { font-family: var(--serif); font-size: clamp(22px, 6vw, 26px); font-weight: 700; color: #1A1A1A; line-height: 1.25; margin-bottom: 14px; }
+.edito-text { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 400; color: #3A3A3A; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -291,6 +297,13 @@ img { max-width:100%; display:block; }
   <!-- BLOCO 3 — MOCKUP + LEGENDA -->
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 14px; border-radius:12px;">
   <p class="mockup-legend">Lembra dos passatempos de banca de jornal? A gente adaptou eles pra você aprender italiano sem perceber que está estudando.</p>
+
+  <!-- BLOCO EDITORIAL "POR QUE AGORA" (padrão da landing) -->
+  <div class="edito-block">
+    <p class="edito-tag">O QUE FAZ FIXAR DE VERDADE</p>
+    <p class="edito-title">Passatempo não pede foco. Pede curiosidade.</p>
+    <p class="edito-text">E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
+  </div>
 
   <!-- BLOCO 4 — SUB-HEADLINE EM LISTA -->
   <p class="formats-intro">200 atividades divididas em 4 formatos:</p>
@@ -320,11 +333,6 @@ img { max-width:100%; display:block; }
   });
   </script>
   <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
-
-  <!-- BLOCO 6 — POR QUE AGORA -->
-  <div class="why-now">
-    <p>Passatempo não pede foco de estudo — pede curiosidade. E o cérebro fixa vocabulário melhor quando não está sob pressão de "estar aprendendo". Você resolve um caça-palavras no café da manhã, uma cruzada esperando consulta, e o italiano vai entrando sem esforço.</p>
-  </div>
 
   <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO -->
   <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro</h2></div>
