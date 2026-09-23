@@ -191,8 +191,8 @@ img { max-width:100%; display:block; }
 /* ── FORA DO CARD: garantia + espaços reservados ── */
 .reject-slot { min-height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
-/* ── RECAP DE PREÇO (2ª instância, após o parágrafo dos temas) ── */
-#wiapy_upsell { margin-top: 28px !important; }
+/* ── CTA DENTRO DO CARD DE OFERTA, logo abaixo do preço ── */
+#wiapy_upsell { margin-top: 20px !important; }
 
 @media (max-width: 390px) {
   .headline { font-size: 1.2rem; }
@@ -314,26 +314,6 @@ img { max-width:100%; display:block; }
     <li><span class="fmt-emoji">🔗</span> Ligue as colunas</li>
   </ul>
 
-  <!-- BLOCO 5 — CTA 1 -->
-  <div id="wiapy_upsell"></div>
-  <script>
-  initWiapyUpsell({
-    elementId: "wiapy_upsell",
-    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-    linkText: "Adicionar ao meu pedido por R$24,90",
-    styles: {
-      backgroundColor: "#00d769",
-      hoverBackgroundColor: "#00b85a",
-      fontSize: "18px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://wiapy.com/login",
-    refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
-  });
-  </script>
-  <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
-
   <!-- BLOCO 7 — VEJA O QUE TE ESPERA DENTRO -->
   <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro</h2></div>
   <div class="peek-grid">
@@ -355,26 +335,6 @@ img { max-width:100%; display:block; }
     </figure>
   </div>
   <p class="peek-themes">Todas as atividades estão organizadas em 6 temas do dia a dia: comida, viagem, família, trabalho, rotina e cultura.</p>
-
-  <!-- BLOCO 8 — CTA 2 -->
-  <div id="wiapy_upsell_2"></div>
-  <script>
-  initWiapyUpsell({
-    elementId: "wiapy_upsell_2",
-    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-    linkText: "Adicionar ao meu pedido por R$24,90",
-    styles: {
-      backgroundColor: "#00d769",
-      hoverBackgroundColor: "#00b85a",
-      fontSize: "18px",
-      borderRadius: "10px"
-    },
-    refusalLinkUrl: "https://wiapy.com/login",
-    refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
-  });
-  </script>
-  <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
 
   <!-- BLOCO 9 — DEPOIMENTO (oculto até ter conteúdo real) -->
   <!-- BLOCO DE DEPOIMENTO — REMOVER ESSA TAG DE COMENTÁRIO E INSERIR CONTEÚDO QUANDO TIVER DEPOIMENTO REAL -->
@@ -425,6 +385,25 @@ img { max-width:100%; display:block; }
       <div class="itp-total-price">R$ 24,90</div>
       <div class="itp-total-period itp-total-period-italic">ou 3x de R$ 8,30 no cartão</div>
     </div>
+
+    <div id="wiapy_upsell"></div>
+    <script>
+    initWiapyUpsell({
+      elementId: "wiapy_upsell",
+      linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
+      linkText: "Adicionar ao meu pedido por R$24,90",
+      styles: {
+        backgroundColor: "#00d769",
+        hoverBackgroundColor: "#00b85a",
+        fontSize: "18px",
+        borderRadius: "10px"
+      },
+      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkText: "Recusar está oferta",
+      refusalLinkColor: "rgba(0,0,0,0.4)"
+    });
+    </script>
+    <p class="cta-reassure" style="color:rgba(255,255,255,.65)">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
   </div>
 </div>
 
