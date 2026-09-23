@@ -240,14 +240,12 @@ img { max-width:100%; display:block; }
 /* ── BLOCO DE OFERTA (caixa de preço + botão), abaixo da legenda do mockup ── */
 .oferta { background: linear-gradient(180deg,#e8edf3 0%,#dde4ec 100%); padding: 32px 20px; margin-top: 20px; }
 .oferta-inner { max-width: 340px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-.oferta .preco-box { background: #1b3a1f; border-radius: 12px; padding: 14px 18px; text-align: center; }
+.oferta .preco-box { background: #1b3a1f; border-radius: 12px; padding: 18px 24px; text-align: center; }
 .oferta .preco-box p { margin: 0; }
-.oferta .preco-box p + p { margin-top: 3px; }
-.oferta .pb-label { color: #d9e2dc; font-size: 13px; font-weight: 400; }
-.oferta .pb-de { color: #ff4d4f; font-size: 15px; font-weight: 600; text-decoration: line-through; }
-.oferta .pb-preco { color: #1ee06b; font-family: "Arial Black", Arial, sans-serif; font-size: 44px; font-weight: 900; line-height: 1.05; letter-spacing: -1px; }
-.oferta .pb-parcela { color: #c9d3cc; font-size: 13px; }
-.oferta .pb-badge { display: inline-block; background: #145a2c; color: #22e06b; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-top: 10px; }
+.oferta .preco-box p + p { margin-top: 2px; }
+.oferta .pb-label { color: #d9e2dc; font-size: 15px; font-weight: 400; }
+.oferta .pb-de { color: #ff4d4f; font-size: 17px; font-weight: 600; text-decoration: line-through; }
+.oferta .pb-preco { color: #1ee06b; font-family: "Arial Black", Arial, sans-serif; font-size: 56px; font-weight: 900; line-height: 1.05; letter-spacing: -1px; }
 .oferta .cta-area { text-align: center; }
 .oferta .btn { display: block; width: 100%; background: #00974a; color: #fff; font-family: "Arial Black", Arial, sans-serif; font-size: 14px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; text-align: center; text-decoration: none; border: none; border-radius: 8px; padding: 15px 18px; box-shadow: 0 6px 24px rgba(0,151,74,.35); cursor: pointer; transition: background .2s, transform .2s; }
 .oferta .btn:hover { background: #00a852; transform: translateY(-2px); }
@@ -259,7 +257,7 @@ img { max-width:100%; display:block; }
 .oferta .prova-txt { color: #4a5568; font-size: 12px; text-align: left; }
 .oferta .prova-txt strong { color: #1a202c; }
 @media (max-width: 380px) {
-  .oferta .pb-preco { font-size: 38px; }
+  .oferta .pb-preco { font-size: 46px; }
   .oferta .btn { font-size: 12.5px; padding: 14px 14px; }
 }
 
@@ -347,12 +345,9 @@ img { max-width:100%; display:block; }
 <section class="oferta">
   <div class="oferta-inner">
     <div class="preco-box">
-      <p class="pb-label">Valor total</p>
-      <p class="pb-de">De R$47,00</p>
+      <p class="pb-de">De: R$47,90</p>
       <p class="pb-label">Por apenas</p>
       <p class="pb-preco">R$24,90</p>
-      <p class="pb-parcela">ou 3x de R$8,30 no cartão</p>
-      <span class="pb-badge">Você economiza R$22,10</span>
     </div>
     <div class="cta-area">
       <a class="btn" id="oferta-btn" href="https://pay.wiapy.com/-f9eH1GP8RJQ">SIM, ADICIONAR AO MEU PEDIDO</a>
