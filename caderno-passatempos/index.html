@@ -3,6 +3,9 @@
 <base href="/caderno-passatempos/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caderno de Passatempos em Italiano</title>
+<link rel="preload" as="image" href="/caderno-passatempos/mockup-200-passatempos.avif" type="image/avif" fetchpriority="high">
+<link rel="preconnect" href="https://wiapy.com">
+<link rel="preconnect" href="https://pay.wiapy.com">
 <script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
 <style>
 :root {
@@ -336,7 +339,7 @@ img { max-width:100%; display:block; }
   <h1 class="headline">Você já garantiu os 127 mapas. Agora fixe cada palavra com <span style="color:var(--verde)">200 passatempos</span> em italiano.</h1>
 
   <!-- BLOCO 3 — MOCKUP + LEGENDA -->
-  <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 14px; border-radius:12px;">
+  <picture><source srcset="mockup-200-passatempos.avif" type="image/avif"><img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 14px; border-radius:12px;"></picture>
   <p class="mockup-legend">Lembra dos passatempos de banca de jornal? A gente adaptou eles pra você aprender italiano sem perceber que está estudando.</p>
 
 </div>
@@ -379,19 +382,19 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
         <div class="carousel-caption"><span class="carousel-caption-title">50 Caça-palavras</span><span class="carousel-caption-sub">Fixe vocabulário sem esforço</span></div>
-        <div class="carousel-img-box"><img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" loading="lazy" width="1000" height="1422" decoding="async"></div>
+        <div class="carousel-img-box"><picture><source srcset="caca-palavras-1.avif" type="image/avif"><img src="caca-palavras-1.webp" alt="Caça-palavras em italiano — La Pasta" loading="lazy" width="1000" height="1422" decoding="async"></picture></div>
       </div>
       <div class="carousel-slide">
         <div class="carousel-caption"><span class="carousel-caption-title">50 Palavras cruzadas</span><span class="carousel-caption-sub">Dica em português, resposta em italiano</span></div>
-        <div class="carousel-img-box"><img src="palavras-cruzadas-1.webp" alt="Palavras cruzadas em italiano — página 1" loading="lazy" width="1000" height="1333" decoding="async"></div>
+        <div class="carousel-img-box"><picture><source srcset="palavras-cruzadas-1.avif" type="image/avif"><img src="palavras-cruzadas-1.webp" alt="Palavras cruzadas em italiano — página 1" loading="lazy" width="1000" height="1333" decoding="async"></picture></div>
       </div>
       <div class="carousel-slide">
         <div class="carousel-caption"><span class="carousel-caption-title">50 Complete a frase</span><span class="carousel-caption-sub">Solte o italiano com situações reais</span></div>
-        <div class="carousel-img-box"><img src="complete-frase-1.webp" alt="Complete a frase em italiano — página 1" loading="lazy" width="1000" height="1413" decoding="async"></div>
+        <div class="carousel-img-box"><picture><source srcset="complete-frase-1.avif" type="image/avif"><img src="complete-frase-1.webp" alt="Complete a frase em italiano — página 1" loading="lazy" width="1000" height="1413" decoding="async"></picture></div>
       </div>
       <div class="carousel-slide">
         <div class="carousel-caption"><span class="carousel-caption-title">50 Ligue as colunas</span><span class="carousel-caption-sub">Conecte palavras e fixe por associação</span></div>
-        <div class="carousel-img-box"><img src="ligue-colunas-1.webp" alt="Ligue as colunas em italiano — página 1" loading="lazy" width="1000" height="1413" decoding="async"></div>
+        <div class="carousel-img-box"><picture><source srcset="ligue-colunas-1.avif" type="image/avif"><img src="ligue-colunas-1.webp" alt="Ligue as colunas em italiano — página 1" loading="lazy" width="1000" height="1413" decoding="async"></picture></div>
       </div>
     </div>
   </div>
@@ -605,7 +608,7 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
 <div class="upg-overlay" id="recusa-overlay" role="dialog" aria-modal="true" aria-label="Espera! Oferta exclusiva">
   <div class="upg-box">
     <button class="upg-close" id="recusa-close" aria-label="Fechar">✕</button>
-    <img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" loading="eager" decoding="async">
+    <picture><source srcset="oferta-recusa.avif" type="image/avif"><img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" loading="eager" decoding="async"></picture>
     <div class="upg-content">
       <a href="https://pay.wiapy.com/iO6fraQdfTDv" class="upg-btn-primary" id="recusa-btn">Quero por apenas R$14,90</a>
       <button class="upg-btn-secondary" id="recusa-continue" type="button">Não, obrigado</button>
