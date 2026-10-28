@@ -22,17 +22,15 @@ window.__early3p=function(cb){var d=false;function r(){if(d)return;d=true;try{cb
 })();
 </script>
 
-<!-- Meta Pixel Code (fbq disponível já; fbevents.js + PageView logo após o DOM, em idle — dispara para TODO visitante) -->
+<!-- Meta Pixel Code (PageView enfileirado NA HORA; fbevents.js baixa async em paralelo — sem travar o render, e conta o visitante mesmo em bounce rápido) -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
-window.__early3p(function(){
-  var t=document.createElement('script');t.async=!0;
-  t.src='https://connect.facebook.net/en_US/fbevents.js';
-  var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t,s);
-  fbq('init','1208728001409571');fbq('track','PageView');
-});
+fbq('init','1208728001409571');fbq('track','PageView');
+var t=document.createElement('script');t.async=!0;
+t.src='https://connect.facebook.net/en_US/fbevents.js';
+var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t,s);
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1208728001409571&ev=PageView&noscript=1"
