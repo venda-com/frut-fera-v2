@@ -73,7 +73,13 @@
             } catch (e) {}
         }
 
-        setInterval(function () {
+        // Celular/tablet não abre DevTools: lá a checagem só dava falso positivo
+        // (zoom com os dedos, navegador do Instagram/Facebook) e apagava a página.
+        const touch =
+            navigator.maxTouchPoints > 0 ||
+            window.matchMedia('(pointer: coarse)').matches;
+
+        if (!touch) setInterval(function () {
 
             const devtoolsOpen =
                 window.outerWidth - window.innerWidth > threshold ||
