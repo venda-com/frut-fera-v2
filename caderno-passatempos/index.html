@@ -7,6 +7,35 @@
 <link rel="preconnect" href="https://wiapy.com">
 <link rel="preconnect" href="https://pay.wiapy.com">
 <script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
+<script>
+// Links do upsell, usados por TODOS os botões da página.
+// checkout = aceitar a oferta | recusa = para onde vai quem recusa
+window.UPSELL = {
+  checkout: "https://pay.wiapy.com/checkout/6a8071d91943b5bbde3279c4",
+  recusa: "https://wiapy.com/login",
+  // Repassa o código da compra anterior (?wiapy_sell=...) para a Wiapy
+  comToken: function (url) {
+    var t = new URLSearchParams(location.search).get("wiapy_sell");
+    if (!t) return url;
+    var u = new URL(url);
+    u.searchParams.set("wiapy_sell", t);
+    return u.toString();
+  },
+  // Botões fora da Wiapy (topo e barra fixa) acionam o botão oficial da Wiapy.
+  // Enquanto ele carrega, espera até 4s; se não carregar, vai direto ao checkout.
+  aceitar: function () {
+    var espera = 0;
+    (function tenta() {
+      var box = document.getElementById("wiapy_upsell"),
+          b = box && box.querySelector("button");
+      if (b && !b.disabled) return b.click();
+      if (b && box.style.display !== "none") return; // compra já em processamento
+      if ((espera += 100) > 4000) return (location.href = UPSELL.comToken(UPSELL.checkout));
+      setTimeout(tenta, 100);
+    })();
+  }
+};
+</script>
 <style>
 :root {
   --verde:   #009246;
@@ -303,7 +332,7 @@ img { max-width:100%; display:block; }
 
 /* ── BOTÕES CTA (Wiapy) — reforço + tamanho mobile ── */
 #wiapy_upsell button, #wiapy_upsell_2 button, #wiapy_upsell_3 button { min-height: 60px !important; font-size: 18px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
-#wiapy_upsell > a, #wiapy_upsell_2 > a, #wiapy_upsell_3 > a { display: none !important; }
+#wiapy_upsell_3 > a { display: none !important; }
 .cta-reassure { font-size: 12.5px; color: var(--txt-s); text-align: center; margin: 12px auto 0; line-height: 1.5; }
 
 /* ── LINK DE RECUSA (discreto) ── */
@@ -353,7 +382,7 @@ img { max-width:100%; display:block; }
       <p class="pb-preco">R$24,90</p>
     </div>
     <div class="cta-area">
-      <a class="btn" id="oferta-btn" href="https://pay.wiapy.com/-f9eH1GP8RJQ">SIM, ADICIONAR AO MEU PEDIDO</a>
+      <a class="btn" id="oferta-btn" href="https://pay.wiapy.com/checkout/6a8071d91943b5bbde3279c4">SIM, EU ACEITO ESSA OFERTA</a>
       <p class="acesso">Acesso imediato após a confirmação do pagamento</p>
       <div class="prova">
         <div class="avatars">
@@ -369,8 +398,7 @@ img { max-width:100%; display:block; }
 </section>
 <script>
 document.getElementById('oferta-btn').addEventListener('click', function(e){
-  var b = document.querySelector('#wiapy_upsell button');
-  if (b) { e.preventDefault(); b.click(); }
+  e.preventDefault(); UPSELL.aceitar();
 });
 </script>
 
@@ -476,17 +504,17 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
     <script>
     initWiapyUpsell({
       elementId: "wiapy_upsell",
-      linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-      linkText: "Adicionar ao meu pedido por R$24,90",
+      linkUrl: UPSELL.checkout,
+      linkText: "SIM, EU ACEITO ESSA OFERTA",
       styles: {
         backgroundColor: "#00d769",
         hoverBackgroundColor: "#00b85a",
-        fontSize: "18px",
+        fontSize: "17px",
         borderRadius: "10px"
       },
-      refusalLinkUrl: "https://wiapy.com/login",
+      refusalLinkUrl: UPSELL.recusa,
       refusalLinkText: "Recusar está oferta",
-      refusalLinkColor: "rgba(0,0,0,0.4)"
+      refusalLinkColor: "rgba(255,255,255,0.6)"
     });
     </script>
     <p class="cta-reassure" style="color:rgba(255,255,255,.65)">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
@@ -508,17 +536,17 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
   <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell_3",
-    linkUrl: "https://pay.wiapy.com/-f9eH1GP8RJQ",
-    linkText: "Adicionar ao meu pedido por R$24,90",
+    linkUrl: UPSELL.checkout,
+    linkText: "SIM, EU ACEITO ESSA OFERTA",
     styles: {
       backgroundColor: "#00d769",
       hoverBackgroundColor: "#00b85a",
-      fontSize: "18px",
+      fontSize: "17px",
       borderRadius: "10px"
     },
-    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
+    refusalLinkColor: "#000000"
   });
   </script>
   <p class="cta-reassure">🔒 Pagamento único · 15 dias de garantia · Sem mensalidade</p>
@@ -568,8 +596,8 @@ document.getElementById('oferta-btn').addEventListener('click', function(e){
 </section>
 
 <!-- BLOCO 15 — BARRA FIXA MOBILE (STICKY CTA) -->
-<div class="sticky-cta" id="sticky-cta" role="button" tabindex="0" aria-label="Adicionar ao meu pedido por R$24,90">
-  <span class="sc-text"><strong>R$24,90</strong> — Adicionar ao meu pedido →</span>
+<div class="sticky-cta" id="sticky-cta" role="button" tabindex="0" aria-label="SIM, EU ACEITO ESSA OFERTA">
+  <span class="sc-text">SIM, EU ACEITO ESSA OFERTA →</span>
 </div>
 
 <script>
@@ -588,7 +616,7 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
   var bar=document.getElementById('sticky-cta');
   var anchor=document.getElementById('wiapy_upsell');
   if(!bar||!anchor) return;
-  function buy(){ var b=anchor.querySelector('button'); if(b) b.click(); }
+  function buy(){ UPSELL.aceitar(); }
   bar.addEventListener('click', buy);
   bar.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); buy(); } });
   if('IntersectionObserver' in window){
@@ -603,35 +631,9 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
 })();
 </script>
 
-<!-- ── POPUP DE RECUSA (downsell, padrão /italiano) ── -->
-<style>.upg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;overflow-y:auto;padding:20px 16px 32px;opacity:0;pointer-events:none;transition:opacity .22s ease}.upg-overlay.upg-open{opacity:1;pointer-events:auto}@media(prefers-reduced-motion:reduce){.upg-box,.upg-overlay{transition:none!important}}.upg-box{background:#fff;border-radius:20px;max-width:420px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.35);transform:translateY(16px);transition:transform .22s ease;margin:0 auto;overflow:hidden}.upg-overlay.upg-open .upg-box{transform:translateY(0)}.upg-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);border:none;cursor:pointer;font-size:18px;color:#555;line-height:1;padding:0;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-family:inherit;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.2);font-weight:700}.upg-close:hover{color:#111}.upg-hero-img{width:100%;height:auto;display:block}.upg-content{padding:1.25rem 1.25rem 1.375rem;text-align:center}.upg-btn-primary{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:1rem;text-align:center;padding:1rem;border-radius:2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;margin-bottom:14px;font-family:inherit}.upg-btn-primary:hover{background:#d98c1a}.upg-btn-secondary{display:block;width:100%;text-align:center;font-size:13.5px;font-weight:600;color:rgba(0,0,0,.4);background:0 0;border:none;cursor:pointer;padding:4px;font-family:inherit}.upg-btn-secondary:hover{color:#111}.upg-btn-primary:focus-visible,.upg-btn-secondary:focus-visible,.upg-close:focus-visible{outline:2px solid #009246;outline-offset:2px}</style>
-<div class="upg-overlay" id="recusa-overlay" role="dialog" aria-modal="true" aria-label="Espera! Oferta exclusiva">
-  <div class="upg-box">
-    <button class="upg-close" id="recusa-close" aria-label="Fechar">✕</button>
-    <picture><source srcset="oferta-recusa.avif" type="image/avif"><img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" loading="eager" decoding="async"></picture>
-    <div class="upg-content">
-      <a href="https://pay.wiapy.com/iO6fraQdfTDv" class="upg-btn-primary" id="recusa-btn">Quero por apenas R$14,90</a>
-      <button class="upg-btn-secondary" id="recusa-continue" type="button">Não, obrigado</button>
-    </div>
-  </div>
-</div>
 <script>
-(function(){
-  var ov=document.getElementById('recusa-overlay'),
-      cl=document.getElementById('recusa-close'),
-      cont=document.getElementById('recusa-continue');
-  function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
-  function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
-  // Intercepta o link de recusa e abre o popup de downsell
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('#recusar-caderno, #wiapy_upsell a, #wiapy_upsell_2 a, #wiapy_upsell_3 a');
-    if(a){e.preventDefault();e.stopImmediatePropagation();open();}
-  },true);
-  cl.addEventListener('click',close);
-  cont.addEventListener('click',close);
-  ov.addEventListener('click',function(e){if(e.target===ov)close();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('upg-open'))close();});
-})();
+// "Não, obrigado..." faz a recusa oficial da Wiapy (leva o código da compra junto)
+document.getElementById('recusar-caderno').href = UPSELL.comToken(UPSELL.recusa);
 </script>
 </body>
 </html>
