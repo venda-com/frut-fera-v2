@@ -60,7 +60,7 @@ img { max-width:100%; display:block; }
 }
 
 /* ── TEXTO DE CORPO ── */
-.sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; }
+.sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; text-wrap: balance; }
 
 /* ── CARD DE INFO (emoji + texto, com destaques) ── */
 .info-card {
@@ -207,7 +207,9 @@ img { max-width:100%; display:block; }
 
 /* ── PREÇO + BOTÃO NO COMEÇO (mesmas cores do card de oferta, sobre o fundo branco) ── */
 .cta-box { text-align: center; margin: 26px 0 0; }
-.cta-box .itp-total-label, .cta-box .itp-total-period { color: var(--txt-s); }
+.cta-box .itp-total-label { color: var(--txt-s); font-size: .95rem; font-weight: 700; }
+.cta-box .itp-total-old { font-size: 1.05rem; }
+.cta-box .itp-total-price { font-size: 2.7rem; }
 #wiapy_upsell_topo, #wiapy_upsell { margin-top: 18px !important; }
 .sec-divider { border: 0; width: 96px; height: 4px; border-radius: 4px; margin: 38px auto 6px; background: linear-gradient(to right, #009246 33.3%, #e5e7eb 33.3%, #e5e7eb 66.6%, #CE2B37 66.6%); }
 
@@ -281,7 +283,8 @@ img { max-width:100%; display:block; }
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 18px; border-radius:12px;">
 
   <!-- PARÁGRAFO 3 -->
-  <p class="sec-text">São mais de 200 passatempos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas.<br><br>Divididos em 6 temas do dia a dia (comida, viagem, família, trabalho, rotina e cultura), pra abrir em qualquer página.</p>
+  <p class="sec-text">São mais de 200 passatempos: caça-palavras, palavras cruzadas, complete a frase e ligue as&nbsp;colunas.</p>
+  <p class="sec-text">Divididos em 6 temas do dia a dia (comida, viagem, família, trabalho, rotina e cultura), pra abrir em qualquer&nbsp;página.</p>
 
   <!-- BOTÃO 0 (Wiapy) — logo no começo, dentro do quadro de preço -->
   <div class="cta-box">
@@ -289,7 +292,6 @@ img { max-width:100%; display:block; }
     <div class="itp-total-old">De R$ 47,00</div>
     <div class="itp-total-label">Por apenas</div>
     <div class="itp-total-price">R$ 24,90</div>
-    <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
     <span class="itp-economy">Você economiza R$ 22,10</span>
     <div id="wiapy_upsell_topo"></div>
     <script>
