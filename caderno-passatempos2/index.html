@@ -200,10 +200,28 @@ img { max-width:100%; display:block; }
 .reject-slot { min-height: 40px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
 /* ── RECAP DE PREÇO (2ª instância, após o parágrafo dos temas) ── */
-#wiapy_upsell { margin-top: 28px !important; }
-.cta-price-top { text-align: center; font-size: 15px; color: var(--txt); margin: 26px 0 12px; }
-.cta-price-top b { color: var(--verde); font-size: 19px; }
-#wiapy_upsell_topo { margin-bottom: 8px; }
+/* ── HEADLINE em duas partes: pergunta (escura) + resposta (verde) ── */
+.headline .hl-q { display: block; color: var(--navy); font-size: .8em; margin-bottom: 10px; text-wrap: balance; }
+.headline .hl-a { display: block; font-size: 1.12em; text-wrap: balance; }
+.headline .hl-mark { background: linear-gradient(transparent 62%, rgba(0,146,70,.18) 62%); }
+
+/* ── QUADRO DE PREÇO + BOTÃO NO COMEÇO (mesmo visual do card de oferta) ── */
+.cta-box {
+  background: #0f1f0f; border-radius: 16px; padding: 1.25rem 1.1rem 1rem;
+  text-align: center; margin: 26px 0 0;
+  box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.25);
+}
+#wiapy_upsell_topo, #wiapy_upsell { margin-top: 18px !important; }
+.sec-divider { border: 0; width: 96px; height: 4px; border-radius: 4px; margin: 38px auto 6px; background: linear-gradient(to right, #009246 33.3%, #e5e7eb 33.3%, #e5e7eb 66.6%, #CE2B37 66.6%); }
+
+/* ── BOTÃO FINAL com mini copy ── */
+.cta-final {
+  background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 16px;
+  padding: 24px 18px 18px; text-align: center; margin-top: 32px;
+}
+.cta-final-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 800; color: var(--verde); line-height: 1.3; margin-bottom: 10px; text-wrap: balance; }
+.cta-final-text { font-size: 15px; color: var(--txt); line-height: 1.6; margin-bottom: 14px; }
+.cta-final-seguro { font-size: 12.5px; color: var(--txt-s); margin-bottom: 14px; text-wrap: balance; }
 
 @media (max-width: 390px) {
   .headline { font-size: 1.2rem; }
@@ -247,7 +265,7 @@ img { max-width:100%; display:block; }
 <div class="wrap">
 
   <!-- HEADLINE -->
-  <h1 class="headline">Lembra dos passatempos de banca de jornal?<br>A gente fez 200 deles <span style="color:var(--verde)">em italiano</span>.</h1>
+  <h1 class="headline"><span class="hl-q">Lembra dos passatempos de banca&nbsp;de&nbsp;jornal?</span><span class="hl-a">A gente fez 200 deles <span class="hl-mark">em&nbsp;italiano</span>.</span></h1>
 
   <!-- CARD DE INFO (3 frases no padrão emoji + texto) -->
   <div class="info-card">
@@ -268,10 +286,16 @@ img { max-width:100%; display:block; }
   <!-- PARÁGRAFO 3 -->
   <p class="sec-text">São mais de 200 passatempos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas.<br><br>Divididos em 6 temas do dia a dia (comida, viagem, família, trabalho, rotina e cultura), pra abrir em qualquer página.</p>
 
-  <!-- BOTÃO 0 (Wiapy) — logo no começo, com o preço visível -->
-  <p class="cta-price-top">Só neste pedido: <b>R$ 24,90</b> (ou 3x de R$ 8,30)</p>
-  <div id="wiapy_upsell_topo"></div>
-  <script>
+  <!-- BOTÃO 0 (Wiapy) — logo no começo, dentro do quadro de preço -->
+  <div class="cta-box">
+    <div class="itp-total-label">Só neste pedido</div>
+    <div class="itp-total-old">De R$ 47,00</div>
+    <div class="itp-total-label">Por apenas</div>
+    <div class="itp-total-price">R$ 24,90</div>
+    <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
+    <span class="itp-economy">Você economiza R$ 22,10</span>
+    <div id="wiapy_upsell_topo"></div>
+    <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell_topo",
     linkUrl: UPSELL.checkout,
@@ -284,9 +308,12 @@ img { max-width:100%; display:block; }
     },
     refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
+    refusalLinkColor: "rgba(255,255,255,0.6)"
   });
-  </script>
+    </script>
+  </div>
+
+  <hr class="sec-divider">
 
   <!-- SUBTÍTULO -->
   <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro:</h2></div>
@@ -405,11 +432,10 @@ img { max-width:100%; display:block; }
       <div class="itp-total-period">ou 3x de R$ 8,30 no cartão</div>
       <span class="itp-economy">Você economiza R$ 22,10</span>
     </div>
-  </div>
 
-  <!-- BOTÃO 1 (Wiapy) — logo abaixo do preço/card -->
-  <div id="wiapy_upsell"></div>
-  <script>
+    <!-- BOTÃO 1 (Wiapy) — dentro do card, logo abaixo da economia -->
+    <div id="wiapy_upsell"></div>
+    <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell",
     linkUrl: UPSELL.checkout,
@@ -422,9 +448,10 @@ img { max-width:100%; display:block; }
     },
     refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
+    refusalLinkColor: "rgba(255,255,255,0.6)"
   });
-  </script>
+    </script>
+  </div>
 
 </div>
 
@@ -492,8 +519,12 @@ img { max-width:100%; display:block; }
 
 <!-- BOTÃO 2 (Wiapy) — mesma CTA repetida após o FAQ -->
 <div class="wrap" style="padding-bottom:40px;">
-  <div id="wiapy_upsell_2"></div>
-  <script>
+  <div class="cta-final">
+    <p class="cta-final-title">O recreio do italiano, por R$&nbsp;24,90</p>
+    <p class="cta-final-text">200 passatempos pra abrir no café, na fila ou no sofá. Sem prazo e sem ordem: começa por qualquer página e para quando quiser.</p>
+    <p class="cta-final-seguro">🔒 Pagamento único · Acesso imediato<br>15 dias de garantia</p>
+    <div id="wiapy_upsell_2"></div>
+    <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell_2",
     linkUrl: UPSELL.checkout,
@@ -506,9 +537,10 @@ img { max-width:100%; display:block; }
     },
     refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(0,0,0,0.4)"
+    refusalLinkColor: "rgba(0,0,0,0.45)"
   });
-  </script>
+    </script>
+  </div>
 </div>
 
 <script>
