@@ -4,6 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caderno de Passatempos em Italiano</title>
 <script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
+<script>
+// Links do upsell, usados por TODOS os botões da página.
+// checkout = aceitar a oferta | recusa = página de downsell (para onde vai quem recusa)
+window.UPSELL = {
+  checkout: "https://pay.wiapy.com/checkout/6a8071d91943b5bbde3279c4",
+  recusa: "https://www.cultivaragora.store/cadernopassatempo3"
+};
+</script>
 <style>
 :root {
   --verde:   #009246;
@@ -193,6 +201,9 @@ img { max-width:100%; display:block; }
 
 /* ── RECAP DE PREÇO (2ª instância, após o parágrafo dos temas) ── */
 #wiapy_upsell { margin-top: 28px !important; }
+.cta-price-top { text-align: center; font-size: 15px; color: var(--txt); margin: 26px 0 12px; }
+.cta-price-top b { color: var(--verde); font-size: 19px; }
+#wiapy_upsell_topo { margin-bottom: 8px; }
 
 @media (max-width: 390px) {
   .headline { font-size: 1.2rem; }
@@ -236,18 +247,18 @@ img { max-width:100%; display:block; }
 <div class="wrap">
 
   <!-- HEADLINE -->
-  <h1 class="headline">E se estudar italiano parecesse mais um passatempo do que uma obrigação?</h1>
+  <h1 class="headline">Lembra dos passatempos de banca de jornal?<br>A gente fez 200 deles <span style="color:var(--verde)">em italiano</span>.</h1>
 
   <!-- CARD DE INFO (3 frases no padrão emoji + texto) -->
   <div class="info-card">
     <div class="info-row">
       <span class="info-row-icon">🎲</span>
-      <p class="info-row-text">Você já deu o <b>primeiro passo</b> com os mapas. E aprender fica muito mais fácil quando parece <span class="hl">brincadeira</span>.</p>
+      <p class="info-row-text">Os mapas são a <b>mesa de estudo</b>. Isto aqui é o <span class="hl">sofá</span>: sem ordem certa, sem lição marcada, sem nada pra terminar. E o italiano entra junto, de carona.</p>
     </div>
     <hr class="info-divider">
     <div class="info-row">
       <span class="info-row-icon">📰</span>
-      <p class="info-row-text">Lembra dos <b>caça-palavras e das cruzadas</b> da banca de jornal? A gente pegou esse mesmo passatempo e adaptou para você <span class="hl">aprender italiano sem perceber</span>.</p>
+      <p class="info-row-text">Não precisa de mesa, nem de silêncio, nem de vontade de estudar. <b>Abre, circula uma palavra, fecha.</b> <span class="hl">Isso já conta.</span></p>
     </div>
   </div>
 
@@ -255,7 +266,27 @@ img { max-width:100%; display:block; }
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 18px; border-radius:12px;">
 
   <!-- PARÁGRAFO 3 -->
-  <p class="sec-text">O Caderno de Passatempos em Italiano reúne mais de 200 atividades: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas.<br><br>Tudo em 6 temas do dia a dia, comida, viagem, família, trabalho, rotina e cultura.</p>
+  <p class="sec-text">São mais de 200 passatempos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas.<br><br>Divididos em 6 temas do dia a dia (comida, viagem, família, trabalho, rotina e cultura), pra abrir em qualquer página.</p>
+
+  <!-- BOTÃO 0 (Wiapy) — logo no começo, com o preço visível -->
+  <p class="cta-price-top">Só neste pedido: <b>R$ 24,90</b> (ou 3x de R$ 8,30)</p>
+  <div id="wiapy_upsell_topo"></div>
+  <script>
+  initWiapyUpsell({
+    elementId: "wiapy_upsell_topo",
+    linkUrl: UPSELL.checkout,
+    linkText: "QUERO OS PASSATEMPOS",
+    styles: {
+      backgroundColor: "#00d769",
+      hoverBackgroundColor: "#00b85a",
+      fontSize: "17px",
+      borderRadius: "10px"
+    },
+    refusalLinkUrl: UPSELL.recusa,
+    refusalLinkText: "Recusar está oferta",
+    refusalLinkColor: "rgba(0,0,0,0.4)"
+  });
+  </script>
 
   <!-- SUBTÍTULO -->
   <div class="sub-title-wrap"><h2 class="sub-title">Veja o que te espera dentro:</h2></div>
@@ -277,7 +308,7 @@ img { max-width:100%; display:block; }
     </div>
     <div class="format-header">
       <p class="format-name">🧩 <span class="mark">Caça-palavras</span></p>
-      <p class="format-benefit">Encontre as palavras italianas escondidas e fixe vocabulário sem esforço.</p>
+      <p class="format-benefit">As palavras em italiano ficam escondidas na grade, e cada uma que aparece já vale.</p>
     </div>
   </div>
 
@@ -298,7 +329,7 @@ img { max-width:100%; display:block; }
     </div>
     <div class="format-header">
       <p class="format-name">✏️ <span class="mark">Palavras cruzadas</span></p>
-      <p class="format-benefit">A dica vem em português, a resposta em italiano — um desafio gostoso pra memória.</p>
+      <p class="format-benefit">A dica vem em português e a resposta em italiano. Travou numa? Pula pra próxima.</p>
     </div>
   </div>
 
@@ -319,7 +350,7 @@ img { max-width:100%; display:block; }
     </div>
     <div class="format-header">
       <p class="format-name">🔤 <span class="mark">Complete a frase</span></p>
-      <p class="format-benefit">Solte o italiano completando frases de situações reais do dia a dia.</p>
+      <p class="format-benefit">Frases do dia a dia com uma lacuna só. Uma frase já é uma rodada inteira.</p>
     </div>
   </div>
 
@@ -340,7 +371,7 @@ img { max-width:100%; display:block; }
     </div>
     <div class="format-header">
       <p class="format-name">🔗 <span class="mark">Ligue as colunas</span></p>
-      <p class="format-benefit">Conecte cada palavra ao seu significado e fixe por associação.</p>
+      <p class="format-benefit">É só puxar a linha da palavra até o significado. Dá pra fazer meia página e largar.</p>
     </div>
   </div>
 
@@ -381,7 +412,7 @@ img { max-width:100%; display:block; }
   <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell",
-    linkUrl: "https://pay.wiapy.com/checkout/6a8071d91943b5bbde3279c4",
+    linkUrl: UPSELL.checkout,
     linkText: "QUERO OS PASSATEMPOS",
     styles: {
       backgroundColor: "#00d769",
@@ -389,7 +420,7 @@ img { max-width:100%; display:block; }
       fontSize: "17px",
       borderRadius: "10px"
     },
-    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
     refusalLinkColor: "rgba(0,0,0,0.4)"
   });
@@ -409,11 +440,11 @@ img { max-width:100%; display:block; }
 <!-- CARD DE BENEFÍCIOS (padrão da imagem enviada) -->
 <div class="wrap">
   <div class="benefit-card">
-    <p class="benefit-title">Com o Caderno de Passatempos, você vai:</p>
-    <div class="benefit-row"><span class="benefit-icon">🧩</span><p class="benefit-text">Fixar o vocabulário dos Mapas resolvendo passatempos em vez de decorar listas</p></div>
-    <div class="benefit-row"><span class="benefit-icon">⏱️</span><p class="benefit-text">Praticar em 5 minutos no café, na fila, no ônibus, sem precisar de mesa nem silêncio</p></div>
-    <div class="benefit-row"><span class="benefit-icon">✏️</span><p class="benefit-text">Escolher entre 4 formatos: caça-palavras, palavras cruzadas, complete a frase e ligue as colunas, nunca fica repetitivo</p></div>
-    <div class="benefit-row"><span class="benefit-icon">🎨</span><p class="benefit-text">Aprender sem sentir que está estudando, porque passatempo não parece dever de casa</p></div>
+    <p class="benefit-title">O que o Caderno é:</p>
+    <div class="benefit-row"><span class="benefit-icon">🧩</span><p class="benefit-text">O oposto de lição de casa, com o mesmo vocabulário dos seus mapas</p></div>
+    <div class="benefit-row"><span class="benefit-icon">⏱️</span><p class="benefit-text">Pequeno o bastante pra caber na fila do banco, no ônibus, no café</p></div>
+    <div class="benefit-row"><span class="benefit-icon">✏️</span><p class="benefit-text">Quatro formatos diferentes, então nunca dá aquela sensação de repetido</p></div>
+    <div class="benefit-row"><span class="benefit-icon">🎨</span><p class="benefit-text">Pra imprimir e resolver à caneta, longe de tela e de bateria</p></div>
   </div>
 </div>
 
@@ -426,14 +457,14 @@ img { max-width:100%; display:block; }
         <h4>Isso é diferente das Listas de Exercícios que já vêm no Plano Completo?</h4>
         <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
       </button>
-      <div class="faq-body"><p>Sim. As Listas treinam gramática e verbos mapa por mapa, no formato tradicional de exercício. O Caderno é passatempo — caça-palavras, palavras cruzadas, complete a frase e ligue as colunas — todos em italiano, que fixam vocabulário sem parecer que você está estudando.</p></div>
+      <div class="faq-body"><p>Sim. As Listas são o treino: gramática e verbos, mapa por mapa, no formato de exercício. O Caderno é o recreio: caça-palavras, cruzadas, complete a frase e ligue as colunas, tudo em italiano, sem ordem certa e sem nada pra terminar.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-toggle" type="button">
         <h4>Preciso já saber italiano para conseguir fazer?</h4>
         <span class="faq-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5 5.5 9 7 7.5l5 5 5-5L18.5 9z"/></svg></span>
       </button>
-      <div class="faq-body"><p>Não. O vocabulário é o mesmo nível dos Mapas (iniciante e intermediário). Você pode ir intercalando: estudou um tema nos Mapas, resolve as atividades daquele tema no Caderno pra fixar. Ou usa depois, como revisão leve.</p></div>
+      <div class="faq-body"><p>Não. O vocabulário é o mesmo dos Mapas, nível iniciante e intermediário. Não tem ordem nem pré-requisito: dá pra abrir no tema que der vontade e parar quando quiser. Todo passatempo tem gabarito, então nada fica pendurado.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-toggle" type="button">
@@ -465,7 +496,7 @@ img { max-width:100%; display:block; }
   <script>
   initWiapyUpsell({
     elementId: "wiapy_upsell_2",
-    linkUrl: "https://pay.wiapy.com/checkout/6a8071d91943b5bbde3279c4",
+    linkUrl: UPSELL.checkout,
     linkText: "QUERO OS PASSATEMPOS",
     styles: {
       backgroundColor: "#00d769",
@@ -473,7 +504,7 @@ img { max-width:100%; display:block; }
       fontSize: "17px",
       borderRadius: "10px"
     },
-    refusalLinkUrl: "https://wiapy.com/login",
+    refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
     refusalLinkColor: "rgba(0,0,0,0.4)"
   });
@@ -523,35 +554,5 @@ document.querySelectorAll('.faq-toggle').forEach(function(t) {
 });
 </script>
 
-<!-- ── POPUP DE RECUSA (downsell, padrão /italiano) ── -->
-<style>.upg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;overflow-y:auto;padding:20px 16px 32px;opacity:0;pointer-events:none;transition:opacity .22s ease}.upg-overlay.upg-open{opacity:1;pointer-events:auto}@media(prefers-reduced-motion:reduce){.upg-box,.upg-overlay{transition:none!important}}.upg-box{background:#fff;border-radius:20px;max-width:420px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.35);transform:translateY(16px);transition:transform .22s ease;margin:0 auto;overflow:hidden}.upg-overlay.upg-open .upg-box{transform:translateY(0)}.upg-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.95);border:none;cursor:pointer;font-size:18px;color:#555;line-height:1;padding:0;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-family:inherit;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.2);font-weight:700}.upg-close:hover{color:#111}.upg-hero-img{width:100%;height:auto;display:block}.upg-content{padding:1.25rem 1.25rem 1.375rem;text-align:center}.upg-btn-primary{display:block;width:100%;background:#f5a623;color:#fff;font-weight:800;font-size:1rem;text-align:center;padding:1rem;border-radius:2rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;margin-bottom:14px;font-family:inherit}.upg-btn-primary:hover{background:#d98c1a}.upg-btn-secondary{display:block;width:100%;text-align:center;font-size:13.5px;font-weight:600;color:rgba(0,0,0,.4);background:0 0;border:none;cursor:pointer;padding:4px;font-family:inherit}.upg-btn-secondary:hover{color:#111}.upg-btn-primary:focus-visible,.upg-btn-secondary:focus-visible,.upg-close:focus-visible{outline:2px solid #009246;outline-offset:2px}</style>
-<div class="upg-overlay" id="recusa-overlay" role="dialog" aria-modal="true" aria-label="Espera! Oferta exclusiva">
-  <div class="upg-box">
-    <button class="upg-close" id="recusa-close" aria-label="Fechar">✕</button>
-    <img class="upg-hero-img" src="oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" loading="eager" decoding="async">
-    <div class="upg-content">
-      <a href="https://pay.wiapy.com/iO6fraQdfTDv" class="upg-btn-primary" id="recusa-btn">Quero por apenas R$14,90</a>
-      <button class="upg-btn-secondary" id="recusa-continue" type="button">Não, obrigado</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  var ov=document.getElementById('recusa-overlay'),
-      cl=document.getElementById('recusa-close'),
-      cont=document.getElementById('recusa-continue');
-  function open(){ov.classList.add('upg-open');ov.scrollTop=0;document.body.style.overflow='hidden';cl.focus();}
-  function close(){ov.classList.remove('upg-open');document.body.style.overflow='';}
-  // Intercepta o link "Recusar esta oferta" de qualquer widget Wiapy e abre o popup
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('#wiapy_upsell a, #wiapy_upsell_2 a');
-    if(a){e.preventDefault();e.stopImmediatePropagation();open();}
-  },true);
-  cl.addEventListener('click',close);
-  cont.addEventListener('click',close);
-  ov.addEventListener('click',function(e){if(e.target===ov)close();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('upg-open'))close();});
-})();
-</script>
 </body>
 </html>
