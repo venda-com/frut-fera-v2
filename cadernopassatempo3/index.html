@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno de Passatempos em Italiano: oferta especial</title>
+<link rel="preload" as="image" href="/caderno-passatempos2/oferta-recusa.webp" fetchpriority="high">
+<script>
+// Links do downsell, usados pelos botões da página.
+// checkout = aceitar a oferta | recusa = para onde vai quem recusa (fim do funil)
+// Quando chegar o script da Wiapy, o botão de aceitar vira o botão oficial (compra com 1 clique).
+window.DOWNSELL = {
+  checkout: "https://pay.wiapy.com/iO6fraQdfTDv",
+  recusa: "https://wiapy.com/login",
+  // Repassa o código da compra anterior (?wiapy_sell=...) para a Wiapy
+  comToken: function (url) {
+    var t = new URLSearchParams(location.search).get("wiapy_sell");
+    if (!t) return url;
+    var u = new URL(url);
+    u.searchParams.set("wiapy_sell", t);
+    return u.toString();
+  }
+};
+</script>
+<style>
+:root {
+  --verde: #009246;
+  --txt: #1f2937;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f4f6; color: var(--txt);
+  border-top: 6px solid; border-image: linear-gradient(to right, #009246 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #CE2B37 66.6%) 1;
+  min-height: 100vh;
+}
+.top-bar {
+  width: 100%; background: var(--verde); color: #fff;
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  text-align: center; padding: 11px 20px; letter-spacing: 0.04em;
+}
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+main { padding: 20px 16px 40px; }
+.ds-box { background:#fff; border-radius:20px; max-width:420px; width:100%; margin:0 auto; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,.12); }
+.ds-img-wrap { position:relative; }
+.ds-img { width:100%; height:auto; display:block; }
+/* a arte veio do popup e tem um "X" desenhado no canto: ele recusa a oferta */
+.ds-x { position:absolute; top:0; right:0; width:16%; height:13%; }
+.ds-content { padding:1.25rem 1.25rem 1.375rem; text-align:center; }
+.ds-btn-aceitar { display:block; width:100%; background:#f5a623; color:#fff; font-weight:800; font-size:1rem; text-align:center; padding:1rem; border-radius:2rem; text-decoration:none; transition:background .2s; margin-bottom:14px; }
+.ds-btn-aceitar:hover { background:#d98c1a; }
+.ds-recusar { display:block; text-align:center; font-size:13.5px; font-weight:600; color:rgba(0,0,0,.4); text-decoration:none; padding:4px; }
+.ds-recusar:hover { color:#111; }
+.ds-btn-aceitar:focus-visible, .ds-recusar:focus-visible { outline:2px solid var(--verde); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<!-- FAIXA DE TOPO (mesma do upsell) -->
+<div class="top-bar">✅ Pedido confirmado! Só mais um passo antes de acessar…</div>
+
+<main>
+  <!-- OFERTA DE DOWNSELL (conteúdo do antigo popup de recusa do /caderno-passatempos2) -->
+  <div class="ds-box">
+    <h1 class="sr-only">Espera! Ganhe R$10 de desconto: 200 Passatempos em Italiano por R$14,90</h1>
+    <div class="ds-img-wrap">
+      <img class="ds-img" src="/caderno-passatempos2/oferta-recusa.webp" alt="Espera! Ganhe R$10 de desconto — 200 Passatempos em Italiano por R$14,90" width="842" height="1052" fetchpriority="high" decoding="async">
+      <a href="https://wiapy.com/login" class="ds-x" id="downsell-x" aria-label="Recusar oferta"></a>
+    </div>
+    <div class="ds-content">
+      <!-- BOTÃO DE ACEITAR: trocar pelo botão Wiapy (initWiapyUpsell) quando o script chegar -->
+      <a href="https://pay.wiapy.com/iO6fraQdfTDv" class="ds-btn-aceitar" id="downsell-aceitar">Quero por apenas R$14,90</a>
+      <a href="https://wiapy.com/login" class="ds-recusar" id="downsell-recusar">Não, obrigado</a>
+    </div>
+  </div>
+</main>
+
+<script>
+// Aceitar e recusar levam o código da compra anterior para a Wiapy
+document.getElementById('downsell-aceitar').href = DOWNSELL.comToken(DOWNSELL.checkout);
+document.getElementById('downsell-recusar').href = DOWNSELL.comToken(DOWNSELL.recusa);
+document.getElementById('downsell-x').href = DOWNSELL.comToken(DOWNSELL.recusa);
+</script>
+</body>
+</html>
