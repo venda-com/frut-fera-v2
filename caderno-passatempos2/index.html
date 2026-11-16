@@ -60,7 +60,11 @@ img { max-width:100%; display:block; }
 }
 
 /* ── TEXTO DE CORPO ── */
-.sec-text { font-size: 15px; color: var(--txt); line-height: 1.7; text-align: center; max-width: 440px; margin: 0 auto 18px; text-wrap: balance; }
+/* ── OS 4 FORMATOS em 2 colunas, logo abaixo do mockup ── */
+.fmt-lead { font-size: 16px; font-weight: 700; color: var(--navy); text-align: center; margin: 0 0 10px; }
+.fmt-grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 340px; margin: 0 auto 4px; }
+.fmt-grid li { background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 10px; padding: 9px 6px; font-size: 14px; font-weight: 700; color: var(--navy); text-align: center; }
+@media (max-width: 374px) { .fmt-grid li { font-size: 13px; padding: 9px 3px; } }
 
 /* ── CARD DE INFO (emoji + texto, com destaques) ── */
 .info-card {
@@ -283,8 +287,8 @@ img { max-width:100%; display:block; }
   <img src="mockup-200-passatempos.webp" alt="200 Passatempos em Italiano — capa e páginas de amostra (caça-palavras, palavras cruzadas, complete a frase e ligue as colunas)" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:auto; max-width:440px; margin:0 auto 18px; border-radius:12px;">
 
   <!-- PARÁGRAFO 3 -->
-  <p class="sec-text">São mais de 200 passatempos: caça-palavras, palavras cruzadas, complete a frase e ligue as&nbsp;colunas.</p>
-  <p class="sec-text">Divididos em 6 temas do dia a dia (comida, viagem, família, trabalho, rotina e cultura), pra abrir em qualquer&nbsp;página.</p>
+  <p class="fmt-lead">São mais de 200 passatempos:</p>
+  <ul class="fmt-grid"><li>🧩 Caça-palavras</li><li>✏️ Palavras cruzadas</li><li>🔤 Complete a frase</li><li>🔗 Ligue as colunas</li></ul>
 
   <!-- BOTÃO 0 (Wiapy) — logo no começo, dentro do quadro de preço -->
   <div class="cta-box">
