@@ -25,6 +25,9 @@ window.DOWNSELL = {
   --branco:  #FFFFFF;
   --txt:     #2D2D2D;
   --txt-s:   #6B7280;
+  --ouro:    #C8922A;
+  --cinza-f: #F9FAFB;
+  --serif: Georgia, 'Times New Roman', serif;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -41,7 +44,7 @@ body {
   font-size: 12px; font-weight: 800; text-transform: uppercase;
   text-align: center; padding: 11px 20px; letter-spacing: 0.04em;
 }
-.wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 20px 40px; }
+.wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 20px; }
 
 /* ── TOPO: aceita o "não" e apresenta a alternativa (padrão do hero do upsell) ── */
 .hv { text-align: center; padding: 30px 20px 6px; }
@@ -70,6 +73,58 @@ body {
 .cta-pill { display: inline-block; background: rgba(0,230,118,.15); color: #00e676; font-size: .75rem; font-weight: 700; padding: .3rem .9rem; border-radius: 1rem; margin-top: .6rem; }
 #wiapy_upsell { margin-top: 18px !important; }
 .cta-seguro { font-size: 12.5px; color: var(--txt-s); text-align: center; margin-top: 14px; text-wrap: balance; }
+
+/* ── FAIXA CINZA-CLARA com as amostras (mesma do upsell) ── */
+.amostras { background: #eef2f6; padding: 8px 0 26px; margin-top: 34px; }
+.sub-title-wrap { text-align: center; margin: 30px 0 22px; }
+.sub-title {
+  display: inline-block; margin: 0;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  color: #fff; background: var(--ouro);
+  padding: 13px 28px; border-radius: 32px;
+  box-shadow: 0 6px 16px rgba(200,146,42,0.35);
+}
+.pt-carousel { position: relative; max-width: 450px; margin: 0 auto; }
+.pt-viewport { overflow: hidden; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
+.pt-track { display: flex; transition: transform .35s ease; }
+.pt-slide { min-width: 100%; }
+.pt-slide img { width: 100%; height: auto; display: block; }
+.pt-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%; border: none;
+  background: rgba(0,0,0,0.72); color: #fff; font-size: 22px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 2; line-height: 1; padding: 0 0 3px;
+}
+.pt-arrow:hover { background: rgba(0,0,0,0.88); }
+.pt-prev { left: 8px; }
+.pt-next { right: 8px; }
+.pt-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; }
+.pt-dot { width: 8px; height: 8px; border-radius: 50%; background: #cfe3d8; border: none; padding: 0; cursor: pointer; }
+.pt-dot.active { background: var(--verde); }
+.amostras-legenda { font-size: 14px; color: var(--txt-s); text-align: center; margin-top: 10px; text-wrap: balance; }
+
+/* ── POR QUE COMEÇAR COM 100 ── */
+.benefit-card { background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 16px; padding: 22px 20px; max-width: 460px; margin: 30px auto; }
+.benefit-title { font-family: var(--serif); font-size: 19px; font-weight: 800; color: var(--verde); text-align: center; line-height: 1.35; margin-bottom: 6px; }
+.benefit-row { display: flex; align-items: flex-start; gap: 13px; margin-top: 14px; }
+.benefit-icon { font-size: 22px; flex-shrink: 0; line-height: 1.4; }
+.benefit-text { font-size: 15px; color: var(--txt); line-height: 1.55; }
+
+/* ── GARANTIA ── */
+.guarantee-section { background: var(--cinza-f); padding: 40px 20px; text-align: center; }
+.guarantee-inner { max-width: 480px; margin: 0 auto; }
+.guarantee-inner img { margin: 0 auto 14px; display: block; }
+.guarantee-inner h2 { font-size: clamp(18px, 3vw, 22px); font-weight: 900; color: var(--navy); margin-bottom: 10px; }
+.guarantee-inner p { font-size: 14px; color: var(--txt-s); line-height: 1.7; }
+
+/* ── BOTÃO FINAL com mini copy ── */
+.cta-final { background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 16px; padding: 24px 18px 18px; text-align: center; margin: 32px 0 40px; }
+.cta-final-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 800; color: var(--verde); line-height: 1.3; margin-bottom: 10px; text-wrap: balance; }
+.cta-final-text { font-size: 15px; color: var(--txt); line-height: 1.6; margin-bottom: 14px; text-wrap: balance; }
+.cta-final .cta-seguro { margin: 0 0 14px; }
+#wiapy_upsell_2 { margin-top: 4px !important; }
 </style>
 </head>
 <body>
@@ -119,6 +174,106 @@ body {
   </div>
 
 </div>
+
+<!-- FAIXA CINZA: uma página de cada formato -->
+<section class="amostras">
+  <div class="wrap">
+    <div class="sub-title-wrap"><h2 class="sub-title">Veja como são por dentro:</h2></div>
+    <div class="pt-carousel" data-carousel>
+      <div class="pt-viewport">
+        <div class="pt-track">
+          <div class="pt-slide"><img src="/caderno-passatempos2/caca-palavras-2.webp" alt="Caça-palavras em italiano" width="1000" height="1422" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="/caderno-passatempos2/palavras-cruzadas-2.webp" alt="Palavras cruzadas em italiano" width="1000" height="1333" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="/caderno-passatempos2/complete-frase-2.webp" alt="Complete a frase em italiano" width="1000" height="1413" loading="lazy" decoding="async"></div>
+          <div class="pt-slide"><img src="/caderno-passatempos2/ligue-colunas-2.webp" alt="Ligue as colunas em italiano" width="1000" height="1413" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <button class="pt-arrow pt-prev" type="button" aria-label="Imagem anterior">‹</button>
+      <button class="pt-arrow pt-next" type="button" aria-label="Próxima imagem">›</button>
+      <div class="pt-dots"></div>
+    </div>
+    <p class="amostras-legenda">Uma página de cada formato: caça-palavras, palavras cruzadas, complete a frase e ligue as&nbsp;colunas.</p>
+  </div>
+</section>
+
+<!-- POR QUE COMEÇAR COM 100 -->
+<div class="wrap">
+  <div class="benefit-card">
+    <p class="benefit-title">Por que começar com 100:</p>
+    <div class="benefit-row"><span class="benefit-icon">📅</span><p class="benefit-text">Um por dia já rende mais de três meses de recreio</p></div>
+    <div class="benefit-row"><span class="benefit-icon">☕</span><p class="benefit-text">Pequeno o bastante pra caber no café, na fila do banco ou no ônibus</p></div>
+    <div class="benefit-row"><span class="benefit-icon">🗂️</span><p class="benefit-text">O mesmo vocabulário dos seus mapas, nos 4 formatos</p></div>
+    <div class="benefit-row"><span class="benefit-icon">💸</span><p class="benefit-text">Menos de R$ 0,10 por passatempo</p></div>
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<section class="guarantee-section">
+  <div class="guarantee-inner">
+    <img src="/italiano/garantia-selo-v2.webp" alt="Garantia de 15 dias" width="120" height="120" loading="lazy" decoding="async">
+    <h2>Garantia de 15 dias</h2>
+    <p>Se por qualquer motivo você não gostar do Caderno, devolvemos 100% do seu dinheiro em até 15 dias após a compra. Sem burocracia e sem perguntas.</p>
+  </div>
+</section>
+
+<!-- BOTÃO FINAL com mini copy -->
+<div class="wrap">
+  <div class="cta-final">
+    <p class="cta-final-title">Os 100 passatempos, por R$&nbsp;9,90</p>
+    <p class="cta-final-text">Pra abrir no café, na fila ou no sofá. Sem prazo e sem ordem: começa por qualquer página e para quando&nbsp;quiser.</p>
+    <p class="cta-seguro">🔒 Pagamento&nbsp;único · Acesso&nbsp;imediato · 15&nbsp;dias&nbsp;de&nbsp;garantia</p>
+    <div id="wiapy_upsell_2"></div>
+    <script>
+    initWiapyUpsell({
+      elementId: "wiapy_upsell_2",
+      linkUrl: DOWNSELL.checkout,
+      linkText: "SIM, QUERO A VERSÃO COM 100",
+      styles: {
+        backgroundColor: "#009246",
+        hoverBackgroundColor: "#007A3A",
+        fontSize: "17px",
+        borderRadius: "10px"
+      },
+      refusalLinkUrl: DOWNSELL.recusa,
+      refusalLinkText: "Não, obrigado, quero só o meu pedido",
+      refusalLinkColor: "rgba(0,0,0,0.45)"
+    });
+    </script>
+  </div>
+</div>
+
+<script>
+// Carrossel das amostras (mesmo do upsell)
+document.querySelectorAll('[data-carousel]').forEach(function(car) {
+  var track = car.querySelector('.pt-track');
+  var slides = car.querySelectorAll('.pt-slide');
+  var dotsWrap = car.querySelector('.pt-dots');
+  var idx = 0;
+  slides.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'pt-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Ir para imagem ' + (i + 1));
+    d.addEventListener('click', function() { go(i); });
+    dotsWrap.appendChild(d);
+  });
+  function update() {
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dotsWrap.querySelectorAll('.pt-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+  }
+  function go(i) { idx = (i + slides.length) % slides.length; update(); }
+  car.querySelector('.pt-prev').addEventListener('click', function() { go(idx - 1); });
+  car.querySelector('.pt-next').addEventListener('click', function() { go(idx + 1); });
+  var startX = null;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function(e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { go(dx < 0 ? idx + 1 : idx - 1); }
+    startX = null;
+  });
+});
+</script>
 
 </body>
 </html>
