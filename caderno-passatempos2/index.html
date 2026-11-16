@@ -205,12 +205,9 @@ img { max-width:100%; display:block; }
 .headline .hl-a { display: block; font-size: 1.12em; text-wrap: balance; }
 .headline .hl-mark { background: linear-gradient(transparent 62%, rgba(0,146,70,.18) 62%); }
 
-/* ── QUADRO DE PREÇO + BOTÃO NO COMEÇO (mesmo visual do card de oferta) ── */
-.cta-box {
-  background: #0f1f0f; border-radius: 16px; padding: 1.25rem 1.1rem 1rem;
-  text-align: center; margin: 26px 0 0;
-  box-shadow: 0 0 0 2px #00e676, 0 0 20px rgba(0,230,118,.25);
-}
+/* ── PREÇO + BOTÃO NO COMEÇO (mesmas cores do card de oferta, sobre o fundo branco) ── */
+.cta-box { text-align: center; margin: 26px 0 0; }
+.cta-box .itp-total-label, .cta-box .itp-total-period { color: var(--txt-s); }
 #wiapy_upsell_topo, #wiapy_upsell { margin-top: 18px !important; }
 .sec-divider { border: 0; width: 96px; height: 4px; border-radius: 4px; margin: 38px auto 6px; background: linear-gradient(to right, #009246 33.3%, #e5e7eb 33.3%, #e5e7eb 66.6%, #CE2B37 66.6%); }
 
@@ -308,7 +305,7 @@ img { max-width:100%; display:block; }
     },
     refusalLinkUrl: UPSELL.recusa,
     refusalLinkText: "Recusar está oferta",
-    refusalLinkColor: "rgba(255,255,255,0.6)"
+    refusalLinkColor: "rgba(0,0,0,0.4)"
   });
     </script>
   </div>
