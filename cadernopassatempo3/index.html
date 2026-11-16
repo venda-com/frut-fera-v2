@@ -9,12 +9,32 @@
 <script src="https://wiapy.com/sell/1.0.0/sell.min.js"></script>
 <script>
 // Links do downsell.
-// checkout = aceitar a oferta | recusa = para onde vai quem recusa (fim do funil)
-// ATENÇÃO: o link abaixo veio da Wiapy terminando em "undefined" (sem o código do produto).
-// Trocar pelo link certo do checkout da versão com 100 antes de publicar.
+// checkout = aceitar a oferta | recusa = página de obrigado (depois do popup de última oportunidade)
+// O link do checkout é o gerado pela Wiapy para o downsell (termina em "undefined");
+// o dono confirmou que a compra funciona com ele.
 window.DOWNSELL = {
   checkout: "https://pay.wiapy.com/checkout/undefined",
-  recusa: "https://wiapy.com/login"
+  recusa: "https://www.cultivaragora.store/pedido-confirmado",
+  // Repassa o código da compra anterior (?wiapy_sell=...) adiante
+  comToken: function (url) {
+    var t = new URLSearchParams(location.search).get("wiapy_sell");
+    if (!t) return url;
+    var u = new URL(url);
+    u.searchParams.set("wiapy_sell", t);
+    return u.toString();
+  },
+  // Botão do popup aciona o botão oficial da Wiapy (espera até 4s se ainda estiver carregando)
+  aceitar: function () {
+    var espera = 0;
+    (function tenta() {
+      var box = document.getElementById("wiapy_upsell"),
+          b = box && box.querySelector("button");
+      if (b && !b.disabled) return b.click();
+      if (b && box.style.display !== "none") return; // compra já em processamento
+      if ((espera += 100) > 4000) return (location.href = DOWNSELL.comToken(DOWNSELL.checkout));
+      setTimeout(tenta, 100);
+    })();
+  }
 };
 </script>
 <style>
@@ -125,6 +145,21 @@ body {
 .cta-final-text { font-size: 15px; color: var(--txt); line-height: 1.6; margin-bottom: 14px; text-wrap: balance; }
 .cta-final .cta-seguro { margin: 0 0 14px; }
 #wiapy_upsell_2 { margin-top: 4px !important; }
+
+/* ── POPUP DE ÚLTIMA OPORTUNIDADE (aparece ao recusar) ── */
+.ul-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px 16px; }
+.ul-overlay[hidden] { display: none; }
+.ul-box { background: #fff; border-radius: 18px; max-width: 400px; width: 100%; padding: 30px 22px 22px; text-align: center; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,.35); }
+.ul-fechar { position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: none; border-radius: 8px; background: #f3f4f6; color: #555; font-size: 18px; font-weight: 700; cursor: pointer; }
+.ul-emoji { font-size: 38px; line-height: 1; margin-bottom: 10px; }
+.ul-box h2 { font-size: 23px; font-weight: 900; color: #1a1a1a; line-height: 1.25; margin-bottom: 10px; text-wrap: balance; }
+.ul-texto { font-size: 15.5px; color: #444; line-height: 1.6; margin-bottom: 18px; text-wrap: balance; }
+.ul-texto b { color: #1a1a1a; }
+.ul-sim { display: block; width: 100%; background: #009246; color: #fff; border: none; border-radius: 10px; padding: 15px 10px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; }
+.ul-sim:hover { background: #007A3A; }
+.ul-nao { display: block; margin-top: 14px; font-size: 14px; color: rgba(0,0,0,.45); }
+.ul-seguro { font-size: 12.5px; color: var(--txt-s); margin-top: 12px; }
+.ul-sim:focus-visible, .ul-nao:focus-visible, .ul-fechar:focus-visible { outline: 2px solid var(--verde); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -275,5 +310,35 @@ document.querySelectorAll('[data-carousel]').forEach(function(car) {
 });
 </script>
 
+<!-- POPUP DE ÚLTIMA OPORTUNIDADE: aparece quando a pessoa recusa o downsell -->
+<div class="ul-overlay" id="ultima-chance" role="dialog" aria-modal="true" aria-labelledby="ul-titulo" hidden>
+  <div class="ul-box">
+    <button class="ul-fechar" id="ul-fechar" type="button" aria-label="Fechar">✕</button>
+    <p class="ul-emoji">⏳</p>
+    <h2 id="ul-titulo">Essa é a última oportunidade</h2>
+    <p class="ul-texto">Depois desta página, os 100 passatempos por <b>R$&nbsp;9,90</b> não aparecem de novo. Se fizer sentido pra você, ainda dá&nbsp;tempo.</p>
+    <button class="ul-sim" id="ul-sim" type="button">SIM, QUERO A VERSÃO COM 100</button>
+    <a class="ul-nao" id="ul-nao" href="https://www.cultivaragora.store/pedido-confirmado">Não, obrigado, quero só o meu pedido</a>
+    <p class="ul-seguro">🔒 Pagamento único · 15 dias de garantia</p>
+  </div>
+</div>
+<script>
+(function () {
+  var ov = document.getElementById('ultima-chance'),
+      fechar = document.getElementById('ul-fechar');
+  document.getElementById('ul-nao').href = DOWNSELL.comToken(DOWNSELL.recusa);
+  function abrir() { ov.hidden = false; document.body.style.overflow = 'hidden'; fechar.focus(); }
+  function sair() { ov.hidden = true; document.body.style.overflow = ''; }
+  // "Não, obrigado" dos botões da Wiapy abre o popup em vez de sair direto
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('#wiapy_upsell > a, #wiapy_upsell_2 > a');
+    if (a) { e.preventDefault(); e.stopImmediatePropagation(); abrir(); }
+  }, true);
+  document.getElementById('ul-sim').addEventListener('click', function () { sair(); DOWNSELL.aceitar(); });
+  fechar.addEventListener('click', sair);
+  ov.addEventListener('click', function (e) { if (e.target === ov) sair(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ov.hidden) sair(); });
+})();
+</script>
 </body>
 </html>

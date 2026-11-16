@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento concluído</title>
+<style>
+:root {
+  --verde:   #009246;
+  --verde-h: #007A3A;
+  --navy:    #111827;
+  --txt:     #2D2D2D;
+  --txt-s:   #6B7280;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff; color: var(--txt);
+  border-top: 6px solid; border-image: linear-gradient(to right, #009246 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #CE2B37 66.6%) 1;
+  min-height: 100vh;
+}
+.top-bar {
+  width: 100%; background: var(--verde); color: #fff;
+  font-size: 12px; font-weight: 800; text-transform: uppercase;
+  text-align: center; padding: 11px 20px; letter-spacing: 0.04em;
+}
+.wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 36px 20px 48px; text-align: center; }
+.ok-icone { width: 76px; height: 76px; border-radius: 50%; background: #e6f4eb; color: var(--verde); font-size: 40px; font-weight: 900; line-height: 76px; margin: 0 auto 18px; box-shadow: 0 4px 14px rgba(0,146,70,.18); }
+h1 { font-size: 28px; font-weight: 900; color: #1a1a1a; line-height: 1.25; margin-bottom: 10px; }
+.lead { font-size: 16px; color: #444; line-height: 1.6; margin-bottom: 26px; text-wrap: balance; }
+.email-card { background: #EAF7EF; border: 1px solid #BFE3D5; border-radius: 16px; padding: 22px 20px; text-align: left; margin-bottom: 26px; }
+.email-card h2 { font-size: 18px; font-weight: 900; color: var(--verde); text-align: center; margin-bottom: 14px; }
+.passo { display: flex; gap: 12px; align-items: flex-start; margin-top: 12px; }
+.passo-num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--verde); color: #fff; font-size: 14px; font-weight: 800; line-height: 26px; text-align: center; }
+.passo p { font-size: 15px; color: var(--txt); line-height: 1.55; }
+.btn-acesso { display: block; background: var(--verde); color: #fff; text-decoration: none; font-size: 16px; font-weight: 700; padding: 16px 10px; border-radius: 10px; }
+.btn-acesso:hover { background: var(--verde-h); }
+.nota { font-size: 13px; color: var(--txt-s); line-height: 1.6; margin-top: 14px; text-wrap: balance; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">✅ Pedido concluído</div>
+
+<div class="wrap">
+  <div class="ok-icone" aria-hidden="true">✓</div>
+  <h1>Pagamento concluído!</h1>
+  <p class="lead">Seu pedido foi confirmado e o acesso já foi enviado para o seu&nbsp;e-mail.</p>
+
+  <div class="email-card">
+    <h2>📩 Confira o seu e-mail</h2>
+    <div class="passo"><span class="passo-num">1</span><p>Abra o e-mail que você usou na compra e procure a mensagem com o seu acesso.</p></div>
+    <div class="passo"><span class="passo-num">2</span><p>Se não estiver na caixa de entrada, olhe também nas pastas <b>Spam</b> e <b>Promoções</b>.</p></div>
+    <div class="passo"><span class="passo-num">3</span><p>A mensagem pode levar alguns minutos para chegar.</p></div>
+  </div>
+
+  <a class="btn-acesso" href="https://wiapy.com/login">ACESSAR MINHA ÁREA DE MEMBROS</a>
+  <p class="nota">Guarde esse e-mail: é por ele que você entra no seu material sempre que quiser.</p>
+</div>
+
+</body>
+</html>
